@@ -6,10 +6,15 @@ Ricardo Fernandes Marques, - nº2180604
 Samuel Jorge Perdigão Martins, - nº2180641
 */
 
-
-create database SportGymDB;
+create database if not exists sportgymdb;
 
 use SportGymDB;
+
+ALTER TABLE planos
+DROP COLUMN dtaPlano;
+
+ALTER TABLE perfisPlanos
+ADD dtaplano date not null;
 
 create table if not exists ginasios(
 IDginasio int unsigned auto_increment,
@@ -75,7 +80,6 @@ nome varchar(100) not null,
 nutricao boolean not null,
 treino boolean not null,
 descricao varchar(5000),
-dtaplano date not null,
 IDperfil int,
 constraint pk_planos_IDplano primary key (IDplano),
 constraint fk_planos_IDperfil foreign key (IDperfil) references perfis(IDperfil)
