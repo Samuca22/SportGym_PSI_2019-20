@@ -16,6 +16,20 @@ DROP COLUMN dtaPlano;
 ALTER TABLE perfisPlanos
 ADD dtaplano date not null;
 
+ALTER TABLE produtos
+ADD estado boolean not null;
+
+ALTER TABLE ginasios
+DROP COLUMN contacto;
+
+ALTER TABLE ginasios
+ADD telefone varchar(15) unique not null;
+
+ALTER TABLE ginasios
+ADD email varchar(200) unique not null;
+
+
+
 create table if not exists ginasios(
 IDginasio int unsigned auto_increment,
 contacto varchar(15) not null unique,
