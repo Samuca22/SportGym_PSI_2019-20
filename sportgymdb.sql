@@ -10,38 +10,19 @@ create database if not exists sportgymdb;
 
 use SportGymDB;
 
-ALTER TABLE planos
-DROP COLUMN dtaPlano;
-
-ALTER TABLE perfisPlanos
-ADD dtaplano date not null;
-
-ALTER TABLE produtos
-ADD estado boolean not null;
-
-ALTER TABLE ginasios
-DROP COLUMN contacto;
-
-ALTER TABLE ginasios
-ADD telefone varchar(15) unique not null;
-
-ALTER TABLE ginasios
-ADD email varchar(200) unique not null;
-
-
-
-create table if not exists ginasios(
+create table if not exists ginasio(
 IDginasio int unsigned auto_increment,
-contacto varchar(15) not null unique,
 rua  varchar(255) not null,
 localidade varchar (255) not null,
 cp  varchar(15) not null,
-constraint pk_ginasios_IDginasio primary key (IDginasio)
+telefone varchar(15) unique not null,
+email varchar(200) unique not null,
+constraint pk_ginasio_IDginasio primary key (IDginasio)
 )ENGINE=InnoDB ;
-select *from ginasios;
 
 
-create table if not exists perfis
+
+create table if not exists perfil
 (
 IDperfil int ,
 nSocio int  unsigned unique not null,
@@ -57,99 +38,100 @@ cp varchar(255) not null,
 nif  varchar(15) unique not null,
 peso double null,
 altura double null,
-constraint pk_perfis_IDperfil primary key (IDperfil),
-constraint fk_perfis_IDperfil foreign key (IDperfil) references  sportgymdb.user(id)
+constraint pk_perfil_IDperfil primary key (IDperfil),
+constraint fk_perfil_IDperfil foreign key (IDperfil) references  sportgymdb.user(id)
 )ENGINE=InnoDB ;
-select *from perfis;
 
 
-create table if not exists adesoes(
+
+create table if not exists adesao(
 IDadesao int unsigned auto_increment,
 dtaInicio date not null,
 dtaFim date null,
 IDginasio int unsigned, 
-constraint pk_adesoes_IDadesao primary key (IDadesao),
-constraint fk_adesoes_IDginasio foreign key (IDginasio) references ginasios(IDginasio)
+constraint pk_adesao_IDadesao primary key (IDadesao),
+constraint fk_adesao_IDginasio foreign key (IDginasio) references ginasio(IDginasio)
 )Engine=InnoDB;
-select *from adesoes;
 
 
-create table if not exists aulas(
+
+create table if not exists aula(
 IDaula int unsigned auto_increment,
 tipo varchar(20) not null, 
 dtaInicio datetime not null,
 duracao time not null,
 IDperfil int ,
 IDginasio int unsigned,
-constraint pk_aulas_IDaula primary key (IDaula),
-constraint fk_aulas_IDperfil foreign key (IDperfil) references perfis(IDperfil),
-constraint fk_aulas_IDginasio foreign key (IDginasio) references ginasios(IDginasio)
+constraint pk_aula_IDaula primary key (IDaula),
+constraint fk_aula_IDperfil foreign key (IDperfil) references perfil(IDperfil),
+constraint fk_aula_IDginasio foreign key (IDginasio) references ginasio(IDginasio)
 )engine=InnoDB;
-select *from aulas;
 
 
-create table if not exists planos(
+
+create table if not exists plano(
 IDplano int unsigned auto_increment,
 nome varchar(100) not null, 
 nutricao boolean not null,
 treino boolean not null,
 descricao varchar(5000),
 IDperfil int,
-constraint pk_planos_IDplano primary key (IDplano),
-constraint fk_planos_IDperfil foreign key (IDperfil) references perfis(IDperfil)
+constraint pk_plano_IDplano primary key (IDplano),
+constraint fk_plano_IDperfil foreign key (IDperfil) references perfil(IDperfil)
 )engine=InnoDB;
-select *from planos;
 
 
-create table if not exists vendas(
+
+create table if not exists venda(
 IDvenda int unsigned auto_increment,
 estado boolean not null,
 dataVenda date not null, 
 total float not null,
 IDperfil int ,
-constraint pk_vendas_IDvenda primary key (IDvenda),
-constraint fk_vendas_IDperfil foreign key (IDperfil) references perfis(IDperfil)
+constraint pk_venda_IDvenda primary key (IDvenda),
+constraint fk_venda_IDperfil foreign key (IDperfil) references perfil(IDperfil)
 )engine=InnoDB;
-select *from vendas;
 
-create table if not exists linhaVendas(
+
+create table if not exists linhaVenda(
 IDlinhaVenda int unsigned auto_increment,
 quantidade int not null,
 subTotal float not null, 
 IDvenda int unsigned ,
-constraint pk_linhaVendas_IDlinhaVenda primary key (IDlinhaVenda),
-constraint fk_linhaVendas_IDvenda foreign key (IDvenda) references vendas(IDvenda)
+constraint pk_linhaVenda_IDlinhaVenda primary key (IDlinhaVenda),
+constraint fk_linhaVenda_IDvenda foreign key (IDvenda) references venda(IDvenda)
 )engine=InnoDB;
-select *from linhaVendas;
 
 
-create table if not exists produtos(
+
+create table if not exists produto(
 IDproduto int unsigned auto_increment,
 nome varchar(50) not null,
 fotoProduto blob not null, 
 descricao varchar(500) not null,
+estado boolean not null,
 precoProduto double not null,
 IDlinhaVenda int unsigned ,
-constraint pk_produtos_IDproduto primary key (IDproduto),
-constraint fk_produtos_IDlinhaVenda foreign key (IDlinhaVenda) references linhaVendas (IDlinhaVenda)
+constraint pk_produto_IDproduto primary key (IDproduto),
+constraint fk_produto_IDlinhaVenda foreign key (IDlinhaVenda) references linhaVenda (IDlinhaVenda)
 )engine=InnoDB;
-select *from produtos;
 
 
-create table if not exists perfisPlanos(
+
+create table if not exists perfilPlano(
 IDperfil int,
 IDplano int unsigned,
-constraint pk_perfisPlanos_IDperfilPlano primary key (IDperfil, IDplano),
-constraint fk_perfisPlanos_IDperfil foreign key (IDperfil) references perfis (IDperfil),
-constraint fk_perfisPlanos_IDplano foreign key (IDplano) references planos(IDplano)
+dtaplano date not null,
+constraint pk_perfilPlano_IDperfilPlano primary key (IDperfil, IDplano),
+constraint fk_perfilPlano_IDperfil foreign key (IDperfil) references perfil (IDperfil),
+constraint fk_perfilPlano_IDplano foreign key (IDplano) references plano(IDplano)
 )engine=InnoDB;
-select *from perfisPlanos;
 
-create table if not exists perfisAulas(
+
+create table if not exists perfilAula(
 IDperfil int,
 IDaula int unsigned,
-constraint pk_perfisAulas_IDperfilAula primary key (IDperfil, IDaula),
-constraint fk_perfisAulas_IDperfil foreign key (IDperfil) references perfis (IDperfil),
-constraint fk_perfisAulas_IDaula foreign key (IDaula) references aulas(IDaula)
+constraint pk_perfilAula_IDperfilAula primary key (IDperfil, IDaula),
+constraint fk_perfilAula_IDperfil foreign key (IDperfil) references perfil (IDperfil),
+constraint fk_perfilAula_IDaula foreign key (IDaula) references aula(IDaula)
 )engine=InnoDB;
-select *from PerfisAulas;
