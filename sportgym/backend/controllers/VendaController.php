@@ -2,9 +2,11 @@
 
 namespace backend\controllers;
 
+use common\models\Perfil;
 use Yii;
 use common\models\Venda;
 use common\models\VendaSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;

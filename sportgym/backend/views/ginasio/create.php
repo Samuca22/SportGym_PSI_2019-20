@@ -3,13 +3,13 @@
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Perfil */
+/* @var $model common\models\Ginasio */
 
-$this->title = 'Create Perfil';
-$this->params['breadcrumbs'][] = ['label' => 'Perfils', 'url' => ['index']];
+$this->title = 'Create Ginasio';
+$this->params['breadcrumbs'][] = ['label' => 'Ginasios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="perfil-create">
+<div class="ginasio-create">
 
     <h1><?= Html::encode($this->title) ?></h1>
 

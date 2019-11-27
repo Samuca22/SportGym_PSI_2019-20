@@ -3,14 +3,14 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Perfil;
-use common\models\PerfilSearch;
+use common\models\Ginasio;
+use common\models\GinasioSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * GinasioController implements the CRUD actions for Perfil model.
+ * GinasioController implements the CRUD actions for Ginasio model.
  */
 class GinasioController extends Controller
 {
@@ -30,12 +30,12 @@ class GinasioController extends Controller
     }
 
     /**
-     * Lists all Perfil models.
+     * Lists all Ginasio models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new PerfilSearch();
+        $searchModel = new GinasioSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,8 +45,8 @@ class GinasioController extends Controller
     }
 
     /**
-     * Displays a single Perfil model.
-     * @param integer $id
+     * Displays a single Ginasio model.
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -58,16 +58,16 @@ class GinasioController extends Controller
     }
 
     /**
-     * Creates a new Perfil model.
+     * Creates a new Ginasio model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Perfil();
+        $model = new Ginasio();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->IDperfil]);
+            return $this->redirect(['view', 'id' => $model->IDginasio]);
         }
 
         return $this->render('create', [
@@ -76,9 +76,9 @@ class GinasioController extends Controller
     }
 
     /**
-     * Updates an existing Perfil model.
+     * Updates an existing Ginasio model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -87,7 +87,7 @@ class GinasioController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->IDperfil]);
+            return $this->redirect(['view', 'id' => $model->IDginasio]);
         }
 
         return $this->render('update', [
@@ -96,9 +96,9 @@ class GinasioController extends Controller
     }
 
     /**
-     * Deletes an existing Perfil model.
+     * Deletes an existing Ginasio model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -110,15 +110,15 @@ class GinasioController extends Controller
     }
 
     /**
-     * Finds the Perfil model based on its primary key value.
+     * Finds the Ginasio model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Perfil the loaded model
+     * @param string $id
+     * @return Ginasio the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
     {
-        if (($model = Perfil::findOne($id)) !== null) {
+        if (($model = Ginasio::findOne($id)) !== null) {
             return $model;
         }
 

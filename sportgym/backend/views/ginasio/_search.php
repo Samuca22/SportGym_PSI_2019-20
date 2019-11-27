@@ -4,44 +4,28 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\PerfilSearch */
+/* @var $model common\models\GinasioSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="perfil-search">
+<div class="ginasio-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'IDperfil') ?>
+    <?= $form->field($model, 'IDginasio') ?>
 
-    <?= $form->field($model, 'nSocio') ?>
+    <?= $form->field($model, 'rua') ?>
 
-    <?= $form->field($model, 'foto') ?>
+    <?= $form->field($model, 'localidade') ?>
 
-    <?= $form->field($model, 'primeiroNome') ?>
+    <?= $form->field($model, 'cp') ?>
 
-    <?= $form->field($model, 'apelido') ?>
+    <?= $form->field($model, 'telefone') ?>
 
-    <?php // echo $form->field($model, 'genero') ?>
-
-    <?php // echo $form->field($model, 'telefone') ?>
-
-    <?php // echo $form->field($model, 'dtaNascimento') ?>
-
-    <?php // echo $form->field($model, 'rua') ?>
-
-    <?php // echo $form->field($model, 'localidade') ?>
-
-    <?php // echo $form->field($model, 'cp') ?>
-
-    <?php // echo $form->field($model, 'nif') ?>
-
-    <?php // echo $form->field($model, 'peso') ?>
-
-    <?php // echo $form->field($model, 'altura') ?>
+    <?php // echo $form->field($model, 'email') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

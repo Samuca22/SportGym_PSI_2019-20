@@ -4,20 +4,20 @@ use yii\helpers\Html;
 use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\Perfil */
+/* @var $model common\models\Ginasio */
 
-$this->title = $model->IDperfil;
-$this->params['breadcrumbs'][] = ['label' => 'Perfils', 'url' => ['index']];
+$this->title = $model->IDginasio;
+$this->params['breadcrumbs'][] = ['label' => 'Ginasios', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
-<div class="perfil-view">
+<div class="ginasio-view">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->IDperfil], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->IDperfil], [
+        <?= Html::a('Update', ['update', 'id' => $model->IDginasio], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Delete', ['delete', 'id' => $model->IDginasio], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',
@@ -29,20 +29,12 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= DetailView::widget([
         'model' => $model,
         'attributes' => [
-            'IDperfil',
-            'nSocio',
-            'foto',
-            'primeiroNome',
-            'apelido',
-            'genero',
-            'telefone',
-            'dtaNascimento',
+            'IDginasio',
             'rua',
             'localidade',
             'cp',
-            'nif',
-            'peso',
-            'altura',
+            'telefone',
+            'email:email',
         ],
     ]) ?>
 

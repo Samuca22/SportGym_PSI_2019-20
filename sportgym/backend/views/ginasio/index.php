@@ -4,18 +4,18 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\PerfilSearch */
+/* @var $searchModel common\models\GinasioSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Perfils';
+$this->title = 'Ginasios';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="perfil-index">
+<div class="ginasio-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Perfil', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Create Ginasio', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -26,20 +26,12 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'IDperfil',
-            'nSocio',
-            'foto',
-            'primeiroNome',
-            'apelido',
-            //'genero',
-            //'telefone',
-            //'dtaNascimento',
-            //'rua',
-            //'localidade',
-            //'cp',
-            //'nif',
-            //'peso',
-            //'altura',
+            'IDginasio',
+            'rua',
+            'localidade',
+            'cp',
+            'telefone',
+            //'email:email',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -46,11 +46,11 @@ class Venda extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'IDvenda' => 'I Dvenda',
+            'IDvenda' => 'ID venda',
             'estado' => 'Estado',
             'dataVenda' => 'Data Venda',
             'total' => 'Total',
-            'IDperfil' => 'I Dperfil',
+            'IDperfil' => 'ID perfil',
         ];
     }
 
@@ -69,4 +69,5 @@ class Venda extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Perfil::className(), ['IDperfil' => 'IDperfil']);
     }
+
 }
