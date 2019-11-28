@@ -7381,3 +7381,1776 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1574886970.386
     'REQUEST_TIME' => 1574886970
 ]
+2019-11-28 16:48:06 [::1][3][gu4s3at92138bfd9j8vej1c7t1][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'primeiroNome' of non-object in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php:12
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php(12): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php(84): backend\controllers\SiteController->render()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionIndex()
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\web\Application->run()
+#13 {main}
+2019-11-28 16:48:06 [::1][3][gu4s3at92138bfd9j8vej1c7t1][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'gu4s3at92138bfd9j8vej1c7t1'
+    '_identity-backend' => '811127b2892cf2210384a787ccb34a251043ac21b85066b673c4717d653e2da6a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[3,\"K2vkeNrcFiAFPUgG854Ivn0Ce1QkxvLZ\",2592000]\";}'
+    '_csrf-backend' => '448bd43b1eed53ae1790bab03ec22f4c4c60d68a8c59acdf62b7c64543689ae8a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"raFfI89C21fXMMBsgTGRjZbyWnLTCxD6\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/site/index'
+    '__id' => 3
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=gu4s3at92138bfd9j8vej1c7t1; _identity-backend=811127b2892cf2210384a787ccb34a251043ac21b85066b673c4717d653e2da6a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22K2vkeNrcFiAFPUgG854Ivn0Ce1QkxvLZ%22%2C2592000%5D%22%3B%7D; _csrf-backend=448bd43b1eed53ae1790bab03ec22f4c4c60d68a8c59acdf62b7c64543689ae8a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22raFfI89C21fXMMBsgTGRjZbyWnLTCxD6%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63305'
+    'REDIRECT_URL' => '/site/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/index'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574959686.579
+    'REQUEST_TIME' => 1574959686
+]
+2019-11-28 16:53:32 [::1][4][e3c09dvrqd4q9jh95rtvpmgm6k][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'primeiroNome' of non-object in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php:12
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php(12): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php(84): backend\controllers\SiteController->render()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionIndex()
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\web\Application->run()
+#13 {main}
+2019-11-28 16:53:32 [::1][4][e3c09dvrqd4q9jh95rtvpmgm6k][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'e3c09dvrqd4q9jh95rtvpmgm6k'
+    '_identity-backend' => 'fd17d05f53721d86a92db078f74ef4357912916a4e45ac6885c97a95062cb861a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[4,\"TiCdO1957SZt8mdberphqeZWbGsXB-JY\",2592000]\";}'
+    '_csrf-backend' => '7b5cdf08a761eb996c4fdaa27f57f4b4706c217b1eb747874ad7065c94466065a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"3cIT8HlN5pa78buAMPkbM6AvSRNZk0-o\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 4
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=e3c09dvrqd4q9jh95rtvpmgm6k; _identity-backend=fd17d05f53721d86a92db078f74ef4357912916a4e45ac6885c97a95062cb861a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22TiCdO1957SZt8mdberphqeZWbGsXB-JY%22%2C2592000%5D%22%3B%7D; _csrf-backend=7b5cdf08a761eb996c4fdaa27f57f4b4706c217b1eb747874ad7065c94466065a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%223cIT8HlN5pa78buAMPkbM6AvSRNZk0-o%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63344'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574960012.105
+    'REQUEST_TIME' => 1574960012
+]
+2019-11-28 16:53:34 [::1][4][e3c09dvrqd4q9jh95rtvpmgm6k][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'primeiroNome' of non-object in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php:12
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php(12): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php(84): backend\controllers\SiteController->render()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionIndex()
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\web\Application->run()
+#13 {main}
+2019-11-28 16:53:34 [::1][4][e3c09dvrqd4q9jh95rtvpmgm6k][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'e3c09dvrqd4q9jh95rtvpmgm6k'
+    '_identity-backend' => 'fd17d05f53721d86a92db078f74ef4357912916a4e45ac6885c97a95062cb861a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[4,\"TiCdO1957SZt8mdberphqeZWbGsXB-JY\",2592000]\";}'
+    '_csrf-backend' => '7b5cdf08a761eb996c4fdaa27f57f4b4706c217b1eb747874ad7065c94466065a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"3cIT8HlN5pa78buAMPkbM6AvSRNZk0-o\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 4
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=e3c09dvrqd4q9jh95rtvpmgm6k; _identity-backend=fd17d05f53721d86a92db078f74ef4357912916a4e45ac6885c97a95062cb861a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22TiCdO1957SZt8mdberphqeZWbGsXB-JY%22%2C2592000%5D%22%3B%7D; _csrf-backend=7b5cdf08a761eb996c4fdaa27f57f4b4706c217b1eb747874ad7065c94466065a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%223cIT8HlN5pa78buAMPkbM6AvSRNZk0-o%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63347'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574960014.401
+    'REQUEST_TIME' => 1574960014
+]
+2019-11-28 16:53:37 [::1][4][e3c09dvrqd4q9jh95rtvpmgm6k][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'primeiroNome' of non-object in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php:12
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php(12): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php(84): backend\controllers\SiteController->render()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionIndex()
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\web\Application->run()
+#13 {main}
+2019-11-28 16:53:37 [::1][4][e3c09dvrqd4q9jh95rtvpmgm6k][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'e3c09dvrqd4q9jh95rtvpmgm6k'
+    '_identity-backend' => 'fd17d05f53721d86a92db078f74ef4357912916a4e45ac6885c97a95062cb861a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[4,\"TiCdO1957SZt8mdberphqeZWbGsXB-JY\",2592000]\";}'
+    '_csrf-backend' => '7b5cdf08a761eb996c4fdaa27f57f4b4706c217b1eb747874ad7065c94466065a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"3cIT8HlN5pa78buAMPkbM6AvSRNZk0-o\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 4
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=e3c09dvrqd4q9jh95rtvpmgm6k; _identity-backend=fd17d05f53721d86a92db078f74ef4357912916a4e45ac6885c97a95062cb861a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22TiCdO1957SZt8mdberphqeZWbGsXB-JY%22%2C2592000%5D%22%3B%7D; _csrf-backend=7b5cdf08a761eb996c4fdaa27f57f4b4706c217b1eb747874ad7065c94466065a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%223cIT8HlN5pa78buAMPkbM6AvSRNZk0-o%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63350'
+    'REDIRECT_URL' => '/site/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/index'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574960017.034
+    'REQUEST_TIME' => 1574960017
+]
+2019-11-28 17:07:50 [::1][4][jnlrevigaajfe53hqbjrdkv8pd][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'primeiroNome' of non-object in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php:12
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php(12): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php(84): backend\controllers\SiteController->render()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionIndex()
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\web\Application->run()
+#13 {main}
+2019-11-28 17:07:50 [::1][4][jnlrevigaajfe53hqbjrdkv8pd][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'jnlrevigaajfe53hqbjrdkv8pd'
+    '_identity-backend' => 'fd17d05f53721d86a92db078f74ef4357912916a4e45ac6885c97a95062cb861a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[4,\"TiCdO1957SZt8mdberphqeZWbGsXB-JY\",2592000]\";}'
+    '_csrf-backend' => '54eefe50c68a75f8072712db1900bdded8adb83eaa48fcf6ce4dff00d7a731f3a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"HsiSl9u0b0fWtQK62OOLtaNIuFV_26qc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 4
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=jnlrevigaajfe53hqbjrdkv8pd; _identity-backend=fd17d05f53721d86a92db078f74ef4357912916a4e45ac6885c97a95062cb861a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22TiCdO1957SZt8mdberphqeZWbGsXB-JY%22%2C2592000%5D%22%3B%7D; _csrf-backend=54eefe50c68a75f8072712db1900bdded8adb83eaa48fcf6ce4dff00d7a731f3a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22HsiSl9u0b0fWtQK62OOLtaNIuFV_26qc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63513'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574960870.07
+    'REQUEST_TIME' => 1574960870
+]
+2019-11-28 17:07:51 [::1][4][jnlrevigaajfe53hqbjrdkv8pd][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'primeiroNome' of non-object in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php:12
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php(12): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php(84): backend\controllers\SiteController->render()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionIndex()
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\web\Application->run()
+#13 {main}
+2019-11-28 17:07:51 [::1][4][jnlrevigaajfe53hqbjrdkv8pd][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'jnlrevigaajfe53hqbjrdkv8pd'
+    '_identity-backend' => 'fd17d05f53721d86a92db078f74ef4357912916a4e45ac6885c97a95062cb861a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[4,\"TiCdO1957SZt8mdberphqeZWbGsXB-JY\",2592000]\";}'
+    '_csrf-backend' => '54eefe50c68a75f8072712db1900bdded8adb83eaa48fcf6ce4dff00d7a731f3a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"HsiSl9u0b0fWtQK62OOLtaNIuFV_26qc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 4
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=jnlrevigaajfe53hqbjrdkv8pd; _identity-backend=fd17d05f53721d86a92db078f74ef4357912916a4e45ac6885c97a95062cb861a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22TiCdO1957SZt8mdberphqeZWbGsXB-JY%22%2C2592000%5D%22%3B%7D; _csrf-backend=54eefe50c68a75f8072712db1900bdded8adb83eaa48fcf6ce4dff00d7a731f3a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22HsiSl9u0b0fWtQK62OOLtaNIuFV_26qc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63514'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574960871.301
+    'REQUEST_TIME' => 1574960871
+]
+2019-11-28 17:07:52 [::1][4][jnlrevigaajfe53hqbjrdkv8pd][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'primeiroNome' of non-object in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php:12
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php(12): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php(84): backend\controllers\SiteController->render()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionIndex()
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\web\Application->run()
+#13 {main}
+2019-11-28 17:07:52 [::1][4][jnlrevigaajfe53hqbjrdkv8pd][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'jnlrevigaajfe53hqbjrdkv8pd'
+    '_identity-backend' => 'fd17d05f53721d86a92db078f74ef4357912916a4e45ac6885c97a95062cb861a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[4,\"TiCdO1957SZt8mdberphqeZWbGsXB-JY\",2592000]\";}'
+    '_csrf-backend' => '54eefe50c68a75f8072712db1900bdded8adb83eaa48fcf6ce4dff00d7a731f3a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"HsiSl9u0b0fWtQK62OOLtaNIuFV_26qc\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 4
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/perfil/3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=jnlrevigaajfe53hqbjrdkv8pd; _identity-backend=fd17d05f53721d86a92db078f74ef4357912916a4e45ac6885c97a95062cb861a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B4%2C%22TiCdO1957SZt8mdberphqeZWbGsXB-JY%22%2C2592000%5D%22%3B%7D; _csrf-backend=54eefe50c68a75f8072712db1900bdded8adb83eaa48fcf6ce4dff00d7a731f3a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22HsiSl9u0b0fWtQK62OOLtaNIuFV_26qc%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63518'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574960872.372
+    'REQUEST_TIME' => 1574960872
+]
+2019-11-28 17:09:13 [::1][3][nsvih1rpk4o14v7ti0c68jev2v][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Controller.php:166
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#5 {main}
+2019-11-28 17:09:13 [::1][3][nsvih1rpk4o14v7ti0c68jev2v][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'PM6t0yxGT8u0pf_fxSFw6y6eeposL_RLgwmocLF-gjdPpZScZgwkmP7XkOfyZxyMSd8Qz1kawT_7cN0RggiwYQ=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'nsvih1rpk4o14v7ti0c68jev2v'
+    '_identity-backend' => '811127b2892cf2210384a787ccb34a251043ac21b85066b673c4717d653e2da6a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[3,\"K2vkeNrcFiAFPUgG854Ivn0Ce1QkxvLZ\",2592000]\";}'
+    '_csrf-backend' => '7d4ec560d30817ee577460042a64f19620c059616fe157093ff20b1c562cce7ca:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"b7RdIKEDUPbrA565oUFlWTX3sEybTGHO\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 3
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '236'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=nsvih1rpk4o14v7ti0c68jev2v; _identity-backend=811127b2892cf2210384a787ccb34a251043ac21b85066b673c4717d653e2da6a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22K2vkeNrcFiAFPUgG854Ivn0Ce1QkxvLZ%22%2C2592000%5D%22%3B%7D; _csrf-backend=7d4ec560d30817ee577460042a64f19620c059616fe157093ff20b1c562cce7ca%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22b7RdIKEDUPbrA565oUFlWTX3sEybTGHO%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63550'
+    'REDIRECT_URL' => '/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574960953.365
+    'REQUEST_TIME' => 1574960953
+]
+2019-11-28 17:14:10 [::1][3][che8c456n0qntmd7v313bgllr1][error][ParseError] ParseError: syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) or const (T_CONST) in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php:113
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('backend\\control...')
+#1 [internal function]: spl_autoload_call('backend\\control...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(637): class_exists('backend\\control...')
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('site')
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('login')
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2019-11-28 17:14:10 [::1][3][che8c456n0qntmd7v313bgllr1][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'sempxkNOQOjwGVcJ1lOwrDyu152isixN3uG1B7H2N2Pi2uigCHgRjMN1PUWwBsTDf8-P9uzqHHiwr4dx56UaOQ=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'che8c456n0qntmd7v313bgllr1'
+    '_identity-backend' => '811127b2892cf2210384a787ccb34a251043ac21b85066b673c4717d653e2da6a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[3,\"K2vkeNrcFiAFPUgG854Ivn0Ce1QkxvLZ\",2592000]\";}'
+    '_csrf-backend' => '1984743f3c61a29b0f1be6538b4e1300205ed9e8a6f0faf8ab50696ccc989da2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"LH_OrCOs8EfKGYwXFNn8Y8b7INV0Ffku\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 3
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '236'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=che8c456n0qntmd7v313bgllr1; _identity-backend=811127b2892cf2210384a787ccb34a251043ac21b85066b673c4717d653e2da6a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22K2vkeNrcFiAFPUgG854Ivn0Ce1QkxvLZ%22%2C2592000%5D%22%3B%7D; _csrf-backend=1984743f3c61a29b0f1be6538b4e1300205ed9e8a6f0faf8ab50696ccc989da2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22LH_OrCOs8EfKGYwXFNn8Y8b7INV0Ffku%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63635'
+    'REDIRECT_URL' => '/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574961250.707
+    'REQUEST_TIME' => 1574961250
+]
+2019-11-28 17:14:11 [::1][3][che8c456n0qntmd7v313bgllr1][error][ParseError] ParseError: syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) or const (T_CONST) in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php:113
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('backend\\control...')
+#1 [internal function]: spl_autoload_call('backend\\control...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(637): class_exists('backend\\control...')
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('site')
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('login')
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2019-11-28 17:14:11 [::1][3][che8c456n0qntmd7v313bgllr1][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'che8c456n0qntmd7v313bgllr1'
+    '_identity-backend' => '811127b2892cf2210384a787ccb34a251043ac21b85066b673c4717d653e2da6a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[3,\"K2vkeNrcFiAFPUgG854Ivn0Ce1QkxvLZ\",2592000]\";}'
+    '_csrf-backend' => '1984743f3c61a29b0f1be6538b4e1300205ed9e8a6f0faf8ab50696ccc989da2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"LH_OrCOs8EfKGYwXFNn8Y8b7INV0Ffku\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 3
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/site/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=che8c456n0qntmd7v313bgllr1; _identity-backend=811127b2892cf2210384a787ccb34a251043ac21b85066b673c4717d653e2da6a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22K2vkeNrcFiAFPUgG854Ivn0Ce1QkxvLZ%22%2C2592000%5D%22%3B%7D; _csrf-backend=1984743f3c61a29b0f1be6538b4e1300205ed9e8a6f0faf8ab50696ccc989da2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22LH_OrCOs8EfKGYwXFNn8Y8b7INV0Ffku%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63636'
+    'REDIRECT_URL' => '/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574961251.947
+    'REQUEST_TIME' => 1574961251
+]
+2019-11-28 17:14:12 [::1][3][che8c456n0qntmd7v313bgllr1][error][ParseError] ParseError: syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) or const (T_CONST) in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php:113
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('backend\\control...')
+#1 [internal function]: spl_autoload_call('backend\\control...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(637): class_exists('backend\\control...')
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('site')
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('index')
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/index', Array)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2019-11-28 17:14:12 [::1][3][che8c456n0qntmd7v313bgllr1][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'che8c456n0qntmd7v313bgllr1'
+    '_identity-backend' => '811127b2892cf2210384a787ccb34a251043ac21b85066b673c4717d653e2da6a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[3,\"K2vkeNrcFiAFPUgG854Ivn0Ce1QkxvLZ\",2592000]\";}'
+    '_csrf-backend' => '1984743f3c61a29b0f1be6538b4e1300205ed9e8a6f0faf8ab50696ccc989da2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"LH_OrCOs8EfKGYwXFNn8Y8b7INV0Ffku\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 3
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=che8c456n0qntmd7v313bgllr1; _identity-backend=811127b2892cf2210384a787ccb34a251043ac21b85066b673c4717d653e2da6a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22K2vkeNrcFiAFPUgG854Ivn0Ce1QkxvLZ%22%2C2592000%5D%22%3B%7D; _csrf-backend=1984743f3c61a29b0f1be6538b4e1300205ed9e8a6f0faf8ab50696ccc989da2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22LH_OrCOs8EfKGYwXFNn8Y8b7INV0Ffku%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63638'
+    'REDIRECT_URL' => '/site/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/index'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574961252.618
+    'REQUEST_TIME' => 1574961252
+]
+2019-11-28 17:14:16 [::1][3][che8c456n0qntmd7v313bgllr1][error][ParseError] ParseError: syntax error, unexpected 'else' (T_ELSE), expecting function (T_FUNCTION) or const (T_CONST) in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php:113
+Stack trace:
+#0 [internal function]: yii\BaseYii::autoload('backend\\control...')
+#1 [internal function]: spl_autoload_call('backend\\control...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(637): class_exists('backend\\control...')
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(596): yii\base\Module->createControllerByID('site')
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(522): yii\base\Module->createController('login')
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#8 {main}
+2019-11-28 17:14:16 [::1][3][che8c456n0qntmd7v313bgllr1][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'che8c456n0qntmd7v313bgllr1'
+    '_identity-backend' => '811127b2892cf2210384a787ccb34a251043ac21b85066b673c4717d653e2da6a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[3,\"K2vkeNrcFiAFPUgG854Ivn0Ce1QkxvLZ\",2592000]\";}'
+    '_csrf-backend' => '1984743f3c61a29b0f1be6538b4e1300205ed9e8a6f0faf8ab50696ccc989da2a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"LH_OrCOs8EfKGYwXFNn8Y8b7INV0Ffku\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 3
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=che8c456n0qntmd7v313bgllr1; _identity-backend=811127b2892cf2210384a787ccb34a251043ac21b85066b673c4717d653e2da6a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B3%2C%22K2vkeNrcFiAFPUgG854Ivn0Ce1QkxvLZ%22%2C2592000%5D%22%3B%7D; _csrf-backend=1984743f3c61a29b0f1be6538b4e1300205ed9e8a6f0faf8ab50696ccc989da2a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22LH_OrCOs8EfKGYwXFNn8Y8b7INV0Ffku%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63640'
+    'REDIRECT_URL' => '/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574961256.555
+    'REQUEST_TIME' => 1574961256
+]
+2019-11-28 17:39:21 [::1][-][mm7nkq4r3m5o08ltc991mhkbli][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Controller.php:166
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#5 {main}
+2019-11-28 17:39:21 [::1][-][mm7nkq4r3m5o08ltc991mhkbli][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 't4jo06B0pKkkIOJO4q4oIJcjdxywrdLH1hW2OD4GcVP6vbrh1zj182VwjS-R40sN-lkbWuTcqJSAUI5TTWEwZw=='
+    'LoginForm' => [
+        'username' => 'socio'
+        'password' => 'socio'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'mm7nkq4r3m5o08ltc991mhkbli'
+    '_csrf-backend' => 'a79baf7c790dc442a51160cc81a7134e88d99fb17b06d7aaf38087c51418f0f8a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"7Tn5D7OJNa3xFGqPPBh-TafDwHkYTOUJ\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '236'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=mm7nkq4r3m5o08ltc991mhkbli; _csrf-backend=a79baf7c790dc442a51160cc81a7134e88d99fb17b06d7aaf38087c51418f0f8a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%227Tn5D7OJNa3xFGqPPBh-TafDwHkYTOUJ%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63937'
+    'REDIRECT_URL' => '/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574962761.313
+    'REQUEST_TIME' => 1574962761
+]
+2019-11-28 17:39:26 [::1][-][mm7nkq4r3m5o08ltc991mhkbli][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Controller.php:166
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#5 {main}
+2019-11-28 17:39:26 [::1][-][mm7nkq4r3m5o08ltc991mhkbli][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 't4jo06B0pKkkIOJO4q4oIJcjdxywrdLH1hW2OD4GcVP6vbrh1zj182VwjS-R40sN-lkbWuTcqJSAUI5TTWEwZw=='
+    'LoginForm' => [
+        'username' => 'socio'
+        'password' => 'socio'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'mm7nkq4r3m5o08ltc991mhkbli'
+    '_csrf-backend' => 'a79baf7c790dc442a51160cc81a7134e88d99fb17b06d7aaf38087c51418f0f8a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"7Tn5D7OJNa3xFGqPPBh-TafDwHkYTOUJ\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '236'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=mm7nkq4r3m5o08ltc991mhkbli; _csrf-backend=a79baf7c790dc442a51160cc81a7134e88d99fb17b06d7aaf38087c51418f0f8a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%227Tn5D7OJNa3xFGqPPBh-TafDwHkYTOUJ%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63939'
+    'REDIRECT_URL' => '/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574962766.627
+    'REQUEST_TIME' => 1574962766
+]
+2019-11-28 17:42:05 [::1][-][nhoud1v5jtuu8fgmknhvr03ua3][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Controller.php:166
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#5 {main}
+2019-11-28 17:42:05 [::1][-][nhoud1v5jtuu8fgmknhvr03ua3][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'Xu9hp-9lER5uyIClKY2e3zP563durMYx-2CLNn2KQNUnujOKuSl3fwCuy8NzuPuNS4vYRCvIolutNu17P84tvg=='
+    'LoginForm' => [
+        'username' => 'socio'
+        'password' => 'socio'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'nhoud1v5jtuu8fgmknhvr03ua3'
+    '_csrf-backend' => 'b552da10078afc850f16e9d5579ccd008ae2180db9d17acd15f1a0eaedc2a6d0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"2-yowBnqyP9ydaWa5TUGWqdifOiWsxea\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '236'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=nhoud1v5jtuu8fgmknhvr03ua3; _csrf-backend=b552da10078afc850f16e9d5579ccd008ae2180db9d17acd15f1a0eaedc2a6d0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%222-yowBnqyP9ydaWa5TUGWqdifOiWsxea%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63973'
+    'REDIRECT_URL' => '/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574962925.67
+    'REQUEST_TIME' => 1574962925
+]
+2019-11-28 17:42:31 [::1][-][1dcialtpoj43od9onbs30eadb2][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Controller.php:166
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#5 {main}
+2019-11-28 17:42:31 [::1][-][1dcialtpoj43od9onbs30eadb2][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'BmY9L1mdzXS4egLwGKV9rNlN4gtseqHRcuTeMPDThm40S0RALt-jBcEqO4l8xCrN7Bm3TDsLxbgUq7dng6vjDw=='
+    'LoginForm' => [
+        'username' => 'socio'
+        'password' => 'socio'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => '1dcialtpoj43od9onbs30eadb2'
+    '_csrf-backend' => '5cd39fceb50d183634edbf31a7fbc6630e239ffa78dffa9756589ba1fbe350f7a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"r39vHWE79QzGGvHDRH8kWQxlZRccLZcI\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '236'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=1dcialtpoj43od9onbs30eadb2; _csrf-backend=5cd39fceb50d183634edbf31a7fbc6630e239ffa78dffa9756589ba1fbe350f7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22r39vHWE79QzGGvHDRH8kWQxlZRccLZcI%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63980'
+    'REDIRECT_URL' => '/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574962951.586
+    'REQUEST_TIME' => 1574962951
+]
+2019-11-28 17:42:54 [::1][-][sqni4sthfd2sjpe0jvoru4hq3k][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Controller.php:166
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#5 {main}
+2019-11-28 17:42:54 [::1][-][sqni4sthfd2sjpe0jvoru4hq3k][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'aX90TAy9QBpC6Yq6zZ0GXsysBtrr8SM0hq4S4eQ7JRQbTE06ROoFLXu48P2K604anuQ-sbygW1jc_HGCqGFGXQ=='
+    'LoginForm' => [
+        'username' => 'socio'
+        'password' => 'socio'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'sqni4sthfd2sjpe0jvoru4hq3k'
+    '_csrf-backend' => '2b8bc8893ab2943be8d4c81658462100fbd35407c7ce4d205e95b6db90fa80d6a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"rxlx2qdF_8cB_0Rc84u_lNeFBtSGc-IT\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '236'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=sqni4sthfd2sjpe0jvoru4hq3k; _csrf-backend=2b8bc8893ab2943be8d4c81658462100fbd35407c7ce4d205e95b6db90fa80d6a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22rxlx2qdF_8cB_0Rc84u_lNeFBtSGc-IT%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63986'
+    'REDIRECT_URL' => '/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574962974.916
+    'REQUEST_TIME' => 1574962974
+]
+2019-11-28 17:43:10 [::1][5][r5kkt4alpd5a7259p25pre50kc][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'primeiroNome' of non-object in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php:12
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php(12): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php(85): backend\controllers\SiteController->render()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionIndex()
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\web\Application->run()
+#13 {main}
+2019-11-28 17:43:10 [::1][5][r5kkt4alpd5a7259p25pre50kc][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'r5kkt4alpd5a7259p25pre50kc'
+    '_identity-backend' => 'b4aea8a87b651138e3103c1853a0fa22fc475d334a76d2b3e1e4e763e177577ba:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[5,\"nUGsJMvZP9VSIdLDgTAkfsw9jWlBKy5m\",2592000]\";}'
+    '_csrf-backend' => '904631fdb6ae4c8aa9c1993f6e41ec238a2210c8df27321f9aa99a3a92e9c4fda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wtOIZ7NXmdoRqJTnO1zmODtcccOIWf4C\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 5
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=r5kkt4alpd5a7259p25pre50kc; _identity-backend=b4aea8a87b651138e3103c1853a0fa22fc475d334a76d2b3e1e4e763e177577ba%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B5%2C%22nUGsJMvZP9VSIdLDgTAkfsw9jWlBKy5m%22%2C2592000%5D%22%3B%7D; _csrf-backend=904631fdb6ae4c8aa9c1993f6e41ec238a2210c8df27321f9aa99a3a92e9c4fda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wtOIZ7NXmdoRqJTnO1zmODtcccOIWf4C%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63990'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574962990.921
+    'REQUEST_TIME' => 1574962990
+]
+2019-11-28 17:43:15 [::1][5][r5kkt4alpd5a7259p25pre50kc][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'primeiroNome' of non-object in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php:12
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php(12): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php(85): backend\controllers\SiteController->render()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionIndex()
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\web\Application->run()
+#13 {main}
+2019-11-28 17:43:15 [::1][5][r5kkt4alpd5a7259p25pre50kc][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'r5kkt4alpd5a7259p25pre50kc'
+    '_identity-backend' => 'b4aea8a87b651138e3103c1853a0fa22fc475d334a76d2b3e1e4e763e177577ba:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[5,\"nUGsJMvZP9VSIdLDgTAkfsw9jWlBKy5m\",2592000]\";}'
+    '_csrf-backend' => '904631fdb6ae4c8aa9c1993f6e41ec238a2210c8df27321f9aa99a3a92e9c4fda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wtOIZ7NXmdoRqJTnO1zmODtcccOIWf4C\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 5
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=r5kkt4alpd5a7259p25pre50kc; _identity-backend=b4aea8a87b651138e3103c1853a0fa22fc475d334a76d2b3e1e4e763e177577ba%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B5%2C%22nUGsJMvZP9VSIdLDgTAkfsw9jWlBKy5m%22%2C2592000%5D%22%3B%7D; _csrf-backend=904631fdb6ae4c8aa9c1993f6e41ec238a2210c8df27321f9aa99a3a92e9c4fda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wtOIZ7NXmdoRqJTnO1zmODtcccOIWf4C%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63995'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574962995.201
+    'REQUEST_TIME' => 1574962995
+]
+2019-11-28 17:43:17 [::1][5][r5kkt4alpd5a7259p25pre50kc][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'primeiroNome' of non-object in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php:12
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php(12): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php(85): backend\controllers\SiteController->render()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionIndex()
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\web\Application->run()
+#13 {main}
+2019-11-28 17:43:17 [::1][5][r5kkt4alpd5a7259p25pre50kc][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'r5kkt4alpd5a7259p25pre50kc'
+    '_identity-backend' => 'b4aea8a87b651138e3103c1853a0fa22fc475d334a76d2b3e1e4e763e177577ba:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[5,\"nUGsJMvZP9VSIdLDgTAkfsw9jWlBKy5m\",2592000]\";}'
+    '_csrf-backend' => '904631fdb6ae4c8aa9c1993f6e41ec238a2210c8df27321f9aa99a3a92e9c4fda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wtOIZ7NXmdoRqJTnO1zmODtcccOIWf4C\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 5
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=r5kkt4alpd5a7259p25pre50kc; _identity-backend=b4aea8a87b651138e3103c1853a0fa22fc475d334a76d2b3e1e4e763e177577ba%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B5%2C%22nUGsJMvZP9VSIdLDgTAkfsw9jWlBKy5m%22%2C2592000%5D%22%3B%7D; _csrf-backend=904631fdb6ae4c8aa9c1993f6e41ec238a2210c8df27321f9aa99a3a92e9c4fda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wtOIZ7NXmdoRqJTnO1zmODtcccOIWf4C%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '63998'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574962997.141
+    'REQUEST_TIME' => 1574962997
+]
+2019-11-28 17:43:22 [::1][5][r5kkt4alpd5a7259p25pre50kc][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'primeiroNome' of non-object in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php:12
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php(12): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php(85): backend\controllers\SiteController->render()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionIndex()
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\web\Application->run()
+#13 {main}
+2019-11-28 17:43:22 [::1][5][r5kkt4alpd5a7259p25pre50kc][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'r5kkt4alpd5a7259p25pre50kc'
+    '_identity-backend' => 'b4aea8a87b651138e3103c1853a0fa22fc475d334a76d2b3e1e4e763e177577ba:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[5,\"nUGsJMvZP9VSIdLDgTAkfsw9jWlBKy5m\",2592000]\";}'
+    '_csrf-backend' => '904631fdb6ae4c8aa9c1993f6e41ec238a2210c8df27321f9aa99a3a92e9c4fda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wtOIZ7NXmdoRqJTnO1zmODtcccOIWf4C\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 5
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=r5kkt4alpd5a7259p25pre50kc; _identity-backend=b4aea8a87b651138e3103c1853a0fa22fc475d334a76d2b3e1e4e763e177577ba%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B5%2C%22nUGsJMvZP9VSIdLDgTAkfsw9jWlBKy5m%22%2C2592000%5D%22%3B%7D; _csrf-backend=904631fdb6ae4c8aa9c1993f6e41ec238a2210c8df27321f9aa99a3a92e9c4fda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wtOIZ7NXmdoRqJTnO1zmODtcccOIWf4C%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '64001'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574963002.501
+    'REQUEST_TIME' => 1574963002
+]
+2019-11-28 17:43:27 [::1][5][r5kkt4alpd5a7259p25pre50kc][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'primeiroNome' of non-object in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php:12
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php(12): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php(85): backend\controllers\SiteController->render()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionIndex()
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\web\Application->run()
+#13 {main}
+2019-11-28 17:43:27 [::1][5][r5kkt4alpd5a7259p25pre50kc][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'r5kkt4alpd5a7259p25pre50kc'
+    '_identity-backend' => 'b4aea8a87b651138e3103c1853a0fa22fc475d334a76d2b3e1e4e763e177577ba:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[5,\"nUGsJMvZP9VSIdLDgTAkfsw9jWlBKy5m\",2592000]\";}'
+    '_csrf-backend' => '904631fdb6ae4c8aa9c1993f6e41ec238a2210c8df27321f9aa99a3a92e9c4fda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wtOIZ7NXmdoRqJTnO1zmODtcccOIWf4C\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 5
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_PURPOSE' => 'prefetch'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=r5kkt4alpd5a7259p25pre50kc; _identity-backend=b4aea8a87b651138e3103c1853a0fa22fc475d334a76d2b3e1e4e763e177577ba%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B5%2C%22nUGsJMvZP9VSIdLDgTAkfsw9jWlBKy5m%22%2C2592000%5D%22%3B%7D; _csrf-backend=904631fdb6ae4c8aa9c1993f6e41ec238a2210c8df27321f9aa99a3a92e9c4fda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wtOIZ7NXmdoRqJTnO1zmODtcccOIWf4C%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '64003'
+    'REDIRECT_URL' => '/site/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/index'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574963007.958
+    'REQUEST_TIME' => 1574963007
+]
+2019-11-28 17:43:30 [::1][5][r5kkt4alpd5a7259p25pre50kc][error][yii\base\ErrorException:8] yii\base\ErrorException: Trying to get property 'primeiroNome' of non-object in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php:12
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\views\site\index.php(12): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(348): yii\web\View->unknown()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(257): yii\web\View->renderPhpFile()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\View.php(156): yii\web\View->renderFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(386): yii\web\View->render()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\SiteController.php(85): backend\controllers\SiteController->render()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): backend\controllers\SiteController->actionIndex()
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): ::call_user_func_array:{C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php:57}()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams()
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): backend\controllers\SiteController->runAction()
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\web\Application->runAction()
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest()
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\web\Application->run()
+#13 {main}
+2019-11-28 17:43:30 [::1][5][r5kkt4alpd5a7259p25pre50kc][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'r5kkt4alpd5a7259p25pre50kc'
+    '_identity-backend' => 'b4aea8a87b651138e3103c1853a0fa22fc475d334a76d2b3e1e4e763e177577ba:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[5,\"nUGsJMvZP9VSIdLDgTAkfsw9jWlBKy5m\",2592000]\";}'
+    '_csrf-backend' => '904631fdb6ae4c8aa9c1993f6e41ec238a2210c8df27321f9aa99a3a92e9c4fda:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"wtOIZ7NXmdoRqJTnO1zmODtcccOIWf4C\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 5
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=r5kkt4alpd5a7259p25pre50kc; _identity-backend=b4aea8a87b651138e3103c1853a0fa22fc475d334a76d2b3e1e4e763e177577ba%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B5%2C%22nUGsJMvZP9VSIdLDgTAkfsw9jWlBKy5m%22%2C2592000%5D%22%3B%7D; _csrf-backend=904631fdb6ae4c8aa9c1993f6e41ec238a2210c8df27321f9aa99a3a92e9c4fda%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22wtOIZ7NXmdoRqJTnO1zmODtcccOIWf4C%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '64006'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574963010.358
+    'REQUEST_TIME' => 1574963010
+]
+2019-11-28 17:44:39 [::1][-][rlhl5b3s6jbfkf54jikvhvk4an][error][yii\web\HttpException:400] yii\web\BadRequestHttpException: Unable to verify your data submission. in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Controller.php:166
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(155): yii\web\Controller->beforeAction(Object(yii\base\InlineAction))
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('login', Array)
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('site/login', Array)
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#5 {main}
+2019-11-28 17:44:39 [::1][-][rlhl5b3s6jbfkf54jikvhvk4an][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'PVpDYhUobG4nSI9JQjoVU9Shy6tD-RePgHss3o_pGNkNOAkOLEAPOn8Z1SgYeUc85OC47jC-J-WxSGLszZlHtQ=='
+    'LoginForm' => [
+        'username' => 'socio'
+        'password' => 'socio'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'rlhl5b3s6jbfkf54jikvhvk4an'
+    '_csrf-backend' => '578bf0e7e05e5de6b4df4cecae524f5b1e0e046ea5c407c2bd184a9ec9d3c2e8a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Swu3UTx2h-2MMWtMn6gklwcGPznLv9BD\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '236'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => 'advanced-backend=rlhl5b3s6jbfkf54jikvhvk4an; _csrf-backend=578bf0e7e05e5de6b4df4cecae524f5b1e0e046ea5c407c2bd184a9ec9d3c2e8a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Swu3UTx2h-2MMWtMn6gklwcGPznLv9BD%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Users\\ricar\\.dotnet\\tools'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\WINDOWS'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '64015'
+    'REDIRECT_URL' => '/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1574963079.069
+    'REQUEST_TIME' => 1574963079
+]

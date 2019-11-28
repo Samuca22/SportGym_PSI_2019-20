@@ -1,4 +1,5 @@
 <?php
+
 namespace backend\controllers;
 
 use common\models\Ginasio;
@@ -70,7 +71,7 @@ class SiteController extends Controller
 
 
         $venda_dataProvider = new ActiveDataProvider([
-            'query' => Venda::find()->limit(4)->orderBy(['dataVenda'=>SORT_DESC]), // LIMITE DE LINHAS POR TABELA E ORDERNAR POR DATA MAIS RECENTE
+            'query' => Venda::find()->limit(4)->orderBy(['dataVenda' => SORT_DESC]), // LIMITE DE LINHAS POR TABELA E ORDERNAR POR DATA MAIS RECENTE
             'pagination' => false,  //paginação a 0
         ]);
 
@@ -83,7 +84,6 @@ class SiteController extends Controller
             'ginasio_dataProvider' => $ginasio_dataProvider,
             'nomeApresentacao' => $nomeApresentacao,
         ]);
-
     }
 
     /**
@@ -100,14 +100,16 @@ class SiteController extends Controller
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             // Fica Logado
-            if (Yii::$app->user->can('entrarBack')){
+            if (Yii::$app->user->can('entrarBack')) {
                 return $this->goBack();
-            } else{
-                if(Yii::$app->user->can('entrarFront')){
-                    Yii::$app->user->logout();
-                    Yii::$app->getSession()->setFlash('error', 'Não tem permissão');
-                }
+            } else {
+                Yii::$app->user->logout();
+                Yii::$app->getSession()->setFlash('error', 'Não tem permissão!');
                 
+                $model->password = '';
+                return $this->render('login', [
+                    'model' => $model,
+                ]);
 
                 
             }
@@ -131,9 +133,4 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
-
-
-
-
-
 }
