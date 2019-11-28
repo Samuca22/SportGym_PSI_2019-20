@@ -45,7 +45,7 @@ class GinasioController extends Controller
     }
 
     /**
-     * Displays a single Ginasio model.
+     * Displays a single Perfil model.
      * @param integer $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -78,7 +78,7 @@ class GinasioController extends Controller
     /**
      * Updates an existing Ginasio model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -98,7 +98,7 @@ class GinasioController extends Controller
     /**
      * Deletes an existing Ginasio model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -113,7 +113,7 @@ class GinasioController extends Controller
      * Finds the Ginasio model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $id
-     * @return Ginasio the loaded model
+     * @return Perfil the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
     protected function findModel($id)
