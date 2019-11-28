@@ -3,16 +3,16 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Ginasio;
-use common\models\GinasioSearch;
+use common\models\GinasioAula;
+use common\models\GinasioAulaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
- * GinasioController implements the CRUD actions for Ginasio model.
+ * GinasioAulaController implements the CRUD actions for GinasioAula model.
  */
-class GinasioController extends Controller
+class GinasioAulaController extends Controller
 {
     /**
      * {@inheritdoc}
@@ -30,12 +30,12 @@ class GinasioController extends Controller
     }
 
     /**
-     * Lists all Ginasio models.
+     * Lists all GinasioAula models.
      * @return mixed
      */
     public function actionIndex()
     {
-        $searchModel = new GinasioSearch();
+        $searchModel = new GinasioAulaSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
@@ -45,29 +45,30 @@ class GinasioController extends Controller
     }
 
     /**
-     * Displays a single Ginasio model.
-     * @param integer $id
+     * Displays a single GinasioAula model.
+     * @param integer $IDginasio
+     * @param integer $IDaula
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($id)
+    public function actionView($IDginasio, $IDaula)
     {
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'model' => $this->findModel($IDginasio, $IDaula),
         ]);
     }
 
     /**
-     * Creates a new Ginasio model.
+     * Creates a new GinasioAula model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
      */
     public function actionCreate()
     {
-        $model = new Ginasio();
+        $model = new GinasioAula();
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->IDginasio]);
+            return $this->redirect(['view', 'IDginasio' => $model->IDginasio, 'IDaula' => $model->IDaula]);
         }
 
         return $this->render('create', [
@@ -76,18 +77,19 @@ class GinasioController extends Controller
     }
 
     /**
-     * Updates an existing Ginasio model.
+     * Updates an existing GinasioAula model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $id
+     * @param integer $IDginasio
+     * @param integer $IDaula
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionUpdate($id)
+    public function actionUpdate($IDginasio, $IDaula)
     {
-        $model = $this->findModel($id);
+        $model = $this->findModel($IDginasio, $IDaula);
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->IDginasio]);
+            return $this->redirect(['view', 'IDginasio' => $model->IDginasio, 'IDaula' => $model->IDaula]);
         }
 
         return $this->render('update', [
@@ -96,29 +98,31 @@ class GinasioController extends Controller
     }
 
     /**
-     * Deletes an existing Ginasio model.
+     * Deletes an existing GinasioAula model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param integer $id
+     * @param integer $IDginasio
+     * @param integer $IDaula
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id)
+    public function actionDelete($IDginasio, $IDaula)
     {
-        $this->findModel($id)->delete();
+        $this->findModel($IDginasio, $IDaula)->delete();
 
         return $this->redirect(['index']);
     }
 
     /**
-     * Finds the Ginasio model based on its primary key value.
+     * Finds the GinasioAula model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-     * @param integer $id
-     * @return Ginasio the loaded model
+     * @param integer $IDginasio
+     * @param integer $IDaula
+     * @return GinasioAula the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
-    protected function findModel($id)
+    protected function findModel($IDginasio, $IDaula)
     {
-        if (($model = Ginasio::findOne($id)) !== null) {
+        if (($model = GinasioAula::findOne(['IDginasio' => $IDginasio, 'IDaula' => $IDaula])) !== null) {
             return $model;
         }
 

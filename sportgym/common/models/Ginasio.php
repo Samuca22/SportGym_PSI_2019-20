@@ -16,6 +16,8 @@ use Yii;
  *
  * @property Adesao[] $adesaos
  * @property Aula[] $aulas
+ * @property Ginasioaula[] $ginasioaulas
+ * @property Aula[] $iDaulas
  */
 class Ginasio extends \yii\db\ActiveRecord
 {
@@ -71,5 +73,21 @@ class Ginasio extends \yii\db\ActiveRecord
     public function getAulas()
     {
         return $this->hasMany(Aula::className(), ['IDginasio' => 'IDginasio']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGinasioaulas()
+    {
+        return $this->hasMany(Ginasioaula::className(), ['IDginasio' => 'IDginasio']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getIDaulas()
+    {
+        return $this->hasMany(Aula::className(), ['IDaula' => 'IDaula'])->viaTable('ginasioaula', ['IDginasio' => 'IDginasio']);
     }
 }

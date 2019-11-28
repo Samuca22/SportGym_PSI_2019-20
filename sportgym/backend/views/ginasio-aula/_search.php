@@ -4,11 +4,11 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\GinasioSearch */
+/* @var $model common\models\GinasioAulaSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="ginasio-search">
+<div class="ginasio-aula-search">
 
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
@@ -17,15 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'IDginasio') ?>
 
-    <?= $form->field($model, 'rua') ?>
-
-    <?= $form->field($model, 'localidade') ?>
-
-    <?= $form->field($model, 'cp') ?>
-
-    <?= $form->field($model, 'telefone') ?>
-
-    <?php // echo $form->field($model, 'email') ?>
+    <?= $form->field($model, 'IDaula') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

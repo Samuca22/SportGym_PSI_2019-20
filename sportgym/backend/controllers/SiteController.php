@@ -76,7 +76,18 @@ class SiteController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            // Fica Logado
+            if (Yii::$app->user->can('entrarBack')){
+                return $this->goBack();
+            } else{
+                if(Yii::$app->user->can('entrarFront')){
+                    Yii::$app->user->logout();
+                    Yii::$app->getSession()->setFlash('error', 'Não tem permissão');
+                }
+                
+
+                
+            }
         } else {
             $model->password = '';
 
