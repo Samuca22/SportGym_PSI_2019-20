@@ -2,9 +2,12 @@
 
 namespace backend\controllers;
 
+
+use common\models\PerfilAula;
 use Yii;
 use common\models\Aula;
 use common\models\AulaSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -36,12 +39,35 @@ class AulaController extends Controller
     public function actionIndex()
     {
         $searchModel = new AulaSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $dataprovider = $searchModel->search(Yii::$app->request->queryParams);
+
+
+        $perfilAula_dataProvider = new ActiveDataProvider([
+            'query' => PerfilAula::find(),
+        ]);
+
+
+        $model = new PerfilAula();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save())
+            return $this->redirect(['view', 'IDperfil' => $model->IDperfil, 'IDaula' => $model->IDaula]);
+
+
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+          'searchModel' => $searchModel,
+            'perfilAula_dataProvider' => $perfilAula_dataProvider,
+            'model' => $model,
         ]);
+
+
+
+
+
+
+
+
+
     }
 
     /**

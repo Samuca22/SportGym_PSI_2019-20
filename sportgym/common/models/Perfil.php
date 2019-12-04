@@ -9,7 +9,7 @@ use Yii;
  *
  * @property int $IDperfil
  * @property int $nSocio
- * @property resource|null $foto
+ * @property string|null $foto
  * @property string $primeiroNome
  * @property string $apelido
  * @property string $genero
@@ -20,15 +20,12 @@ use Yii;
  * @property string $cp
  * @property string $nif
  * @property float|null $peso
- * @property float|null $altura
  *
- * @property Aula[] $aulas
  * @property User $iDperfil
  * @property Perfilaula[] $perfilaulas
  * @property Aula[] $iDaulas
  * @property Perfilplano[] $perfilplanos
  * @property Plano[] $iDplanos
- * @property Plano[] $planos
  * @property Venda[] $vendas
  */
 class Perfil extends \yii\db\ActiveRecord
@@ -49,9 +46,10 @@ class Perfil extends \yii\db\ActiveRecord
         return [
             [['IDperfil', 'nSocio', 'primeiroNome', 'apelido', 'genero', 'telefone', 'dtaNascimento', 'rua', 'localidade', 'cp', 'nif'], 'required'],
             [['IDperfil', 'nSocio'], 'integer'],
-            [['foto', 'genero'], 'string'],
+            [['genero'], 'string'],
             [['dtaNascimento'], 'safe'],
-            [['peso', 'altura'], 'number'],
+            [['peso'], 'number'],
+            [['foto'], 'string', 'max' => 500],
             [['primeiroNome'], 'string', 'max' => 50],
             [['apelido'], 'string', 'max' => 30],
             [['telefone', 'rua', 'nif'], 'string', 'max' => 15],
@@ -83,16 +81,7 @@ class Perfil extends \yii\db\ActiveRecord
             'cp' => 'Cp',
             'nif' => 'Nif',
             'peso' => 'Peso',
-            'altura' => 'Altura',
         ];
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getAulas()
-    {
-        return $this->hasMany(Aula::className(), ['IDperfil' => 'IDperfil']);
     }
 
     /**
@@ -133,14 +122,6 @@ class Perfil extends \yii\db\ActiveRecord
     public function getIDplanos()
     {
         return $this->hasMany(Plano::className(), ['IDplano' => 'IDplano'])->viaTable('perfilplano', ['IDperfil' => 'IDperfil']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getPlanos()
-    {
-        return $this->hasMany(Plano::className(), ['IDperfil' => 'IDperfil']);
     }
 
     /**

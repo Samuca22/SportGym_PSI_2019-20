@@ -17,7 +17,7 @@ class PlanoSearch extends Plano
     public function rules()
     {
         return [
-            [['IDplano', 'nutricao', 'treino', 'IDperfil'], 'integer'],
+            [['IDplano', 'nutricao', 'treino'], 'integer'],
             [['nome', 'descricao'], 'safe'],
         ];
     }
@@ -61,7 +61,6 @@ class PlanoSearch extends Plano
             'IDplano' => $this->IDplano,
             'nutricao' => $this->nutricao,
             'treino' => $this->treino,
-            'IDperfil' => $this->IDperfil,
         ]);
 
         $query->andFilterWhere(['like', 'nome', $this->nome])

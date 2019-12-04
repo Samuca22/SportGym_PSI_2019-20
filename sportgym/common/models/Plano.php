@@ -12,11 +12,9 @@ use Yii;
  * @property int $nutricao
  * @property int $treino
  * @property string|null $descricao
- * @property int|null $IDperfil
  *
  * @property Perfilplano[] $perfilplanos
  * @property Perfil[] $iDperfils
- * @property Perfil $iDperfil
  */
 class Plano extends \yii\db\ActiveRecord
 {
@@ -35,10 +33,9 @@ class Plano extends \yii\db\ActiveRecord
     {
         return [
             [['nome', 'nutricao', 'treino'], 'required'],
-            [['nutricao', 'treino', 'IDperfil'], 'integer'],
+            [['nutricao', 'treino'], 'integer'],
             [['nome'], 'string', 'max' => 100],
             [['descricao'], 'string', 'max' => 5000],
-            [['IDperfil'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['IDperfil' => 'IDperfil']],
         ];
     }
 
@@ -53,7 +50,6 @@ class Plano extends \yii\db\ActiveRecord
             'nutricao' => 'Nutricao',
             'treino' => 'Treino',
             'descricao' => 'Descricao',
-            'IDperfil' => 'I Dperfil',
         ];
     }
 
@@ -71,13 +67,5 @@ class Plano extends \yii\db\ActiveRecord
     public function getIDperfils()
     {
         return $this->hasMany(Perfil::className(), ['IDperfil' => 'IDperfil'])->viaTable('perfilplano', ['IDplano' => 'IDplano']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getIDperfil()
-    {
-        return $this->hasOne(Perfil::className(), ['IDperfil' => 'IDperfil']);
     }
 }
