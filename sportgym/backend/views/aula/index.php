@@ -30,12 +30,12 @@ $this->params['breadcrumbs'][] = $this->title;
     </tr>
     <tr>
         <td height=25><center>08:00h</td>
-        <td height=25><center><a href=”https://carlacycling.wordpress.com/2015/02/28/o-que-e-o-cycling/”>CYCLING</a></td>
-        <td height=25><center><a>YOGA</a></td>
-        <td height=25><center><a> </a></td>
-        <td height=25><center><a>PUMP</a></td>
-        <td height=25><center><a> </a></td>
-        <td height=25><center><a>PILATES</a></td>
+        <td height=25><center>CYCLING</td>
+        <td height=25><center>YOGA</td>
+        <td height=25><center></td>
+        <td height=25><center>PUMP</td>
+        <td height=25><center></td>
+        <td height=25><center>PILATES</td>
     </tr>
 
         <tr>
@@ -128,7 +128,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <td height=25><center>BODY JUMP</td>
             <td height=25><center></td>
         </tr>
-        
+
 </table></center>
 
 <div class="aula-index">

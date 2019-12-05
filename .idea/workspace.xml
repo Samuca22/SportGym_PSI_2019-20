@@ -2,81 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5538eca9-c884-44b9-ab32-fa76ffd70a24" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sportgym/backend/controllers/DefinicoesController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sportgym/backend/views/definicoes/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/controllers/AulaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/controllers/AulaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded26f3a0d8.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded273e3ee7.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded279040ff.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded27924a39.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded27c0e689.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded2d0180e0.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded2df525d6.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded3f3ca303.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded3f50edd8.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded40ba850b.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded40d2b1fa.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded40d9b7ab.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded40e0331f.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded40e50ecf.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded40f23686.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded4109a33c.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded414c228f.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded45588e07.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded45666a6f.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded4856d5a9.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded4996e84a.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded4b981a80.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded4db2abbe.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded4ed24855.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded6445dd11.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded66411d0c.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded6c00c7e8.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded75425ac7.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded75c249f1.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded76ed3923.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded77376215.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded77b20e43.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded8371be3e.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded83af09cd.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded85abfd84.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded88ec3903.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded895935c1.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5dded89f8639f.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddeda58d7e86.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddeda7050ef9.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddeda7501ef4.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddeda8655662.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddeda92bacfe.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddeda98d52fb.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddeda9aa0f0a.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddedab81d736.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddedab8390b6.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddedabf34a90.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddedb6353f90.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddedc62efe04.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddedc84defde.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddedcfe85f8d.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddede3a6bd27.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddede47ad7ba.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddedeb56c08a.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddededac9390.data" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/5ddedeed0f86f.data" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/index.data" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/runtime/debug/index.data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/runtime/logs/app.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/aula/_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/aula/_search.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sportgym/backend/views/aula/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/aula/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/common/models/Aula.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/common/models/Aula.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/common/models/AulaSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/common/models/AulaSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/common/models/Perfil.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/common/models/Perfil.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/common/models/PerfilAula.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/common/models/PerfilAula.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/common/models/PerfilAulaSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/common/models/PerfilAulaSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/common/models/PerfilPlano.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/common/models/PerfilPlano.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/common/models/PerfilPlanoSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/common/models/PerfilPlanoSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/common/models/PerfilSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/common/models/PerfilSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/common/models/Plano.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/common/models/Plano.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/common/models/PlanoSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/common/models/PlanoSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/frontend/runtime/debug/index.data" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/frontend/runtime/debug/index.data" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgymdb.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sportgymdb.sql" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +131,8 @@
       <workItem from="1575361660364" duration="2499000" />
       <workItem from="1575368514936" duration="4095000" />
       <workItem from="1575405862117" duration="31000" />
-      <workItem from="1575460241374" duration="6144000" />
+      <workItem from="1575460241374" duration="6759000" />
+      <workItem from="1575489720543" duration="3099000" />
     </task>
     <servers />
   </component>
@@ -219,5 +151,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/sportgym/backend/controllers/AdesaoController.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
