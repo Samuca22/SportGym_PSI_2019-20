@@ -43,9 +43,11 @@ class m191128_171511_rbac_init extends Migration
 
 
         // Atribuir Roles
-        $auth->assign($socio, 4);
-        $auth->assign($colab, 5);
-        $auth->assign($admin, 3);
+        $auth->assign($admin, 1);
+        $auth->assign($colab, 2);
+        $auth->assign($socio, 3);
+        
+        
     }
 
     /**

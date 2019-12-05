@@ -34,7 +34,6 @@ $this->params['breadcrumbs'][] = $this->title;
             'nutricao',
             'treino',
             'descricao',
-            'IDperfil',
         ],
     ]) ?>
 

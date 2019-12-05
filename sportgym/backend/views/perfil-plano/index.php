@@ -1,38 +1,64 @@
 <?php
 
+use common\models\Perfil;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\PerfilPlanoSearch */
+/* @var $searchModel common\models\PlanoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Perfil Planos';
+$this->title = 'Sócio Com Planos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="perfil-plano-index">
+<div class="plano-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1>Sócios Com Planos</h1>
+    <hr>
 
+    <?php echo $this->render('_search', ['model' => $perfilPlano_searchModel]);
+    ?>
+    <br>
+
+        <?= GridView::widget([
+            'dataProvider' => $perfilPlanos_dataProvider,
+            //'filterModel' => $perfilPlano_searchModel,
+            'columns' => [
+                ['class' => 'yii\grid\SerialColumn'],
+                'IDperfil',
+                [
+                    'label' => 'Nº Sócio',
+                    'attribute' => 'IDperfil',
+                    'value' => function ($model) {
+                        $perfis = Perfil::find()->where(['IDperfil' => $model->IDperfil])->one();
+                        return $perfis->nSocio;
+                    }
+                ],
+                [
+                    'attribute' => 'Nome Sócio',
+                    'value' => 'iDperfil.primeiroNome',
+                ],
+                'IDplano',
+                [
+                    'attribute' => 'Nome Plano',
+                    'value' => 'iDplano.nome',
+                ],
+
+
+                ['class' => 'yii\grid\ActionColumn'],
+            ],
+        ]); ?>
+
+
+    <br>
     <p>
-        <?= Html::a('Create Perfil Plano', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Atribuir Plano de Treino', ['perfil-plano/create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
 
-            'IDperfil',
-            'IDplano',
-            'dtaplano',
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+
 
 
 </div>

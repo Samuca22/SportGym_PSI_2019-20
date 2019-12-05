@@ -16,6 +16,7 @@ use Yii;
  */
 class PerfilPlano extends \yii\db\ActiveRecord
 {
+    public $nSocio;
     /**
      * {@inheritdoc}
      */
@@ -30,12 +31,13 @@ class PerfilPlano extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['IDperfil', 'IDplano', 'dtaplano'], 'required'],
+            [[/*'IDperfil', */'IDplano', 'dtaplano', 'nSocio'], 'required'],
             [['IDperfil', 'IDplano'], 'integer'],
             [['dtaplano'], 'safe'],
             [['IDperfil', 'IDplano'], 'unique', 'targetAttribute' => ['IDperfil', 'IDplano']],
             [['IDperfil'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['IDperfil' => 'IDperfil']],
             [['IDplano'], 'exist', 'skipOnError' => true, 'targetClass' => Plano::className(), 'targetAttribute' => ['IDplano' => 'IDplano']],
+            [['nSocio'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['nSocio' => 'nSocio']],
         ];
     }
 
@@ -45,6 +47,7 @@ class PerfilPlano extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
+            'nSocio' => 'Número de Sócio',
             'IDperfil' => 'I Dperfil',
             'IDplano' => 'I Dplano',
             'dtaplano' => 'Dtaplano',

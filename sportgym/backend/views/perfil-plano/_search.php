@@ -14,12 +14,9 @@ use yii\widgets\ActiveForm;
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
+    
+    <?= $form->field($model, 'nSocio') ?>
 
-    <?= $form->field($model, 'IDperfil') ?>
-
-    <?= $form->field($model, 'IDplano') ?>
-
-    <?= $form->field($model, 'dtaplano') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
