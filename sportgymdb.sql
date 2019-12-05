@@ -26,7 +26,11 @@ create table if not exists perfil
 (
 IDperfil int ,
 nSocio int  unsigned unique not null,
+<<<<<<< HEAD
 foto varchar(500) null ,
+=======
+foto varchar(500) null,
+>>>>>>> 87693c9d6a07f82fd2f44845ccc33f2ece3c0b84
 primeiroNome varchar(50) not null,
 apelido varchar(30) not null,
 genero enum('M','F') not null,
@@ -97,8 +101,13 @@ constraint fk_linhaVenda_IDvenda foreign key (IDvenda) references venda(IDvenda)
 
 create table if not exists produto(
 IDproduto int unsigned auto_increment,
+<<<<<<< HEAD
 nome varchar(50) not null,
 fotoProduto varchar(500) null, 
+=======
+nome varchar(500) null,
+fotoProduto varchar(500) not null, 
+>>>>>>> 87693c9d6a07f82fd2f44845ccc33f2ece3c0b84
 descricao varchar(500) not null,
 estado boolean not null,
 precoProduto double not null,
