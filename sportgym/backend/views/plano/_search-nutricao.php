@@ -11,19 +11,11 @@ use yii\widgets\ActiveForm;
 <div class="plano-search">
 
     <?php $form = ActiveForm::begin([
-        'action' => ['index'],
+        'action' => ['index-nutricao'],
         'method' => 'get',
     ]); ?>
-
-    <?= $form->field($model, 'IDplano') ?>
-
+    
     <?= $form->field($model, 'nome') ?>
-
-    <?= $form->field($model, 'nutricao') ?>
-
-    <?= $form->field($model, 'treino') ?>
-
-    <?= $form->field($model, 'descricao') ?>
 
     <?php // echo $form->field($model, 'IDperfil') ?>
 

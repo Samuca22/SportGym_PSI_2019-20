@@ -19,7 +19,7 @@ class PerfilSearch extends Perfil
         return [
             [['IDperfil', 'nSocio'], 'integer'],
             [['foto', 'primeiroNome', 'apelido', 'genero', 'telefone', 'dtaNascimento', 'rua', 'localidade', 'cp', 'nif'], 'safe'],
-            [['peso', 'altura'], 'number'],
+            [['peso'], 'number'],
         ];
     }
 
@@ -63,7 +63,6 @@ class PerfilSearch extends Perfil
             'nSocio' => $this->nSocio,
             'dtaNascimento' => $this->dtaNascimento,
             'peso' => $this->peso,
-            'altura' => $this->altura,
         ]);
 
         $query->andFilterWhere(['like', 'foto', $this->foto])

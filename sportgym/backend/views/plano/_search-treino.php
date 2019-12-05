@@ -4,19 +4,18 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\PerfilPlanoSearch */
+/* @var $model common\models\PlanoSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="perfil-plano-search">
+<div class="plano-search">
 
     <?php $form = ActiveForm::begin([
-        'action' => ['index'],
+        'action' => ['index-treino'],
         'method' => 'get',
     ]); ?>
     
-    <?= $form->field($model, 'nSocio') ?>
-
+    <?= $form->field($model, 'nome') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
