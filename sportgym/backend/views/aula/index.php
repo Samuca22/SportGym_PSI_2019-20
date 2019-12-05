@@ -140,33 +140,12 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
 
-    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $perfilAula_dataProvider,
-        'filterModel' => $searchModel,
         'columns' => [
-
-            [
-                'attribute' => 'Nº Socio',
-                'value' => 'iDperfil.nSocio',
-            ],
-
-
-            [
-                'attribute' => 'Nome',
-                'value' => 'iDperfil.primeiroNome',
-            ],
-            [
-                'attribute' => 'Nome',
-                'value' => 'iDperfil.nif',
-            ],
-
-            [
-                'attribute' => 'Aula',
-                'value' => 'iDaula.tipo',
-            ],
-
+            'tipo',
+            'duracao',
 
             //'dtaInicio',
             //'duracao',
@@ -177,21 +156,17 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]);
 
+
     ?>
-    <h3>INSCREVER SÓCIOS</h3>
 
-    <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'IDperfil')->textInput() ?>
+</div>
 
-    <?= $form->field($model, 'IDaula')->textInput() ?>
+<div style="text-align: center;">
 
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
-    </div>
-
-    <?php ActiveForm::end(); ?>
-
+    <p style="text-align: center;">
+        <?= Html::a('Increver os Sócios nas Aulas', ['/perfil-aula'], ['class' => 'btn btn-warning btn-lg']) ?>
+    </p>
 </div>
 
 

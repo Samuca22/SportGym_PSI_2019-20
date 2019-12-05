@@ -46,6 +46,7 @@ class AulaSearch extends Aula
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
+            'sort' => false,
         ]);
 
         $this->load($params);
@@ -57,13 +58,13 @@ class AulaSearch extends Aula
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
+      /*  $query->andFilterWhere([
             'IDaula' => $this->IDaula,
             'dtaInicio' => $this->dtaInicio,
             'duracao' => $this->duracao,
             'IDperfil' => $this->IDperfil,
             'IDginasio' => $this->IDginasio,
-        ]);
+        ]);*/
 
         $query->andFilterWhere(['like', 'tipo', $this->tipo]);
 

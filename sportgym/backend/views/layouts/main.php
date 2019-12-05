@@ -45,6 +45,8 @@ AppAsset::register($this);
                 ['label' => 'Home', 'url' => ['/site/index']],
                 ['label' => 'Planos Treino', 'url' => ['/plano/index-treino']],
                 ['label' => 'Planos Nutrição', 'url' => ['/plano/index-nutricao']],
+                ['label' => 'Aulas', 'url' => ['/aula']],
+                ['label' => 'Definições', 'url' => ['/definicoes']],
             ];
             $menuItems[] = '<li>'
                 . Html::beginForm(['/site/logout'], 'post')

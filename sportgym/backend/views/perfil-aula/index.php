@@ -7,31 +7,55 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\PerfilAulaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Perfil Aulas';
+$this->title = 'Sócios inscritos em aulas';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="perfil-aula-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>
-        <?= Html::a('Create Perfil Aula', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php echo $this->render('_search', ['model' => $perfilAula_searchModel]); ?>
 
     <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
+        'dataProvider' => $perfilAula_dataProvider,
+        // 'filterModel' => $perfilAula_searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            [
+                'attribute' => 'Nº Socio',
+                'value' => 'iDperfil.nSocio',
+            ],
 
-            'IDperfil',
-            'IDaula',
+            [
+                'attribute' => 'Nome',
+                'value' => 'iDperfil.primeiroNome',
+            ],
+            [
+                'attribute' => 'Nome',
+                'value' => 'iDperfil.apelido',
+            ],
+            [
+                'attribute' => 'Nif',
+                'value' => 'iDperfil.nif',
+            ],
+
+            [
+                'attribute' => 'Aula',
+                'value' => 'iDaula.tipo',
+            ],
+
+            [
+                'attribute' => 'Data',
+                'value' => 'iDaula.dtaInicio',
+            ],
+
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
-    ]); ?>
+    ]);
+    ?>
 
+    <p>
+        <?= Html::a('Inscrever Sócio', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
 
 </div>

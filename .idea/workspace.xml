@@ -2,12 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5538eca9-c884-44b9-ab32-fa76ffd70a24" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sportgym/backend/controllers/DefinicoesController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sportgym/backend/views/definicoes/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportgym/backend/controllers/AulaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/controllers/AulaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportgym/backend/controllers/DefinicoesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/controllers/DefinicoesController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportgym/backend/controllers/PerfilAulaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/controllers/PerfilAulaController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/index.data" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/runtime/debug/index.data" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/runtime/logs/app.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sportgym/backend/views/aula/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/aula/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/layouts/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/layouts/main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/perfil-aula/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/perfil-aula/_form.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/perfil-aula/_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/perfil-aula/_search.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/perfil-aula/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/perfil-aula/create.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/perfil-aula/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/perfil-aula/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/site/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportgym/common/models/AulaSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/common/models/AulaSearch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportgym/common/models/PerfilAula.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/common/models/PerfilAula.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportgym/common/models/PerfilAulaSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/common/models/PerfilAulaSearch.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -133,6 +143,7 @@
       <workItem from="1575405862117" duration="31000" />
       <workItem from="1575460241374" duration="6759000" />
       <workItem from="1575489720543" duration="3099000" />
+      <workItem from="1575566833862" duration="14729000" />
     </task>
     <servers />
   </component>
@@ -159,6 +170,11 @@
           <url>file://$PROJECT_DIR$/sportgym/backend/controllers/AdesaoController.php</url>
           <line>4</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/sportgym/common/models/PlanoSearch.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

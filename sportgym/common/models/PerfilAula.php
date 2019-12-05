@@ -14,7 +14,9 @@ use Yii;
  * @property Perfil $iDperfil
  */
 class PerfilAula extends \yii\db\ActiveRecord
+
 {
+    public $nSocio;
     /**
      * {@inheritdoc}
      */
@@ -29,11 +31,13 @@ class PerfilAula extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['IDperfil', 'IDaula'], 'required'],
+            [['IDperfil', 'IDaula', 'nSocio',], 'required'],
             [['IDperfil', 'IDaula'], 'integer'],
             [['IDperfil', 'IDaula'], 'unique', 'targetAttribute' => ['IDperfil', 'IDaula']],
             [['IDaula'], 'exist', 'skipOnError' => true, 'targetClass' => Aula::className(), 'targetAttribute' => ['IDaula' => 'IDaula']],
             [['IDperfil'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['IDperfil' => 'IDperfil']],
+            [['nSocio'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['nSocio' => 'nSocio']],
+
         ];
     }
 
@@ -43,6 +47,7 @@ class PerfilAula extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
+            'nSocio' => 'Número de Sócio',
             'IDperfil' => 'I Dperfil',
             'IDaula' => 'I Daula',
         ];
