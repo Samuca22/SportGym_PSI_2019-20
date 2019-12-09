@@ -29,10 +29,6 @@ use yii\helpers\Html;
     <?php endforeach; ?>
 </table>
 
-<<<<<<< HEAD
-
-
-=======
 <br>
 <br>
 <div id="home-seccao-ginasios">
@@ -41,4 +37,3 @@ use yii\helpers\Html;
         <button class="btn btn-home-ginasios"><?= $model->localidade ?></button>
     <?php endforeach; ?>
 </div>
->>>>>>> Ricardo_gestaoPlanos

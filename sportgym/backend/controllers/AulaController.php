@@ -76,12 +76,6 @@ class AulaController extends Controller
             'model' => $model,
         ]);
 
-
-<<<<<<< HEAD
-
-
-=======
->>>>>>> Ricardo_gestaoPlanos
     }
 
     /**

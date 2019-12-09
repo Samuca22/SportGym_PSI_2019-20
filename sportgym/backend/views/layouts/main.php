@@ -43,12 +43,7 @@ AppAsset::register($this);
         } else {
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
-<<<<<<< HEAD
-                ['label' => 'Planos Treino', 'url' => ['/plano/index-treino']],
-                ['label' => 'Planos Nutrição', 'url' => ['/plano/index-nutricao']],
-                ['label' => 'Aulas', 'url' => ['/aula']],
-                ['label' => 'Definições', 'url' => ['/definicoes']],
-=======
+                ['label' => 'Gestão de Aulas', 'url' => ['/aula']],
                 [
                     'label' => 'Gestão de Planos',
                     'items' => [
@@ -57,8 +52,8 @@ AppAsset::register($this);
                         ['label' => 'Atribuir Planos', 'url' => ['/perfil-plano/index']],
                     ],
                 ],
-                ['label' => 'Aulas', 'url' => ['/aula/index']],
->>>>>>> Ricardo_gestaoPlanos
+                ['label' => 'Gestão de Vendas', 'url' => ['/venda/index']],
+                ['label' => 'Definições', 'url' => ['/definicoes/index']],
             ];
             $menuItems[] = '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
