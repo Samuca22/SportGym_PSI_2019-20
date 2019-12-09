@@ -43,8 +43,15 @@ AppAsset::register($this);
         } else {
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
-                ['label' => 'Planos Treino', 'url' => ['/plano/index-treino']],
-                ['label' => 'Planos Nutrição', 'url' => ['/plano/index-nutricao']],
+                [
+                    'label' => 'Gestão de Planos',
+                    'items' => [
+                        ['label' => 'Planos Treino', 'url' => ['/plano/index-treino']],
+                        ['label' => 'Planos Nutrição', 'url' => ['/plano/index-nutricao']],
+                        ['label' => 'Atribuir Planos', 'url' => ['/perfil-plano/index']],
+                    ],
+                ],
+                ['label' => 'Aulas', 'url' => ['/aula/index']],
             ];
             $menuItems[] = '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
@@ -71,13 +78,13 @@ AppAsset::register($this);
         </div>
     </div>
 
-    <footer class="footer">
+    <!--<footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; <?= Html::encode('SportGym') ?> <?= date('Y') ?></p>
+            <p class="pull-left">&copy; <?php //echo Html::encode('SportGym') ?> <?php //echo date('Y') ?></p>
 
-            <p class="pull-right"><?= Yii::powered() ?></p>
+            <p class="pull-right"><? //echo Yii::powered() ?></p>
         </div>
-    </footer>
+    </footer> -->
 
     <?php $this->endBody() ?>
 </body>

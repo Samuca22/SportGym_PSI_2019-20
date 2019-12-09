@@ -7,11 +7,8 @@ use common\models\PerfilAula;
 use Yii;
 use common\models\Aula;
 use common\models\AulaSearch;
-<<<<<<< HEAD
 use yii\filters\AccessControl;
-=======
 use yii\data\ActiveDataProvider;
->>>>>>> 87693c9d6a07f82fd2f44845ccc33f2ece3c0b84
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -78,13 +75,6 @@ class AulaController extends Controller
             'perfilAula_dataProvider' => $perfilAula_dataProvider,
             'model' => $model,
         ]);
-
-
-
-
-
-
-
 
 
     }

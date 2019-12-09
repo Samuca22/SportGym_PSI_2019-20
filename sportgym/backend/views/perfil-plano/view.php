@@ -6,33 +6,34 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\PerfilPlano */
 
-$this->title = $model->IDperfil;
-$this->params['breadcrumbs'][] = ['label' => 'Perfil Planos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+
 \yii\web\YiiAsset::register($this);
 ?>
+
 <div class="perfil-plano-view">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1>Dados da Atribuição do Plano</h1>
+    <hr>
+    <br>
+    
 
-    <p>
-        <?= Html::a('Update', ['update', 'IDperfil' => $model->IDperfil, 'IDplano' => $model->IDplano], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'IDperfil' => $model->IDperfil, 'IDplano' => $model->IDplano], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'IDperfil',
-            'IDplano',
-            'dtaplano',
-        ],
-    ]) ?>
+    <table class="table table-bordered">
+        <tr>
+            <th>Número de Sócio</th>
+            <td><?= $model->iDperfil->nSocio ?></td>
+        </tr>
+        <tr>
+            <th>Nome do Sócio</th>
+            <td><?= $model->iDperfil->primeiroNome . ' ' . $model->iDperfil->apelido ?></td>
+        </tr>
+        <tr>
+            <th>Nome do Plano</th>
+            <td><?= $model->iDplano->nome ?></td>
+        </tr>
+        <tr>
+            <th>Data de Atribuição</th>
+            <td><?= $model->dtaplano ?></td>
+        </tr>
+    </table>
 
 </div>

@@ -49,6 +49,7 @@ class PlanoController extends Controller
         ];
     }
 
+
     /**
      * Lists all Plano models.
      * @return mixed
@@ -70,7 +71,6 @@ class PlanoController extends Controller
         $nutricao_searchModel = new PlanoSearch();
         $nutricao_dataProvider = $nutricao_searchModel->search(Yii::$app->request->queryParams);
         $nutricao_dataProvider->query->andWhere('nutricao = 1');
-        
 
         return $this->render('index-nutricao', [
             'nutricao_searchModel' => $nutricao_searchModel,
@@ -100,7 +100,21 @@ class PlanoController extends Controller
     {
         $model = new Plano();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            if($model->tipo == 1){
+                $model->treino = 1;
+                $model->nutricao = 0;
+            }
+            if($model->tipo == 2)
+            {
+                $model->treino = 0;
+                $model->nutricao = 1;
+            }
+
+            $model->nome = 'sportgym_' . $model->nome;
+            $model->save();
+            
+
             return $this->redirect(['view', 'id' => $model->IDplano]);
         }
 

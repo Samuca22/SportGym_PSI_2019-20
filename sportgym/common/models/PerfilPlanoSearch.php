@@ -51,7 +51,6 @@ class PerfilPlanoSearch extends PerfilPlano
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort' => false,
         ]);
 
         $this->load($params);
@@ -64,7 +63,7 @@ class PerfilPlanoSearch extends PerfilPlano
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'perfil.nSocio' => $this->nSocio,
+            'perfil.nif' => $this->nSocio,
         ]);
 
         return $dataProvider;

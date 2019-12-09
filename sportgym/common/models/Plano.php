@@ -18,6 +18,8 @@ use Yii;
  */
 class Plano extends \yii\db\ActiveRecord
 {
+    public $tipo;
+    
     /**
      * {@inheritdoc}
      */
@@ -32,8 +34,11 @@ class Plano extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'nutricao', 'treino'], 'required'],
-            [['nutricao', 'treino'], 'integer'],
+            ['tipo', 'required', 'message' => 'Selecione um tipo de plano'],
+            [['nome'/*, 'nutricao', 'treino'*/], 'required', 'message' => 'Introduza um nome para o plano'],
+            [['nutricao', 'treino', 'contador'], 'integer'],
+            ['descricao', 'required', 'message' => 'Introduza a descrição do plano'],
+            ['tipo', 'safe'],
             [['nome'], 'string', 'max' => 100],
             [['descricao'], 'string', 'max' => 5000],
         ];
@@ -49,7 +54,7 @@ class Plano extends \yii\db\ActiveRecord
             'nome' => 'Nome',
             'nutricao' => 'Nutricao',
             'treino' => 'Treino',
-            'descricao' => 'Descricao',
+            'descricao' => 'Descrição',
         ];
     }
 
