@@ -65,13 +65,12 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $idPerfil = Yii::$app->user->getId(); //variavel para buscar o id de o perfil logado
-        $nomeApresentacao = Perfil::findOne($idPerfil); // variavel para associar o perfil do utilizador logado
-
+         //variavel para buscar o id de o perfil logado
+        $nomeApresentacao = Perfil::findOne(Yii::$app->user->getId()); // variavel para associar o perfil do utilizador logado
 
 
         $venda_dataProvider = new ActiveDataProvider([
-            'query' => Venda::find()->limit(4)->orderBy(['dataVenda' => SORT_DESC]), // LIMITE DE LINHAS POR TABELA E ORDERNAR POR DATA MAIS RECENTE
+            'query' => Venda::find()->limit(5)->orderBy(['dataVenda' => SORT_DESC]), // LIMITE DE LINHAS POR TABELA E ORDERNAR POR DATA MAIS RECENTE
             'pagination' => false,  //paginação a 0
         ]);
 
@@ -101,19 +100,25 @@ class SiteController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
             // Fica Logado
             if (Yii::$app->user->can('entrarBack')) {
+
                 return $this->goBack();
             } else {
-                Yii::$app->user->logout();
-                Yii::$app->getSession()->setFlash('error', 'Não tem permissão!');
-                
+
+                if (Yii::$app->user->can('entrarFront')) {
+                    
+                    Yii::$app->user->logout();
+                    Yii::$app->getSession()->setFlash('error', 'Não tem permissão! Ou dados Incorretos!');
+                }
+
                 $model->password = '';
+
                 return $this->render('login', [
                     'model' => $model,
                 ]);
-
-                
             }
+
         } else {
+
             $model->password = '';
 
             return $this->render('login', [

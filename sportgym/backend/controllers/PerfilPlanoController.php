@@ -6,6 +6,7 @@ use common\models\Perfil;
 use Yii;
 use common\models\PerfilPlano;
 use common\models\PerfilPlanoSearch;
+use common\models\PerfilSearch;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -53,36 +54,9 @@ class PerfilPlanoController extends Controller
 
     public function actionIndex()
     {
-        $perfilPlano_searchModel = new PerfilPlanoSearch();
-        $perfilPlanos_dataProvider = $perfilPlano_searchModel->search(Yii::$app->request->queryParams);
+        $perfis_searchModel = new PerfilSearch();
+        $perfis_dataProvider = $perfis_searchModel->search(Yii::$app->request->queryParams);
 
-        return $this->render('index', [
-            'perfilPlano_searchModel' => $perfilPlano_searchModel,
-            'perfilPlanos_dataProvider' => $perfilPlanos_dataProvider,
-        ]);
-    }
-
-    /**
-     * Displays a single PerfilPlano model.
-     * @param integer $IDperfil
-     * @param integer $IDplano
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($IDperfil, $IDplano)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($IDperfil, $IDplano),
-        ]);
-    }
-
-    /**
-     * Creates a new PerfilPlano model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-    public function actionCreate()
-    {
         // variável usada para a verificação da existência do perfil
         $perfilExiste = false;
 
@@ -104,7 +78,7 @@ class PerfilPlanoController extends Controller
         // Se o perfil existe e os dados foram validados -> gravar na base de dados e redirecionar para a view do perfilplano criado
         if ($perfilExiste == true && $model->validate()) {
             $model->save();
-            return $this->redirect(['view', 'IDperfil' => $model->IDperfil, 'IDplano' => $model->IDplano]);
+            return $this->render('index', ['model' => $model, 'perfis_dataProvider' => $perfis_dataProvider, 'perfis_searchModel' => $perfis_searchModel]);
         }
 
         // Se os campos não estão preenchidos (primeira vez que se chama a action)
@@ -113,15 +87,46 @@ class PerfilPlanoController extends Controller
             if ($perfilExiste == false) {
                 Yii::$app->getSession()->setFlash('error', 'Sócio não existe');
                 $model->nSocio = '';
+            } else {
+                if ($model->validate() == false) {
+                    Yii::$app->getSession()->setFlash('error', 'Por favor verifique que os campos estão corretamente preenchidos e que o plano não esteja já associado sócio inserido');
+                }
             }
-            else{
-                return $this->render('create', ['model' => $model, 'perfis' => $perfis]);
-            }
+
+            return $this->render('index', ['model' => $model, 'perfis_dataProvider' => $perfis_dataProvider, 'perfis_searchModel' => $perfis_searchModel]);
         }
 
-        
-        return $this->render('create', ['model' => $model, 'perfis' => $perfis]);
+
+        return $this->render('index', ['model' => $model, 'perfis_dataProvider' => $perfis_dataProvider, 'perfis_searchModel' => $perfis_searchModel]);
     }
+
+    /**
+     * Displays a single PerfilPlano model.
+     * @param integer $IDperfil
+     * @param integer $IDplano
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    /*
+     public function actionView($IDperfil, $IDplano)
+    {
+        return $this->render('view', [
+            'model' => $this->findModel($IDperfil, $IDplano),
+        ]);
+    }
+    */
+
+    /**
+     * Creates a new PerfilPlano model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+    /*
+    public function actionCreate()
+    {
+
+    }
+    */
 
     /**
      * Updates an existing PerfilPlano model.
@@ -131,9 +136,11 @@ class PerfilPlanoController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
+    /*
     public function actionUpdate($IDperfil, $IDplano)
     {
         $model = $this->findModel($IDperfil, $IDplano);
+
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'IDperfil' => $model->IDperfil, 'IDplano' => $model->IDplano]);
@@ -143,6 +150,7 @@ class PerfilPlanoController extends Controller
             'model' => $model,
         ]);
     }
+    */
 
     /**
      * Deletes an existing PerfilPlano model.
@@ -152,12 +160,15 @@ class PerfilPlanoController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
+    /*
     public function actionDelete($IDperfil, $IDplano)
     {
         $this->findModel($IDperfil, $IDplano)->delete();
+        Yii::$app->getSession()->setFlash('success', 'Plano eliminado do sócio com sucesso');
 
         return $this->redirect(['index']);
     }
+    */
 
     /**
      * Finds the PerfilPlano model based on its primary key value.

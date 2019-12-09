@@ -45,7 +45,6 @@ class PlanoSearch extends Plano
 
         $dataProvider = new ActiveDataProvider([
             'query' => $query,
-            'sort' => false,
         ]);
 
         $this->load($params);
@@ -56,7 +55,7 @@ class PlanoSearch extends Plano
             return $dataProvider;
         }
 
-        // grid filtering conditions
+        // grid filtering conditionsad
         $query->andFilterWhere(['like', 'nome', $this->nome]);
 
         return $dataProvider;

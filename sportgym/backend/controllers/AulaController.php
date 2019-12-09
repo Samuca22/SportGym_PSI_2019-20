@@ -77,8 +77,11 @@ class AulaController extends Controller
         ]);
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> Ricardo_gestaoPlanos
     }
 
     /**

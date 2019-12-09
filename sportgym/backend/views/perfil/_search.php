@@ -15,15 +15,15 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'IDperfil') ?>
+    <?= $form->field($model, 'global')->textInput(['maxLength' => true, 'class' => 'form-control form-criar']) ?>
 
-    <?= $form->field($model, 'nSocio') ?>
+    <?php //$form->field($model, 'nSocio') ?>
 
-    <?= $form->field($model, 'foto') ?>
+    <?php //$form->field($model, 'foto') ?>
 
-    <?= $form->field($model, 'primeiroNome') ?>
+    <?php //$form->field($model, 'primeiroNome') ?>
 
-    <?= $form->field($model, 'apelido') ?>
+    <?php //$form->field($model, 'apelido') ?>
 
     <?php // echo $form->field($model, 'genero') ?>
 
@@ -42,8 +42,8 @@ use yii\widgets\ActiveForm;
     <?php // echo $form->field($model, 'peso') ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
+        <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-procurar']) ?>
+        <?php //echo Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

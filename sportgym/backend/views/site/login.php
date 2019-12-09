@@ -7,29 +7,28 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$this->title = 'Login';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'SportGym';
 ?>
 <div class="site-login">
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1 style="text-align: center;">SPORTGYM</h1>
+    <div class="caixa-login">
+        <div class="row">
+            <div class="col-lg-12">
+                <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-    <p>Please fill out the following fields to login:</p>
+                <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'class' => 'form-control form-login']) ?>
 
-    <div class="row">
-        <div class="col-lg-5">
-            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
-
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?>
-
-                <?= $form->field($model, 'password')->passwordInput() ?>
+                <?= $form->field($model, 'password')->passwordInput(['class' => 'form-control form-login']) ?>
 
                 <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
                 <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+                    <?= Html::submitButton('Login', ['class' => 'btn btn-login', 'name' => 'login-button']) ?>
                 </div>
 
-            <?php ActiveForm::end(); ?>
+                <?php ActiveForm::end(); ?>
+            </div>
         </div>
     </div>
+
 </div>

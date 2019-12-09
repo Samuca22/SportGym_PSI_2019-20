@@ -1,47 +1,47 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\PlanoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Planos Treino';
-$this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="plano-index">
 
-    <h1>Planos de Treino</h1>
+    <h1>Planos de Treino <?= Html::a('Criar Novo Plano', ['create'], ['class' => 'btn btn-lg btn-criarPlano']) ?></h1>
     <hr>
+    <br>
 
     <?php echo $this->render('_search-treino', ['model' => $treino_searchModel]);
     ?>
-    <?= GridView::widget([
-        'dataProvider' => $treino_dataProvider,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-            'nome',
-            'descricao',
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
 
-    <div style="text-align: center;">
-        <p>
-            <?= Html::a('Criar Novo Plano', ['create'], ['class' => 'btn btn-success']) ?>
-        </p>
+    <div style="overflow-y: scroll; Height: 400px; border: 1px solid #595959;">
+        <table class="table table-bordered">
+            <tr style="background: #3D77DF;">
+                <th style="width: 25%;">Nome</th>
+                <th>Descrição</th>
+                <th style="width: 25%;text-align:center;">Ação</th>
+            </tr>
+            <?php foreach ($treino_dataProvider->models as $model) : ?>
+                <tr style="overflow:hidden;text-overflow:ellipsis;">
+                    <td><?= $model->nome ?></td>
+                    <td style="max-width:500px;max-height:40px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;">
+                        <?= $model->descricao ?>
+                    </td>
+                    <td class="td-acao">
+                        <?= Html::a('Ver', ['view', 'id' => $model->IDplano], ['class' => 'btn btn-xs btn-acao']) ?>
+                        <?= Html::a('Editar', ['update', 'id' => $model->IDplano], ['class' => 'btn btn-xs btn-acao']) ?>
+                        <?= Html::a('Eliminar', ['delete', 'id' => $model->IDplano], [
+                                'class' => 'btn btn-xs btn-acao',
+                                'data-confirm' => 'Tem mesmo a certeza que pretende apagar este plano?', 'data-method' => 'post'
+                            ]) ?>
+                    </td>
+                </tr>
 
-        <br>
-        <p style="text-align: center;">
-            <?= Html::a('Ver Todos os Sócios com Planos Associados', ['/perfil-plano/index'], ['class' => 'btn btn-warning btn-lg']) ?>
-        </p>
+            <?php endforeach; ?>
+        </table>
+
     </div>
-
-
-
-
-
-
-
 </div>
