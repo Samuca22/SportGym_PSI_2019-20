@@ -11,6 +11,8 @@ use common\models\Produto;
  */
 class ProdutoSearch extends Produto
 {
+
+    public $global;
     /**
      * {@inheritdoc}
      */
@@ -18,8 +20,15 @@ class ProdutoSearch extends Produto
     {
         return [
             [['IDproduto', 'estado', 'IDlinhaVenda'], 'integer'],
-            [['nome', 'fotoProduto', 'descricao'], 'safe'],
+            [['nome', 'fotoProduto', 'descricao', 'global'], 'safe'],
             [['precoProduto'], 'number'],
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'global' => 'Nome ou Estado', 
         ];
     }
 
@@ -58,16 +67,18 @@ class ProdutoSearch extends Produto
         }
 
         // grid filtering conditions
+        /*
         $query->andFilterWhere([
             'IDproduto' => $this->IDproduto,
             'estado' => $this->estado,
             'precoProduto' => $this->precoProduto,
             'IDlinhaVenda' => $this->IDlinhaVenda,
-        ]);
+        ]);*/
 
-        $query->andFilterWhere(['like', 'nome', $this->nome])
-            ->andFilterWhere(['like', 'fotoProduto', $this->fotoProduto])
-            ->andFilterWhere(['like', 'descricao', $this->descricao]);
+        $query->orFilterWhere(['like', 'nome', $this->global])
+            ->orFilterWhere(['like', 'estado', $this->global]);
+            //->andFilterWhere(['like', 'fotoProduto', $this->fotoProduto])
+            //->andFilterWhere(['like', 'descricao', $this->descricao]);
 
         return $dataProvider;
     }

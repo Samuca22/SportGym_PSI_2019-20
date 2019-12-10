@@ -9,6 +9,8 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+//Biblioteca que permite fazer upload de um ficheiro
+use yii\web\UploadedFile;
 
 /**
  * ProdutoController implements the CRUD actions for Produto model.
@@ -82,15 +84,32 @@ class ProdutoController extends Controller
     {
         $model = new Produto();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->IDproduto]);
+        if($model->load(Yii::$app->request->post()))
+        {
+            $nome_imagem = 'prod'.rand(1, 4000);    //Atribui nome aleatório ao ficheiro 
+            $model->file = UploadedFile::getInstance($model, 'file');
+            if ($model->file == null) {
+                Yii::$app->getSession()->setFlash('error', 'Por favor selecione uma imagem!');
+                return $this->render('create', [
+                    'model' => $model,
+                ]);
+            } else {
+                $model->file->saveAs('uploads/produtos/' . $nome_imagem . '.' . $model->file->extension);
+
+                $model->fotoProduto = $nome_imagem . '.' . $model->file->extension;
+
+                $model->save();
+
+                return $this->redirect(['view', 'id' => $model->IDproduto]);
+            }
         }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        else
+        {
+            return $this->render('create', [
+                'model' => $model,
+            ]);
+        }
     }
-
     /**
      * Updates an existing Produto model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -102,8 +121,28 @@ class ProdutoController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->IDproduto]);
+        if ($model->load(Yii::$app->request->post())) {
+
+            if($model->validate()){
+
+                $nome_imagem = 'prod'.rand(1, 4000);    //Atribui nome aleatório ao ficheiro 
+                $model->file = UploadedFile::getInstance($model, 'file');
+
+                if ($model->file == null) {
+                    Yii::$app->getSession()->setFlash('error', 'Por favor selecione uma imagem!');
+                    return $this->render('update', [
+                        'model' => $model,
+                    ]);
+                } else {
+                    $model->file->saveAs('uploads/produtos/' . $nome_imagem . '.' . $model->file->extension);
+    
+                    $model->fotoProduto = $nome_imagem . '.' . $model->file->extension;
+    
+                    $model->save();
+    
+                    return $this->redirect(['view', 'id' => $model->IDproduto]);
+                }
+            }
         }
 
         return $this->render('update', [

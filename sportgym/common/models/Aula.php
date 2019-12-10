@@ -15,6 +15,13 @@ use Yii;
  * @property int|null $IDginasio
  *
  * @property Ginasio $iDginasio
+<<<<<<< HEAD
+<<<<<<< HEAD
+ * @property Perfil $iDperfil
+=======
+>>>>>>> Samuel-BackOffice-GestaoPessoas
+=======
+>>>>>>> 01ecfc65fd6ad76efe51d54fca8ec2b0ef4169f1
  * @property Ginasioaula[] $ginasioaulas
  * @property Ginasio[] $iDginasios
  * @property Perfilaula[] $perfilaulas
@@ -70,6 +77,25 @@ class Aula extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
+<<<<<<< HEAD
+    public function getGinasioaulas()
+    {
+        return $this->hasMany(Ginasioaula::className(), ['IDaula' => 'IDaula']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getIDginasios()
+    {
+        return $this->hasMany(Ginasio::className(), ['IDginasio' => 'IDginasio'])->viaTable('ginasioaula', ['IDaula' => 'IDaula']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+=======
+>>>>>>> 01ecfc65fd6ad76efe51d54fca8ec2b0ef4169f1
     public function getGinasioaulas()
     {
         return $this->hasMany(Ginasioaula::className(), ['IDaula' => 'IDaula']);

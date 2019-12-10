@@ -34,11 +34,16 @@ class Plano extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+<<<<<<< HEAD
+            [['nome', 'nutricao', 'treino'], 'required'],
+            [['nutricao', 'treino'], 'integer'],
+=======
             ['tipo', 'required', 'message' => 'Selecione um tipo de plano'],
             [['nome'/*, 'nutricao', 'treino'*/], 'required', 'message' => 'Introduza um nome para o plano'],
             [['nutricao', 'treino', 'contador'], 'integer'],
             ['descricao', 'required', 'message' => 'Introduza a descrição do plano'],
             ['tipo', 'safe'],
+>>>>>>> 01ecfc65fd6ad76efe51d54fca8ec2b0ef4169f1
             [['nome'], 'string', 'max' => 100],
             [['descricao'], 'string', 'max' => 5000],
         ];
@@ -54,7 +59,11 @@ class Plano extends \yii\db\ActiveRecord
             'nome' => 'Nome',
             'nutricao' => 'Nutricao',
             'treino' => 'Treino',
+<<<<<<< HEAD
+            'descricao' => 'Descricao',
+=======
             'descricao' => 'Descrição',
+>>>>>>> 01ecfc65fd6ad76efe51d54fca8ec2b0ef4169f1
         ];
     }
 

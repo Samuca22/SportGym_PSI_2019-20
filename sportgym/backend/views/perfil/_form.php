@@ -12,33 +12,41 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'IDperfil')->textInput() ?>
+    <!-- $form->field($model, 'IDperfil')->textInput()  -->
 
-    <?= $form->field($model, 'nSocio')->textInput() ?>
+    <?= $form->field($modelUser, 'username')->textInput(['autofocus' => true]) ?>
 
-    <?= $form->field($model, 'foto')->textInput() ?>
+    <?= $form->field($modelUser, 'email') ?>
 
-    <?= $form->field($model, 'primeiroNome')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($modelUser, 'password')->passwordInput() ?>
 
-    <?= $form->field($model, 'apelido')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($modelPerfil, 'IDperfil')->textInput() ?>
 
-    <?= $form->field($model, 'genero')->dropDownList([ 'M' => 'M', 'F' => 'F', ], ['prompt' => '']) ?>
+    <?= $form->field($modelPerfil, 'nSocio')->textInput() ?>
 
-    <?= $form->field($model, 'telefone')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($modelPerfil, 'primeiroNome')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'dtaNascimento')->textInput() ?>
+    <?= $form->field($modelPerfil, 'apelido')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'rua')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($modelPerfil, 'nif')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'localidade')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($modelPerfil, 'genero')->dropDownList(['M' => 'M', 'F' => 'F',], ['prompt' => '']) ?>
 
-    <?= $form->field($model, 'cp')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($modelPerfil, 'telefone')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'nif')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($modelPerfil, 'dtaNascimento')->textInput() ?>
 
-    <?= $form->field($model, 'peso')->textInput() ?>
+    <?= $form->field($modelPerfil, 'rua')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'altura')->textInput() ?>
+    <?= $form->field($modelPerfil, 'localidade')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($modelPerfil, 'cp')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($modelPerfil, 'peso')->textInput() ?>
+
+    <?= $form->field($modelPerfil, 'altura')->textInput() ?>
+
+    <?= $form->field($modelPerfil, 'foto')->fileInput() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

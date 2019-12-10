@@ -44,11 +44,19 @@ class Perfil extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+<<<<<<< HEAD
+            [[/*'IDperfil'*/'nSocio', 'primeiroNome', 'apelido', 'genero', 'telefone', 'dtaNascimento', 'rua', 'localidade', 'cp', 'nif'], 'required'],
+            [[/*'IDperfil'*/'nSocio'], 'integer'],
+            [['genero'], 'string'],
+            [['dtaNascimento'], 'safe'],
+            [['peso', 'altura'], 'number'],
+=======
             [['IDperfil', 'nSocio', 'primeiroNome', 'apelido', 'genero', 'telefone', 'dtaNascimento', 'rua', 'localidade', 'cp', 'nif'], 'required'],
             [['IDperfil', 'nSocio'], 'integer'],
             [['genero'], 'string'],
             [['dtaNascimento'], 'safe'],
             [['peso'], 'number'],
+>>>>>>> 01ecfc65fd6ad76efe51d54fca8ec2b0ef4169f1
             [['foto'], 'string', 'max' => 500],
             [['primeiroNome'], 'string', 'max' => 50],
             [['apelido'], 'string', 'max' => 30],
@@ -57,7 +65,7 @@ class Perfil extends \yii\db\ActiveRecord
             [['nSocio'], 'unique'],
             [['telefone'], 'unique'],
             [['nif'], 'unique'],
-            [['IDperfil'], 'unique'],
+            //[[/*'IDperfil'*/], 'unique'],
             [['IDperfil'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['IDperfil' => 'id']],
         ];
     }
@@ -68,18 +76,18 @@ class Perfil extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
-            'IDperfil' => 'I Dperfil',
-            'nSocio' => 'N Socio',
+            'IDperfil' => 'IDperfil',
+            'nSocio' => 'Nº Socio',
             'foto' => 'Foto',
             'primeiroNome' => 'Primeiro Nome',
             'apelido' => 'Apelido',
             'genero' => 'Genero',
             'telefone' => 'Telefone',
-            'dtaNascimento' => 'Dta Nascimento',
-            'rua' => 'Rua',
+            'dtaNascimento' => 'Data de Nascimento',
+            'rua' => 'Morada',
             'localidade' => 'Localidade',
-            'cp' => 'Cp',
-            'nif' => 'Nif',
+            'cp' => 'Código Postal',
+            'nif' => 'NIF',
             'peso' => 'Peso',
         ];
     }
@@ -124,11 +132,32 @@ class Perfil extends \yii\db\ActiveRecord
         return $this->hasMany(Plano::className(), ['IDplano' => 'IDplano'])->viaTable('perfilplano', ['IDperfil' => 'IDperfil']);
     }
 
+<<<<<<< HEAD
+    public function getSemPlanos()
+    {
+        return count($this->getIDplanos()) == 0;
+    }
+
+=======
+>>>>>>> 01ecfc65fd6ad76efe51d54fca8ec2b0ef4169f1
     /**
      * @return \yii\db\ActiveQuery
      */
     public function getVendas()
     {
         return $this->hasMany(Venda::className(), ['IDperfil' => 'IDperfil']);
+    }
+
+    //---------------------------------------------------------
+    //Getter para juntar os campos 'primeiroNome' e 'apelido'
+    public function getNomeCompleto(){
+        return $this->primeiroNome . ' ' . $this->apelido;
+    }
+
+    //---------------------------------------------------------
+    public function atributeLabels(){
+        return [
+            'nomeCompleto' => Yii::t('app', 'Nome Completo')
+        ];
     }
 }

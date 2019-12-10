@@ -4,11 +4,13 @@ namespace backend\controllers;
 
 use Yii;
 use common\models\Perfil;
+use common\models\User;
 use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use backend\models\SignupForm;
 
 /**
  * PerfilController implements the CRUD actions for Perfil model.
@@ -80,15 +82,25 @@ class PerfilController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Perfil();
+        $modelPerfil = new Perfil();
+        $modelUser = new SignupForm();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->IDperfil]);
+        Yii::$app->getSession()->setFlash('success', 'Chupa');
+
+        if ($modelUser->load(Yii::$app->request->post()) && $modelUser->validate() && $modelPerfil->load(Yii::$app->request->post()) && $modelPerfil->validate()) {
+            Yii::$app->getSession()->setFlash('success', 'ola');
+
+            return $this->redirect('index');
+            //return $this->redirect(['view', 'id' => $modelPerfil->IDperfil]);
+        }
+        else{
+            return $this->render('create', [
+                'modelPerfil' => $modelPerfil,
+                'modelUser' => $modelUser,
+            ]);
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        
     }
 
     /**

@@ -22,6 +22,9 @@ class Produto extends \yii\db\ActiveRecord
     /**
      * {@inheritdoc}
      */
+
+    public $file;
+
     public static function tableName()
     {
         return 'produto';
@@ -34,7 +37,8 @@ class Produto extends \yii\db\ActiveRecord
     {
         return [
             [['nome', 'fotoProduto', 'descricao', 'estado', 'precoProduto'], 'required'],
-            [['fotoProduto'], 'string'],
+            [['fotoProduto'], 'string', 'max' => 500],
+            [['file'], 'file'],
             [['estado', 'IDlinhaVenda'], 'integer'],
             [['precoProduto'], 'number'],
             [['nome'], 'string', 'max' => 50],
@@ -51,11 +55,13 @@ class Produto extends \yii\db\ActiveRecord
         return [
             'IDproduto' => 'I Dproduto',
             'nome' => 'Nome',
-            'fotoProduto' => 'Foto Produto',
-            'descricao' => 'Descricao',
+            'fotoProduto' => 'Foto do Produto',
+            'descricao' => 'Descrição',
             'estado' => 'Estado',
-            'precoProduto' => 'Preco Produto',
+            'precoProduto' => 'Preço',
             'IDlinhaVenda' => 'I Dlinha Venda',
+            //
+            'file' => 'Foto',
         ];
     }
 
@@ -65,5 +71,16 @@ class Produto extends \yii\db\ActiveRecord
     public function getIDlinhaVenda()
     {
         return $this->hasOne(Linhavenda::className(), ['IDlinhaVenda' => 'IDlinhaVenda']);
+    }
+
+    //Vai buscar a imagem e faz o encoding para Base64
+    public function mostrarImagem()
+    {
+        $path = 'uploads/produtos/' . $this->fotoProduto;
+        $type = pathinfo($path, PATHINFO_EXTENSION);
+        $data = file_get_contents($path);
+        $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+
+        return $base64;
     }
 }

@@ -17,7 +17,12 @@ class PlanoSearch extends Plano
     public function rules()
     {
         return [
+<<<<<<< HEAD
+            [['IDplano', 'nutricao', 'treino'], 'integer'],
+            [['nome', 'descricao'], 'safe'],
+=======
             [['nome'], 'safe'],
+>>>>>>> 01ecfc65fd6ad76efe51d54fca8ec2b0ef4169f1
         ];
     }
 
@@ -55,8 +60,20 @@ class PlanoSearch extends Plano
             return $dataProvider;
         }
 
+<<<<<<< HEAD
+        // grid filtering conditions
+        $query->andFilterWhere([
+            'IDplano' => $this->IDplano,
+            'nutricao' => $this->nutricao,
+            'treino' => $this->treino,
+        ]);
+
+        $query->andFilterWhere(['like', 'nome', $this->nome])
+            ->andFilterWhere(['like', 'descricao', $this->descricao]);
+=======
         // grid filtering conditionsad
         $query->andFilterWhere(['like', 'nome', $this->nome]);
+>>>>>>> 01ecfc65fd6ad76efe51d54fca8ec2b0ef4169f1
 
         return $dataProvider;
     }
