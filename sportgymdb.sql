@@ -10,7 +10,6 @@ create database if not exists sportgymdb;
 
 use SportGymDB;
 
-drop table ginasio;
 create table if not exists ginasio(
 IDginasio int unsigned auto_increment,
 rua  varchar(255) not null,
@@ -22,7 +21,6 @@ constraint pk_ginasio_IDginasio primary key (IDginasio)
 )ENGINE=InnoDB ;
 
 
-drop table perfil;
 create table if not exists perfil
 (
 IDperfil int ,
@@ -43,7 +41,6 @@ constraint fk_perfil_IDperfil foreign key (IDperfil) references  sportgymdb.user
 )ENGINE=InnoDB ;
 
 
-drop table adesao;
 create table if not exists adesao(
 IDadesao int unsigned auto_increment,
 dtaInicio date not null,
@@ -54,7 +51,6 @@ constraint fk_adesao_IDginasio foreign key (IDginasio) references ginasio(IDgina
 )Engine=InnoDB;
 
 
-drop table aula;
 create table if not exists aula(
 IDaula int unsigned auto_increment,
 tipo varchar(20) not null, 
@@ -67,7 +63,6 @@ constraint fk_aula_IDginasio foreign key (IDginasio) references ginasio(IDginasi
 )engine=InnoDB;
 
 
-drop table plano;
 create table if not exists plano(
 IDplano int unsigned auto_increment,
 nome varchar(100) not null, 
@@ -78,7 +73,6 @@ constraint pk_plano_IDplano primary key (IDplano)
 )engine=InnoDB;
 
 
-drop table venda;
 create table if not exists venda(
 IDvenda int unsigned auto_increment,
 estado boolean not null,
@@ -90,7 +84,6 @@ constraint fk_venda_IDperfil foreign key (IDperfil) references perfil(IDperfil)
 )engine=InnoDB;
 
 
-drop table linhaVenda;
 create table if not exists linhaVenda(
 IDlinhaVenda int unsigned auto_increment,
 quantidade int not null,
@@ -101,7 +94,6 @@ constraint fk_linhaVenda_IDvenda foreign key (IDvenda) references venda(IDvenda)
 )engine=InnoDB;
 
 
-drop table produto;
 create table if not exists produto(
 IDproduto int unsigned auto_increment,
 nome varchar(50) not null,
@@ -115,7 +107,6 @@ constraint fk_produto_IDlinhaVenda foreign key (IDlinhaVenda) references linhaVe
 )engine=InnoDB;
 
 
-drop table perfilPlano;
 create table if not exists perfilPlano(
 IDperfil int,
 IDplano int unsigned,
@@ -126,7 +117,6 @@ constraint fk_perfilPlano_IDplano foreign key (IDplano) references plano(IDplano
 )engine=InnoDB;
 
 
-drop table perfilAula;
 create table if not exists perfilAula(
 IDperfil int,
 IDaula int unsigned,

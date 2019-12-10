@@ -21,22 +21,29 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+            
+            //['class' => 'yii\grid\SerialColumn'],
 
-            'IDperfil',
+            //'IDperfil',
             'nSocio',
-            'foto',
-            'primeiroNome',
-            'apelido',
+            //'foto',
+            //'primeiroNome',
+            //'apelido',
+            'nomeCompleto',
+            [
+                'attribute' => 'email',
+                'value' => 'iDperfil.email',
+            ],
+            'nif',
+            'telefone',
             //'genero',
-            //'telefone',
             //'dtaNascimento',
             //'rua',
             //'localidade',
             //'cp',
-            //'nif',
             //'peso',
             //'altura',
+
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

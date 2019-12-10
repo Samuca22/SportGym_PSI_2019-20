@@ -206,4 +206,13 @@ class User extends ActiveRecord implements IdentityInterface
     {
         $this->password_reset_token = null;
     }
+
+    //GETTER da o id USER para poder mostrar dados da table USER na table PERFIL
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getPerfil()
+    {
+        return $this->hasOne(Perfil::className(), ['IDperfil' => 'id']);
+    }
 }

@@ -37,6 +37,8 @@ AppAsset::register($this);
     ]);
     $menuItems = [
         ['label' => 'Home', 'url' => ['/site/index']],
+        ['label' => 'Gestão de Pessoas', 'url' => ['/perfil/index']],   //Adiciona a opção Gestão de Pessoas ao INDEX do BACKEND
+        ['label' => 'Gestão de Produtos', 'url' => ['/produto/index']], //Adiciona a opção Gestão de Produtos ao INDEX do BACKEND
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
