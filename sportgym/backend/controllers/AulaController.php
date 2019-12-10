@@ -76,9 +76,6 @@ class AulaController extends Controller
             'model' => $model,
         ]);
 
-
-
-
     }
 
     /**

@@ -1,5 +1,8 @@
 <?php
 
+use Codeception\Command\Shared\Style;
+use common\models\Plano;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -12,16 +15,23 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'nSocio')->textInput() ?>
+    <?= $form->field($model, 'nSocio')->textInput(['class' => 'form-control form-criar']) ?>
 
-    <?= $form->field($model, 'IDperfil')->textInput() ?>
 
-    <?= $form->field($model, 'IDplano')->textInput() ?>
+    <?= $form->field($model, 'IDplano')->dropDownList(
+        ArrayHelper::map(Plano::find()->all(), 'IDplano', 'nome'),
+        [
+           'prompt' => 'Selecione um plano',
+           'class' => 'form-control form-criar',
+        ]
+    ) ?>
 
-    <?= $form->field($model, 'dtaplano')->textInput() ?>
+
+
+    <?= $form->field($model, 'dtaplano')->textInput(['class' => 'form-control form-criar']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Gravar', ['class' => 'btn btn-guardar']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

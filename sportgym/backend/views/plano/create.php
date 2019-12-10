@@ -5,9 +5,7 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Plano */
 
-$this->title = 'Create Plano';
-$this->params['breadcrumbs'][] = ['label' => 'Planos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Criar Plano';
 ?>
 <div class="plano-create">
 

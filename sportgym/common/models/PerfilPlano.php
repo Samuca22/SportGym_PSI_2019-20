@@ -31,13 +31,14 @@ class PerfilPlano extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [[/*'IDperfil', */'IDplano', 'dtaplano', 'nSocio'], 'required'],
+            [[/*'IDperfil', */'dtaplano'], 'required', 'message' => 'Introduza a data em que o plano foi atribuido'],
+            [['nSocio'], 'required', 'message' => 'Introduza o número de sócio'],
+            [['IDplano'], 'required', 'message' => 'Introduza um plano válido'], 
             [['IDperfil', 'IDplano'], 'integer'],
             [['dtaplano'], 'safe'],
-            [['IDperfil', 'IDplano'], 'unique', 'targetAttribute' => ['IDperfil', 'IDplano']],
+            [['IDperfil', 'IDplano'], 'unique', 'targetAttribute' => ['IDperfil', 'IDplano'], 'message' => 'Este plano já se encontra atribuído ao sócio inserido'],
             [['IDperfil'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['IDperfil' => 'IDperfil']],
-            [['IDplano'], 'exist', 'skipOnError' => true, 'targetClass' => Plano::className(), 'targetAttribute' => ['IDplano' => 'IDplano']],
-            [['nSocio'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['nSocio' => 'nSocio']],
+            [['IDplano'], 'exist', 'skipOnError' => true, 'targetClass' => Plano::className(), 'targetAttribute' => ['IDplano' => 'IDplano'], 'message' => 'ola'],
         ];
     }
 
@@ -49,7 +50,7 @@ class PerfilPlano extends \yii\db\ActiveRecord
         return [
             'nSocio' => 'Número de Sócio',
             'IDperfil' => 'I Dperfil',
-            'IDplano' => 'I Dplano',
+            'IDplano' => 'Nome do Plano',
             'dtaplano' => 'Dtaplano',
         ];
     }
