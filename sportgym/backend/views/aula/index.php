@@ -139,32 +139,17 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Criar Nova Aula', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-
-
     <?= GridView::widget([
-<<<<<<< HEAD
         'dataProvider' => $perfilAula_dataProvider,
         'columns' => [
             'tipo',
             'duracao',
 
-            //'dtaInicio',
-            //'duracao',
-=======
-        'dataProvider' => $aula_dataProvider,
-        'columns' => [
-
-            'tipo',
-            'duracao',
->>>>>>> GoncaloAula
-            //'IDperfil',
-            //'IDginasio',
-
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]);
 
-<<<<<<< HEAD
+
 
     ?>
 
@@ -177,18 +162,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Increver os Sócios nas Aulas', ['/perfil-aula'], ['class' => 'btn btn-warning btn-lg']) ?>
     </p>
 </div>
-=======
-    ?>
 
-    <div style="text-align: center;">
-
-        <br>
-        <p style="text-align: center;">
-            <?= Html::a('Ver todas as inscrições', ['/perfil-aula/index'], ['class' => 'btn btn-warning btn-lg']) ?>
-        </p>
-    </div>
-
->>>>>>> GoncaloAula
 
 
 

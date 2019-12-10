@@ -2,14 +2,8 @@
 
 namespace backend\controllers;
 
-<<<<<<< HEAD
-use common\models\Perfil;
-
-=======
-
 use common\models\Perfil;
 use common\models\PerfilAulaSearch;
->>>>>>> GoncaloAula
 use Yii;
 use common\models\PerfilAula;
 use yii\filters\AccessControl;
@@ -58,7 +52,6 @@ class PerfilAulaController extends Controller
      */
     public function actionIndex()
     {
-<<<<<<< HEAD
         {
             $perfilAula_searchModel = new PerfilAulaSearch();
             $perfilAula_dataProvider = $perfilAula_searchModel->search(Yii::$app->request->queryParams);
@@ -68,16 +61,6 @@ class PerfilAulaController extends Controller
                 'perfilAula_dataProvider' => $perfilAula_dataProvider,
             ]);
         }
-
-=======
-        $perfilAula_searchModel = new PerfilAulaSearch();
-        $perfilAula_dataProvider = $perfilAula_searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'perfilAula_searchModel' => $perfilAula_searchModel,
-            'perfilAula_dataProvider' => $perfilAula_dataProvider,
-        ]);
->>>>>>> GoncaloAula
     }
 
     /**

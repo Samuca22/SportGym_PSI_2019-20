@@ -7,16 +7,8 @@ use common\models\PerfilAula;
 use Yii;
 use common\models\Aula;
 use common\models\AulaSearch;
-<<<<<<< HEAD
 use yii\filters\AccessControl;
 use yii\data\ActiveDataProvider;
-=======
-
-use yii\filters\AccessControl;
-
-use yii\data\ActiveDataProvider;
-
->>>>>>> GoncaloAula
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -65,16 +57,6 @@ class AulaController extends Controller
         $aula_searchModel = new AulaSearch();
         $perfilAula_dataProvider = $aula_searchModel->search(Yii::$app->request->queryParams);
 
-
-<<<<<<< HEAD
-        $perfilAula_dataProvider = new ActiveDataProvider([
-=======
-        $aula_dataProvider = new ActiveDataProvider([
->>>>>>> GoncaloAula
-            'query' => Aula::find(),
-        ]);
-
-
         $model = new PerfilAula();
 
         if ($model->load(Yii::$app->request->post()) && $model->save())
@@ -83,16 +65,10 @@ class AulaController extends Controller
 
 
         return $this->render('index', [
-<<<<<<< HEAD
-          'aula_searchModel' => $aula_searchModel,
+            'aula_searchModel' => $aula_searchModel,
             'perfilAula_dataProvider' => $perfilAula_dataProvider,
-=======
-          'searchModel' => $searchModel,
-            'aula_dataProvider' => $aula_dataProvider,
->>>>>>> GoncaloAula
             'model' => $model,
         ]);
-
     }
 
     /**

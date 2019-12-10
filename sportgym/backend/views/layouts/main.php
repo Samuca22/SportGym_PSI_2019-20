@@ -43,7 +43,6 @@ AppAsset::register($this);
         } else {
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
-<<<<<<< HEAD
                 ['label' => 'Gestão de Aulas', 'url' => ['/aula']],
                 [
                     'label' => 'Gestão de Planos',
@@ -54,13 +53,7 @@ AppAsset::register($this);
                     ],
                 ],
                 ['label' => 'Gestão de Vendas', 'url' => ['/venda/index']],
-                ['label' => 'Definições', 'url' => ['/definicoes/index']],
-=======
-                ['label' => 'Planos Treino', 'url' => ['/plano/index-treino']],
-                ['label' => 'Planos Nutrição', 'url' => ['/plano/index-nutricao']],
-                ['label' => 'Aulas', 'url' => ['/aula']],
                 ['label' => 'Definições', 'url' => ['/definicoes/index-ginasio']],
->>>>>>> GoncaloAula
             ];
             $menuItems[] = '<li>'
                 . Html::beginForm(['/site/logout'], 'post')

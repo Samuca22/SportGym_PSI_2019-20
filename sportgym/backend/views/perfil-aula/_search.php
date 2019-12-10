@@ -16,11 +16,6 @@ use yii\widgets\ActiveForm;
     ]); ?>
 
     <?= $form->field($model, 'nSocio') ?>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> GoncaloAula
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>

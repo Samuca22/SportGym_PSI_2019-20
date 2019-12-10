@@ -14,10 +14,9 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nSocio')->textInput() ?>
 
-<<<<<<< HEAD
+
     <?= $form->field($model, 'IDperfil')->textInput() ?>
-=======
->>>>>>> GoncaloAula
+
 
     <?= $form->field($model, 'IDaula')->textInput() ?>
 
