@@ -14,9 +14,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nSocio')->textInput() ?>
 
+<<<<<<< HEAD
     <?= $form->field($model, 'IDperfil')->textInput() ?>
+=======
+>>>>>>> GoncaloAula
 
     <?= $form->field($model, 'IDaula')->textInput() ?>
+
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

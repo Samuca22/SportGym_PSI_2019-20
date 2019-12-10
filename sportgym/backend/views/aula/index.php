@@ -142,6 +142,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
     <?= GridView::widget([
+<<<<<<< HEAD
         'dataProvider' => $perfilAula_dataProvider,
         'columns' => [
             'tipo',
@@ -149,6 +150,13 @@ $this->params['breadcrumbs'][] = $this->title;
 
             //'dtaInicio',
             //'duracao',
+=======
+        'dataProvider' => $aula_dataProvider,
+        'columns' => [
+
+            'tipo',
+            'duracao',
+>>>>>>> GoncaloAula
             //'IDperfil',
             //'IDginasio',
 
@@ -156,6 +164,7 @@ $this->params['breadcrumbs'][] = $this->title;
         ],
     ]);
 
+<<<<<<< HEAD
 
     ?>
 
@@ -168,6 +177,18 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Increver os Sócios nas Aulas', ['/perfil-aula'], ['class' => 'btn btn-warning btn-lg']) ?>
     </p>
 </div>
+=======
+    ?>
+
+    <div style="text-align: center;">
+
+        <br>
+        <p style="text-align: center;">
+            <?= Html::a('Ver todas as inscrições', ['/perfil-aula/index'], ['class' => 'btn btn-warning btn-lg']) ?>
+        </p>
+    </div>
+
+>>>>>>> GoncaloAula
 
 
 

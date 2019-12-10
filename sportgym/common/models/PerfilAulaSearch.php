@@ -12,7 +12,10 @@ use common\models\PerfilAula;
 class PerfilAulaSearch extends PerfilAula
 {
     public $nSocio;
+<<<<<<< HEAD
     public $tipo;
+=======
+>>>>>>> GoncaloAula
     /**
      * {@inheritdoc}
      */
@@ -21,8 +24,11 @@ class PerfilAulaSearch extends PerfilAula
         return [
             [['nSocio'], 'integer'],
             ['nSocio', 'safe'],
+<<<<<<< HEAD
             [['tipo'], 'integer'],
             ['tipo', 'safe'],
+=======
+>>>>>>> GoncaloAula
         ];
     }
 
@@ -46,6 +52,10 @@ class PerfilAulaSearch extends PerfilAula
     {
         $query = PerfilAula::find();
         $query->leftJoin('perfil', 'perfil.IDperfil=perfilaula.IDperfil');
+<<<<<<< HEAD
+=======
+
+>>>>>>> GoncaloAula
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([
@@ -64,7 +74,10 @@ class PerfilAulaSearch extends PerfilAula
         // grid filtering conditions
         $query->andFilterWhere([
             'perfil.nSocio' => $this->nSocio,
+<<<<<<< HEAD
              'aula.tipo' => $this->tipo,
+=======
+>>>>>>> GoncaloAula
         ]);
 
         return $dataProvider;
