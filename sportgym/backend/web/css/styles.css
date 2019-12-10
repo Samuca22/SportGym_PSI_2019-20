@@ -74,28 +74,48 @@ body{
     background: #3D77DF;
 }
 
-.td-acao{
+.table tr .td-acao{
     text-align: center;
-    padding: auto !important;
+    vertical-align: middle;
 }
 
 #home-seccao-ginasios{
     text-align: center;
 }
 
-.btn-home-ginasios{
+#home-seccao-ginasios .btn-home-ginasios{
+    width: 200px;
     background-color: #3D77DF;
-    width: 240px;
-    height: 60px;
+    color: #ffffff;
     border-radius: 0;
-    margin: 16px;
+    margin: 10px;
     font-size: 18px;
+    ;
+}
+
+.btn-ver-venda{
+    border-radius: 0;
+    background-color: #3D77DF;
+    color: #ffffff;
+    margin: auto  !important;
 }
 
 .btn-home-ginasios:hover{
+    background: #ffffff;
+    color: #ffffff;
+}
+
+.btn-ver-venda:hover, .btn-home-ginasios:hover{
     background: #2e58a3;
     color: #ffffff;
 }
+
+.venda-caixa-comprador{
+    border: 1px solid #b9b9b9;
+    padding: 10px;
+}
+
+
 
 
 

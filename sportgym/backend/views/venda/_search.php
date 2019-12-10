@@ -15,19 +15,10 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'IDvenda') ?>
-
-    <?= $form->field($model, 'estado') ?>
-
-    <?= $form->field($model, 'dataVenda') ?>
-
-    <?= $form->field($model, 'total') ?>
-
-    <?= $form->field($model, 'IDperfil') ?>
+    <?= $form->field($model, 'global')->textInput(['class' => 'form-control form-pesquisa', 'placeholder' => 'AAAA-MM-DD  ou  Joana Silva']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
+        <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-procurar']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

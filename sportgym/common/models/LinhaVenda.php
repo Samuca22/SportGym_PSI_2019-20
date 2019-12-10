@@ -64,6 +64,6 @@ class LinhaVenda extends \yii\db\ActiveRecord
      */
     public function getProdutos()
     {
-        return $this->hasMany(Produto::className(), ['IDlinhaVenda' => 'IDlinhaVenda']);
+        return $this->hasOne(Produto::className(), ['IDlinhaVenda' => 'IDlinhaVenda']);
     }
 }

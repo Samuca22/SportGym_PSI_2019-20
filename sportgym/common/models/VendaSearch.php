@@ -11,6 +11,7 @@ use common\models\Venda;
  */
 class VendaSearch extends Venda
 {
+    public $global;
     /**
      * {@inheritdoc}
      */
@@ -18,8 +19,15 @@ class VendaSearch extends Venda
     {
         return [
             [['IDvenda', 'estado', 'IDperfil'], 'integer'],
-            [['dataVenda'], 'safe'],
+            [['dataVenda', 'global'], 'safe'],
             [['total'], 'number'],
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'global' => 'Data da Venda ou Primeiro Nome',
         ];
     }
 
@@ -42,6 +50,7 @@ class VendaSearch extends Venda
     public function search($params)
     {
         $query = Venda::find();
+        $query->leftJoin('perfil', 'perfil.IDperfil=venda.IDperfil');
 
         // add conditions that should always apply here
 
@@ -58,13 +67,14 @@ class VendaSearch extends Venda
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
-            'IDvenda' => $this->IDvenda,
-            'estado' => $this->estado,
-            'dataVenda' => $this->dataVenda,
-            'total' => $this->total,
-            'IDperfil' => $this->IDperfil,
-        ]);
+        $query->orFilterWhere(['like', 'dataVenda', $this->global])
+            ->orFilterWhere(['like', 'perfil.primeiroNome', $this->global]);
+        //'IDvenda' => $this->IDvenda,
+        //'estado' => $this->estado,
+        //'dataVenda' => $this->dataVenda,
+        //'total' => $this->total,
+        //'IDperfil' => $this->IDperfil,
+        //]);
 
         return $dataProvider;
     }

@@ -34,6 +34,6 @@ use yii\helpers\Html;
 <div id="home-seccao-ginasios">
     <h4>Ginásios</h4>
     <?php foreach ($ginasio_dataProvider->models as $model) : ?>
-        <button class="btn btn-home-ginasios"><?= $model->localidade ?></button>
+            <?= Html::a("{$model->localidade}", ['definicoes'], ['class' => 'btn btn-lg btn-home-ginasios']) ?>
     <?php endforeach; ?>
 </div>

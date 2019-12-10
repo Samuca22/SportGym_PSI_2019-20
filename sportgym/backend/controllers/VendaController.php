@@ -2,7 +2,10 @@
 
 namespace backend\controllers;
 
+use common\models\LinhaVenda;
 use common\models\Perfil;
+use common\models\PerfilSearch;
+use common\models\User;
 use Yii;
 use common\models\Venda;
 use common\models\VendaSearch;
@@ -53,12 +56,12 @@ class VendaController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new VendaSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $vendas_searchModel = new VendaSearch();
+        $vendas_dataProvider = $vendas_searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'vendas_searchModel' => $vendas_searchModel,
+            'vendas_dataProvider' => $vendas_dataProvider,
         ]);
     }
 
@@ -70,8 +73,13 @@ class VendaController extends Controller
      */
     public function actionView($id)
     {
+        $comprador = User::findOne([Yii::$app->user->getId()]);
+        $linhasVenda = LinhaVenda::find()->where(['IDvenda' => $id])->all();
+
         return $this->render('view', [
             'model' => $this->findModel($id),
+            'comprador' => $comprador,
+            'linhasVenda' => $linhasVenda,
         ]);
     }
 

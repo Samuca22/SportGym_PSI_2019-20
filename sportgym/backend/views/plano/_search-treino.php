@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
     
-    <?= $form->field($model, 'nome')->textInput(['maxlength' => 999, 'class' => 'form-control form-pesquisa']) ?>
+    <?= $form->field($model, 'nome')->textInput(['maxlength' => true, 'class' => 'form-control form-pesquisa']) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-procurar']) ?>

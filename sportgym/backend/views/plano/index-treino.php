@@ -42,6 +42,5 @@ $this->title = 'Planos Treino';
 
             <?php endforeach; ?>
         </table>
-
     </div>
 </div>
