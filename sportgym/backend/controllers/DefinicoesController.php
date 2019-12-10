@@ -17,7 +17,7 @@ use yii\filters\VerbFilter;
 class DefinicoesController extends  Controller
 {
 
-    public function actionIndexdefinicoesgym()
+    public function actioIndex()
     {
         $ginasio_dataProvider = new ActiveDataProvider([
             'query' => Ginasio::find(),
