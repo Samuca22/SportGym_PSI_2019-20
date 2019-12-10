@@ -207,6 +207,10 @@ class User extends ActiveRecord implements IdentityInterface
         $this->password_reset_token = null;
     }
 
+<<<<<<< HEAD
+=======
+    //GETTER da o id USER para poder mostrar dados da table USER na table PERFIL
+>>>>>>> Samuel-BackOffice-GestaoPessoas
     /**
      * @return \yii\db\ActiveQuery
      */

@@ -1,5 +1,6 @@
 <?php
 
+use Codeception\PHPUnit\ResultPrinter\HTML as ResultPrinterHTML;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -18,25 +19,38 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Produto', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'IDproduto',
-            'nome',
-            'fotoProduto',
-            'descricao',
-            'estado',
-            //'precoProduto',
-            //'IDlinhaVenda',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-
+    <table class="table table-bordered">
+        <tr>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Estado</th>
+            <th>Ação</th>
+        </tr>
+        <?php foreach($dataProvider->models as $model):?>
+            <tr>
+                <td><?= $model->nome ?></td>
+                <td><?= $model->descricao ?></td>
+                <td><?= $model->precoProduto . '€' ?></td>
+                <td>
+                    <?php if($model->estado == 0){?>
+                        Não Ativo
+                    <?php } ?>
+                    <?php if($model->estado == 1){?>
+                        Ativo
+                    <?php } ?>
+                </td>
+                <td>
+                    <?=Html::a('Ver', ['view', 'id'=>$model->IDproduto], ['class' => 'btn btn-xs '])?>
+                    <?=Html::a('Editar', ['update', 'id'=>$model->IDproduto], ['class' => 'btn btn-xs '])?>
+                    <?=Html::a('Eliminar', ['delete', 'id'=>$model->IDproduto], ['class' => 'btn btn-xs ',
+                    'data-confirm' => 'Tem mesmo a certeza que pretende apagar este produto?', 'data-method' => 'post'
+                    ])?>
+                </td>
+            </tr>
+        <?php endforeach;?>
+    </table>
 
 </div>
