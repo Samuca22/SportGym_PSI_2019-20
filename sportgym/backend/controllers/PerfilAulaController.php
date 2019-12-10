@@ -2,9 +2,11 @@
 
 namespace backend\controllers;
 
+
+use common\models\Perfil;
+use common\models\PerfilAulaSearch;
 use Yii;
 use common\models\PerfilAula;
-use common\models\PerfilAulaSearch;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -51,12 +53,12 @@ class PerfilAulaController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new PerfilAulaSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $perfilAula_searchModel = new PerfilAulaSearch();
+        $perfilAula_dataProvider = $perfilAula_searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'perfilAula_searchModel' => $perfilAula_searchModel,
+            'perfilAula_dataProvider' => $perfilAula_dataProvider,
         ]);
     }
 
@@ -81,15 +83,44 @@ class PerfilAulaController extends Controller
      */
     public function actionCreate()
     {
-        $model = new PerfilAula();
+        // variável usada para a verificação da existência do perfil
+        $perfilExiste = false;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        // Instanciar modelo e tentar popula-lo
+        $model = new PerfilAula();
+        $model->load(Yii::$app->request->post());
+
+        // Procurar em todos os perfis se o perfil com o nºSócio inserido existe
+        $perfis = Perfil::find()->all();
+
+        foreach ($perfis as $perfil) {
+            if ($model->nSocio == $perfil->nSocio) {
+                $perfilExiste = true;
+                $model->IDperfil = $perfil->IDperfil;
+                break;
+            }
+        }
+
+        // Se o perfil existe e os dados foram validados -> gravar na base de dados e redirecionar para a view do perfilAula criado
+        if ($perfilExiste == true && $model->validate()) {
+            $model->save();
             return $this->redirect(['view', 'IDperfil' => $model->IDperfil, 'IDaula' => $model->IDaula]);
         }
 
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        // Se os campos não estão preenchidos (primeira vez que se chama a action)
+        if ($model->nSocio != null) {
+
+            if ($perfilExiste == false) {
+                Yii::$app->getSession()->setFlash('error', 'Sócio não existe');
+                $model->nSocio = '';
+            }
+            else{
+                return $this->render('create', ['model' => $model, 'perfis' => $perfis]);
+            }
+        }
+
+
+        return $this->render('create', ['model' => $model, 'perfis' => $perfis]);
     }
 
     /**

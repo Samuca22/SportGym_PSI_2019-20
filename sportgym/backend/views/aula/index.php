@@ -140,36 +140,13 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
 
 
-    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
-        'dataProvider' => $perfilAula_dataProvider,
-        'filterModel' => $searchModel,
+        'dataProvider' => $aula_dataProvider,
         'columns' => [
 
-            [
-                'attribute' => 'Nº Socio',
-                'value' => 'iDperfil.nSocio',
-            ],
-
-
-            [
-                'attribute' => 'Nome',
-                'value' => 'iDperfil.primeiroNome',
-            ],
-            [
-                'attribute' => 'Nome',
-                'value' => 'iDperfil.nif',
-            ],
-
-            [
-                'attribute' => 'Aula',
-                'value' => 'iDaula.tipo',
-            ],
-
-
-            //'dtaInicio',
-            //'duracao',
+            'tipo',
+            'duracao',
             //'IDperfil',
             //'IDginasio',
 
@@ -178,21 +155,15 @@ $this->params['breadcrumbs'][] = $this->title;
     ]);
 
     ?>
-    <h3>INSCREVER SÓCIOS</h3>
 
-    <?php $form = ActiveForm::begin(); ?>
+    <div style="text-align: center;">
 
-    <?= $form->field($model, 'IDperfil')->textInput() ?>
-
-    <?= $form->field($model, 'IDaula')->textInput() ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <br>
+        <p style="text-align: center;">
+            <?= Html::a('Ver todas as inscrições', ['/perfil-aula/index'], ['class' => 'btn btn-warning btn-lg']) ?>
+        </p>
     </div>
 
-    <?php ActiveForm::end(); ?>
-
-</div>
 
 
 
