@@ -15,15 +15,10 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'IDaula') ?>
+
 
     <?= $form->field($model, 'tipo') ?>
 
-    <?= $form->field($model, 'dtaInicio') ?>
-
-    <?= $form->field($model, 'duracao') ?>
-
-    <?= $form->field($model, 'IDperfil') ?>
 
     <?php // echo $form->field($model, 'IDginasio') ?>
 

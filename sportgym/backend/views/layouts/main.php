@@ -15,6 +15,7 @@ AppAsset::register($this);
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
+
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,9 +24,21 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body>
-<?php $this->beginBody() ?>
 
+<body>
+    <?php $this->beginBody() ?>
+
+    <div class="wrap">
+        <?php
+        NavBar::begin([
+            'brandLabel' => Html::encode('SportGym'),
+            'brandUrl' => Yii::$app->homeUrl,
+            'options' => [
+                'class' => 'navbar-inverse navbar-fixed-top',
+            ],
+        ]);
+
+<<<<<<< HEAD
 <div class="wrap">
     <?php
     NavBar::begin([
@@ -58,25 +71,67 @@ AppAsset::register($this);
     ]);
     NavBar::end();
     ?>
+=======
+        if (Yii::$app->user->isGuest) {
+            $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+        } else {
+            $menuItems = [
+                ['label' => 'Home', 'url' => ['/site/index']],
+<<<<<<< HEAD
+                ['label' => 'Gestão de Aulas', 'url' => ['/aula']],
+                [
+                    'label' => 'Gestão de Planos',
+                    'items' => [
+                        ['label' => 'Planos Treino', 'url' => ['/plano/index-treino']],
+                        ['label' => 'Planos Nutrição', 'url' => ['/plano/index-nutricao']],
+                        ['label' => 'Atribuir Planos', 'url' => ['/perfil-plano/index']],
+                    ],
+                ],
+                ['label' => 'Gestão de Vendas', 'url' => ['/venda/index']],
+                ['label' => 'Definições', 'url' => ['/definicoes/index']],
+=======
+                ['label' => 'Planos Treino', 'url' => ['/plano/index-treino']],
+                ['label' => 'Planos Nutrição', 'url' => ['/plano/index-nutricao']],
+                ['label' => 'Aulas', 'url' => ['/aula']],
+                ['label' => 'Definições', 'url' => ['/definicoes/index-ginasio']],
+>>>>>>> GoncaloAula
+            ];
+            $menuItems[] = '<li>'
+                . Html::beginForm(['/site/logout'], 'post')
+                . Html::submitButton(
+                    'Logout (' . Yii::$app->user->identity->username . ')',
+                    ['class' => 'btn btn-link logout']
+                )
+                . Html::endForm()
+                . '</li>';
+        }
+        echo Nav::widget([
+            'options' => ['class' => 'navbar-nav navbar-right'],
+            'items' => $menuItems,
+        ]);
+        NavBar::end();
+        ?>
+>>>>>>> 01ecfc65fd6ad76efe51d54fca8ec2b0ef4169f1
 
-    <div class="container">
-        <?= Breadcrumbs::widget([
-            'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) ?>
-        <?= Alert::widget() ?>
-        <?= $content ?>
+        <div class="container">
+            <?= Breadcrumbs::widget([
+                'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+            ]) ?>
+            <?= Alert::widget() ?>
+            <?= $content ?>
+        </div>
     </div>
-</div>
 
-<footer class="footer">
-    <div class="container">
-        <p class="pull-left">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></p>
+    <!--<footer class="footer">
+        <div class="container">
+            <p class="pull-left">&copy; <?php //echo Html::encode('SportGym') ?> <?php //echo date('Y') ?></p>
 
-        <p class="pull-right"><?= Yii::powered() ?></p>
-    </div>
-</footer>
+            <p class="pull-right"><? //echo Yii::powered() ?></p>
+        </div>
+    </footer> -->
 
-<?php $this->endBody() ?>
+    <?php $this->endBody() ?>
 </body>
+
 </html>
 <?php $this->endPage() ?>

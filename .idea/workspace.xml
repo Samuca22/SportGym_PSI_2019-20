@@ -1,23 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5538eca9-c884-44b9-ab32-fa76ffd70a24" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/controllers/GinasioController.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/controllers/GinasioController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/controllers/SiteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/controllers/SiteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/controllers/VendaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/controllers/VendaController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/ginasio/_form.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/ginasio/_form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/ginasio/_search.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/ginasio/_search.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/ginasio/create.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/ginasio/create.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/ginasio/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/ginasio/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/ginasio/update.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/ginasio/update.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/ginasio/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/ginasio/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/site/homepage.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/site/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/site/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/venda/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/venda/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/common/models/GinasioSearch.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/common/models/GinasioSearch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/common/models/Venda.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/common/models/Venda.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sportgym/frontend/models/SignupForm.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/frontend/models/SignupForm.php" afterDir="false" />
-    </list>
+    <list default="true" id="5538eca9-c884-44b9-ab32-fa76ffd70a24" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +93,7 @@
   <component name="ProjectId" id="1UCILLfxZYbLbWOMGDSf2Sezncn" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../app-original" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/sportgym" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -136,6 +120,14 @@
       <workItem from="1574854094879" duration="379000" />
       <workItem from="1574854477339" duration="8695000" />
       <workItem from="1574881370853" duration="5943000" />
+      <workItem from="1575038922519" duration="2848000" />
+      <workItem from="1575361660364" duration="2499000" />
+      <workItem from="1575368514936" duration="4095000" />
+      <workItem from="1575405862117" duration="31000" />
+      <workItem from="1575460241374" duration="6759000" />
+      <workItem from="1575489720543" duration="3099000" />
+      <workItem from="1575566833862" duration="14729000" />
+      <workItem from="1575904971434" duration="49000" />
     </task>
     <servers />
   </component>
@@ -154,5 +146,21 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/sportgym/backend/controllers/AdesaoController.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/sportgym/common/models/PlanoSearch.php</url>
+          <line>4</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

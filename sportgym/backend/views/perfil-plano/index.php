@@ -1,38 +1,54 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
+use yii\widgets\Pjax;
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\PerfilPlanoSearch */
-/* @var $dataProvider yii\data\ActiveDataProvider */
+/* @var $model common\models\PerfilPlano */
 
-$this->title = 'Perfil Planos';
-$this->params['breadcrumbs'][] = $this->title;
-?>
-<div class="perfil-plano-index">
+$this->title = 'Atribuir Planos'; ?>
+<div class="perfil-plano-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h1>Atribuir Planos</h1>
+    <hr>
+    <br>
 
-    <p>
-        <?= Html::a('Create Perfil Plano', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
+    <?= $this->render('_form', [
+        'model' => $model,
+    ]) ?>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+    <span style="color: #737373;font-size:14px;margin-top:30px;">Consultar</span>
+    <div style="border: 1px solid #595959; padding:20px;">
 
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+        <?php echo $this->render('/perfil/_search', ['model' => $perfis_searchModel]);
+        ?>
 
-            'IDperfil',
-            'IDplano',
-            'dtaplano',
+        <div style="overflow-y: scroll; Height: 400px; border: 1px solid #595959;">
+            <table class="table table-bordered">
+                <tr style="background: #3D77DF;">
+                    <th style="width:20%">Número de Sócio</th>
+                    <th>Nome</th>
+                    <th style="width:20%">NIF</th>
+                    <th style="width:20%">Género</th>
+                </tr>
+                <?php foreach ($perfis_dataProvider->models as $model) : ?>
+                    <tr>
+                        <td><?= $model->nSocio ?></td>
+                        <td><?= $model->primeiroNome . ' ' . $model->apelido ?></td>
+                        <td><?= $model->nif ?></td>
+                        <td>
+                            <?php if ($model->genero == 'M') { ?>
+                                <span>Masculino</span>
+                            <?php } else { ?>
+                                <span>Feminino</span>
+                            <?php } ?>
+                        </td>
+                    </tr>
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+                <?php endforeach; ?>
+            </table>
 
+        </div>
+    </div>
 
 </div>

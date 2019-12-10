@@ -15,6 +15,7 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
+<<<<<<< HEAD
     <?= $form->field($model, 'IDperfil') ?>
 
     <?= $form->field($model, 'nSocio') ?>
@@ -24,6 +25,17 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'primeiroNome') ?>
 
     <?= $form->field($model, 'apelido') ?>
+=======
+    <?= $form->field($model, 'global')->textInput(['maxLength' => true, 'class' => 'form-control form-criar']) ?>
+
+    <?php //$form->field($model, 'nSocio') ?>
+
+    <?php //$form->field($model, 'foto') ?>
+
+    <?php //$form->field($model, 'primeiroNome') ?>
+
+    <?php //$form->field($model, 'apelido') ?>
+>>>>>>> 01ecfc65fd6ad76efe51d54fca8ec2b0ef4169f1
 
     <?php // echo $form->field($model, 'genero') ?>
 
@@ -41,11 +53,17 @@ use yii\widgets\ActiveForm;
 
     <?php // echo $form->field($model, 'peso') ?>
 
+<<<<<<< HEAD
     <?php // echo $form->field($model, 'altura') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
         <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
+=======
+    <div class="form-group">
+        <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-procurar']) ?>
+        <?php //echo Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
+>>>>>>> 01ecfc65fd6ad76efe51d54fca8ec2b0ef4169f1
     </div>
 
     <?php ActiveForm::end(); ?>

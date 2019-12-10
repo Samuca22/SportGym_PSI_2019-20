@@ -14,7 +14,13 @@ use Yii;
  * @property Perfil $iDperfil
  */
 class PerfilAula extends \yii\db\ActiveRecord
+
 {
+    public $nSocio;
+<<<<<<< HEAD
+=======
+
+>>>>>>> GoncaloAula
     /**
      * {@inheritdoc}
      */
@@ -29,11 +35,20 @@ class PerfilAula extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['IDperfil', 'IDaula'], 'required'],
+<<<<<<< HEAD
+            [['IDperfil', 'IDaula', 'nSocio',], 'required'],
+=======
+            [[/*'IDperfil',*/ 'IDaula', 'nSocio'], 'required'],
+>>>>>>> GoncaloAula
             [['IDperfil', 'IDaula'], 'integer'],
             [['IDperfil', 'IDaula'], 'unique', 'targetAttribute' => ['IDperfil', 'IDaula']],
             [['IDaula'], 'exist', 'skipOnError' => true, 'targetClass' => Aula::className(), 'targetAttribute' => ['IDaula' => 'IDaula']],
             [['IDperfil'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['IDperfil' => 'IDperfil']],
+            [['nSocio'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['nSocio' => 'nSocio']],
+<<<<<<< HEAD
+
+=======
+>>>>>>> GoncaloAula
         ];
     }
 
@@ -43,8 +58,14 @@ class PerfilAula extends \yii\db\ActiveRecord
     public function attributeLabels()
     {
         return [
+            'nSocio' => 'Número de Sócio',
+<<<<<<< HEAD
             'IDperfil' => 'I Dperfil',
             'IDaula' => 'I Daula',
+=======
+            'IDperfil' => 'ID perfil',
+            'IDaula' => 'ID aula',
+>>>>>>> GoncaloAula
         ];
     }
 

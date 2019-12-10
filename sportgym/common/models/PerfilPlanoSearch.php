@@ -5,20 +5,23 @@ namespace common\models;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use common\models\PerfilPlano;
+use common\models\Perfil;
+use yii\db\ActiveQuery;
 
 /**
  * PerfilPlanoSearch represents the model behind the search form of `common\models\PerfilPlano`.
  */
 class PerfilPlanoSearch extends PerfilPlano
 {
+    public $nSocio;
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['IDperfil', 'IDplano'], 'integer'],
-            [['dtaplano'], 'safe'],
+            [['nSocio'], 'integer'],
+            ['nSocio', 'safe'],
         ];
     }
 
@@ -40,7 +43,9 @@ class PerfilPlanoSearch extends PerfilPlano
      */
     public function search($params)
     {
+
         $query = PerfilPlano::find();
+        $query->leftJoin('perfil', 'perfil.IDperfil=perfilplano.IDperfil');
 
         // add conditions that should always apply here
 
@@ -58,9 +63,7 @@ class PerfilPlanoSearch extends PerfilPlano
 
         // grid filtering conditions
         $query->andFilterWhere([
-            'IDperfil' => $this->IDperfil,
-            'IDplano' => $this->IDplano,
-            'dtaplano' => $this->dtaplano,
+            'perfil.nif' => $this->nSocio,
         ]);
 
         return $dataProvider;

@@ -20,7 +20,6 @@ use Yii;
  * @property string $cp
  * @property string $nif
  * @property float|null $peso
- * @property float|null $altura
  *
  * @property User $iDperfil
  * @property Perfilaula[] $perfilaulas
@@ -45,11 +44,19 @@ class Perfil extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
+<<<<<<< HEAD
             [[/*'IDperfil'*/'nSocio', 'primeiroNome', 'apelido', 'genero', 'telefone', 'dtaNascimento', 'rua', 'localidade', 'cp', 'nif'], 'required'],
             [[/*'IDperfil'*/'nSocio'], 'integer'],
             [['genero'], 'string'],
             [['dtaNascimento'], 'safe'],
             [['peso', 'altura'], 'number'],
+=======
+            [['IDperfil', 'nSocio', 'primeiroNome', 'apelido', 'genero', 'telefone', 'dtaNascimento', 'rua', 'localidade', 'cp', 'nif'], 'required'],
+            [['IDperfil', 'nSocio'], 'integer'],
+            [['genero'], 'string'],
+            [['dtaNascimento'], 'safe'],
+            [['peso'], 'number'],
+>>>>>>> 01ecfc65fd6ad76efe51d54fca8ec2b0ef4169f1
             [['foto'], 'string', 'max' => 500],
             [['primeiroNome'], 'string', 'max' => 50],
             [['apelido'], 'string', 'max' => 30],
@@ -82,7 +89,6 @@ class Perfil extends \yii\db\ActiveRecord
             'cp' => 'Código Postal',
             'nif' => 'NIF',
             'peso' => 'Peso',
-            'altura' => 'Altura',
         ];
     }
 
@@ -126,11 +132,14 @@ class Perfil extends \yii\db\ActiveRecord
         return $this->hasMany(Plano::className(), ['IDplano' => 'IDplano'])->viaTable('perfilplano', ['IDperfil' => 'IDperfil']);
     }
 
+<<<<<<< HEAD
     public function getSemPlanos()
     {
         return count($this->getIDplanos()) == 0;
     }
 
+=======
+>>>>>>> 01ecfc65fd6ad76efe51d54fca8ec2b0ef4169f1
     /**
      * @return \yii\db\ActiveQuery
      */

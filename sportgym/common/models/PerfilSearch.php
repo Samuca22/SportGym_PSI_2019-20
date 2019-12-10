@@ -11,6 +11,7 @@ use common\models\Perfil;
  */
 class PerfilSearch extends Perfil
 {
+    public $global;
     /**
      * {@inheritdoc}
      */
@@ -18,8 +19,15 @@ class PerfilSearch extends Perfil
     {
         return [
             [['IDperfil', 'nSocio'], 'integer'],
-            [['foto', 'primeiroNome', 'apelido', 'genero', 'telefone', 'dtaNascimento', 'rua', 'localidade', 'cp', 'nif'], 'safe'],
-            [['peso', 'altura'], 'number'],
+            [['global', 'foto', 'primeiroNome', 'apelido', 'genero', 'telefone', 'dtaNascimento', 'rua', 'localidade', 'cp', 'nif'], 'safe'],
+            [['peso'], 'number'],
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'global' => 'Primeiro Nome ou NIF  ou  NºSócio',
         ];
     }
 
@@ -58,23 +66,23 @@ class PerfilSearch extends Perfil
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
+        /*$query->andFilterWhere([
             'IDperfil' => $this->IDperfil,
             'nSocio' => $this->nSocio,
             'dtaNascimento' => $this->dtaNascimento,
             'peso' => $this->peso,
-            'altura' => $this->altura,
-        ]);
+        ]);*/
 
-        $query->andFilterWhere(['like', 'foto', $this->foto])
-            ->andFilterWhere(['like', 'primeiroNome', $this->primeiroNome])
-            ->andFilterWhere(['like', 'apelido', $this->apelido])
-            ->andFilterWhere(['like', 'genero', $this->genero])
-            ->andFilterWhere(['like', 'telefone', $this->telefone])
-            ->andFilterWhere(['like', 'rua', $this->rua])
-            ->andFilterWhere(['like', 'localidade', $this->localidade])
-            ->andFilterWhere(['like', 'cp', $this->cp])
-            ->andFilterWhere(['like', 'nif', $this->nif]);
+        $query->orFilterWhere(['like', 'primeiroNome', $this->global])
+            ->orFilterWhere(['like', 'nSocio', $this->global])
+            //->andFilterWhere(['like', 'foto', $this->foto])
+            //->andFilterWhere(['like', 'apelido', $this->apelido])
+            //->andFilterWhere(['like', 'genero', $this->genero])
+            //->andFilterWhere(['like', 'telefone', $this->telefone])
+            //->andFilterWhere(['like', 'rua', $this->rua])
+            //->andFilterWhere(['like', 'localidade', $this->localidade])
+            //->andFilterWhere(['like', 'cp', $this->cp])
+            ->orFilterWhere(['like', 'nif', $this->global]);
 
         return $dataProvider;
     }

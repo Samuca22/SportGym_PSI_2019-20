@@ -8,48 +8,32 @@ use yii\helpers\Html;
 ?>
 
 <h1><?= Html::encode($this->title) ?></h1>
-<h4>
-    Bem vindo <?= Html::encode($nomeApresentacao->primeiroNome). ' '. Html::encode($nomeApresentacao->apelido). '.' ?>
-</h4>
-
-<h3>ULTIMAS VENDAS</h3>
-<?= GridView::widget([
-    'dataProvider' => $venda_dataProvider,
-    'columns' => [
-        'estado',
-        'dataVenda',
-        'total',
-        [
-            'attribute' => 'Nome',
-            'value' => 'iDperfil.primeiroNome',
-        ],
-        [
-            'attribute' => 'Apelido',
-            'value' => 'iDperfil.apelido',
-        ],
-        ['class' => 'yii\grid\ActionColumn'],
-    ],
-]);
-?>
+<h3>Bem vindo Sr.(a) <?= Html::encode($nomeApresentacao->primeiroNome) . ' ' . Html::encode($nomeApresentacao->apelido) . '.' ?></h3>
+<hr>
 <br>
-<h3>GINASIOS</h3>
-<?= GridView::widget([
-    'dataProvider' => $ginasio_dataProvider,
-    'columns' => [
-        ['class' => 'yii\grid\SerialColumn'],
 
+<h4>Últimas Vendas</h4>
+<table class="table table-bordered">
+    <tr style="background: #3D77DF;">
+        <th>Nome Comprador</th>
+        <th>Valor</th>
+        <th>Data</th>
+    </tr>
+    <?php foreach ($venda_dataProvider->models as $model) : ?>
+        <tr>
+            <td><?= $model->iDperfil->primeiroNome . ' ' . $model->iDperfil->apelido ?></td>
+            <td><?= $model->total . '€' ?></td>
+            <td><?= $model->dataVenda ?></td>
+        </tr>
 
-        'localidade',
-        'telefone',
-        'email:email',
+    <?php endforeach; ?>
+</table>
 
-        ['class' => 'yii\grid\ActionColumn'],
-    ],
-]); ?>
-
-
-
-
-
-
-
+<br>
+<br>
+<div id="home-seccao-ginasios">
+    <h4>Ginásios</h4>
+    <?php foreach ($ginasio_dataProvider->models as $model) : ?>
+        <button class="btn btn-home-ginasios"><?= $model->localidade ?></button>
+    <?php endforeach; ?>
+</div>

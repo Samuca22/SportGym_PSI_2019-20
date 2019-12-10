@@ -2,9 +2,14 @@
 
 namespace backend\controllers;
 
+use common\models\Perfil;
+use common\models\PerfilPlano;
+use common\models\PerfilPlanoSearch;
+use common\models\PerfilSearch;
 use Yii;
 use common\models\Plano;
 use common\models\PlanoSearch;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -20,6 +25,21 @@ class PlanoController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => [],
+                        'allow' => false,
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'actions' => [],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -29,18 +49,32 @@ class PlanoController extends Controller
         ];
     }
 
+
     /**
      * Lists all Plano models.
      * @return mixed
      */
-    public function actionIndex()
+    public function actionIndexTreino()
     {
-        $searchModel = new PlanoSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        $treino_searchModel = new PlanoSearch();
+        $treino_dataProvider = $treino_searchModel->search(Yii::$app->request->queryParams);
+        $treino_dataProvider->query->andWhere('treino = 1');
 
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+        return $this->render('index-treino', [
+            'treino_searchModel' => $treino_searchModel,
+            'treino_dataProvider' => $treino_dataProvider,
+        ]);
+    }
+
+    public function actionIndexNutricao()
+    {
+        $nutricao_searchModel = new PlanoSearch();
+        $nutricao_dataProvider = $nutricao_searchModel->search(Yii::$app->request->queryParams);
+        $nutricao_dataProvider->query->andWhere('nutricao = 1');
+
+        return $this->render('index-nutricao', [
+            'nutricao_searchModel' => $nutricao_searchModel,
+            'nutricao_dataProvider' => $nutricao_dataProvider,
         ]);
     }
 
@@ -66,7 +100,21 @@ class PlanoController extends Controller
     {
         $model = new Plano();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post())) {
+            if($model->tipo == 1){
+                $model->treino = 1;
+                $model->nutricao = 0;
+            }
+            if($model->tipo == 2)
+            {
+                $model->treino = 0;
+                $model->nutricao = 1;
+            }
+
+            $model->nome = 'sportgym_' . $model->nome;
+            $model->save();
+            
+
             return $this->redirect(['view', 'id' => $model->IDplano]);
         }
 
@@ -104,9 +152,39 @@ class PlanoController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
+        $plano = $this->findModel($id);
+        $perfisPlano = PerfilPlano::find()->all();
+        $possivelApagar = true;
 
-        return $this->redirect(['index']);
+        foreach ($perfisPlano as $perfilPlano) {
+            if ($perfilPlano->IDplano == $plano->IDplano) {
+                $possivelApagar = false;
+                break;
+            }
+        }
+
+        if($possivelApagar == true){
+            if ($plano->treino == 1) {
+                $plano->delete();
+                Yii::$app->getSession()->setFlash('success', 'Plano Apagado com sucesso');
+                return $this->redirect(['index-treino']);
+            } else {
+                $plano->delete();
+                Yii::$app->getSession()->setFlash('success', 'Plano Apagado com sucesso');
+                return $this->redirect(['index-nutricao']);
+            }
+        }
+        else{
+            if ($plano->treino == 1) {
+                Yii::$app->getSession()->setFlash('error', 'Este plano de treino encontra-se associado a pelo menos um sócio');
+                return $this->redirect(['index-treino']);
+            } else {
+
+                Yii::$app->getSession()->setFlash('error', 'Este plano de nutrição encontra-se associado a pelo menos um sócio');
+                return $this->redirect(['index-nutricao']);
+            }
+        }
+        
     }
 
     /**
