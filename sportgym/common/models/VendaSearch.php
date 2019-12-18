@@ -49,7 +49,7 @@ class VendaSearch extends Venda
      */
     public function search($params)
     {
-        $query = Venda::find();
+        $query = Venda::find()->orderBy(['dataVenda' => SORT_DESC]);
         $query->leftJoin('perfil', 'perfil.IDperfil=venda.IDperfil');
 
         // add conditions that should always apply here

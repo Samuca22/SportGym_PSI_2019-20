@@ -14,15 +14,18 @@ class m191128_171511_rbac_init extends Migration
     {
         $auth = Yii::$app->authManager;
 
+
         // Criar Roles (papéis)
+        
         $socio = $auth->createRole('socio');
         $auth->add($socio);
 
         $colab = $auth->createRole('colaborador');
         $auth->add($colab);
 
-        $admin = $auth->createRole('admnistrador');
+        $admin = $auth->createRole('administrador');
         $auth->add($admin);
+
 
         // Criar Permissões
 
@@ -34,19 +37,33 @@ class m191128_171511_rbac_init extends Migration
         $entrarFront->description = 'permite entrar no backoffice';
         $auth->add($entrarBack);
 
+        $criarEditarGinasios = $auth->createPermission('criarEditarGinasios');
+        $criarEditarGinasios->description = 'permissão para criar e editar novos registos de ginásios';
+        $auth->add($criarEditarGinasios);
+
+        $alterarEstadoProdutos = $auth->createPermission('alterarEstadoProdutos');
+        $alterarEstadoProdutos->description = 'permissão para alerar o estado dos produtos';
+        $auth->add($alterarEstadoProdutos);
+
+        $alterarEstatuto = $auth->createPermission('alterarEstatuto');
+        $alterarEstatuto->description = 'permissão para alerar o estado de perfis';
+        $auth->add($alterarEstatuto);
+
+        $cancelarInscricaoAula = $auth->createPermission('cancelarInscricaoAula');
+        $cancelarInscricaoAula->description = 'permissão para alerar o estado de perfis';
+        $auth->add($cancelarInscricaoAula);
+
+
         // Atribui Permissões
 
         $auth->addChild($socio, $entrarFront);
         $auth->addChild($colab, $entrarBack);
         $auth->addChild($colab, $socio);
         $auth->addChild($admin, $colab);
-
-
-        // Atribuir Roles
-        $auth->assign($admin, 1);
-        $auth->assign($colab, 2);
-        $auth->assign($socio, 3);
-        
+        $auth->addChild($admin, $criarEditarGinasios);
+        $auth->addChild($admin, $alterarEstadoProdutos);
+        $auth->addChild($admin, $alterarEstatuto);
+        $auth->addChild($admin, $cancelarInscricaoAula);   
         
     }
 
@@ -56,7 +73,6 @@ class m191128_171511_rbac_init extends Migration
     public function safeDown()
     {
         $auth = Yii::$app->authManager;
-
         $auth->removeAll();
     }
 

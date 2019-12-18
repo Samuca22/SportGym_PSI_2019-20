@@ -32,12 +32,12 @@ class PerfilAula extends \yii\db\ActiveRecord
     {
         return [
 
-            [['IDperfil', 'IDaula', 'nSocio',], 'required'],
+            [[/*'IDperfil', 'IDaula', */'nSocio',], 'required', 'message' => 'Introduza o número de sócio'],
+            [['IDaula'], 'required', 'message' => 'Selecione uma aula'],
             [['IDperfil', 'IDaula'], 'integer'],
-            [['IDperfil', 'IDaula'], 'unique', 'targetAttribute' => ['IDperfil', 'IDaula']],
+            [['IDperfil', 'IDaula'], 'unique', 'targetAttribute' => ['IDperfil', 'IDaula'], 'message' => 'O aluno já se encontra inscrito na aula selecionada'],
             [['IDaula'], 'exist', 'skipOnError' => true, 'targetClass' => Aula::className(), 'targetAttribute' => ['IDaula' => 'IDaula']],
-            [['IDperfil'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['IDperfil' => 'IDperfil']],
-            [['nSocio'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['nSocio' => 'nSocio']],
+            [['nSocio'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['nSocio' => 'nSocio'], 'message' => 'Sócio não existe'],
         ];
     }
 
@@ -49,7 +49,7 @@ class PerfilAula extends \yii\db\ActiveRecord
         return [
             'nSocio' => 'Número de Sócio',
             'IDperfil' => 'I Dperfil',
-            'IDaula' => 'I Daula',
+            'IDaula' => 'Nome da Aula',
 
         ];
     }

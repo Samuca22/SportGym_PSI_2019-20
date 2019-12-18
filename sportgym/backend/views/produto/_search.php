@@ -1,5 +1,7 @@
 <?php
 
+use common\models\Produto;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -15,22 +17,21 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?php // $form->field($model, 'IDproduto') ?>
 
-    <?= $form->field($model, 'global') ?>
+    <?= $form->field($model, 'nome') ?>
 
-    <?php // $form->field($model, 'fotoProduto') ?>
-
-    <?php //$form->field($model, 'descricao') ?>
-
-    <?php //$form->field($model, 'estado') ?>
-
-    <?php // echo $form->field($model, 'precoProduto') ?>
-
-    <?php // echo $form->field($model, 'IDlinhaVenda') ?>
+    <?= $form->field($model, 'estado')->dropDownList(
+        [
+            0 => 'Não Ativo',
+            1 => 'Ativo',
+        ],
+        [
+            'prompt' => 'Filtrar por estado',
+        ]
+    ) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
+        <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-azul']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

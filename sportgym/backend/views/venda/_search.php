@@ -18,7 +18,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'global')->textInput(['class' => 'form-control form-pesquisa', 'placeholder' => 'AAAA-MM-DD  ou  Joana Silva']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-procurar']) ?>
+        <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-azul']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

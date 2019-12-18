@@ -2,10 +2,8 @@
 
 namespace backend\controllers;
 
-use common\models\Perfil;
+
 use common\models\PerfilPlano;
-use common\models\PerfilPlanoSearch;
-use common\models\PerfilSearch;
 use Yii;
 use common\models\Plano;
 use common\models\PlanoSearch;
@@ -28,6 +26,16 @@ class PlanoController extends Controller
             'access' => [
                 'class' => AccessControl::className(),
                 'rules' => [
+                    [
+                        'actions' => [],
+                        'allow' => true,
+                        'roles' => ['administrador'],
+                    ],
+                    [
+                        'actions' => ['delete'],
+                        'allow' => false,
+                        'roles' => ['colaborador'],
+                    ],
                     [
                         'actions' => [],
                         'allow' => false,
@@ -100,7 +108,7 @@ class PlanoController extends Controller
     {
         $model = new Plano();
 
-        if ($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if($model->tipo == 1){
                 $model->treino = 1;
                 $model->nutricao = 0;
@@ -111,11 +119,12 @@ class PlanoController extends Controller
                 $model->nutricao = 1;
             }
 
-            $model->nome = 'sportgym_' . $model->nome;
-            $model->save();
-            
-
-            return $this->redirect(['view', 'id' => $model->IDplano]);
+            if($model->save()){
+                $model->nome = 'sportgym' . $model->IDplano . '_' . $model->nome;
+                $model->save();
+                Yii::$app->getSession()->setFlash('success', 'Plano criado com sucesso');
+                return $this->redirect(['view', 'id' => $model->IDplano]);
+            }
         }
 
         return $this->render('create', [
@@ -176,11 +185,11 @@ class PlanoController extends Controller
         }
         else{
             if ($plano->treino == 1) {
-                Yii::$app->getSession()->setFlash('error', 'Este plano de treino encontra-se associado a pelo menos um sócio');
+                Yii::$app->getSession()->setFlash('error', 'Este plano encontra-se associado a pelo menos um sócio');
                 return $this->redirect(['index-treino']);
             } else {
 
-                Yii::$app->getSession()->setFlash('error', 'Este plano de nutrição encontra-se associado a pelo menos um sócio');
+                Yii::$app->getSession()->setFlash('error', 'Este plano encontra-se associado a pelo menos um sócio');
                 return $this->redirect(['index-nutricao']);
             }
         }

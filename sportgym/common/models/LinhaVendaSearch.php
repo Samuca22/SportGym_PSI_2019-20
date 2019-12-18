@@ -17,7 +17,7 @@ class LinhaVendaSearch extends LinhaVenda
     public function rules()
     {
         return [
-            [['IDlinhaVenda', 'quantidade', 'IDvenda'], 'integer'],
+            [['IDlinhaVenda', 'quantidade', 'IDvenda', 'IDproduto'], 'integer'],
             [['subTotal'], 'number'],
         ];
     }
@@ -62,6 +62,7 @@ class LinhaVendaSearch extends LinhaVenda
             'quantidade' => $this->quantidade,
             'subTotal' => $this->subTotal,
             'IDvenda' => $this->IDvenda,
+            'IDproduto' => $this->IDproduto,
         ]);
 
         return $dataProvider;

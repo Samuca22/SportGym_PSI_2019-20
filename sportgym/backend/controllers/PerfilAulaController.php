@@ -6,6 +6,7 @@ use common\models\Perfil;
 use common\models\PerfilAulaSearch;
 use Yii;
 use common\models\PerfilAula;
+use common\models\PerfilSearch;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -52,98 +53,38 @@ class PerfilAulaController extends Controller
      */
     public function actionIndex()
     {
-        {
-            $perfilAula_searchModel = new PerfilAulaSearch();
-            $perfilAula_dataProvider = $perfilAula_searchModel->search(Yii::$app->request->queryParams);
+        $perfis_searchModel = new PerfilSearch();
+        $perfis_dataProvider = $perfis_searchModel->search(Yii::$app->request->queryParams);
 
-            return $this->render('index', [
-                'perfilAula_searchModel' => $perfilAula_searchModel,
-                'perfilAula_dataProvider' => $perfilAula_dataProvider,
-            ]);
-        }
-    }
+        $perfisaulas_searchModel = new PerfilAulaSearch();
+        $perfisaulas_dataProvider = $perfisaulas_searchModel->search(Yii::$app->request->queryParams);
 
-    /**
-     * Displays a single PerfilAula model.
-     * @param integer $IDperfil
-     * @param integer $IDaula
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionView($IDperfil, $IDaula)
-    {
-        return $this->render('view', [
-            'model' => $this->findModel($IDperfil, $IDaula),
-        ]);
-    }
-
-    /**
-     * Creates a new PerfilAula model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-    public function actionCreate()
-    {
         // variável usada para a verificação da existência do perfil
-        $perfilExiste = false;
+        //$perfilExiste = false;
 
         // Instanciar modelo e tentar popula-lo
-        $model = new PerfilAula();
-        $model->load(Yii::$app->request->post());
+        $modelPerfilAula = new PerfilAula();
 
-        // Procurar em todos os perfis se o perfil com o nºSócio inserido existe
-        $perfis = Perfil::find()->all();
+        if ($modelPerfilAula->load(Yii::$app->request->post()) && $modelPerfilAula->validate()) {
+            $perfil = Perfil::findOne(['nSocio' => $modelPerfilAula->nSocio]);
+            $modelPerfilAula->IDperfil = $perfil->IDperfil;
 
-        foreach ($perfis as $perfil) {
-            if ($model->nSocio == $perfil->nSocio) {
-                $perfilExiste = true;
-                $model->IDperfil = $perfil->IDperfil;
-                break;
-            }
+            if ($modelPerfilAula->save()) {
+                Yii::$app->getSession()->setFlash('success', 'Inscrição realizada com sucesso');
+            } 
         }
-
-        // Se o perfil existe e os dados foram validados -> gravar na base de dados e redirecionar para a view do perfilAula criado
-        if ($perfilExiste == true && $model->validate()) {
-            $model->save();
-            return $this->redirect(['view', 'IDperfil' => $model->IDperfil, 'IDaula' => $model->IDaula]);
-        }
-
-        // Se os campos não estão preenchidos (primeira vez que se chama a action)
-        if ($model->nSocio != null) {
-
-            if ($perfilExiste == false) {
-                Yii::$app->getSession()->setFlash('error', 'Sócio não existe');
-                $model->nSocio = '';
-            }
-            else{
-                return $this->render('create', ['model' => $model, 'perfis' => $perfis]);
-            }
-        }
-
-
-        return $this->render('create', ['model' => $model, 'perfis' => $perfis]);
+        return $this->render('index', [
+            'modelPerfilAula' => $modelPerfilAula,
+            'perfis_dataProvider' => $perfis_dataProvider,
+            'perfis_searchModel' => $perfis_searchModel,
+            'perfisaulas_searchModel' => $perfisaulas_searchModel,
+            'perfisaulas_dataProvider' => $perfisaulas_dataProvider
+        ]);
     }
 
-
-    /**
-     * Updates an existing PerfilAula model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $IDperfil
-     * @param integer $IDaula
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($IDperfil, $IDaula)
+    public function actionMapaAulas()
     {
-        $model = $this->findModel($IDperfil, $IDaula);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'IDperfil' => $model->IDperfil, 'IDaula' => $model->IDaula]);
-        }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
+        return $this->render('mapa-aulas');
     }
 
     /**
@@ -156,7 +97,12 @@ class PerfilAulaController extends Controller
      */
     public function actionDelete($IDperfil, $IDaula)
     {
-        $this->findModel($IDperfil, $IDaula)->delete();
+        if(Yii::$app->user->can('cancelarInscricaoAula')){
+            $this->findModel($IDperfil, $IDaula)->delete();
+        } else {
+            Yii::$app->getSession()->setFlash('warning', 'Sem permissão');
+        }
+        
 
         return $this->redirect(['index']);
     }

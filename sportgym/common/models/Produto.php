@@ -9,20 +9,15 @@ use Yii;
  *
  * @property int $IDproduto
  * @property string $nome
- * @property resource $fotoProduto
+ * @property string $fotoProduto
  * @property string $descricao
  * @property int $estado
  * @property float $precoProduto
- * @property int|null $IDlinhaVenda
  *
- * @property Linhavenda $iDlinhaVenda
+ * @property Linhavenda[] $linhavendas
  */
 class Produto extends \yii\db\ActiveRecord
 {
-    /**
-     * {@inheritdoc}
-     */
-
     public $file;
 
     public static function tableName()
@@ -36,14 +31,14 @@ class Produto extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome', 'fotoProduto', 'descricao', 'estado', 'precoProduto'], 'required'],
+            [['nome'], 'required', 'message' => 'Introduza um nome para o produto'],
+            [['precoProduto'], 'required', 'message' => 'Introduza um preço para o produto'],
+            [['descricao'], 'required', 'message' => 'Introduza uma descrição para o produto'],
             [['fotoProduto'], 'string', 'max' => 500],
-            [['file'], 'file'],
-            [['estado', 'IDlinhaVenda'], 'integer'],
+            [['estado'], 'integer'],
             [['precoProduto'], 'number'],
             [['nome'], 'string', 'max' => 50],
             [['descricao'], 'string', 'max' => 500],
-            [['IDlinhaVenda'], 'exist', 'skipOnError' => true, 'targetClass' => Linhavenda::className(), 'targetAttribute' => ['IDlinhaVenda' => 'IDlinhaVenda']],
         ];
     }
 
@@ -59,7 +54,6 @@ class Produto extends \yii\db\ActiveRecord
             'descricao' => 'Descrição',
             'estado' => 'Estado',
             'precoProduto' => 'Preço',
-            'IDlinhaVenda' => 'I Dlinha Venda',
             //
             'file' => 'Foto',
         ];
@@ -68,19 +62,36 @@ class Produto extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getIDlinhaVenda()
+    public function getLinhavendas()
     {
-        return $this->hasOne(Linhavenda::className(), ['IDlinhaVenda' => 'IDlinhaVenda']);
+        return $this->hasMany(Linhavenda::className(), ['IDproduto' => 'IDproduto']);
     }
 
     //Vai buscar a imagem e faz o encoding para Base64
     public function mostrarImagem()
     {
-        $path = 'uploads/produtos/' . $this->fotoProduto;
-        $type = pathinfo($path, PATHINFO_EXTENSION);
-        $data = file_get_contents($path);
-        $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
 
-        return $base64;
+        if ($this->fotoProduto == '') {
+            $path = 'uploads/produtos/no_prod.png';
+            $type = pathinfo($path, PATHINFO_EXTENSION);
+            $data = file_get_contents($path);
+            $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+            return $base64;
+        } else {
+            $path = 'uploads/produtos/' . $this->fotoProduto;
+            $type = pathinfo($path, PATHINFO_EXTENSION);
+            $data = file_get_contents($path);
+            $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
+            return $base64;
+        }
+    }
+
+    public function alterarEstado()
+    {
+        if ($this->estado == 0) {
+            return $this->estado = 1;
+        } else {
+            return $this->estado = 0;
+        }
     }
 }

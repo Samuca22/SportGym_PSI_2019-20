@@ -53,7 +53,7 @@ class Ginasio extends \yii\db\ActiveRecord
             'IDginasio' => 'I Dginasio',
             'rua' => 'Rua',
             'localidade' => 'Localidade',
-            'cp' => 'Cp',
+            'cp' => 'Código Postal',
             'telefone' => 'Telefone',
             'email' => 'Email',
         ];

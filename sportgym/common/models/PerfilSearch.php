@@ -74,9 +74,9 @@ class PerfilSearch extends Perfil
         ]);*/
 
         $query->orFilterWhere(['like', 'primeiroNome', $this->global])
+            ->orFilterWhere(['like', 'apelido', $this->global])
             ->orFilterWhere(['like', 'nSocio', $this->global])
             //->andFilterWhere(['like', 'foto', $this->foto])
-            //->andFilterWhere(['like', 'apelido', $this->apelido])
             //->andFilterWhere(['like', 'genero', $this->genero])
             //->andFilterWhere(['like', 'telefone', $this->telefone])
             //->andFilterWhere(['like', 'rua', $this->rua])

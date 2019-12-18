@@ -38,46 +38,12 @@ AppAsset::register($this);
             ],
         ]);
 
-<<<<<<< HEAD
-<div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    $menuItems = [
-        ['label' => 'Home', 'url' => ['/site/index']],
-        ['label' => 'Gestão de Pessoas', 'url' => ['/perfil/index']],   //Adiciona a opção Gestão de Pessoas ao INDEX do BACKEND
-        ['label' => 'Gestão de Produtos', 'url' => ['/produto/index']], //Adiciona a opção Gestão de Produtos ao INDEX do BACKEND
-    ];
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems[] = '<li>'
-            . Html::beginForm(['/site/logout'], 'post')
-            . Html::submitButton(
-                'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
-            )
-            . Html::endForm()
-            . '</li>';
-    }
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => $menuItems,
-    ]);
-    NavBar::end();
-    ?>
-=======
         if (Yii::$app->user->isGuest) {
             $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
         } else {
             $menuItems = [
                 ['label' => 'Home', 'url' => ['/site/index']],
-                ['label' => 'Gestão de Aulas', 'url' => ['/aula']],
+                ['label' => 'Gestão de Aulas', 'url' => ['/perfil-aula/index']],
                 [
                     'label' => 'Gestão de Planos',
                     'items' => [
@@ -86,8 +52,10 @@ AppAsset::register($this);
                         ['label' => 'Atribuir Planos', 'url' => ['/perfil-plano/index']],
                     ],
                 ],
+                ['label' => 'Gestão de Pessoas', 'url' => ['/perfil/index']],   //Adiciona a opção Gestão de Pessoas ao INDEX do BACKEND
+                ['label' => 'Gestão de Produtos', 'url' => ['/produto/index']], //Adiciona a opção Gestão de Produtos ao INDEX do BACKEND
                 ['label' => 'Gestão de Vendas', 'url' => ['/venda/index']],
-                ['label' => 'Definições', 'url' => ['/definicoes/index-ginasio']],
+                ['label' => 'Definições', 'url' => ['/definicoes/index-ginasios']],
             ];
             $menuItems[] = '<li>'
                 . Html::beginForm(['/site/logout'], 'post')
@@ -104,7 +72,7 @@ AppAsset::register($this);
         ]);
         NavBar::end();
         ?>
->>>>>>> 01ecfc65fd6ad76efe51d54fca8ec2b0ef4169f1
+
 
         <div class="container">
             <?= Breadcrumbs::widget([
@@ -117,9 +85,12 @@ AppAsset::register($this);
 
     <!--<footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; <?php //echo Html::encode('SportGym') ?> <?php //echo date('Y') ?></p>
+            <p class="pull-left">&copy; <?php //echo Html::encode('SportGym') 
+                                        ?> <?php //echo date('Y') 
+                                                                                    ?></p>
 
-            <p class="pull-right"><? //echo Yii::powered() ?></p>
+            <p class="pull-right"><? //echo Yii::powered() 
+                                    ?></p>
         </div>
     </footer> -->
 

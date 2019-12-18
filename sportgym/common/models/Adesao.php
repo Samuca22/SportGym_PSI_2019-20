@@ -30,10 +30,13 @@ class Adesao extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['dtaInicio'], 'required'],
+            //[['dtaInicio'], 'required'],
             [['dtaInicio', 'dtaFim'], 'safe'],
+            [['IDginasio'], 'required', 'message' => 'Por favor selecione um ginásio'],
             [['IDginasio'], 'integer'],
             [['IDginasio'], 'exist', 'skipOnError' => true, 'targetClass' => Ginasio::className(), 'targetAttribute' => ['IDginasio' => 'IDginasio']],
+            [['IDperfil'], 'integer'],
+            [['IDperfil'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['IDperfil' => 'IDperfil']],
         ];
     }
 
@@ -46,7 +49,7 @@ class Adesao extends \yii\db\ActiveRecord
             'IDadesao' => 'I Dadesao',
             'dtaInicio' => 'Dta Inicio',
             'dtaFim' => 'Dta Fim',
-            'IDginasio' => 'I Dginasio',
+            'IDginasio' => 'Ginásio',
         ];
     }
 
@@ -56,5 +59,13 @@ class Adesao extends \yii\db\ActiveRecord
     public function getIDginasio()
     {
         return $this->hasOne(Ginasio::className(), ['IDginasio' => 'IDginasio']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getIDperfil()
+    {
+        return $this->hasOne(Adesao::className(), ['IDperfil' => 'IDperfil']);
     }
 }

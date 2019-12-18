@@ -5,17 +5,17 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Perfil */
 
-$this->title = 'Update Perfil: ' . $model->IDperfil;
-$this->params['breadcrumbs'][] = ['label' => 'Perfils', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->IDperfil, 'url' => ['view', 'id' => $model->IDperfil]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = 'Editar Sócio';
 ?>
 <div class="perfil-update">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h4>Editar Sócio (Nº Sócio - <?= $modelPerfil->nSocio ?>)</h4>         
+    <hr class="hr">
+    <br>
 
-    <?= $this->render('_form', [
-        'model' => $model,
+    <?= $this->render('_form-update', [
+        'modelPerfil' => $modelPerfil,
+        'modelUser' => $modelUser,
     ]) ?>
 
 </div>

@@ -1,64 +1,92 @@
 <?php
 
-use common\models\Perfil;
 use yii\helpers\Html;
-use yii\grid\GridView;
+
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\PerfilAulaSearch */
+/* @var $searchModel common\models\AulaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-
-$this->title = 'Sócios inscritos em aulas';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Gestão de Aulas';
 ?>
-<div class="perfil-aula-index">
+<div class="aula-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h3>Inscrever Sócios em Aulas <?= Html::a('Ver Mapa de Aulas', ['mapa-aulas'], ['class' => 'btn btn-lg btn-azul btn-ver-mapa', 'target' => '_blank']) ?></h3>
+    <hr class="hr">
+    <br>
 
-    <?php echo $this->render('_search', ['model' => $perfilAula_searchModel]); ?>
+    <?= $this->render('/perfil-aula/_form', ['modelPerfilAula' => $modelPerfilAula]) ?>
 
-    <?= GridView::widget([
-        'dataProvider' => $perfilAula_dataProvider,
-        // 'filterModel' => $perfilAula_searchModel,
-        'columns' => [
-            [
-                'attribute' => 'Nº Socio',
-                'value' => 'iDperfil.nSocio',
-            ],
-            [
-                'attribute' => 'Nome',
-                'value' => 'iDperfil.primeiroNome',
-            ],
-            [
 
-                'attribute' => 'Apelido',
-                'value' => 'iDperfil.apelido',
-            ],
-            [
-                'attribute' => 'Nif',
-                'value' => 'iDperfil.nif',
-            ],
-            [
 
-                'attribute' => 'Apelido',
-                'value' => 'iDperfil.apelido',
-            ],
-            [
-                'attribute' => 'Aula',
-                'value' => 'iDaula.tipo',
-            ],
-            [
-                'attribute' => 'Data',
-                'value' => 'iDaula.dtaInicio',
-            ],
+    <div class="row">
+        <div class="col-md-12">
+            <span class="text-consulta">Consultar</span>
+            <div class="border-consulta">
+                <?php echo $this->render('/perfil/_search', ['model' => $perfis_searchModel]);?>
+                <div class="caixa-tabela">
+                    <div class="panel">
+                        <table class="table table-bordered">
+                            <tr style="background: #3D77DF;">
+                                <th>Número de Sócio</th>
+                                <th>Nome</th>
+                                <th>NIF</th>
+                                <th>Género</th>
+                            </tr>
+                            <?php foreach ($perfis_dataProvider->models as $model) : ?>
+                                <tr>
+                                    <td><?= $model->nSocio ?></td>
+                                    <td><?= $model->primeiroNome . ' ' . $model->apelido ?></td>
+                                    <td><?= $model->nif ?></td>
+                                    <td>
+                                        <?php if ($model->genero == 'M') { ?>
+                                            <span>Masculino</span>
+                                        <?php } else { ?>
+                                            <span>Feminino</span>
+                                        <?php } ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-
-    <p>
-        <?= Html::a('Inscrever Sócio', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-</div>
+    <div class="row" style="margin-top:30px;">
+        <div class="col-md-12">
+            <span class="text-consulta">Cancelar Inscrições</span>
+            <div class="border-consulta">
+                <div class="caixa-tabela" style="max-height:300px;">
+                    <?= $this->render('/perfil-aula/_search', ['model' => $perfisaulas_searchModel]) ?>
+                    <div class="panel">
+                        <table class="table table-bordered">
+                            <tr style="background: #3D77DF;">
+                                <th>Sócio</th>
+                                <th>Aula</th>
+                                <th class="text-center">Ação</th>
+                            </tr>
+                            <?php foreach ($perfisaulas_dataProvider->models as $model) : ?>
+                                <tr>
+                                    <td><?= $model->iDperfil->nSocio .' - '. $model->iDperfil->primeiroNome .' '. $model->iDperfil->apelido ?></td>
+                                    <td><?= $model->iDaula->tipo?></td>
+                                    <td class="text-center">
+                                        <?=
+                                            Html::a('Cancelar Inscrição', ['delete', 'IDperfil' => $model->IDperfil, 'IDaula' => $model->IDaula], [
+                                                'class' => 'btn btn-acao',
+                                                'data' => [
+                                                    'confirm' => 'Tem a certeza que pretende cancelar esta inscrição?',
+                                                    'method' => 'post',
+                                                ],
+                                            ])
+                                        ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

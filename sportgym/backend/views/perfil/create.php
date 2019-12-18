@@ -5,17 +5,18 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Perfil */
 
-$this->title = 'Create Perfil';
-$this->params['breadcrumbs'][] = ['label' => 'Perfils', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Criar Perfil';
 ?>
 <div class="perfil-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h4><?= Html::encode($this->title) ?></h4>
+    <hr class="hr">
+    <br>
 
-    <?= $this->render('_form', [
+    <?= $this->render('_form-create', [
         'modelPerfil' => $modelPerfil,
         'modelUser' => $modelUser,
+        'modelAdesao' => $modelAdesao,
     ]) ?>
 
 </div>

@@ -9,7 +9,9 @@ $this->title = 'Criar Plano';
 ?>
 <div class="plano-create">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+    <h4><?= Html::encode($this->title) ?></h4>
+    <hr class="hr">
+    <br>
 
     <?= $this->render('_form', [
         'model' => $model,

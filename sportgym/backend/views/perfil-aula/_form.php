@@ -1,5 +1,7 @@
 <?php
 
+use common\models\Aula;
+use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -12,19 +14,20 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'nSocio')->textInput() ?>
+    <?= $form->field($modelPerfilAula, 'nSocio')->textInput() ?>
 
-
-    <?= $form->field($model, 'IDperfil')->textInput() ?>
-
-
-    <?= $form->field($model, 'IDaula')->textInput() ?>
+    <?= $form->field($modelPerfilAula, 'IDaula')->dropDownList(
+        ArrayHelper::map(Aula::find()->all(), 'IDaula', 'tipo'),
+        [
+            'prompt' => 'Selecione uma aula',
+            'class' => 'form-control',
+        ]
+    ) ?>
 
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Inscrever', ['class' => 'btn btn-azul']) ?>
+        <?php ActiveForm::end(); ?>
+
     </div>
-
-    <?php ActiveForm::end(); ?>
-
 </div>

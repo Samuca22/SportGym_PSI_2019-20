@@ -11,34 +11,37 @@ $this->title = 'Vendas';
 ?>
 <div class="venda-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-    <hr>
+    <h3><?= Html::encode($this->title) ?></h3>
+    <hr class="hr">
     <br>
 
     <?php echo $this->render('_search', ['model' => $vendas_searchModel]);
     ?>
 
-    <table class="table table-bordered" style="text-align:center;">
-        <tr style="background: #3D77DF;">
-            <th style="text-align:center;">Comprador</th>
-            <th style="text-align:center;">Venda</th>
-            <th style="text-align:center;">Ação</th>
-        </tr>
-        <?php foreach ($vendas_dataProvider->models as $model) : ?>
-            <tr>
-                <td>
-                    <p><?= $model->iDperfil->primeiroNome . ' ' . $model->iDperfil->apelido ?></p>
-                    <p><?= $model->iDperfil->telefone ?></p>
-                </td>
-                <td>
-                    <p><?= $model->dataVenda ?></p>
-                    <p><?= $model->total . '€' ?></p>
-                </td>
-                <td class="td-acao">
-                    <?= Html::a('Ver Detalhes', ['view', 'id' => $model->IDvenda], ['class' => 'btn btn-ver-venda']) ?>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </table>
-
+    <div class="caixa-tabela">
+        <div class="panel">
+            <table class="table table-bordered" style="text-align:center;">
+                <tr style="background: #3D77DF;">
+                    <th class="text-center">Comprador</th>
+                    <th class="text-center">Venda</th>
+                    <th class="text-center">Ação</th>
+                </tr>
+                <?php foreach ($vendas_dataProvider->models as $model) : ?>
+                    <tr>
+                        <td>
+                            <p><?= $model->iDperfil->primeiroNome . ' ' . $model->iDperfil->apelido ?></p>
+                            <p><?= $model->iDperfil->telefone ?></p>
+                        </td>
+                        <td>
+                            <p><?= Yii::$app->formatter->asDate($model->dataVenda, 'dd-MM-yyyy') ?></p>
+                            <p><?= $model->total . '€' ?></p>
+                        </td>
+                        <td class="text-center"style="vertical-align:middle;">
+                            <?= Html::a('Ver Detalhes', ['view', 'id' => $model->IDvenda], ['class' => 'btn btn-azul']) ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </table>
+        </div>
+    </div>
 </div>

@@ -18,8 +18,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'nSocio') ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
+        <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-azul']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

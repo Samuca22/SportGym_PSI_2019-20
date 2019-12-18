@@ -11,9 +11,10 @@ use Yii;
  * @property int $quantidade
  * @property float $subTotal
  * @property int|null $IDvenda
+ * @property int|null $IDproduto
  *
+ * @property Produto $iDproduto
  * @property Venda $iDvenda
- * @property Produto[] $produtos
  */
 class LinhaVenda extends \yii\db\ActiveRecord
 {
@@ -31,9 +32,10 @@ class LinhaVenda extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['quantidade', 'subTotal'], 'required'],
-            [['quantidade', 'IDvenda'], 'integer'],
+            [['quantidade'], 'required'],
+            [['quantidade', 'IDvenda', 'IDproduto'], 'integer'],
             [['subTotal'], 'number'],
+            [['IDproduto'], 'exist', 'skipOnError' => true, 'targetClass' => Produto::className(), 'targetAttribute' => ['IDproduto' => 'IDproduto']],
             [['IDvenda'], 'exist', 'skipOnError' => true, 'targetClass' => Venda::className(), 'targetAttribute' => ['IDvenda' => 'IDvenda']],
         ];
     }
@@ -48,7 +50,16 @@ class LinhaVenda extends \yii\db\ActiveRecord
             'quantidade' => 'Quantidade',
             'subTotal' => 'Sub Total',
             'IDvenda' => 'I Dvenda',
+            'IDproduto' => 'I Dproduto',
         ];
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getIDproduto()
+    {
+        return $this->hasOne(Produto::className(), ['IDproduto' => 'IDproduto']);
     }
 
     /**
@@ -59,11 +70,12 @@ class LinhaVenda extends \yii\db\ActiveRecord
         return $this->hasOne(Venda::className(), ['IDvenda' => 'IDvenda']);
     }
 
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getProdutos()
+
+    // Chamar ao criar uma linhaVenda ou editar
+    public function atualizarSubTotal()
     {
-        return $this->hasOne(Produto::className(), ['IDlinhaVenda' => 'IDlinhaVenda']);
+        $produto = $this->iDproduto;;
+        $this->subTotal = $produto->precoProduto * $this->quantidade;
+        $this->save();
     }
 }

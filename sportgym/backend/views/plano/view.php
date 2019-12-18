@@ -11,28 +11,24 @@ $this->title = $model->nome;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="plano-view">
-    <h1>
+    <h4>
         <?php if ($model->treino == 1) {
             echo 'Plano de <strong>Treino: </strong>' . Html::encode($model->nome);
         } else {
             echo 'Plano de <strong>Nutrição: </strong>' . Html::encode($model->nome);
         }
         ?>
-    </h1>
-    <hr>
+    </h4>
+    <hr class="hr">
     <br>
-
-    <textarea style="width: 100%;resize: none;" class="caixa-descricao" disabled><?= $model->descricao ?></textarea>
-
-
-
+    <textarea class="planos-textarea" disabled><?= $model->descricao ?></textarea>
 
     <p>
-        <?= Html::a('Editar', ['update', 'id' => $model->IDplano], ['class' => 'btn btn-editar']) ?>
+        <?= Html::a('Editar', ['update', 'id' => $model->IDplano], ['class' => 'btn btn-azul']) ?>
         <?= Html::a('Eliminar', ['delete', 'id' => $model->IDplano], [
-            'class' => 'btn btn-eliminar',
+            'class' => 'btn btn-vermelho',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Tem a certeza que pretende eliminar este plano?',
                 'method' => 'post',
             ],
         ]) ?>

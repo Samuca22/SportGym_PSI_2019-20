@@ -15,23 +15,21 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'nSocio')->textInput(['class' => 'form-control form-criar']) ?>
+    <?= $form->field($modelPerfilPlano, 'nSocio')->textInput(['class' => 'form-control', 'placeholder' => 'Musculação']) ?>
 
 
-    <?= $form->field($model, 'IDplano')->dropDownList(
+    <?= $form->field($modelPerfilPlano, 'IDplano')->dropDownList(
         ArrayHelper::map(Plano::find()->all(), 'IDplano', 'nome'),
         [
            'prompt' => 'Selecione um plano',
-           'class' => 'form-control form-criar',
+           'class' => 'form-control',
         ]
     ) ?>
 
-
-
-    <?= $form->field($model, 'dtaplano')->textInput(['class' => 'form-control form-criar']) ?>
+    <?= $form->field($modelPerfilPlano, 'dtaplano')->textInput(['class' => 'form-control', 'placeholder' => 'aaaa-mm-dd']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Gravar', ['class' => 'btn btn-guardar']) ?>
+        <?= Html::submitButton('Atribuir Plano', ['class' => 'btn btn-azul']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

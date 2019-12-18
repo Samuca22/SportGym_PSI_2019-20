@@ -15,10 +15,10 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
     
-    <?= $form->field($model, 'nome')->textInput(['maxlength' => true, 'class' => 'form-control form-pesquisa']) ?>
+    <?= $form->field($model, 'nome')->textInput(['maxlength' => true, 'class' => 'form-control']) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-procurar']) ?>
+        <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-azul']) ?>
         <!-- Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) -->
     </div>
 

@@ -16,9 +16,9 @@ $this->title = 'SportGym';
             <div class="col-lg-12">
                 <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'class' => 'form-control form-login']) ?>
+                <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'class' => 'form-control']) ?>
 
-                <?= $form->field($model, 'password')->passwordInput(['class' => 'form-control form-login']) ?>
+                <?= $form->field($model, 'password')->passwordInput(['class' => 'form-control']) ?>
 
                 <?= $form->field($model, 'rememberMe')->checkbox() ?>
 

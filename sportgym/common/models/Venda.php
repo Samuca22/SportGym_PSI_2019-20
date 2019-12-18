@@ -70,4 +70,9 @@ class Venda extends \yii\db\ActiveRecord
         return $this->hasOne(Perfil::className(), ['IDperfil' => 'IDperfil']);
     }
 
+    // Chamar ao criar uma linhaVenda
+    public function atualizarTotal(){
+        $this->total = LinhaVenda::find()->where(['IDvenda' => $this->IDvenda])->sum('subTotal');
+        $this->save();
+    }
 }

@@ -28,6 +28,16 @@ class ProdutoController extends Controller
                 'rules' => [
                     [
                         'actions' => [],
+                        'allow' => true,
+                        'roles' => ['administrador'],
+                    ],
+                    [
+                        'actions' => ['create', 'delete'],
+                        'allow' => false,
+                        'roles' => ['colaborador'],
+                    ],
+                    [
+                        'actions' => [],
                         'allow' => false,
                         'roles' => ['?'],
                     ],
@@ -83,28 +93,23 @@ class ProdutoController extends Controller
     public function actionCreate()
     {
         $model = new Produto();
-
-        if($model->load(Yii::$app->request->post()))
-        {
-            $nome_imagem = 'prod'.rand(1, 4000);    //Atribui nome aleatório ao ficheiro 
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $model->save();
+            $nome_imagem = 'prod' . $model->IDproduto;    //Atribui nome aleatório ao ficheiro 
             $model->file = UploadedFile::getInstance($model, 'file');
+            $model->estado = 0;
+
             if ($model->file == null) {
-                Yii::$app->getSession()->setFlash('error', 'Por favor selecione uma imagem!');
-                return $this->render('create', [
-                    'model' => $model,
-                ]);
             } else {
                 $model->file->saveAs('uploads/produtos/' . $nome_imagem . '.' . $model->file->extension);
-
                 $model->fotoProduto = $nome_imagem . '.' . $model->file->extension;
-
-                $model->save();
-
-                return $this->redirect(['view', 'id' => $model->IDproduto]);
             }
-        }
-        else
-        {
+
+            $model->save();
+
+            Yii::$app->getSession()->setFlash('success', 'Produto criado com sucesso');
+            return $this->redirect(['view', 'id' => $model->IDproduto]);
+        } else {
             return $this->render('create', [
                 'model' => $model,
             ]);
@@ -121,28 +126,19 @@ class ProdutoController extends Controller
     {
         $model = $this->findModel($id);
 
-        if ($model->load(Yii::$app->request->post())) {
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            $nome_imagem = 'prod' . $id;    //Atribui nome aleatório ao ficheiro 
+            $model->file = UploadedFile::getInstance($model, 'file');
 
-            if($model->validate()){
-
-                $nome_imagem = 'prod'.rand(1, 4000);    //Atribui nome aleatório ao ficheiro 
-                $model->file = UploadedFile::getInstance($model, 'file');
-
-                if ($model->file == null) {
-                    Yii::$app->getSession()->setFlash('error', 'Por favor selecione uma imagem!');
-                    return $this->render('update', [
-                        'model' => $model,
-                    ]);
-                } else {
-                    $model->file->saveAs('uploads/produtos/' . $nome_imagem . '.' . $model->file->extension);
-    
-                    $model->fotoProduto = $nome_imagem . '.' . $model->file->extension;
-    
-                    $model->save();
-    
-                    return $this->redirect(['view', 'id' => $model->IDproduto]);
-                }
+            if ($model->file == null) {
+            } else {
+                $model->file->saveAs('uploads/produtos/' . $nome_imagem . '.' . $model->file->extension);
+                $model->fotoProduto = $nome_imagem . '.' . $model->file->extension;
             }
+
+            $model->save();
+            Yii::$app->getSession()->setFlash('success', 'Produto editado com sucesso');
+            return $this->redirect(['view', 'id' => $model->IDproduto]);
         }
 
         return $this->render('update', [
@@ -160,8 +156,7 @@ class ProdutoController extends Controller
     public function actionDelete($id)
     {
         $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
+        Yii::$app->getSession()->setFlash('success', 'Produto eliminado com sucesso');
     }
 
     /**
@@ -171,6 +166,23 @@ class ProdutoController extends Controller
      * @return Produto the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */
+
+    public function actionAlterarEstado($id)
+    {
+        if (Yii::$app->user->can('alterarEstadoProdutos')) {
+            $model = $this->findModel($id);
+            $model->alterarEstado();
+            $model->save(false);
+
+            Yii::$app->getSession()->setFlash('success', "Estado do produto $model->nome alterado com sucesso");
+        } else {
+            Yii::$app->getSession()->setFlash('warning', "Sem permissão");
+        }
+
+
+        return $this->redirect('index');
+    }
+
     protected function findModel($id)
     {
         if (($model = Produto::findOne($id)) !== null) {

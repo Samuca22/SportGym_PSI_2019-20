@@ -13,16 +13,16 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'nome')->textInput(['maxlength' => true, 'class' => 'form-control form-criar']) ?>
+    <?= $form->field($model, 'nome')->textInput(['maxlength' => true, 'class' => 'form-control', 'placeholder' => 'Musculação/Emagrecimento']) ?>
 
-    <?php 
-    if($model->treino == 1){
+    <?php
+    if ($model->treino == 1) {
         $model->tipo = 0;
     }
-    if($model->treino == 1){
+    if ($model->treino == 1) {
         $model->tipo = 1;
     }
-    if($model->nutricao == 1){
+    if ($model->nutricao == 1) {
         $model->tipo = 2;
     }
     ?>
@@ -39,49 +39,45 @@ use yii\widgets\ActiveForm;
             ],
         ],
         [
-            
-            'class' => 'form-control form-criar'
+
+            'class' => 'form-control'
         ]
     ) ?>
 
 
-    <?= $form->field($model, 'descricao')->textarea(['maxlength' => true, 'style' => 'width:500px;height:700px',
-    'value' => 'Nome Plano - Objetivo
+    <?php if($model->descricao == null){ ?>
+    <?= $form->field($model, 'descricao')->textarea([
+        'maxlength' => true, 'style' => 'resize:none;width:500px;height:700px;overflow-y:auto;',
+        'value' => 'Nome Plano - Objetivo
 
-    PEQUENO-ALMOÇO
-    leite com aveia OU ovos com batatas
+        PEQUENO-ALMOÇO
+        leite com aveia OU ovos com batatas
     
-    LANCHE DA MANHÃ
-    Pão com atum
+        LANCHE DA MANHÃ
+        Pão com atum
 
-    ALMOÇO
-    Batata doce com arroz com um peito de frango
+        ALMOÇO
+        Batata doce com arroz com um peito de frango
     
-    LANCHA DA TARDE
-    Pão com cebola e maionese
+        LANCHA DA TARDE
+        Pão com cebola e maionese
     
-    JANTAR
-    Batata salgada com massa e salmão
+        JANTAR
+        Batata salgada com massa e salmão
     
-    CEIA
-    Shake',
-    
-    
+        CEIA
+        Shake',
 
-
-
-
-
-
-
-
-
-
-
-    'class' => 'form-control form-criar']) ?>
+        'class' => 'form-control'
+    ]) ?>
+    <?php } else{ ?>
+        <?=
+        $form->field($model, 'descricao')->textarea(['maxlength' => true, 'style' => 'resize:none;width:500px;height:700px'])
+        ?>
+    <?php } ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Gravar', ['class' => 'btn btn-guardar']) ?>
+        <?= Html::submitButton('Gravar', ['class' => 'btn btn-azul']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

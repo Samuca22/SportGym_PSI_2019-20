@@ -9,15 +9,15 @@ $this->title = $model->nome;
 ?>
 <div class="plano-update">
 
-    <h1>
+    <h4>
         <?php if ($model->treino == 1) {
             echo 'Plano de <strong>Treino: </strong>' . Html::encode($model->nome);
         } else {
             echo 'Plano de <strong>Nutrição: </strong>' . Html::encode($model->nome);
         }
         ?>
-    </h1>
-    <hr>
+    </h4>
+    <hr class="hr">
     <br>
 
     <?= $this->render('_form', [

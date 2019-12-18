@@ -5,14 +5,14 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Produto */
 
-$this->title = 'Editar Produto: ' . $model->IDproduto;
-$this->params['breadcrumbs'][] = ['label' => 'Produtos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->IDproduto, 'url' => ['view', 'id' => $model->IDproduto]];
-$this->params['breadcrumbs'][] = 'Update';
+$this->title = $model->nome;
 ?>
 <div class="produto-update">
 
-    <h1><?= Html::encode($this->title) ?></h1>
+
+    <h4>Atualizar Dados: <?= $model->nome ?></h4>
+    <hr class="hr">
+    <br>
 
     <?= $this->render('_form', [
         'model' => $model,
