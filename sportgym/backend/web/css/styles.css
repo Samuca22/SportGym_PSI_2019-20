@@ -1,0 +1,258 @@
+body{
+    background: #2E2F31;
+    color: #ffffff;
+}
+
+.hr{
+    margin-top: 0px;
+}
+
+.caixa-ver{
+    width:80%;
+    margin:auto;
+    border: 1px solid #ffffff;
+    padding: 16px 0;
+    border-radius:6px;
+}
+
+
+.caixa-ver-headers{
+    font-size:16px; 
+    margin-bottom:10px;
+    text-align:center;
+    border-radius:6px;
+    background:#3D77DF;
+    border: 1px solid #ffffff
+}
+
+.caixa-consulta{
+    border: 1px solid #595959; 
+    padding:10px;
+    border-radius:6px;
+    margin-bottom:20px; 
+}
+
+.td-descricao{
+    max-width:200px;
+    text-overflow:ellipsis;
+    overflow:hidden;
+    white-space: nowrap;
+}
+
+.text-consulta{
+    color: #737373;
+    font-size:14px;
+}
+
+.border-consulta{
+    border: 1px solid #595959;
+     padding:20px;
+     border-radius:6px;
+}
+
+/* Text */
+
+.text-center{
+    text-align: center;
+}
+
+/* botoes */
+
+.btn-azul{
+    background-color: #3D77DF;
+    color: #ffffff;
+    border-radius: 6px;
+    border: 1px solid white;
+}
+
+.btn-azul:hover{
+    background: #2e58a3;
+    color: #ffffff;
+}
+
+.btn-vermelho{
+    background: #d63e3e;
+    color: #ffffff;
+    border-radius: 6px;
+    border: 1px solid white;
+    margin-left: 10px;
+}
+
+.btn-vermelho:hover{
+    background: #912222;
+    color: #ffffff;
+}
+
+.btn-acao{
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.btn-acao:hover{
+    color: #3D77DF;
+    text-decoration: underline;
+}
+
+.btn-acao-reverse{
+    font-size: 14px;
+    color: #3D77DF;
+    text-decoration: underline;
+}
+
+.btn-acao-reverse:hover{
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/* Tabelas */
+
+.caixa-tabela{
+    overflow-y: auto;
+    height: auto;
+    max-height: 400px;
+    border: 1px solid #595959;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.planos-textarea{
+    width: 100%;
+    resize: none;
+    background: #f6f6f6;
+    color: #000000;
+    margin: 20px 0; 
+    padding: 8px;
+    height:400px;
+    border-radius: 6px;
+    overflow-y: auto;
+}
+
+.produtos-textarea{
+    width: 100%;
+    resize: none;
+    background: #f6f6f6;
+    color: #000000;
+    margin: 20px 0; 
+    padding: 8px;
+    height:150px;
+    border-radius: 6px;
+    overflow-y: auto;
+}
+
+.panel{
+    margin-bottom: 0;
+}
+
+
+/*
+* === Login ===
+*/
+
+.btn-login{
+    background: #2E2F31;
+    border-radius: 6px;
+    float: right;
+    border: 1px solid #ffffff;
+}
+
+.caixa-login{
+    width:40%;
+    padding:20px; 
+    margin: 50px auto;
+    background: #3D77DF;
+    border-radius: 6px;
+    border: 1px solid #ffffff;
+}
+
+
+/*
+* === Home ===
+*/
+
+.btn-home-ginasios{
+    width: 200px;
+    margin: 10px;
+    font-size: 18px;
+}
+
+
+
+/*
+* === Planos ===
+*/
+
+.btn-criar-plano{
+    margin-left: 20px;
+}
+
+
+/*
+* === Aulas ===
+*/
+
+.btn-ver-mapa{
+    margin-left: 20px;
+}
+
+.btn-mapa-aulas{
+    margin-left: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.table tr:nth-child(even) {
+    background-color: #595959;
+}
+
+.table tr:nth-child(odd) {
+    background-color: #2E2F31;;
+}
+
+
+
+#home-seccao-ginasios{
+    text-align: center;
+}
+
+.btn-ver-venda{
+    border-radius: 0;
+    background-color: #3D77DF;
+    color: #ffffff;
+    margin: auto  !important;
+}
+
+
+
+.venda-caixa-comprador{
+    border: 1px solid #b9b9b9;
+    padding: 10px;
+}
+
+#table-aulas{
+    text-align: center;
+}
+
+table tr td .btn-venda-ver-produto{
+    text-decoration: underline;
+}
+
+.btn-venda-ver-produto:hover{
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+/*
+* === vista view de perfil ===
+*/
