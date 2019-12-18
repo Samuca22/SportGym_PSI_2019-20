@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5538eca9-c884-44b9-ab32-fa76ffd70a24" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/sportgym/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/debug/index.data" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/runtime/debug/index.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportgym/backend/runtime/logs/app.log" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/runtime/logs/app.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sportgym/backend/views/perfil-aula/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/sportgym/backend/views/perfil-aula/index.php" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/sportgym/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\wamp64\www\SportGym_PSI_2019-20\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/sportgym/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/sebastian/recursion-context" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/sebastian/resource-operations" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/sebastian/diff" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/sebastian/global-state" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/sebastian/object-enumerator" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/symfony/yaml" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/sebastian/exporter" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/sebastian/comparator" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/sebastian/environment" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/sebastian/code-unit-reverse-lookup" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/opis/closure" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/sebastian/version" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/yiisoft/yii2-bootstrap" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/yiisoft/yii2-faker" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/yiisoft/yii2" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/yiisoft/yii2-swiftmailer" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/yiisoft/yii2-gii" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/phpdocumentor/reflection-docblock" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/phpdocumentor/type-resolver" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/yiisoft/yii2-composer" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/yiisoft/yii2-debug" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/phpdocumentor/reflection-common" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/bower-asset/inputmask" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/bower-asset/bootstrap" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/bower-asset/jquery" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/behat/gherkin" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/bower-asset/yii2-pjax" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/bower-asset/punycode" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/myclabs/deep-copy" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/composer" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/psr/http-message" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/codeception/stub" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/codeception/base" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/codeception/phpunit-wrapper" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/codeception/verify" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/cebe/markdown" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/fzaninotto/faker" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/ezyang/htmlpurifier" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/phpspec/php-diff" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/phpspec/prophecy" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/phpunit/php-text-template" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/phpunit/php-token-stream" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/phpunit/php-file-iterator" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/phpunit/php-timer" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/phpunit/php-code-coverage" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/phpunit/phpunit-mock-objects" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/phpunit/phpunit" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/guzzlehttp/psr7" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/ralouphie/getallheaders" />
+      <path value="$PROJECT_DIR$/sportgym/vendor/symfony/css-selector" />
+    </include_path>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="85" />
+    <option name="y" value="25" />
+    <option name="width" value="1750" />
+    <option name="height" value="980" />
+  </component>
+  <component name="ProjectId" id="1UCILLfxZYbLbWOMGDSf2Sezncn" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SportGym_PSI_2019-20" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SportGym_PSI_2019-20" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../SportGym_PSI_2019-20_APP" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5538eca9-c884-44b9-ab32-fa76ffd70a24" name="Default Changelist" comment="" />
+      <created>1574854093526</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1574854093526</updated>
+      <workItem from="1574854094879" duration="379000" />
+      <workItem from="1574854477339" duration="8695000" />
+      <workItem from="1574881370853" duration="5943000" />
+      <workItem from="1575038922519" duration="2848000" />
+      <workItem from="1575361660364" duration="2499000" />
+      <workItem from="1575368514936" duration="4095000" />
+      <workItem from="1575405862117" duration="31000" />
+      <workItem from="1575460241374" duration="6759000" />
+      <workItem from="1575489720543" duration="3099000" />
+      <workItem from="1575566833862" duration="14729000" />
+      <workItem from="1575904971434" duration="49000" />
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" visible="true" weight="0.32980832" />
+      <window_info id="Structure" side_tool="true" />
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="Resources Explorer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info id="Captures" order="0" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="TODO" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="right" id="Theme Preview" />
+      <window_info anchor="right" id="Palette&#9;" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list />
+          </value>
+        </entry>
+        <entry key="User">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
