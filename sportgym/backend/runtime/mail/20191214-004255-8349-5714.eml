@@ -1,0 +1,49 @@
+Message-ID: <b6ac9f651663d1075ae3f6a20f1c551b@sportgym.back>
+Date: Sat, 14 Dec 2019 00:42:55 +0000
+Subject: Account registration at My Application
+From: My Application robot <support@example.com>
+To: ricardofm1712@gmail.com
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift_v4_1576284175_af2804d8de22a0c72c95f38a9481e0fa_=_"
+
+
+--_=_swift_v4_1576284175_af2804d8de22a0c72c95f38a9481e0fa_=_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+Hello N-uPLrFA,
+
+Follow the link below to verify your email:
+
+http://sportgym.back/site/verify-email?token=3DpTMLls2FR-GDb8ioef3bTk_vZOxs=
+wVjW_1576284175
+
+--_=_swift_v4_1576284175_af2804d8de22a0c72c95f38a9481e0fa_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+" />
+    <title></title>
+    </head>
+<body>
+        <div class=3D"verify-email">
+    <p>Hello N-uPLrFA,</p>
+
+    <p>Follow the link below to verify your email:</p>
+
+    <p><a href=3D"http://sportgym.back/site/verify-email?token=3DpTMLls2FR-=
+GDb8ioef3bTk_vZOxswVjW_1576284175">http://sportgym.back/site/verify-email?t=
+oken=3DpTMLls2FR-GDb8ioef3bTk_vZOxswVjW_1576284175</a></p>
+</div>
+    </body>
+</html>
+
+
+--_=_swift_v4_1576284175_af2804d8de22a0c72c95f38a9481e0fa_=_--

@@ -1,0 +1,49 @@
+Message-ID: <d6c666179f711cf16147de56aab01850@sportgym.front>
+Date: Tue, 03 Dec 2019 10:49:53 +0000
+Subject: Account registration at My Application
+From: My Application robot <support@example.com>
+To: colab@colab.com
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="_=_swift_v4_1575370193_5c510b6a9291dd1f9eef00be78e560d6_=_"
+
+
+--_=_swift_v4_1575370193_5c510b6a9291dd1f9eef00be78e560d6_=_
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+
+Hello colab,
+
+Follow the link below to verify your email:
+
+http://sportgym.front/site/verify-email?token=3DNMaUj9sMOZ5_14DEjSQsYGd7FHP=
+D7VwX_1575370193
+
+--_=_swift_v4_1575370193_5c510b6a9291dd1f9eef00be78e560d6_=_
+Content-Type: text/html; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org=
+/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=3D"http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8=
+" />
+    <title></title>
+    </head>
+<body>
+        <div class=3D"verify-email">
+    <p>Hello colab,</p>
+
+    <p>Follow the link below to verify your email:</p>
+
+    <p><a href=3D"http://sportgym.front/site/verify-email?token=3DNMaUj9sMO=
+Z5_14DEjSQsYGd7FHPD7VwX_1575370193">http://sportgym.front/site/verify-email=
+?token=3DNMaUj9sMOZ5_14DEjSQsYGd7FHPD7VwX_1575370193</a></p>
+</div>
+    </body>
+</html>
+
+
+--_=_swift_v4_1575370193_5c510b6a9291dd1f9eef00be78e560d6_=_--
