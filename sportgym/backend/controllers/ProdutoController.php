@@ -94,7 +94,6 @@ class ProdutoController extends Controller
     {
         $model = new Produto();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $model->save();
             $nome_imagem = 'prod' . $model->IDproduto;    //Atribui nome aleatório ao ficheiro 
             $model->file = UploadedFile::getInstance($model, 'file');
             $model->estado = 0;

@@ -6540,3 +6540,900 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1576700034.179
     'REQUEST_TIME' => 1576700034
 ]
+2019-12-19 16:39:38 [::1][1][n0jpq26l9g1kd6tocad0vju97r][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "ginasio". in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ginasio', Array)
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2019-12-19 16:39:38 [::1][1][n0jpq26l9g1kd6tocad0vju97r][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'n0jpq26l9g1kd6tocad0vju97r'
+    '_identity-backend' => '3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"srWppg_5NWZ9P2wsAssNS9_tDvdLWePv\",2592000]\";}'
+    '_csrf-backend' => 'fb8eda32a16029c180cffbfefb887e16421e4f2aaf24e8e3fbfe8caae4ddb3f0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JSOSgERtdUEe1Y4vvbxUAJZukL--y45t\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=n0jpq26l9g1kd6tocad0vju97r; _identity-backend=3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22srWppg_5NWZ9P2wsAssNS9_tDvdLWePv%22%2C2592000%5D%22%3B%7D; _csrf-backend=fb8eda32a16029c180cffbfefb887e16421e4f2aaf24e8e3fbfe8caae4ddb3f0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JSOSgERtdUEe1Y4vvbxUAJZukL--y45t%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '55484'
+    'REDIRECT_URL' => '/ginasio'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/ginasio'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1576773578.097
+    'REQUEST_TIME' => 1576773578
+]
+2019-12-19 16:39:42 [::1][1][n0jpq26l9g1kd6tocad0vju97r][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "ginasios". in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ginasios', Array)
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2019-12-19 16:39:42 [::1][1][n0jpq26l9g1kd6tocad0vju97r][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'n0jpq26l9g1kd6tocad0vju97r'
+    '_identity-backend' => '3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"srWppg_5NWZ9P2wsAssNS9_tDvdLWePv\",2592000]\";}'
+    '_csrf-backend' => 'fb8eda32a16029c180cffbfefb887e16421e4f2aaf24e8e3fbfe8caae4ddb3f0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JSOSgERtdUEe1Y4vvbxUAJZukL--y45t\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=n0jpq26l9g1kd6tocad0vju97r; _identity-backend=3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22srWppg_5NWZ9P2wsAssNS9_tDvdLWePv%22%2C2592000%5D%22%3B%7D; _csrf-backend=fb8eda32a16029c180cffbfefb887e16421e4f2aaf24e8e3fbfe8caae4ddb3f0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JSOSgERtdUEe1Y4vvbxUAJZukL--y45t%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '55483'
+    'REDIRECT_URL' => '/ginasios'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/ginasios'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1576773582.765
+    'REQUEST_TIME' => 1576773582
+]
+2019-12-19 16:39:47 [::1][1][n0jpq26l9g1kd6tocad0vju97r][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "ginasio". in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php:537
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ginasio', Array)
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#2 {main}
+2019-12-19 16:39:46 [::1][1][n0jpq26l9g1kd6tocad0vju97r][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'n0jpq26l9g1kd6tocad0vju97r'
+    '_identity-backend' => '3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"srWppg_5NWZ9P2wsAssNS9_tDvdLWePv\",2592000]\";}'
+    '_csrf-backend' => 'fb8eda32a16029c180cffbfefb887e16421e4f2aaf24e8e3fbfe8caae4ddb3f0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JSOSgERtdUEe1Y4vvbxUAJZukL--y45t\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=n0jpq26l9g1kd6tocad0vju97r; _identity-backend=3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22srWppg_5NWZ9P2wsAssNS9_tDvdLWePv%22%2C2592000%5D%22%3B%7D; _csrf-backend=fb8eda32a16029c180cffbfefb887e16421e4f2aaf24e8e3fbfe8caae4ddb3f0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JSOSgERtdUEe1Y4vvbxUAJZukL--y45t%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '55484'
+    'REDIRECT_URL' => '/ginasio'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/ginasio'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1576773586.975
+    'REQUEST_TIME' => 1576773586
+]
+2019-12-19 16:48:10 [::1][1][n0jpq26l9g1kd6tocad0vju97r][error][yii\db\Exception] PDOException: SQLSTATE[HY000]: General error: 1364 Field 'estado' doesn't have a default value in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php:1290
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1290): PDOStatement->execute()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1091): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(432): yii\db\Command->execute()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('produto', Array)
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\ProdutoController.php(97): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\ProdutoController->actionCreate()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('produto/create', Array)
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000]: General error: 1364 Field 'estado' doesn't have a default value
+The SQL being executed was: INSERT INTO `produto` (`nome`, `precoProduto`, `descricao`) VALUES ('Shake', 4, 'Batatas fritas') in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php:674
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `pr...')
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1091): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(432): yii\db\Command->execute()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('produto', Array)
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\ProdutoController.php(97): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\ProdutoController->actionCreate()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('produto/create', Array)
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 1364
+    [2] => Field 'estado' doesn't have a default value
+)
+
+2019-12-19 16:48:10 [::1][1][n0jpq26l9g1kd6tocad0vju97r][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'fnsdlBj9N6vNeTZSxhXFdxHIWsUbVfI99nBZO8uCQs40KFLHf7hl36ksczf3TPEBZ6oikFofqEidPHQWsrZ3ug=='
+    'Produto' => [
+        'nome' => 'Shake'
+        'precoProduto' => '4'
+        'descricao' => 'Batatas fritas'
+        'file' => ''
+    ]
+]
+
+$_FILES = [
+    'Produto' => [
+        'name' => [
+            'file' => 'MAPA AULAS.png'
+        ]
+        'type' => [
+            'file' => 'image/png'
+        ]
+        'tmp_name' => [
+            'file' => 'C:\\wamp64\\tmp\\phpA8B3.tmp'
+        ]
+        'error' => [
+            'file' => 0
+        ]
+        'size' => [
+            'file' => 178296
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'n0jpq26l9g1kd6tocad0vju97r'
+    '_identity-backend' => '3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"srWppg_5NWZ9P2wsAssNS9_tDvdLWePv\",2592000]\";}'
+    '_csrf-backend' => 'fb8eda32a16029c180cffbfefb887e16421e4f2aaf24e8e3fbfe8caae4ddb3f0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JSOSgERtdUEe1Y4vvbxUAJZukL--y45t\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '179113'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryU2aYtTEIQtsNOYDS'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://sportgym.back/produto/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=n0jpq26l9g1kd6tocad0vju97r; _identity-backend=3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22srWppg_5NWZ9P2wsAssNS9_tDvdLWePv%22%2C2592000%5D%22%3B%7D; _csrf-backend=fb8eda32a16029c180cffbfefb887e16421e4f2aaf24e8e3fbfe8caae4ddb3f0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JSOSgERtdUEe1Y4vvbxUAJZukL--y45t%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '55755'
+    'REDIRECT_URL' => '/produto/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/produto/create'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1576774090.575
+    'REQUEST_TIME' => 1576774090
+]
+2019-12-19 16:49:00 [::1][1][n0jpq26l9g1kd6tocad0vju97r][error][yii\db\Exception] PDOException: SQLSTATE[HY000]: General error: 1364 Field 'estado' doesn't have a default value in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php:1290
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1290): PDOStatement->execute()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1091): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(432): yii\db\Command->execute()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('produto', Array)
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\ProdutoController.php(97): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\ProdutoController->actionCreate()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('produto/create', Array)
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000]: General error: 1364 Field 'estado' doesn't have a default value
+The SQL being executed was: INSERT INTO `produto` (`nome`, `precoProduto`, `descricao`) VALUES ('Shake', 4, 'Batatas fritas') in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php:674
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `pr...')
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1091): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(432): yii\db\Command->execute()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('produto', Array)
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\ProdutoController.php(97): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\ProdutoController->actionCreate()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('produto/create', Array)
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 1364
+    [2] => Field 'estado' doesn't have a default value
+)
+
+2019-12-19 16:49:00 [::1][1][n0jpq26l9g1kd6tocad0vju97r][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'fnsdlBj9N6vNeTZSxhXFdxHIWsUbVfI99nBZO8uCQs40KFLHf7hl36ksczf3TPEBZ6oikFofqEidPHQWsrZ3ug=='
+    'Produto' => [
+        'nome' => 'Shake'
+        'precoProduto' => '4'
+        'descricao' => 'Batatas fritas'
+        'file' => ''
+    ]
+]
+
+$_FILES = [
+    'Produto' => [
+        'name' => [
+            'file' => 'MAPA AULAS.png'
+        ]
+        'type' => [
+            'file' => 'image/png'
+        ]
+        'tmp_name' => [
+            'file' => 'C:\\wamp64\\tmp\\php6A6E.tmp'
+        ]
+        'error' => [
+            'file' => 0
+        ]
+        'size' => [
+            'file' => 178296
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'n0jpq26l9g1kd6tocad0vju97r'
+    '_identity-backend' => '3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"srWppg_5NWZ9P2wsAssNS9_tDvdLWePv\",2592000]\";}'
+    '_csrf-backend' => 'fb8eda32a16029c180cffbfefb887e16421e4f2aaf24e8e3fbfe8caae4ddb3f0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JSOSgERtdUEe1Y4vvbxUAJZukL--y45t\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '179113'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryU2aYtTEIQtsNOYDS'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://sportgym.back/produto/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=n0jpq26l9g1kd6tocad0vju97r; _identity-backend=3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22srWppg_5NWZ9P2wsAssNS9_tDvdLWePv%22%2C2592000%5D%22%3B%7D; _csrf-backend=fb8eda32a16029c180cffbfefb887e16421e4f2aaf24e8e3fbfe8caae4ddb3f0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JSOSgERtdUEe1Y4vvbxUAJZukL--y45t%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '55767'
+    'REDIRECT_URL' => '/produto/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/produto/create'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1576774140.167
+    'REQUEST_TIME' => 1576774140
+]
+2019-12-19 16:49:18 [::1][1][n0jpq26l9g1kd6tocad0vju97r][error][yii\db\Exception] PDOException: SQLSTATE[HY000]: General error: 1364 Field 'estado' doesn't have a default value in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php:1290
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1290): PDOStatement->execute()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1091): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(432): yii\db\Command->execute()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('produto', Array)
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\ProdutoController.php(97): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\ProdutoController->actionCreate()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('produto/create', Array)
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000]: General error: 1364 Field 'estado' doesn't have a default value
+The SQL being executed was: INSERT INTO `produto` (`nome`, `precoProduto`, `descricao`) VALUES ('maionese', 3, 'para comer ') in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php:674
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `pr...')
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1091): yii\db\Command->internalExecute('INSERT INTO `pr...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(432): yii\db\Command->execute()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('produto', Array)
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\ProdutoController.php(97): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\ProdutoController->actionCreate()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('produto/create', Array)
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => HY000
+    [1] => 1364
+    [2] => Field 'estado' doesn't have a default value
+)
+
+2019-12-19 16:49:18 [::1][1][n0jpq26l9g1kd6tocad0vju97r][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'h9pmPwtE8lamF7v9Ai15sOPxhX3Gdu4cNsKOPn9mXKXNiSlsbAGgIsJC_pgzdE3GlZP9KIc8tGldjqMTBlJp0Q=='
+    'Produto' => [
+        'nome' => 'maionese'
+        'precoProduto' => '3'
+        'descricao' => 'para comer '
+        'file' => ''
+    ]
+]
+
+$_FILES = [
+    'Produto' => [
+        'name' => [
+            'file' => ''
+        ]
+        'type' => [
+            'file' => ''
+        ]
+        'tmp_name' => [
+            'file' => ''
+        ]
+        'error' => [
+            'file' => 4
+        ]
+        'size' => [
+            'file' => 0
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'n0jpq26l9g1kd6tocad0vju97r'
+    '_identity-backend' => '3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"srWppg_5NWZ9P2wsAssNS9_tDvdLWePv\",2592000]\";}'
+    '_csrf-backend' => 'fb8eda32a16029c180cffbfefb887e16421e4f2aaf24e8e3fbfe8caae4ddb3f0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JSOSgERtdUEe1Y4vvbxUAJZukL--y45t\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '818'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundary56ok0z6FOrUWR0NO'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://sportgym.back/produto/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=n0jpq26l9g1kd6tocad0vju97r; _identity-backend=3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22srWppg_5NWZ9P2wsAssNS9_tDvdLWePv%22%2C2592000%5D%22%3B%7D; _csrf-backend=fb8eda32a16029c180cffbfefb887e16421e4f2aaf24e8e3fbfe8caae4ddb3f0a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22JSOSgERtdUEe1Y4vvbxUAJZukL--y45t%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '55783'
+    'REDIRECT_URL' => '/produto/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/produto/create'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1576774158.354
+    'REQUEST_TIME' => 1576774158
+]
+2019-12-19 16:59:39 [::1][1][vt1bcueikpnv1o2fp1jok25j53][error][yii\db\Exception] PDOException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '1996-19-07' for column 'dtaNascimento' at row 1 in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php:1290
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1290): PDOStatement->execute()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1091): yii\db\Command->internalExecute('INSERT INTO `pe...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(432): yii\db\Command->execute()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('perfil', Array)
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\PerfilController.php(136): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\PerfilController->actionCreate()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('perfil/create', Array)
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+
+Next yii\db\Exception: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '1996-19-07' for column 'dtaNascimento' at row 1
+The SQL being executed was: INSERT INTO `perfil` (`primeiroNome`, `apelido`, `dtaNascimento`, `genero`, `telefone`, `nif`, `rua`, `localidade`, `cp`, `IDperfil`, `nSocio`, `foto`) VALUES ('Goncalo', 'Oliveira', '1996-19-07', 'M', '9123424234', '124234234', 'Rua da riberita', 'Leiria', '2323-323', 3, '1003', 'prof1003.png') in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php:674
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `pe...')
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1091): yii\db\Command->internalExecute('INSERT INTO `pe...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(432): yii\db\Command->execute()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('perfil', Array)
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\PerfilController.php(136): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\PerfilController->actionCreate()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('perfil/create', Array)
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 22007
+    [1] => 1292
+    [2] => Incorrect date value: '1996-19-07' for column 'dtaNascimento' at row 1
+)
+
+2019-12-19 16:59:38 [::1][1][vt1bcueikpnv1o2fp1jok25j53][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'gqEZf_evc4ey_agJpNcmIpid3iYrx5fIQNrJn_IUp63sw1RKkIIfyMOQ2H70oFRx9O6JF3L20ZcqkYH8s37V2g=='
+    'Perfil' => [
+        'primeiroNome' => 'Goncalo'
+        'apelido' => 'Oliveira'
+        'dtaNascimento' => '1996-19-07'
+        'genero' => 'M'
+        'telefone' => '9123424234'
+        'nif' => '124234234'
+        'rua' => 'Rua da riberita'
+        'localidade' => 'Leiria'
+        'cp' => '2323-323'
+        'file' => ''
+    ]
+    'SignupForm' => [
+        'email' => 'goncalo_oliveira14@hotmail.com'
+    ]
+    'Adesao' => [
+        'IDginasio' => '1'
+    ]
+]
+
+$_FILES = [
+    'Perfil' => [
+        'name' => [
+            'file' => 'transferir.png'
+        ]
+        'type' => [
+            'file' => 'image/png'
+        ]
+        'tmp_name' => [
+            'file' => 'C:\\wamp64\\tmp\\php292F.tmp'
+        ]
+        'error' => [
+            'file' => 0
+        ]
+        'size' => [
+            'file' => 776029
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'vt1bcueikpnv1o2fp1jok25j53'
+    '_identity-backend' => '3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"srWppg_5NWZ9P2wsAssNS9_tDvdLWePv\",2592000]\";}'
+    '_csrf-backend' => '44247f161db0f39771c4a899d628f595459a5e0fda1ca4dbc6b71ac5c2b5b72da:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"nbM5g-lOqmpwPwrSlsW1Y1F_jKHcAjrw\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '777743'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryt3ktOepjvxh5ZSdS'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36 Edg/79.0.309.54'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://sportgym.back/perfil/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,pt-BR;q=0.8,en;q=0.7,en-US;q=0.6,en-GB;q=0.5'
+    'HTTP_COOKIE' => 'advanced-backend=vt1bcueikpnv1o2fp1jok25j53; _identity-backend=3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22srWppg_5NWZ9P2wsAssNS9_tDvdLWePv%22%2C2592000%5D%22%3B%7D; _csrf-backend=44247f161db0f39771c4a899d628f595459a5e0fda1ca4dbc6b71ac5c2b5b72da%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22nbM5g-lOqmpwPwrSlsW1Y1F_jKHcAjrw%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '56100'
+    'REDIRECT_URL' => '/perfil/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/perfil/create'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1576774778.83
+    'REQUEST_TIME' => 1576774778
+]
+2019-12-19 17:16:59 [::1][1][vt1bcueikpnv1o2fp1jok25j53][error][yii\db\Exception] PDOException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '1996-07-1996' for column 'dtaNascimento' at row 1 in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php:1290
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1290): PDOStatement->execute()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1091): yii\db\Command->internalExecute('INSERT INTO `pe...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(432): yii\db\Command->execute()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('perfil', Array)
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\PerfilController.php(136): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\PerfilController->actionCreate()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('perfil/create', Array)
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+
+Next yii\db\Exception: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '1996-07-1996' for column 'dtaNascimento' at row 1
+The SQL being executed was: INSERT INTO `perfil` (`primeiroNome`, `apelido`, `dtaNascimento`, `genero`, `telefone`, `nif`, `rua`, `localidade`, `cp`, `IDperfil`, `nSocio`, `foto`) VALUES ('Gonçalo', 'Oliveira', '1996-07-1996', 'M', '912324242', '12324242', 'Rua da liberdad', 'Lieria', '1233-233', 2, '1002', 'prof1002.png') in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php:674
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `pe...')
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1091): yii\db\Command->internalExecute('INSERT INTO `pe...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(432): yii\db\Command->execute()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('perfil', Array)
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\PerfilController.php(136): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\PerfilController->actionCreate()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('create', Array)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('perfil/create', Array)
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 22007
+    [1] => 1292
+    [2] => Incorrect date value: '1996-07-1996' for column 'dtaNascimento' at row 1
+)
+
+2019-12-19 17:16:58 [::1][1][vt1bcueikpnv1o2fp1jok25j53][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'l0BCq_HqfbYqX_YljXUvi6jpnCm75Znj6vbtrCmvLNL5Ig-elscR-VsyhlLdAl3YxJrLGOLU37yAvaXPaMVepQ=='
+    'Perfil' => [
+        'primeiroNome' => 'Gonçalo'
+        'apelido' => 'Oliveira'
+        'dtaNascimento' => '1996-07-1996'
+        'genero' => 'M'
+        'telefone' => '912324242'
+        'nif' => '12324242'
+        'rua' => 'Rua da liberdad'
+        'localidade' => 'Lieria'
+        'cp' => '1233-233'
+        'file' => ''
+    ]
+    'SignupForm' => [
+        'email' => 'goncalo@hotmail.com'
+    ]
+    'Adesao' => [
+        'IDginasio' => '1'
+    ]
+]
+
+$_FILES = [
+    'Perfil' => [
+        'name' => [
+            'file' => 'transferir.png'
+        ]
+        'type' => [
+            'file' => 'image/png'
+        ]
+        'tmp_name' => [
+            'file' => 'C:\\wamp64\\tmp\\php669.tmp'
+        ]
+        'error' => [
+            'file' => 0
+        ]
+        'size' => [
+            'file' => 776029
+        ]
+    ]
+]
+
+$_COOKIE = [
+    'advanced-backend' => 'vt1bcueikpnv1o2fp1jok25j53'
+    '_identity-backend' => '3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"srWppg_5NWZ9P2wsAssNS9_tDvdLWePv\",2592000]\";}'
+    '_csrf-backend' => '44247f161db0f39771c4a899d628f595459a5e0fda1ca4dbc6b71ac5c2b5b72da:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"nbM5g-lOqmpwPwrSlsW1Y1F_jKHcAjrw\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '777733'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryD0AUA9udv7VoRvFW'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36 Edg/79.0.309.54'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://sportgym.back/perfil/create'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,pt-BR;q=0.8,en;q=0.7,en-US;q=0.6,en-GB;q=0.5'
+    'HTTP_COOKIE' => 'advanced-backend=vt1bcueikpnv1o2fp1jok25j53; _identity-backend=3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22srWppg_5NWZ9P2wsAssNS9_tDvdLWePv%22%2C2592000%5D%22%3B%7D; _csrf-backend=44247f161db0f39771c4a899d628f595459a5e0fda1ca4dbc6b71ac5c2b5b72da%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22nbM5g-lOqmpwPwrSlsW1Y1F_jKHcAjrw%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '56302'
+    'REDIRECT_URL' => '/perfil/create'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/perfil/create'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1576775818.497
+    'REQUEST_TIME' => 1576775818
+]
