@@ -7,10 +7,12 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\PerfilAulaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Perfil Aulas';
+$this->title = 'Aulas';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<h3>MAPA DE AULAS</h3>
+<h3>
+    <center>Mapa de Aulas</center>
+</h3>
 <hr class="hr">
 <br>
 <div class="panel">
@@ -108,29 +110,25 @@ $this->params['breadcrumbs'][] = $this->title;
         </tr>
     </table>
 </div>
+<br>
+<br>
 
-<div class="perfil-aula-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Create Perfil Aula', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'IDperfil',
-            'IDaula',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+<h3>
+    <center>Aulas Inscritas</center>
+</h3>
+<hr class="hr">
+<br>
 
 
-</div>
+<?php foreach ($dataProvider->models as $model) : ?>
+    <div class="col-md-3">
+        <div class="mostrar-aulas">
+            <span><?= $model->iDaula->tipo ?></span>
+        </div>
+    </div>
+<?php endforeach; ?>
+
+
+
+
+

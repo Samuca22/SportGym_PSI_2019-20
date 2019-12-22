@@ -2,9 +2,12 @@
 
 namespace frontend\controllers;
 
+use common\models\Aula;
+use common\models\Perfil;
 use Yii;
 use common\models\PerfilAula;
 use common\models\PerfilAulaSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,11 +38,17 @@ class PerfilAulaController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new PerfilAulaSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        $user = Yii::$app->user->identity;
+        $query = PerfilAula::find()->where(['IDperfil' => $user->id]);
+
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
+
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
         ]);
     }

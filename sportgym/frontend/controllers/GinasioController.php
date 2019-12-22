@@ -2,9 +2,11 @@
 
 namespace frontend\controllers;
 
+use common\models\PerfilAula;
 use Yii;
 use common\models\Ginasio;
 use common\models\GinasioSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,12 +37,14 @@ class GinasioController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new GinasioSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        $ginasio_dataProvider = new ActiveDataProvider([
+            'query' => Ginasio::find(),
+        ]);
+
 
         return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
+            'ginasio_dataProvider' => $ginasio_dataProvider,
         ]);
     }
 
