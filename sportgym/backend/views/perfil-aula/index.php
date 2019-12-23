@@ -11,19 +11,19 @@ $this->title = 'Gestão de Aulas';
 ?>
 <div class="aula-index">
 
-    <h3>Inscrever Sócios em Aulas <?= Html::a('Ver Mapa de Aulas', ['mapa-aulas'], ['class' => 'btn btn-lg btn-azul btn-ver-mapa', 'target' => '_blank']) ?></h3>
+    <h3>Inscrever Sócios em
+        Aulas <?= Html::a('Ver Mapa de Aulas', ['mapa-aulas'], ['class' => 'btn btn-lg btn-azul btn-ver-mapa', 'target' => '_blank']) ?></h3>
     <hr class="hr">
     <br>
 
     <?= $this->render('/perfil-aula/_form', ['modelPerfilAula' => $modelPerfilAula]) ?>
 
 
-
     <div class="row">
         <div class="col-md-12">
             <span class="text-consulta">Consultar</span>
             <div class="border-consulta">
-                <?php echo $this->render('/perfil/_search', ['model' => $perfis_searchModel]);?>
+                <?php echo $this->render('/perfil/_search', ['model' => $perfis_searchModel]); ?>
                 <div class="caixa-tabela">
                     <div class="panel">
                         <table class="table table-bordered">
@@ -69,17 +69,17 @@ $this->title = 'Gestão de Aulas';
                             </tr>
                             <?php foreach ($perfisaulas_dataProvider->models as $model) : ?>
                                 <tr>
-                                    <td><?= $model->iDperfil->nSocio .' - '. $model->iDperfil->primeiroNome .' '. $model->iDperfil->apelido ?></td>
-                                    <td><?= $model->iDaula->tipo?></td>
+                                    <td><?= $model->iDperfil->nSocio . ' - ' . $model->iDperfil->primeiroNome . ' ' . $model->iDperfil->apelido ?></td>
+                                    <td><?= $model->iDaula->tipo ?></td>
                                     <td class="text-center">
                                         <?=
-                                            Html::a('Cancelar Inscrição', ['delete', 'IDperfil' => $model->IDperfil, 'IDaula' => $model->IDaula], [
-                                                'class' => 'btn btn-acao',
-                                                'data' => [
-                                                    'confirm' => 'Tem a certeza que pretende cancelar esta inscrição?',
-                                                    'method' => 'post',
-                                                ],
-                                            ])
+                                        Html::a('Cancelar Inscrição', ['delete', 'IDperfil' => $model->IDperfil, 'IDaula' => $model->IDaula], [
+                                            'class' => 'btn btn-acao',
+                                            'data' => [
+                                                'confirm' => 'Tem a certeza que pretende cancelar esta inscrição?',
+                                                'method' => 'post',
+                                            ],
+                                        ])
                                         ?>
                                     </td>
                                 </tr>

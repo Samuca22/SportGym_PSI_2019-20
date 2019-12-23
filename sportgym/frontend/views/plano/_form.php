@@ -1,5 +1,6 @@
 <?php
 
+
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -10,18 +11,52 @@ use yii\widgets\ActiveForm;
 
 <div class="plano-form">
 
+    <?php if ($model->treino == 1) {
+        echo 'Plano de Treino ';
+
+    } else {
+        echo 'Plano de Nutrição ';
+    }
+    ?>
+    <br>
+    <br>
+
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'nutricao')->textInput() ?>
+    <?php if ($model->descricao == null) { ?>
+        <?= $form->field($model, 'descricao')->textarea([
+            'maxlength' => true, 'style' => 'resize:none;width:500px;height:700px;overflow-y:auto;',
+            'value' => 'Nome Plano - Objetivo
 
-    <?= $form->field($model, 'treino')->textInput() ?>
+        PEQUENO-ALMOÇO
+        leite com aveia OU ovos com batatas
+    
+        LANCHE DA MANHÃ
+        Pão com atum
 
-    <?= $form->field($model, 'descricao')->textInput(['maxlength' => true]) ?>
+        ALMOÇO
+        Batata doce com arroz com um peito de frango
+    
+        LANCHA DA TARDE
+        Pão com cebola e maionese
+    
+        JANTAR
+        Batata salgada com massa e salmão
+    
+        CEIA
+        Shake',
+
+            'class' => 'form-control'
+        ]) ?>
+    <?php } else { ?>
+        <?=
+        $form->field($model, 'descricao')->textarea(['maxlength' => true, 'style' => 'resize:none;width:500px;height:700px'])
+        ?>
+    <?php } ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Gravar', ['class' => 'btn btn-azul']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

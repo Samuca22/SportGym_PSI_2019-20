@@ -2,9 +2,12 @@
 
 namespace frontend\controllers;
 
+use common\models\PerfilPlano;
+use common\models\PerfilPlanoSearch;
 use Yii;
 use common\models\Venda;
 use common\models\VendaSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,8 +38,20 @@ class VendaController extends Controller
      */
     public function actionIndex()
     {
+
+        $user = Yii::$app->user->identity;
+        $query = Venda::find()->where(['IDperfil' => $user->id])->andWhere('estado = 1');;
+
         $searchModel = new VendaSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        //   $dataProvider=$searchModel->search(Yii::$app->request->queryParams);
+
+
+        $venda_dataProvider = new ActiveDataProvider ([
+            'query' => $query,
+        ]);
+
+
+        $dataProvider = $venda_dataProvider;
 
         return $this->render('index', [
             'searchModel' => $searchModel,

@@ -44,8 +44,8 @@ class PerfilAulaController extends Controller
 
 
         $dataProvider = new ActiveDataProvider([
-            'query' => $query,
-        ]);
+        'query' => $query,
+    ]);
 
 
         return $this->render('index', [

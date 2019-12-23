@@ -1,7 +1,5 @@
 <?php
 
-use yii\helpers\Html;
-use yii\grid\GridView;
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\GinasioSearch */
@@ -9,14 +7,14 @@ use yii\grid\GridView;
 
 $this->title = 'Clubes';
 
-?>
+use yii\helpers\Html; ?>
 
 
 <div class="ginasio-cotainer">
     <div class="ginasio-hero">
         <div class="ginasio-hero-copy">
             <h3>
-                <center>Clubes</center>
+                <center><?= Html::encode($this->title) ?></center>
             </h3>
             <hr class="hr">
             <br>

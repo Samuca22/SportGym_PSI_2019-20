@@ -5,6 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use common\models\PerfilPlano;
 use common\models\PerfilPlanoSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,8 +36,19 @@ class PerfilPlanoController extends Controller
      */
     public function actionIndex()
     {
+
+        $user = Yii::$app->user->identity;
+        $query = PerfilPlano::find()->where(['IDperfil' => $user->id]);
+
+
         $searchModel = new PerfilPlanoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        $plano_dataProvider = new ActiveDataProvider ([
+            'query' => $query,
+        ]);
+
+        $dataProvider = $plano_dataProvider;
 
         return $this->render('index', [
             'searchModel' => $searchModel,

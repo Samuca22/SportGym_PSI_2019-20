@@ -6,6 +6,7 @@ body {
 .hr {
     margin-top: 0px;
 }
+
 /*PERFIL-AULA VIEW */
 .table tr:nth-child(even) {
     background-color: #595959;
@@ -30,7 +31,7 @@ body {
 }
 
 /*GINASISO VIEW */
-.mostrar-ginasios{
+.mostrar-ginasios {
     border: 1px solid #ddd;
     text-align: center;
     border-radius: 6px;
@@ -43,21 +44,22 @@ body {
 
 
 }
+
 .mostrar-ginasios:hover {
     filter: blur(0px);
 }
 
 
-/*GINASISO VIEW - background */
-.ginasio-cotainer{
+/*GINASISO  - background */
+.ginasio-cotainer {
     position: absolute;
-    left:0;
-    top:0;
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
 }
 
-.ginasio-hero{
+.ginasio-hero {
     height: 100%;
     width: 100%;
     background-image: linear-gradient(rgba(26, 26, 26, 0.6), rgba(26, 26, 26, 0.6)), url("../images/clubesimg.png");
@@ -66,7 +68,86 @@ body {
     background-position: center;
 }
 
-.ginasio-hero-copy{
-    padding-top:70px;
+.ginasio-hero-copy {
+    padding-top: 70px;
     text-align: center;
 }
+
+/*Sobre Nós VIEW */
+/*SOBRE NOS  - background */
+
+.sobre-nos-cotainer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.sobre-nos-hero {
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(rgba(26, 26, 26, 0.6), rgba(26, 26, 26, 0.6)), url("../images/sobrenosimg.png");
+    background-repeat: no-repeat;
+    background-position: top;
+}
+
+.sobre-nos-hero-copy {
+    padding-top: 70px;
+    text-align: center;
+}
+
+
+/*MEUS PLANOS VIEW */
+
+
+.mostrar-planos {
+    text-align: center;
+    color: black;
+    background: white;
+    border-radius: 6px;
+    height: 150px;
+    vertical-align: middle;
+    font-size: 20px;
+}
+
+.planos-textarea {
+    width: 100%;
+    resize: none;
+    background: #f6f6f6;
+    color: #000000;
+    margin: 20px 0;
+    padding: 8px;
+    height: 400px;
+    border-radius: 6px;
+    overflow-y: auto;
+}
+
+
+/*BOTOES */
+
+.btn-azul {
+    background-color: #3D77DF;
+    color: #ffffff;
+    border-radius: 6px;
+    border: 1px solid white;
+}
+
+.btn-azul:hover {
+    background: #2e58a3;
+    color: #ffffff;
+}
+
+.btn-vermelho {
+    background: #d63e3e;
+    color: #ffffff;
+    border-radius: 6px;
+    border: 1px solid white;
+    margin-left: 10px;
+}
+
+.btn-vermelho:hover {
+    background: #912222;
+    color: #ffffff;
+}
+

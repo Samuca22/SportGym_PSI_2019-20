@@ -2,6 +2,8 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use kartik\icons\Icon;
+
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\PerfilPlanoSearch */
@@ -10,29 +12,29 @@ use yii\grid\GridView;
 $this->title = 'Perfil Planos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="perfil-plano-index">
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Create Perfil Plano', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'IDperfil',
-            'IDplano',
-            'dtaplano',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
+<?php echo $this->render('_search', ['model' => $searchModel]);
+?>
 
 
-</div>
+<h3>
+    <center>Meus Planos</center>
+</h3>
+<hr class="hr">
+<br>
+<?php foreach ($dataProvider->models as $model) : ?>
+    <div class="col-md-6">
+        <div class="mostrar-planos">
+            <span><?= 'Plano - ' . $model->iDplano->nome ?></span><br><br>
+            <span><?= 'Data Plano - ' . $model->dtaplano ?></span><br>
+            <div class="butoes">
+                <?= Html::a('Ver', ['view', 'IDplano', 'IDperfil' => $model->IDplano], ['class' => 'btn btn-xs btn-acao']) ?>
+                <?= Html::a('Editar', ['update', 'id' => $model->IDplano], ['class' => 'btn btn-xs btn-acao']) ?>
+                <?= Html::a('Eliminar', ['delete', 'id' => $model->IDplano], [
+                    'class' => 'btn btn-xs btn-acao',
+                    'data-confirm' => 'Tem mesmo a certeza que pretende apagar este plano?', 'data-method' => 'post'
+                ]) ?>
+            </div>
+        </div>
+    </div>
+<?php endforeach; ?>

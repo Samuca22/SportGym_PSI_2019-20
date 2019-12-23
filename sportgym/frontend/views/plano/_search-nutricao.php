@@ -4,23 +4,22 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $model common\models\VendaSearch */
+/* @var $model common\models\PlanoSearch */
 /* @var $form yii\widgets\ActiveForm */
 ?>
 
-<div class="venda-search">
+<div class="plano-search">
 
     <?php $form = ActiveForm::begin([
-        'action' => ['index'],
+        'action' => ['index-nutricao'],
         'method' => 'get',
     ]); ?>
-
-
-    <?= $form->field($model, 'global')->textInput(['class' => 'form-control form-pesquisa', 'placeholder' => 'Total ou Data ']) ?>
+    
+    <?= $form->field($model, 'nome')->textInput(['maxlength' => true, 'class' => 'form-control']) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-azul']) ?>
-
+        <!-- Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) -->
     </div>
 
     <?php ActiveForm::end(); ?>

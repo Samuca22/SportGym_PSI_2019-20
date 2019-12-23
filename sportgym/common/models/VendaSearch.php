@@ -12,6 +12,8 @@ use common\models\Venda;
 class VendaSearch extends Venda
 {
     public $global;
+    public $globalFrontend;
+
     /**
      * {@inheritdoc}
      */
@@ -28,6 +30,8 @@ class VendaSearch extends Venda
     {
         return [
             'global' => 'Data da Venda ou Primeiro Nome',
+            'globalFrontend' => '',
+
         ];
     }
 
@@ -68,7 +72,10 @@ class VendaSearch extends Venda
 
         // grid filtering conditions
         $query->orFilterWhere(['like', 'dataVenda', $this->global])
-            ->orFilterWhere(['like', 'perfil.primeiroNome', $this->global]);
+            ->orFilterWhere(['like', 'perfil.primeiroNome', $this->global])
+            ->orFilterWhere(['like', 'total', $this->globalFrontend])
+        ->orFilterWhere(['like', 'dataVenda', $this->globalFrontend])
+        ->orFilterWhere(['like', 'estado', $this->globalFrontend]);
         //'IDvenda' => $this->IDvenda,
         //'estado' => $this->estado,
         //'dataVenda' => $this->dataVenda,

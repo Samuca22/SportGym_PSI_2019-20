@@ -39,14 +39,14 @@ AppAsset::register($this);
 
     if (Yii::$app->user->isGuest) {
         $menuItems = [
-            ['label' => 'Clubes', 'url' => ['/site/ginasio']],
-            ['label' => 'Sobre Nós', 'url' => ['/site/login']],
+            ['label' => 'Clubes', 'url' => ['/ginasio/index']],
+            ['label' => 'Sobre Nós', 'url' => ['/sobre-nos/index']],
             ['label' => 'Login', 'url' => ['/site/login']],
         ];
     } else {
         $menuItems = [
             ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Meus Planos', 'url' => ['/site/about']],
+            ['label' => 'Meus Planos', 'url' => ['/plano/index']],
             ['label' => 'Minhas Compras', 'url' => ['/venda/index']],
             ['label' => 'Mapa de Aulas', 'url' => ['perfil-aula/index']],
             ['label' => 'Clubes', 'url' => ['ginasio/index']],

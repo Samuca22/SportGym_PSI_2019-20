@@ -7,11 +7,10 @@ use yii\grid\GridView;
 /* @var $searchModel common\models\PerfilAulaSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Aulas';
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Mapa de Aulas';
 ?>
 <h3>
-    <center>Mapa de Aulas</center>
+    <center><?= Html::encode($this->title) ?></center>
 </h3>
 <hr class="hr">
 <br>

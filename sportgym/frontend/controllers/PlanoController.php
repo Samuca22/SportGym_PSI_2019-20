@@ -2,9 +2,13 @@
 
 namespace frontend\controllers;
 
+use common\models\PerfilAula;
+use common\models\PerfilPlano;
+use common\models\User;
 use Yii;
 use common\models\Plano;
 use common\models\PlanoSearch;
+use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -33,22 +37,40 @@ class PlanoController extends Controller
      * Lists all Plano models.
      * @return mixed
      */
-    public function actionIndex()
-    {
-        $searchModel = new PlanoSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
 
     /**
      * Displays a single Plano model.
      * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionIndex()
+    {
+
+        $user = Yii::$app->user->identity;
+        $query = PerfilPlano::find()->where(['IDperfil' => $user->id]);
+
+        $plano_searchModel = new PlanoSearch();
+       // $plano_dataProvider = $treino_searchModel->search(Yii::$app->request->queryParams);
+
+
+        $planos_dataProvider = new ActiveDataProvider ([
+            'query' => $query,
+        ]);
+
+        $plano_dataProvider = $planos_dataProvider;
+
+        return $this->render('index', [
+            'plano_searchModel' => $plano_searchModel,
+            'plano_dataProvider' => $plano_dataProvider,
+        ]);
+
+    }
+
+    /**
+     * Creates a new Plano model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
      */
     public function actionView($id)
     {
@@ -57,11 +79,8 @@ class PlanoController extends Controller
         ]);
     }
 
-    /**
-     * Creates a new Plano model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
+
+
     public function actionCreate()
     {
         $model = new Plano();
@@ -102,9 +121,9 @@ class PlanoController extends Controller
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($id)
+    public function actionDelete($IDperfil, $IDplano)
     {
-        $this->findModel($id)->delete();
+        PerfilPlano::findOne($IDperfil, $IDplano)->delete();
 
         return $this->redirect(['index']);
     }

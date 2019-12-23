@@ -7510,3 +7510,116 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1576961255.38
     'REQUEST_TIME' => 1576961255
 ]
+2019-12-23 17:11:26 [::1][1][drmorqp5s3mbnl11dohqh2q810][error][yii\db\Exception] PDOException: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '2019-25-12' for column 'dtaplano' at row 1 in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php:1290
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1290): PDOStatement->execute()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1091): yii\db\Command->internalExecute('INSERT INTO `pe...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(432): yii\db\Command->execute()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('perfilplano', Array)
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\PerfilPlanoController.php(67): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\PerfilPlanoController->actionIndex()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('perfil-plano/in...', Array)
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+
+Next yii\db\Exception: SQLSTATE[22007]: Invalid datetime format: 1292 Incorrect date value: '2019-25-12' for column 'dtaplano' at row 1
+The SQL being executed was: INSERT INTO `perfilplano` (`IDplano`, `dtaplano`, `IDperfil`) VALUES ('4', '2019-25-12', 3) in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php:674
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1295): yii\db\Schema->convertException(Object(PDOException), 'INSERT INTO `pe...')
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1091): yii\db\Command->internalExecute('INSERT INTO `pe...')
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(432): yii\db\Command->execute()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(600): yii\db\Schema->insert('perfilplano', Array)
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\ActiveRecord.php(566): yii\db\ActiveRecord->insertInternal(NULL)
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\BaseActiveRecord.php(678): yii\db\ActiveRecord->insert(true, NULL)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\controllers\PerfilPlanoController.php(67): yii\db\BaseActiveRecord->save()
+#7 [internal function]: backend\controllers\PerfilPlanoController->actionIndex()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\base\Controller->runAction('index', Array)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('perfil-plano/in...', Array)
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
+#14 {main}
+Additional Information:
+Array
+(
+    [0] => 22007
+    [1] => 1292
+    [2] => Incorrect date value: '2019-25-12' for column 'dtaplano' at row 1
+)
+
+2019-12-23 17:11:26 [::1][1][drmorqp5s3mbnl11dohqh2q810][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'FYjflFJcrTq_u10jFPzDCDw8f8GziU0NIO1L6wrf7Upbzb7fPGXIbdTWcGsmmrtmVWYPuYCxLFJ_3xOkQZCiCQ=='
+    'PerfilPlano' => [
+        'nSocio' => '1003'
+        'IDplano' => '4'
+        'dtaplano' => '2019-25-12'
+    ]
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '27c7e18fed437ba0d75719be066f1b0847f14608a9e566fd4c618476028ed129a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"DXKMCXfQQzLqzDjXkvOGYBDZAHMhG_bZ\",2592000]\";}'
+    'advanced-backend' => 'drmorqp5s3mbnl11dohqh2q810'
+    '_csrf-backend' => 'affc4be5110a983ce98f554b6b1b1edc226c4ba27886f7e46b81ab6d0e7e0562a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"NEaKn9eWkm-H2fxniZpx38a__2XOKOOC\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '199'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://sportgym.back/perfil-plano/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => '_identity-backend=27c7e18fed437ba0d75719be066f1b0847f14608a9e566fd4c618476028ed129a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22DXKMCXfQQzLqzDjXkvOGYBDZAHMhG_bZ%22%2C2592000%5D%22%3B%7D; advanced-backend=drmorqp5s3mbnl11dohqh2q810; _csrf-backend=affc4be5110a983ce98f554b6b1b1edc226c4ba27886f7e46b81ab6d0e7e0562a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22NEaKn9eWkm-H2fxniZpx38a__2XOKOOC%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '52770'
+    'REDIRECT_URL' => '/perfil-plano/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/perfil-plano/index'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1577121086.3
+    'REQUEST_TIME' => 1577121086
+]

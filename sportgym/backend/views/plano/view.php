@@ -24,14 +24,14 @@ $this->title = $model->nome;
     <textarea class="planos-textarea" disabled><?= $model->descricao ?></textarea>
 
     <p>
-        <?= Html::a('Editar', ['update', 'id' => $model->IDplano], ['class' => 'btn btn-azul']) ?>
-        <?= Html::a('Eliminar', ['delete', 'id' => $model->IDplano], [
-            'class' => 'btn btn-vermelho',
-            'data' => [
-                'confirm' => 'Tem a certeza que pretende eliminar este plano?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
+    <?= Html::a('Editar', ['update', 'id' => $model->IDplano], ['class' => 'btn btn-azul']) ?>
+    <?= Html::a('Eliminar', ['delete', 'id' => $model->IDplano], [
+        'class' => 'btn btn-vermelho',
+        'data' => [
+            'confirm' => 'Tem a certeza que pretende eliminar este plano?',
+            'method' => 'post',
+        ],
+    ]) ?>
+</p>
 
 </div>
