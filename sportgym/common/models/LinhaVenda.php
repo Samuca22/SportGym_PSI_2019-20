@@ -78,4 +78,12 @@ class LinhaVenda extends \yii\db\ActiveRecord
         $this->subTotal = $produto->precoProduto * $this->quantidade;
         $this->save();
     }
+
+    public function iniciarLinhaVenda($IDvenda)
+    {
+        $this->IDvenda = $IDvenda;
+        $this->quantidade = 0;
+        $this->subTotal = 0;
+        $this->save();
+    }
 }

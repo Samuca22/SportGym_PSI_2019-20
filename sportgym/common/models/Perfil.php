@@ -52,6 +52,7 @@ class Perfil extends \yii\db\ActiveRecord
             [['IDperfil', 'nSocio'], 'integer'],
             [['genero'], 'string'],
             [['dtaNascimento'], 'safe'],
+            [['dtaNascimento'], 'date', 'format' => 'yyyy-M-d', 'message' => 'Formato data: aaaa-mm-dd'],
             [['peso'], 'number'],
             [['foto'], 'string', 'max' => 500],
             [['primeiroNome'], 'string', 'max' => 50],

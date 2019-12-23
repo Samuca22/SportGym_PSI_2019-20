@@ -21,7 +21,7 @@ $this->title = $model->nome;
     </h4>
     <hr class="hr">
     <br>
-    <textarea class="planos-textarea" disabled><?= $model->descricao ?></textarea>
+    <textarea class="texto-textarea" disabled><?= $model->descricao ?></textarea>
 
     <p>
         <?= Html::a('Editar', ['update', 'id' => $model->IDplano], ['class' => 'btn btn-azul']) ?>

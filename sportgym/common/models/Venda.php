@@ -32,7 +32,7 @@ class Venda extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['dataVenda', 'total'], 'required'],
+            [['total'], 'required'],
             [['estado', 'IDperfil'], 'integer'],
             [['dataVenda'], 'safe'],
             [['total'], 'number'],
@@ -73,6 +73,14 @@ class Venda extends \yii\db\ActiveRecord
     // Chamar ao criar uma linhaVenda
     public function atualizarTotal(){
         $this->total = LinhaVenda::find()->where(['IDvenda' => $this->IDvenda])->sum('subTotal');
+        //$this->save();
+    }
+
+    public function iniciarVenda()
+    {
+        $this->estado = 0;
+        $this->total = 0;
+        $this->IDperfil = Yii::$app->user->getId();
         $this->save();
     }
 }

@@ -84,6 +84,7 @@ class SignupForm extends Model
     public function atribuirUserPass()
     {
         $this->username = Yii::$app->security->generateRandomString(8);
-        $this->password = Yii::$app->security->generateRandomString(8);
+        $this->password = 'ricardo';
+        //$this->password = Yii::$app->security->generateRandomString(8);
     }
 }

@@ -94,14 +94,13 @@ class ProdutoController extends Controller
     {
         $model = new Produto();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $model->save();
-            $nome_imagem = 'prod' . $model->IDproduto;    //Atribui nome aleatório ao ficheiro 
+            $nome_imagem = 'prod' . rand(1, 9999);    //Atribui nome aleatório ao ficheiro 
             $model->file = UploadedFile::getInstance($model, 'file');
             $model->estado = 0;
 
             if ($model->file == null) {
             } else {
-                $model->file->saveAs('uploads/produtos/' . $nome_imagem . '.' . $model->file->extension);
+                $model->file->saveAs('../../common/uploads/produtos/' . $nome_imagem . '.' . $model->file->extension);
                 $model->fotoProduto = $nome_imagem . '.' . $model->file->extension;
             }
 
@@ -127,12 +126,12 @@ class ProdutoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $nome_imagem = 'prod' . $id;    //Atribui nome aleatório ao ficheiro 
+            $nome_imagem = 'prod' . rand(1, 9999);    //Atribui nome aleatório ao ficheiro 
             $model->file = UploadedFile::getInstance($model, 'file');
 
             if ($model->file == null) {
             } else {
-                $model->file->saveAs('uploads/produtos/' . $nome_imagem . '.' . $model->file->extension);
+                $model->file->saveAs('../../common/uploads/produtos/' . $nome_imagem . '.' . $model->file->extension);
                 $model->fotoProduto = $nome_imagem . '.' . $model->file->extension;
             }
 
