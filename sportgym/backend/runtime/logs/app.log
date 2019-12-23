@@ -6540,6 +6540,7 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1576700034.179
     'REQUEST_TIME' => 1576700034
 ]
+<<<<<<< Updated upstream
 2019-12-19 16:39:38 [::1][1][n0jpq26l9g1kd6tocad0vju97r][error][yii\web\HttpException:404] yii\base\InvalidRouteException: Unable to resolve the request "ginasio". in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php:537
 Stack trace:
 #0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('ginasio', Array)
@@ -6623,12 +6624,17 @@ Stack trace:
 #1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\backend\web\index.php(17): yii\base\Application->run()
 #2 {main}
 2019-12-19 16:39:42 [::1][1][n0jpq26l9g1kd6tocad0vju97r][info][application] $_GET = []
+=======
+2019-12-18 23:04:16 [::1][-][-][warning][yii\web\User::getIdentityAndDurationFromCookie] Invalid auth key attempted for user '1': 4L2hzSp3FF-YL_-AiRWX4RSq_wc7VV8W
+2019-12-18 23:04:15 [::1][-][-][info][application] $_GET = []
+>>>>>>> Stashed changes
 
 $_POST = []
 
 $_FILES = []
 
 $_COOKIE = [
+<<<<<<< Updated upstream
     'advanced-backend' => 'n0jpq26l9g1kd6tocad0vju97r'
     '_identity-backend' => '3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"srWppg_5NWZ9P2wsAssNS9_tDvdLWePv\",2592000]\";}'
     '_csrf-backend' => 'fb8eda32a16029c180cffbfefb887e16421e4f2aaf24e8e3fbfe8caae4ddb3f0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JSOSgERtdUEe1Y4vvbxUAJZukL--y45t\";}'
@@ -7096,11 +7102,15 @@ $_COOKIE = [
     'advanced-backend' => 'n0jpq26l9g1kd6tocad0vju97r'
     '_identity-backend' => '3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"srWppg_5NWZ9P2wsAssNS9_tDvdLWePv\",2592000]\";}'
     '_csrf-backend' => 'fb8eda32a16029c180cffbfefb887e16421e4f2aaf24e8e3fbfe8caae4ddb3f0a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"JSOSgERtdUEe1Y4vvbxUAJZukL--y45t\";}'
+=======
+    '_identity-backend' => 'f304f189ad4c1e68a6e8cd11f95e861cce07a0973262dc83dcd5cbab5bd08395a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"4L2hzSp3FF-YL_-AiRWX4RSq_wc7VV8W\",2592000]\";}'
+>>>>>>> Stashed changes
 ]
 
 $_SESSION = [
     '__flash' => []
     '__returnUrl' => 'http://sportgym.back/'
+<<<<<<< Updated upstream
     '__id' => 1
 ]
 
@@ -7408,13 +7418,33 @@ $_SERVER = [
     'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,pt-BR;q=0.8,en;q=0.7,en-US;q=0.6,en-GB;q=0.5'
     'HTTP_COOKIE' => 'advanced-backend=vt1bcueikpnv1o2fp1jok25j53; _identity-backend=3a857117480f74ebe7d683b10d5052cf044ed5a224888a65a155dfd874568f1ea%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22srWppg_5NWZ9P2wsAssNS9_tDvdLWePv%22%2C2592000%5D%22%3B%7D; _csrf-backend=44247f161db0f39771c4a899d628f595459a5e0fda1ca4dbc6b71ac5c2b5b72da%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22nbM5g-lOqmpwPwrSlsW1Y1F_jKHcAjrw%22%3B%7D'
     'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+=======
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.79 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-US;q=0.8,en;q=0.7'
+    'HTTP_COOKIE' => '_identity-backend=f304f189ad4c1e68a6e8cd11f95e861cce07a0973262dc83dcd5cbab5bd08395a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%224L2hzSp3FF-YL_-AiRWX4RSq_wc7VV8W%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Razer Chroma SDK\\bin;C:\\Program Files\\Razer Chroma SDK\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Users\\Samuel Martins\\AppData\\Local\\Microsoft\\WindowsApps;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\130\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\140\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\140\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\140\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Users\\Samuel Martins\\.dotnet\\tools'
+>>>>>>> Stashed changes
     'SystemRoot' => 'C:\\Windows'
     'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
     'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
     'WINDIR' => 'C:\\Windows'
+<<<<<<< Updated upstream
     'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
 '
     'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+=======
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win64) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win64) PHP/7.2.18'
+>>>>>>> Stashed changes
     'SERVER_NAME' => 'sportgym.back'
     'SERVER_ADDR' => '::1'
     'SERVER_PORT' => '80'
@@ -7425,6 +7455,7 @@ $_SERVER = [
     'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
     'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
     'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+<<<<<<< Updated upstream
     'REMOTE_PORT' => '56302'
     'REDIRECT_URL' => '/perfil/create'
     'GATEWAY_INTERFACE' => 'CGI/1.1'
@@ -7622,4 +7653,16 @@ $_SERVER = [
     'PHP_SELF' => '/index.php'
     'REQUEST_TIME_FLOAT' => 1577121086.3
     'REQUEST_TIME' => 1577121086
+=======
+    'REMOTE_PORT' => '60245'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1576710255.575
+    'REQUEST_TIME' => 1576710255
+>>>>>>> Stashed changes
 ]
