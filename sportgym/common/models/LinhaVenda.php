@@ -72,18 +72,39 @@ class LinhaVenda extends \yii\db\ActiveRecord
 
 
     // Chamar ao criar uma linhaVenda ou editar
-    public function atualizarSubTotal()
+    public function atualizarLinhaVenda()
     {
-        $produto = $this->iDproduto;;
+        $produto = $this->iDproduto;
         $this->subTotal = $produto->precoProduto * $this->quantidade;
         $this->save();
     }
 
-    public function iniciarLinhaVenda($IDvenda)
+    public function iniciarLinhaVenda($IDvenda, $produto)
     {
         $this->IDvenda = $IDvenda;
-        $this->quantidade = 0;
-        $this->subTotal = 0;
+        $this->IDproduto = $produto->IDproduto;
+        $this->quantidade = 1;
+        $this->subTotal = $produto->precoProduto * $this->quantidade;
         $this->save();
+    }
+
+    public function menosQuantidade()
+    {
+        if ($this->quantidade > 1) {
+            $this->quantidade--;
+            $this->save();
+            $this->atualizarLinhaVenda();
+        } else {
+            $this->delete();
+        }
+    }
+
+    public function maisQuantidade()
+    {
+        if ($this->quantidade >= 0 && $this->quantidade < 15) {
+            $this->quantidade++;
+            $this->save();
+            $this->atualizarLinhaVenda();
+        }
     }
 }

@@ -70,7 +70,7 @@ class SiteController extends Controller
 
 
         $venda_dataProvider = new ActiveDataProvider([
-            'query' => Venda::find()->orderBy(['dataVenda' => SORT_DESC])->limit(5), // LIMITE DE LINHAS POR TABELA E ORDERNAR POR DATA MAIS RECENTE
+            'query' => Venda::find()->where(['estado' => 1])->orderBy(['dataVenda' => SORT_DESC])->limit(5), // LIMITE DE LINHAS POR TABELA E ORDERNAR POR DATA MAIS RECENTE
             'pagination' => false,  //paginação a 0
         ]);
 

@@ -12,24 +12,38 @@ use yii\grid\GridView;
     <hr class="hr">
     <br>
 
+    <table class="table">
+        <?php if ($linhaVendas != null) : ?>
+            <?php foreach ($linhaVendas as $linha) : ?>
+                <tr>
+                    <td style="vertical-align: middle;"><img src="<?= $linha->iDproduto->mostrarImagem() ?>" height="90" width="90"></td>
+                    <td style="vertical-align: middle;"><span><?= $linha->iDproduto->nome . ' - ' . $linha->iDproduto->precoProduto . '€' ?></span></td>
+                    <td style="vertical-align: middle;"><span style="font-size:20px;"><?= Html::a('<img src="/imgs/QuantMenos.png" width="20" height="20" style="margin-right:10px;">', ['menos-quantidade', 'IDlinhaVenda' => $linha->IDlinhaVenda]) . 'x'
+                                                                                            . $linha->quantidade .
+                                                                                            Html::a('<img src="/imgs/QuantMais.png" width="20" height="20" style="margin-left:10px;">', ['mais-quantidade', 'IDlinhaVenda' => $linha->IDlinhaVenda]) ?></span></td>
+                    <td style="vertical-align: middle;"><span style="float:right;padding-right:16px;"><?= $linha->subTotal . '€'  ?></span></td>
+                </tr>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </table>
 
     <div class="row">
-            <div class="col-md-3" style="text-align:center;margin-bottom:16px;">
-                <div style="border:1px solid white;color:black;background:#f6f6f6;border-radius:6px;padding:8px;">
-                    <p><?= $venda->estado ?></p>
-                </div>
+        <div class="col-md-6">
+            <?= Html::a('Finalizar Compra', ['finalizar-venda'], ['class' => 'btn btn-lg', 'style' => 'color:white;background:#28d133;border:1px solid #fff']) ?>
+            <?= Html::a('Remover Items', ['apagar-venda'], [
+                'class' => 'btn btn-lg btn-vermelho', 'style' => 'border:1px solid #fff',
+                'data' => [
+                    'confirm' => 'De certeza que pretende apagar todos os produtos do seu carrinho?',
+                ],
+            ]) ?>
+        </div>
+        <div class="col-md-6">
+            <div style="float:right;padding-right:16px;">
+                <span>Valor Total</span><br>
+                <span style="font-size: 18px;float:right;"><?= $venda->total . '€' ?></span>
             </div>
+        </div>
     </div>
-
-    <?php if($linhaVendas != null): ?>
-    <?php foreach($linhaVendas as $linha): ?>
-        <p><?=  $linha->IDproduto ?></p>
-        <p><?= $linha->IDvenda ?></p>
-        <p><?= 'x' . $linha->quantidade ?></p>
-        <p><?= $linha->subTotal . '€'  ?></p>
-        <hr>
-    <?php endforeach; ?>
-    <?php endif; ?>
 
 
 </div>

@@ -76,7 +76,7 @@ drop table venda;
 create table if not exists venda(
 IDvenda int unsigned auto_increment,
 estado boolean not null,
-dataVenda date null, 
+dataVenda datetime null, 
 total float not null,
 IDperfil int ,
 constraint pk_venda_IDvenda primary key (IDvenda),
