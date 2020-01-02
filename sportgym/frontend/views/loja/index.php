@@ -24,8 +24,7 @@ $this->title = 'Loja - SportGym';
     <hr class="hr">
     <br>
 
-
-    <?php echo $this->render('_search', ['model' => $searchModel]); ?>
+    <?php echo $this->render('_search', ['model' => $produto_searchModel]); ?>
 
 
     <div class="row">

@@ -38,17 +38,14 @@ class LojaController extends Controller
     public function actionIndex()
     {
         $venda = Venda::findOne(['IDperfil' => Yii::$app->user->getId(), 'estado' => 0]);
-        if ($venda != null) {
-            $venda->atualizarVenda();
-            $venda->save();
-        }
-        $searchModel = new ProdutoSearch();
-        $produto_dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        $produto_searchModel = new ProdutoSearch();
+        $produto_dataProvider = $produto_searchModel->search(Yii::$app->request->queryParams);
         $produto_dataProvider->query->andWhere('estado = 1');
 
         return $this->render('index', [
             'produto_dataProvider' => $produto_dataProvider,
-            'searchModel' => $searchModel,
+            'produto_searchModel' => $produto_searchModel,
             'venda' => $venda,
         ]);
     }
