@@ -41,6 +41,12 @@ use yii\widgets\ActiveForm;
                         <?= $form->field($perfil, 'genero')->dropDownList(['M' => 'Masculino', 'F' => 'Feminino',], ['prompt' => 'Género']) ?>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <?php $perfil->username = $user->username ?>
+                        <?= $form->field($perfil, 'username')->textInput() ?>
+                    </div>
+                </div>
             </div>
         </div>
         <br>
@@ -53,7 +59,8 @@ use yii\widgets\ActiveForm;
         </div>
         <div class="row">
             <div class="col-md-12">
-                <?= $form->field($user, 'email') ?>
+            <?php $perfil->email = $user->email ?>
+                <?= $form->field($perfil, 'email') ?>
             </div>
 
         </div>

@@ -5,6 +5,8 @@ namespace frontend\controllers;
 use Yii;
 use common\models\Perfil;
 use common\models\PerfilSearch;
+use common\models\User;
+use common\models\Venda;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -52,8 +54,15 @@ class PerfilController extends Controller
      */
     public function actionView($id)
     {
+        //Permite mostrar dados da tabela User
+        $modelUser = User::find()->where(['id' => $id])->one();
+
+        $modelVenda = Venda::find()->where(['IDperfil' => $id])->one();
+
         return $this->render('view', [
-            'model' => $this->findModel($id),
+            'modelPerfil' => $this->findModel($id),
+            'modelUser' => $modelUser,
+            'modelVenda' => $modelVenda,
         ]);
     }
 
@@ -84,14 +93,17 @@ class PerfilController extends Controller
      */
     public function actionUpdate($id)
     {
+        $modelUser = User::findOne($id);
         $model = $this->findModel($id);
 
+        /*
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->IDperfil]);
-        }
+        }*/
 
         return $this->render('update', [
             'model' => $model,
+            'modelUser' => $modelUser,
         ]);
     }
 

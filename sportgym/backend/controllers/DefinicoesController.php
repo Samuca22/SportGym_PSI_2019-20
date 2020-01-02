@@ -6,6 +6,7 @@ namespace backend\controllers;
 
 use common\models\Ginasio;
 use common\models\Perfil;
+use common\models\User;
 use yii\web\Controller;
 use Yii;
 use yii\filters\AccessControl;
@@ -39,7 +40,7 @@ class DefinicoesController extends  Controller
                         'allow' => true,
                         'roles' => ['@'],
                     ],
-                    
+
                 ],
             ],
             'verbs' => [
@@ -73,18 +74,29 @@ class DefinicoesController extends  Controller
 
     public function actionUpdateUtilizador($id)
     {
-        $user = Yii::$app->user->identity;
         $perfil = Perfil::findOne($id);
+        $modelUser  = User::findOne($id);
+        $usernameAntigo = $modelUser->username;
 
         if ($perfil->load(Yii::$app->request->post()) && $perfil->validate()) {
+            if ($usernameAntigo != $perfil->username) {
+                $outroUser = User::findOne(['username' => $perfil->username]);
+                if ($outroUser == null) {
+                    $modelUser->username = $perfil->username;
+                    $modelUser->save();
+                } else {
+                    Yii::$app->getSession()->setFlash('error', 'username já existe');
+                }
+            }
+            $modelUser->email = $perfil->email;
             $perfil->save();
 
-            return $this->render('index-utilizador', ['perfil' => $perfil, 'user' => $user]);
+            return $this->render('index-utilizador', ['perfil' => $perfil, 'user' => $modelUser]);
         }
 
         return $this->render('update-utilizador', [
             'perfil' => $perfil,
-            'user' => $user,
+            'user' => $modelUser,
         ]);
     }
 

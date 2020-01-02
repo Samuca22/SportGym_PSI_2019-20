@@ -34,6 +34,7 @@ class Perfil extends \yii\db\ActiveRecord
     public $file;
     public $estatuto;
     public $email;
+    public $username;
     /**
      * {@inheritdoc}
      */
@@ -64,9 +65,10 @@ class Perfil extends \yii\db\ActiveRecord
             [['nif'], 'unique'],
             [['file'], 'file'],
             [['estatuto', 'email'], 'safe'],
-            //[['email'], 'required', 'message' => 'Preencha os campos'],
-            ['email', 'email'],
+            [['email'], 'required', 'message' => 'Introduza um email válido'],
+            ['email', 'email', 'message' => 'Introduza um email válido'],
             ['email', 'string', 'max' => 255],
+            ['username', 'required', 'message' => 'Introduza um username válido'],
             //[['IDperfil'], 'unique'],
             [['IDperfil'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['IDperfil' => 'id']],
         ];
@@ -194,5 +196,12 @@ class Perfil extends \yii\db\ActiveRecord
         $nome_imagem = 'prof' . $this->nSocio;    //Atribui nome aleatório ao ficheiro 
         $this->file->saveAs('uploads/perfis/' . $nome_imagem . '.' . $this->file->extension);
         $this->foto = $nome_imagem . '.' . $this->file->extension;
+    }
+
+    public function whenSelfUnique($model, $attribute) {
+        if (!\Yii::$app->user->isGuest) {
+            return \Yii::$app->user->identity->$attribute !== $model->$attribute;
+        }
+        return true;
     }
 }

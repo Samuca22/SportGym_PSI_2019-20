@@ -10,10 +10,12 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use common\models\LoginForm;
+use common\models\Ginasio;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
 use frontend\models\ContactForm;
+use yii\data\ActiveDataProvider;
 
 /**
  * Site controller
@@ -74,7 +76,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $ginasio_dataProvider = new ActiveDataProvider([
+            'query' => Ginasio::find(),
+        ]);
+
+        return $this->render('index', [
+            'ginasio_dataProvider' => $ginasio_dataProvider,
+        ]);
     }
 
     /**
