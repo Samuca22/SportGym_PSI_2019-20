@@ -4,7 +4,11 @@ namespace frontend\controllers;
 
 use Yii;
 use common\models\LinhaVenda;
+<<<<<<< HEAD
 use common\models\LinhaVendaSearch;
+=======
+use yii\data\ActiveDataProvider;
+>>>>>>> Ricardo_API
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,18 +39,30 @@ class LinhaVendaController extends Controller
      */
     public function actionIndex()
     {
+<<<<<<< HEAD
         $searchModel = new LinhaVendaSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
+=======
+        $dataProvider = new ActiveDataProvider([
+            'query' => LinhaVenda::find(),
+        ]);
+
+        return $this->render('index', [
+>>>>>>> Ricardo_API
             'dataProvider' => $dataProvider,
         ]);
     }
 
     /**
      * Displays a single LinhaVenda model.
+<<<<<<< HEAD
      * @param string $id
+=======
+     * @param integer $id
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -78,7 +94,11 @@ class LinhaVendaController extends Controller
     /**
      * Updates an existing LinhaVenda model.
      * If update is successful, the browser will be redirected to the 'view' page.
+<<<<<<< HEAD
      * @param string $id
+=======
+     * @param integer $id
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -98,7 +118,11 @@ class LinhaVendaController extends Controller
     /**
      * Deletes an existing LinhaVenda model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
+<<<<<<< HEAD
      * @param string $id
+=======
+     * @param integer $id
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -112,7 +136,11 @@ class LinhaVendaController extends Controller
     /**
      * Finds the LinhaVenda model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
+<<<<<<< HEAD
      * @param string $id
+=======
+     * @param integer $id
+>>>>>>> Ricardo_API
      * @return LinhaVenda the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */

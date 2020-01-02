@@ -5,6 +5,10 @@ namespace frontend\controllers;
 use Yii;
 use common\models\Produto;
 use common\models\ProdutoSearch;
+<<<<<<< HEAD
+=======
+use yii\data\ActiveDataProvider;
+>>>>>>> Ricardo_API
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,18 +39,32 @@ class ProdutoController extends Controller
      */
     public function actionIndex()
     {
+<<<<<<< HEAD
         $searchModel = new ProdutoSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+=======
+
+        $searchModel = new ProdutoSearch();
+        $produto_dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        return $this->render('index', [
+            'produto_dataProvider' => $produto_dataProvider,
+            'searchModel' => $searchModel,
+>>>>>>> Ricardo_API
         ]);
     }
 
     /**
      * Displays a single Produto model.
+<<<<<<< HEAD
      * @param string $id
+=======
+     * @param integer $id
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -78,7 +96,11 @@ class ProdutoController extends Controller
     /**
      * Updates an existing Produto model.
      * If update is successful, the browser will be redirected to the 'view' page.
+<<<<<<< HEAD
      * @param string $id
+=======
+     * @param integer $id
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -98,7 +120,11 @@ class ProdutoController extends Controller
     /**
      * Deletes an existing Produto model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
+<<<<<<< HEAD
      * @param string $id
+=======
+     * @param integer $id
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -112,7 +138,11 @@ class ProdutoController extends Controller
     /**
      * Finds the Produto model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
+<<<<<<< HEAD
      * @param string $id
+=======
+     * @param integer $id
+>>>>>>> Ricardo_API
      * @return Produto the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */

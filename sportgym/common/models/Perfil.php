@@ -53,7 +53,11 @@ class Perfil extends \yii\db\ActiveRecord
             [['IDperfil', 'nSocio'], 'integer'],
             [['genero'], 'string'],
             [['dtaNascimento'], 'safe'],
+<<<<<<< HEAD
             [['dtaNascimento'], 'date', 'format'=>'yyyy-M-d'],
+=======
+            [['dtaNascimento'], 'date', 'format' => 'yyyy-M-d', 'message' => 'Formato data: aaaa-mm-dd'],
+>>>>>>> Ricardo_API
             [['peso'], 'number'],
             [['foto'], 'string', 'max' => 500],
             [['primeiroNome'], 'string', 'max' => 50],
@@ -154,13 +158,13 @@ class Perfil extends \yii\db\ActiveRecord
     public function mostrarImagem()
     {
         if ($this->foto == '') {
-            $path = 'uploads/perfis/no_prof.png';
+            $path = '../../common/uploads/perfis/no_prof.png';
             $type = pathinfo($path, PATHINFO_EXTENSION);
             $data = file_get_contents($path);
             $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
             return $base64;
         } else {
-            $path = 'uploads/perfis/' . $this->foto;
+            $path = '../../common/uploads/perfis/' . $this->foto;
             $type = pathinfo($path, PATHINFO_EXTENSION);
             $data = file_get_contents($path);
             $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
@@ -194,7 +198,7 @@ class Perfil extends \yii\db\ActiveRecord
     public function atribuirImagem()
     {
         $nome_imagem = 'prof' . $this->nSocio;    //Atribui nome aleatório ao ficheiro 
-        $this->file->saveAs('uploads/perfis/' . $nome_imagem . '.' . $this->file->extension);
+        $this->file->saveAs('../../common/uploads/perfis/' . $nome_imagem . '.' . $this->file->extension);
         $this->foto = $nome_imagem . '.' . $this->file->extension;
     }
 

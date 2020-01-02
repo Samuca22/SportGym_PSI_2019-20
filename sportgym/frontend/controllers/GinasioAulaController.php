@@ -4,7 +4,11 @@ namespace frontend\controllers;
 
 use Yii;
 use common\models\GinasioAula;
+<<<<<<< HEAD
 use common\models\GinasioAulaSearch;
+=======
+use yii\data\ActiveDataProvider;
+>>>>>>> Ricardo_API
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,19 +39,32 @@ class GinasioAulaController extends Controller
      */
     public function actionIndex()
     {
+<<<<<<< HEAD
         $searchModel = new GinasioAulaSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
+=======
+        $dataProvider = new ActiveDataProvider([
+            'query' => GinasioAula::find(),
+        ]);
+
+        return $this->render('index', [
+>>>>>>> Ricardo_API
             'dataProvider' => $dataProvider,
         ]);
     }
 
     /**
      * Displays a single GinasioAula model.
+<<<<<<< HEAD
      * @param string $IDginasio
      * @param string $IDaula
+=======
+     * @param integer $IDginasio
+     * @param integer $IDaula
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -79,8 +96,13 @@ class GinasioAulaController extends Controller
     /**
      * Updates an existing GinasioAula model.
      * If update is successful, the browser will be redirected to the 'view' page.
+<<<<<<< HEAD
      * @param string $IDginasio
      * @param string $IDaula
+=======
+     * @param integer $IDginasio
+     * @param integer $IDaula
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -100,8 +122,13 @@ class GinasioAulaController extends Controller
     /**
      * Deletes an existing GinasioAula model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
+<<<<<<< HEAD
      * @param string $IDginasio
      * @param string $IDaula
+=======
+     * @param integer $IDginasio
+     * @param integer $IDaula
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -115,8 +142,13 @@ class GinasioAulaController extends Controller
     /**
      * Finds the GinasioAula model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
+<<<<<<< HEAD
      * @param string $IDginasio
      * @param string $IDaula
+=======
+     * @param integer $IDginasio
+     * @param integer $IDaula
+>>>>>>> Ricardo_API
      * @return GinasioAula the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */

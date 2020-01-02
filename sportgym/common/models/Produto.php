@@ -72,13 +72,13 @@ class Produto extends \yii\db\ActiveRecord
     {
 
         if ($this->fotoProduto == '') {
-            $path = 'uploads/produtos/no_prod.png';
+            $path = '../../common/uploads/produtos/no_prod.png';
             $type = pathinfo($path, PATHINFO_EXTENSION);
             $data = file_get_contents($path);
             $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
             return $base64;
         } else {
-            $path = 'uploads/produtos/' . $this->fotoProduto;
+            $path = '../../common/uploads/produtos/' . $this->fotoProduto;
             $type = pathinfo($path, PATHINFO_EXTENSION);
             $data = file_get_contents($path);
             $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);

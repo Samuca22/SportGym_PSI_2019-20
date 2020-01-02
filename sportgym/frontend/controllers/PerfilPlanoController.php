@@ -4,7 +4,10 @@ namespace frontend\controllers;
 
 use Yii;
 use common\models\PerfilPlano;
+<<<<<<< HEAD
 use common\models\PerfilPlanoSearch;
+=======
+>>>>>>> Ricardo_API
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -36,6 +39,7 @@ class PerfilPlanoController extends Controller
      */
     public function actionIndex()
     {
+<<<<<<< HEAD
 
         $user = Yii::$app->user->identity;
         $query = PerfilPlano::find()->where(['IDperfil' => $user->id]);
@@ -52,6 +56,13 @@ class PerfilPlanoController extends Controller
 
         return $this->render('index', [
             'searchModel' => $searchModel,
+=======
+        $dataProvider = new ActiveDataProvider([
+            'query' => PerfilPlano::find(),
+        ]);
+
+        return $this->render('index', [
+>>>>>>> Ricardo_API
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -59,7 +70,11 @@ class PerfilPlanoController extends Controller
     /**
      * Displays a single PerfilPlano model.
      * @param integer $IDperfil
+<<<<<<< HEAD
      * @param string $IDplano
+=======
+     * @param integer $IDplano
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -92,7 +107,11 @@ class PerfilPlanoController extends Controller
      * Updates an existing PerfilPlano model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $IDperfil
+<<<<<<< HEAD
      * @param string $IDplano
+=======
+     * @param integer $IDplano
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -113,7 +132,11 @@ class PerfilPlanoController extends Controller
      * Deletes an existing PerfilPlano model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $IDperfil
+<<<<<<< HEAD
      * @param string $IDplano
+=======
+     * @param integer $IDplano
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -128,7 +151,11 @@ class PerfilPlanoController extends Controller
      * Finds the PerfilPlano model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $IDperfil
+<<<<<<< HEAD
      * @param string $IDplano
+=======
+     * @param integer $IDplano
+>>>>>>> Ricardo_API
      * @return PerfilPlano the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */

@@ -16,7 +16,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'dtaFim')->textInput() ?>
 
+<<<<<<< HEAD
     <?= $form->field($model, 'IDginasio')->textInput(['maxlength' => true]) ?>
+=======
+    <?= $form->field($model, 'IDginasio')->textInput() ?>
+>>>>>>> Ricardo_API
 
     <?= $form->field($model, 'IDperfil')->textInput() ?>
 

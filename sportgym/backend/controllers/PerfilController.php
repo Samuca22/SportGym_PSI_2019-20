@@ -123,13 +123,11 @@ class PerfilController extends Controller
             $modelPerfil->nSocio = 1000 + $modelPerfil->IDperfil;
 
             // se foi dado upload de imagem - guardar.
-            $nome_imagem = 'prof' . $modelPerfil->nSocio;    //Atribui nome aleatório ao ficheiro 
             $modelPerfil->file = UploadedFile::getInstance($modelPerfil, 'file');
 
 
             if ($modelPerfil->file != null) {
-                $modelPerfil->file->saveAs('uploads/perfis/' . $nome_imagem . '.' . $modelPerfil->file->extension);
-                $modelPerfil->foto = $nome_imagem . '.' . $modelPerfil->file->extension;
+                $modelPerfil->atribuirImagem();
             }
 
             // guardar perfil na bd e criar a sua respetiva adesão

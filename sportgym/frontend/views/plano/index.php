@@ -1,6 +1,7 @@
 <?php
 
 use yii\helpers\Html;
+<<<<<<< HEAD
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\PlanoSearch */
@@ -75,3 +76,39 @@ $this->title = 'Meus Planos';
         </div>
     <?php } ?>
 <?php endforeach; ?>
+=======
+use yii\grid\GridView;
+
+/* @var $this yii\web\View */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = 'Planos';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="plano-index">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+
+    <p>
+        <?= Html::a('Create Plano', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'IDplano',
+            'nome',
+            'nutricao',
+            'treino',
+            'descricao',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+
+
+</div>
+>>>>>>> Ricardo_API

@@ -15,6 +15,7 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
+<<<<<<< HEAD
     <?= $form->field($model, 'IDproduto') ?>
 
     <?= $form->field($model, 'nome') ?>
@@ -35,3 +36,19 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
+=======
+    <div class="row" style="position:relative;margin-bottom:20px;">
+        <div class="col-md-8"></div>
+        <div class="col-md-3">
+            <?= $form->field($model, 'nome')->textInput(['placeholder' => "Pesquisar", 'style' => 'float:left;']) ?>
+        </div>
+        <div class="col-md-1" style="position:absolute;bottom:0;float:right;right:0;padding:0;">
+            <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-azul']) ?>
+        </div>
+    </div>
+
+
+    <?php ActiveForm::end(); ?>
+
+</div>
+>>>>>>> Ricardo_API

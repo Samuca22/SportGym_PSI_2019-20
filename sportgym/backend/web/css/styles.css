@@ -116,7 +116,7 @@ body{
     border-radius: 6px;
 }
 
-.planos-textarea{
+.texto-textarea{
     width: 100%;
     resize: none;
     background: #f6f6f6;
@@ -199,19 +199,6 @@ body{
     margin-left: 10px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .table tr:nth-child(even) {
     background-color: #595959;
 }
@@ -232,8 +219,6 @@ body{
     color: #ffffff;
     margin: auto  !important;
 }
-
-
 
 .venda-caixa-comprador{
     border: 1px solid #b9b9b9;

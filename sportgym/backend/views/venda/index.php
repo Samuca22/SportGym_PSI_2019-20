@@ -33,7 +33,7 @@ $this->title = 'Vendas';
                             <p><?= $model->iDperfil->telefone ?></p>
                         </td>
                         <td>
-                            <p><?= Yii::$app->formatter->asDate($model->dataVenda, 'dd-MM-yyyy') ?></p>
+                            <p><?= Yii::$app->formatter->asDate($model->dataVenda, 'php:Y-m-d (H:i:s)') ?></p>
                             <p><?= $model->total . '€' ?></p>
                         </td>
                         <td class="text-center"style="vertical-align:middle;">

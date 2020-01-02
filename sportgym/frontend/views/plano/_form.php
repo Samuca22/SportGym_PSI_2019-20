@@ -1,6 +1,9 @@
 <?php
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> Ricardo_API
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -11,6 +14,7 @@ use yii\widgets\ActiveForm;
 
 <div class="plano-form">
 
+<<<<<<< HEAD
     <?php if ($model->treino == 1) {
         echo 'Plano de Treino ';
 
@@ -57,8 +61,26 @@ use yii\widgets\ActiveForm;
 
     <div class="form-group">
         <?= Html::submitButton('Gravar', ['class' => 'btn btn-azul']) ?>
+=======
+    <?php $form = ActiveForm::begin(); ?>
+
+    <?= $form->field($model, 'nome')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'nutricao')->textInput() ?>
+
+    <?= $form->field($model, 'treino')->textInput() ?>
+
+    <?= $form->field($model, 'descricao')->textInput(['maxlength' => true]) ?>
+
+    <div class="form-group">
+        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+>>>>>>> Ricardo_API
     </div>
 
     <?php ActiveForm::end(); ?>
 
+<<<<<<< HEAD
 </div>
+=======
+</div>
+>>>>>>> Ricardo_API

@@ -1,6 +1,5 @@
 <?php
 
-use Codeception\PHPUnit\ResultPrinter\HTML as ResultPrinterHTML;
 use yii\helpers\Html;
 use yii\grid\GridView;
 
@@ -32,7 +31,7 @@ $this->title = 'Gestão de Produtos';;
                 <?php foreach ($dataProvider->models as $model) : ?>
                     <tr>
                         <td><img src='<?= $model->mostrarImagem() ?>' width='25' height='25' style="margin-right:7px;"><?= $model->nome ?></td>
-                        <td style="max-width:200px;text-overflow:ellipsis;overflow:hidden;">
+                        <td style="max-width:200px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;">
                             <?= $model->descricao ?>
                         </td>
                         <td class="text-center"><?= $model->precoProduto . '€' ?></td>

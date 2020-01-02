@@ -14,7 +14,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'IDperfil')->textInput() ?>
 
+<<<<<<< HEAD
     <?= $form->field($model, 'IDplano')->textInput(['maxlength' => true]) ?>
+=======
+    <?= $form->field($model, 'IDplano')->textInput() ?>
+>>>>>>> Ricardo_API
 
     <?= $form->field($model, 'dtaplano')->textInput() ?>
 

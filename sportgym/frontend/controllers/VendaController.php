@@ -2,11 +2,16 @@
 
 namespace frontend\controllers;
 
+<<<<<<< HEAD
 use common\models\PerfilPlano;
 use common\models\PerfilPlanoSearch;
 use Yii;
 use common\models\Venda;
 use common\models\VendaSearch;
+=======
+use Yii;
+use common\models\Venda;
+>>>>>>> Ricardo_API
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -38,6 +43,7 @@ class VendaController extends Controller
      */
     public function actionIndex()
     {
+<<<<<<< HEAD
 
         $user = Yii::$app->user->identity;
         $query = Venda::find()->where(['IDperfil' => $user->id])->andWhere('estado = 1');;
@@ -55,13 +61,24 @@ class VendaController extends Controller
 
         return $this->render('index', [
             'searchModel' => $searchModel,
+=======
+        $dataProvider = new ActiveDataProvider([
+            'query' => Venda::find(),
+        ]);
+
+        return $this->render('index', [
+>>>>>>> Ricardo_API
             'dataProvider' => $dataProvider,
         ]);
     }
 
     /**
      * Displays a single Venda model.
+<<<<<<< HEAD
      * @param string $id
+=======
+     * @param integer $id
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -93,7 +110,11 @@ class VendaController extends Controller
     /**
      * Updates an existing Venda model.
      * If update is successful, the browser will be redirected to the 'view' page.
+<<<<<<< HEAD
      * @param string $id
+=======
+     * @param integer $id
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -113,7 +134,11 @@ class VendaController extends Controller
     /**
      * Deletes an existing Venda model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
+<<<<<<< HEAD
      * @param string $id
+=======
+     * @param integer $id
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -127,7 +152,11 @@ class VendaController extends Controller
     /**
      * Finds the Venda model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
+<<<<<<< HEAD
      * @param string $id
+=======
+     * @param integer $id
+>>>>>>> Ricardo_API
      * @return Venda the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */

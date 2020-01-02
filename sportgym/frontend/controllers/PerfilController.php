@@ -4,9 +4,13 @@ namespace frontend\controllers;
 
 use Yii;
 use common\models\Perfil;
+<<<<<<< HEAD
 use common\models\PerfilSearch;
 use common\models\User;
 use common\models\Venda;
+=======
+use yii\data\ActiveDataProvider;
+>>>>>>> Ricardo_API
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -37,11 +41,19 @@ class PerfilController extends Controller
      */
     public function actionIndex()
     {
+<<<<<<< HEAD
         $searchModel = new PerfilSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
+=======
+        $dataProvider = new ActiveDataProvider([
+            'query' => Perfil::find(),
+        ]);
+
+        return $this->render('index', [
+>>>>>>> Ricardo_API
             'dataProvider' => $dataProvider,
         ]);
     }
@@ -54,6 +66,7 @@ class PerfilController extends Controller
      */
     public function actionView($id)
     {
+<<<<<<< HEAD
         //Permite mostrar dados da tabela User
         $modelUser = User::find()->where(['id' => $id])->one();
 
@@ -63,6 +76,10 @@ class PerfilController extends Controller
             'modelPerfil' => $this->findModel($id),
             'modelUser' => $modelUser,
             'modelVenda' => $modelVenda,
+=======
+        return $this->render('view', [
+            'model' => $this->findModel($id),
+>>>>>>> Ricardo_API
         ]);
     }
 
@@ -93,6 +110,7 @@ class PerfilController extends Controller
      */
     public function actionUpdate($id)
     {
+<<<<<<< HEAD
         $modelUser = User::findOne($id);
         $model = $this->findModel($id);
 
@@ -104,6 +122,16 @@ class PerfilController extends Controller
         return $this->render('update', [
             'model' => $model,
             'modelUser' => $modelUser,
+=======
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['view', 'id' => $model->IDperfil]);
+        }
+
+        return $this->render('update', [
+            'model' => $model,
+>>>>>>> Ricardo_API
         ]);
     }
 

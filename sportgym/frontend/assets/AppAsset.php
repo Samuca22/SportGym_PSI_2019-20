@@ -13,7 +13,11 @@ class AppAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/site.css',
+<<<<<<< HEAD
         'css/stylesFront.css',
+=======
+        'css/styles.css',
+>>>>>>> Ricardo_API
     ];
     public $js = [
     ];

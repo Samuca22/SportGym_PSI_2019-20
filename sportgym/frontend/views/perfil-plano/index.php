@@ -2,16 +2,22 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+<<<<<<< HEAD
 use kartik\icons\Icon;
 
 
 /* @var $this yii\web\View */
 /* @var $searchModel common\models\PerfilPlanoSearch */
+=======
+
+/* @var $this yii\web\View */
+>>>>>>> Ricardo_API
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Perfil Planos';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+<<<<<<< HEAD
 
 <?php echo $this->render('_search', ['model' => $searchModel]);
 ?>
@@ -38,3 +44,29 @@ $this->params['breadcrumbs'][] = $this->title;
         </div>
     </div>
 <?php endforeach; ?>
+=======
+<div class="perfil-plano-index">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+
+    <p>
+        <?= Html::a('Create Perfil Plano', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'IDperfil',
+            'IDplano',
+            'dtaplano',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+
+
+</div>
+>>>>>>> Ricardo_API

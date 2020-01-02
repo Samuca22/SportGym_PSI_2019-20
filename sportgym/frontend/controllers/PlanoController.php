@@ -2,12 +2,17 @@
 
 namespace frontend\controllers;
 
+<<<<<<< HEAD
 use common\models\PerfilAula;
 use common\models\PerfilPlano;
 use common\models\User;
 use Yii;
 use common\models\Plano;
 use common\models\PlanoSearch;
+=======
+use Yii;
+use common\models\Plano;
+>>>>>>> Ricardo_API
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -37,6 +42,7 @@ class PlanoController extends Controller
      * Lists all Plano models.
      * @return mixed
      */
+<<<<<<< HEAD
 
     /**
      * Displays a single Plano model.
@@ -71,6 +77,24 @@ class PlanoController extends Controller
      * Creates a new Plano model.
      * If creation is successful, the browser will be redirected to the 'view' page.
      * @return mixed
+=======
+    public function actionIndex()
+    {
+        $dataProvider = new ActiveDataProvider([
+            'query' => Plano::find(),
+        ]);
+
+        return $this->render('index', [
+            'dataProvider' => $dataProvider,
+        ]);
+    }
+
+    /**
+     * Displays a single Plano model.
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+>>>>>>> Ricardo_API
      */
     public function actionView($id)
     {
@@ -79,8 +103,16 @@ class PlanoController extends Controller
         ]);
     }
 
+<<<<<<< HEAD
 
 
+=======
+    /**
+     * Creates a new Plano model.
+     * If creation is successful, the browser will be redirected to the 'view' page.
+     * @return mixed
+     */
+>>>>>>> Ricardo_API
     public function actionCreate()
     {
         $model = new Plano();
@@ -97,7 +129,11 @@ class PlanoController extends Controller
     /**
      * Updates an existing Plano model.
      * If update is successful, the browser will be redirected to the 'view' page.
+<<<<<<< HEAD
      * @param string $id
+=======
+     * @param integer $id
+>>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -117,6 +153,7 @@ class PlanoController extends Controller
     /**
      * Deletes an existing Plano model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
+<<<<<<< HEAD
      * @param string $id
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
@@ -124,6 +161,15 @@ class PlanoController extends Controller
     public function actionDelete($IDperfil, $IDplano)
     {
         PerfilPlano::findOne($IDperfil, $IDplano)->delete();
+=======
+     * @param integer $id
+     * @return mixed
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    public function actionDelete($id)
+    {
+        $this->findModel($id)->delete();
+>>>>>>> Ricardo_API
 
         return $this->redirect(['index']);
     }
@@ -131,7 +177,11 @@ class PlanoController extends Controller
     /**
      * Finds the Plano model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
+<<<<<<< HEAD
      * @param string $id
+=======
+     * @param integer $id
+>>>>>>> Ricardo_API
      * @return Plano the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */

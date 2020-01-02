@@ -14,7 +14,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'IDperfil')->textInput() ?>
 
+<<<<<<< HEAD
     <?= $form->field($model, 'IDaula')->textInput(['maxlength' => true]) ?>
+=======
+    <?= $form->field($model, 'IDaula')->textInput() ?>
+>>>>>>> Ricardo_API
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

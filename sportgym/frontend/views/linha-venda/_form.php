@@ -16,9 +16,15 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'subTotal')->textInput() ?>
 
+<<<<<<< HEAD
     <?= $form->field($model, 'IDvenda')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'IDproduto')->textInput(['maxlength' => true]) ?>
+=======
+    <?= $form->field($model, 'IDvenda')->textInput() ?>
+
+    <?= $form->field($model, 'IDproduto')->textInput() ?>
+>>>>>>> Ricardo_API
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

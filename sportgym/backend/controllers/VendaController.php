@@ -58,6 +58,7 @@ class VendaController extends Controller
     {
         $vendas_searchModel = new VendaSearch();
         $vendas_dataProvider = $vendas_searchModel->search(Yii::$app->request->queryParams);
+        $vendas_dataProvider->query->where(['estado' => 1]);
 
         return $this->render('index', [
             'vendas_searchModel' => $vendas_searchModel,

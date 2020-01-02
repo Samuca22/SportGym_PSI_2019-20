@@ -55,7 +55,7 @@ $this->title = $model->nome;
                     <div class="row">
                         <div class="col-sm-12" style="margin-top:20px;">
                             <div>Descrição</div>
-                            <textarea class="produtos-textarea" disabled><?= $model->descricao ?></textarea>
+                            <textarea class="texto-textarea" disabled><?= $model->descricao ?></textarea>
                         </div>
                     </div>
                 </div>
