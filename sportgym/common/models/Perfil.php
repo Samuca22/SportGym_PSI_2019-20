@@ -56,6 +56,7 @@ class Perfil extends \yii\db\ActiveRecord
             [['dtaNascimento'], 'date', 'format'=>'yyyy-M-d'],
             [['dtaNascimento'], 'date', 'format' => 'yyyy-M-d', 'message' => 'Formato data: aaaa-mm-dd'],
             [['peso'], 'number'],
+            [['altura'], 'number'],
             [['foto'], 'string', 'max' => 500],
             [['primeiroNome'], 'string', 'max' => 50],
             [['apelido'], 'string', 'max' => 30],
@@ -93,7 +94,7 @@ class Perfil extends \yii\db\ActiveRecord
             'cp' => 'Código Postal',
             'nif' => 'NIF',
             'peso' => 'Peso',
-
+            'altura' => 'Altura',
             'estatuto' => 'Estatuto',
             'file' => 'Foto',
         ];
