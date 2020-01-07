@@ -35,6 +35,7 @@ class Venda extends \yii\db\ActiveRecord
             [['total'], 'required'],
             [['estado', 'IDperfil'], 'integer'],
             [['dataVenda'], 'safe'],
+            [['dataVenda'], 'date', 'format'=>'yyyy-m-d'],
             [['total'], 'number'],
             [['IDperfil'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['IDperfil' => 'IDperfil']],
         ];

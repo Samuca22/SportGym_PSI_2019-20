@@ -93,12 +93,12 @@ class ProdutoController extends Controller
     public function actionCreate()
     {
         $model = new Produto();
+
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-<<<<<<< HEAD
-            $nome_imagem = 'prod' . $model->IDproduto;    //Atribui nome aleatório ao ficheiro 
-=======
-            $nome_imagem = 'prod' . rand(1, 9999);    //Atribui nome aleatório ao ficheiro 
->>>>>>> Ricardo_API
+            $nome_imagem = 'prod' . $model->IDproduto;    //Atribui nome aleatório ao ficheiro
+            $nome_imagem = 'prod' . rand(1, 9999);    //Atribui nome aleatório ao ficheiro
+
+
             $model->file = UploadedFile::getInstance($model, 'file');
             $model->estado = 0;
 

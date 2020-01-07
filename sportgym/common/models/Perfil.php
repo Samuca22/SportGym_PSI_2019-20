@@ -53,11 +53,8 @@ class Perfil extends \yii\db\ActiveRecord
             [['IDperfil', 'nSocio'], 'integer'],
             [['genero'], 'string'],
             [['dtaNascimento'], 'safe'],
-<<<<<<< HEAD
             [['dtaNascimento'], 'date', 'format'=>'yyyy-M-d'],
-=======
             [['dtaNascimento'], 'date', 'format' => 'yyyy-M-d', 'message' => 'Formato data: aaaa-mm-dd'],
->>>>>>> Ricardo_API
             [['peso'], 'number'],
             [['foto'], 'string', 'max' => 500],
             [['primeiroNome'], 'string', 'max' => 50],

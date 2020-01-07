@@ -1,2 +1,7 @@
 suite_namespace: backend\tests\unit
 actor: UnitTester
+modules:
+  enabled:
+    - Asserts
+    - Yii2:
+        configFile: 'config/codeception-local.php'
