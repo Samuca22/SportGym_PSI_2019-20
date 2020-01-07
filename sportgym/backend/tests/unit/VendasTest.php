@@ -1,6 +1,5 @@
 <?php namespace backend\tests;
 
-use common\models\Produto;
 use common\models\Venda;
 
 class VendasTest extends \Codeception\Test\Unit
@@ -12,6 +11,13 @@ class VendasTest extends \Codeception\Test\Unit
 
     protected function _before()
     {
+
+        $venda = new Venda();
+        $venda->total = 500;
+        $venda->dataVenda = '2019-12-25';
+        $venda->estado = 1;
+
+        $venda->save();
     }
 
     protected function _after()
@@ -23,8 +29,8 @@ class VendasTest extends \Codeception\Test\Unit
     {
 
         $venda = new Venda();
-        $venda->dataVenda = '2019-12-25';
         $venda->total = 500;
+        $venda->dataVenda = '2019-12-25';
         $venda->estado = 1;
 
 
@@ -74,25 +80,65 @@ class VendasTest extends \Codeception\Test\Unit
     }
 
 
-    public function testGravarVendaValida() // Gravar a Venda
-    {
-
-        $venda = new Venda();
-        $venda->dataVenda = '2019-12-25';
-        $venda->total = 500;
-        $venda->estado = 1;
-
-        $venda->save() ;
-    }
-
-
 
     public function testVerificarVendaExiste() // Test para verificar se o produto extiste
     {
-        $produto = $this->testGravarVendaValida();
 
         $this->tester->seeRecord(Venda::class, ['dataVenda' => '2019-12-25']);
     }
+
+
+    public function testAtualizarVendaData()  // Verifica a alteração do campo dataVenda
+    {
+
+        $data_antiga = '2019-12-25';
+        $data_nova = '2020-01-01';
+
+        $this->tester->seeRecord(Venda::class, ['dataVenda' => $data_antiga]);
+        $this->tester->dontSeeRecord(Venda::class, ['dataVenda' => $data_nova]);
+
+        $venda = Venda::find()->where(['dataVenda' => $data_antiga])->one();
+        $venda->dataVenda = $data_nova;
+        $venda->save();
+
+        $this->tester->seeRecord(Venda::class, ['dataVenda' => $data_nova]);
+    }
+
+
+
+    public function testAtualizarVendaTotal()  // Verifica a alteração do campo Total
+    {
+        $total_antigo = 500;
+        $total_novo = 499;
+
+        $this->tester->seeRecord(Venda::class, ['total' => $total_antigo]);
+        $this->tester->dontSeeRecord(Venda::class, ['total' => $total_novo]);
+
+        $venda = Venda::find()->where(['total' => $total_antigo])->one();
+        $venda->total = $total_novo;
+        $venda->save();
+
+        $this->tester->seeRecord(Venda::class,['total' => $total_novo]);
+    }
+
+
+    public function testApagarVendaData() // Verifica se o produto foi apagado atravez do campo Data
+    {
+        $this->tester->seeRecord(Venda::class, ['dataVenda' => '2019-12-25']);
+        $venda = Venda::find()->where(['dataVenda' => '2019-12-25'])->one();
+        $venda->delete();
+        $this->tester->dontSeeRecord(Venda::class, ['dataVenda' => '2019-12-25']);
+    }
+
+
+    public function testApagarVendaTotal() // Verifica se o produto foi apagado atravez do campo Total
+    {
+        $this->tester->seeRecord(Venda::class, ['total' => 500]);
+        $venda = Venda::find()->where(['total' => 500])->one();
+        $venda->delete();
+        $this->tester->dontSeeRecord(Venda::class, ['total' => 500]);
+    }
+
 
 
 }

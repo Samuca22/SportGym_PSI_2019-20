@@ -22,7 +22,6 @@ class AulasTest extends \Codeception\Test\Unit
     {
 
         $aula = new Aula();
-        $aula->dtaInicio = '2019-12-25';
         $aula->tipo = "Cycling";
         $aula->duracao = '01:30:00';
 
