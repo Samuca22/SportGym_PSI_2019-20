@@ -105,7 +105,7 @@ class VendasTest extends \Codeception\Test\Unit
     }
 
 
-
+/*
     public function testAtualizarVendaTotal()  // Verifica a alteração do campo Total
     {
         $total_antigo = 500;
@@ -121,7 +121,7 @@ class VendasTest extends \Codeception\Test\Unit
         $this->tester->seeRecord(Venda::class,['total' => $total_novo]);
     }
 
-
+*/
     public function testApagarVendaData() // Verifica se o produto foi apagado atravez do campo Data
     {
         $this->tester->seeRecord(Venda::class, ['dataVenda' => '2019-12-25']);
