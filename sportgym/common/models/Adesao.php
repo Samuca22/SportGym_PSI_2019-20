@@ -9,7 +9,6 @@ use Yii;
  *
  * @property int $IDadesao
  * @property string $dtaInicio
- * @property string|null $dtaFim
  * @property int|null $IDginasio
  *
  * @property Ginasio $iDginasio
@@ -30,7 +29,7 @@ class Adesao extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            //[['dtaInicio'], 'required'],
+            [['dtaInicio'], 'required'],
             [['dtaInicio', 'dtaFim'], 'safe'],
             [['IDginasio'], 'required', 'message' => 'Por favor selecione um ginásio'],
             [['IDginasio'], 'integer'],

@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-
-
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-use yii\widgets\DetailView;
 
 /* @var $this yii\web\View */
 /* @var $model common\models\Plano */
@@ -14,65 +9,25 @@ $this->title = $model->nome;
 \yii\web\YiiAsset::register($this);
 ?>
 <div class="plano-view">
-    <h4>
-        <?php if ($model->treino == 1) {
-            echo 'Plano de <strong>Treino: </strong>' . Html::encode($model->nome);
-        } else {
-            echo 'Plano de <strong>Nutrição: </strong>' . Html::encode($model->nome);
-        }
-        ?>
-    </h4>
-    <hr class="hr">
-    <br>
-    <textarea class="planos-textarea" disabled><?= $model->descricao ?></textarea>
-
-    <p>
-        <?= Html::a('Editar', ['update', 'id' => $model->IDplano], ['class' => 'btn btn-azul']) ?>
-        <?= Html::a('Eliminar', ['delete', 'id' => $model->IDplano], [
-            'class' => 'btn btn-vermelho',
-            'data' => [
-                'confirm' => 'Tem a certeza que pretende eliminar este plano?',
-=======
-<?php
-
-use yii\helpers\Html;
-use yii\widgets\DetailView;
-
-/* @var $this yii\web\View */
-/* @var $model common\models\PerfilPlano */
-
-$this->title = $model->IDperfil;
-$this->params['breadcrumbs'][] = ['label' => 'Perfil Planos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
-\yii\web\YiiAsset::register($this);
-?>
-<div class="perfil-plano-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Update', ['update', 'IDperfil' => $model->IDperfil, 'IDplano' => $model->IDplano], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'IDperfil' => $model->IDperfil, 'IDplano' => $model->IDplano], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
->>>>>>> Ricardo_API
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
-<<<<<<< HEAD
+    <div class="img-container">
+        <div class="my-container meus-planos">
+            <h4>
+                <?php if ($model->treino == 1) {
+                    echo 'Plano de Treino: <strong>' . Html::encode($model->nome) . '</strong>';
+                } else {
+                    echo 'Plano de Nutrição: <strong>' . Html::encode($model->nome) . '</strong>';
+                }
+                ?>
+            </h4>
+            <hr class="hr" style="margin-bottom:0;">
+            <br>
+            <div class="butoes">
+                <?= Html::a('<img src="/imgs/lixo.png" height="36" width="36">', ['delete', 'IDplano' => $model->IDplano], [
+                'class' => 'btn btn-eliminar-plano',
+                'data-confirm' => 'Tem mesmo a certeza que pretende apagar este plano?', 'data-method' => 'post',
+                 ]) ?>
+            </div>
+            <textarea class="planos-textarea" disabled><?= $model->descricao ?></textarea>
+        </div>
+    </div>
 </div>
-=======
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'IDperfil',
-            'IDplano',
-            'dtaplano',
-        ],
-    ]) ?>
-
-</div>
->>>>>>> Ricardo_API

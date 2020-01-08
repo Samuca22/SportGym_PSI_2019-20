@@ -39,8 +39,9 @@ class Ginasio extends \yii\db\ActiveRecord
             [['rua', 'localidade'], 'string', 'max' => 255],
             [['cp', 'telefone'], 'string', 'max' => 15],
             [['email'], 'string', 'max' => 200],
-            [['telefone'], 'unique'],
-            [['email'], 'unique'],
+            [['email'], 'email'],
+            ['email', 'unique', 'targetClass' => '\common\models\Ginasio', 'message' => 'Este email já está associado a um clube'],
+            ['telefone', 'unique', 'targetClass' => '\common\models\Ginasio', 'message' => 'Este telefone já está associado a um clube'],
         ];
     }
 

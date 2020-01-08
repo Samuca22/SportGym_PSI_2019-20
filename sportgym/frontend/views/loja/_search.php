@@ -14,18 +14,8 @@ use yii\widgets\ActiveForm;
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
-
-    <div class="row" style="position:relative;margin-bottom:20px;">
-        <div class="col-md-8"></div>
-        <div class="col-md-3">
-            <?= $form->field($model, 'nome')->textInput(['placeholder' => "Pesquisar", 'style' => 'float:left;']) ?>
-        </div>
-        <div class="col-md-1" style="position:absolute;bottom:0;float:right;right:0;padding:0;">
-            <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-azul']) ?>
-        </div>
-    </div>
-
-
+    <?= $form->field($model, 'nome')->textInput(['maxlength' => true, 'class' => 'form-control', 'placeholder' => 'Nome do Produto'])->label(false) ?>
+    <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-azul', 'style' => 'float:right;']) ?>
     <?php ActiveForm::end(); ?>
 
 </div>

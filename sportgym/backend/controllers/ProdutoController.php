@@ -2,6 +2,7 @@
 
 namespace backend\controllers;
 
+use common\models\LinhaVenda;
 use Yii;
 use common\models\Produto;
 use common\models\ProdutoSearch;
@@ -94,18 +95,15 @@ class ProdutoController extends Controller
     {
         $model = new Produto();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-<<<<<<< HEAD
-            $nome_imagem = 'prod' . $model->IDproduto;    //Atribui nome aleatório ao ficheiro 
-=======
-            $nome_imagem = 'prod' . rand(1, 9999);    //Atribui nome aleatório ao ficheiro 
->>>>>>> Ricardo_API
-            $model->file = UploadedFile::getInstance($model, 'file');
             $model->estado = 0;
+            $model->save();
+            
+            $model->file = UploadedFile::getInstance($model, 'file');
+
 
             if ($model->file == null) {
             } else {
-                $model->file->saveAs('../../common/uploads/produtos/' . $nome_imagem . '.' . $model->file->extension);
-                $model->fotoProduto = $nome_imagem . '.' . $model->file->extension;
+                $model->atribuirImagem();
             }
 
             $model->save();
@@ -130,13 +128,11 @@ class ProdutoController extends Controller
         $model = $this->findModel($id);
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $nome_imagem = 'prod' . rand(1, 9999);    //Atribui nome aleatório ao ficheiro 
             $model->file = UploadedFile::getInstance($model, 'file');
 
             if ($model->file == null) {
             } else {
-                $model->file->saveAs('../../common/uploads/produtos/' . $nome_imagem . '.' . $model->file->extension);
-                $model->fotoProduto = $nome_imagem . '.' . $model->file->extension;
+                $model->atribuirImagem();
             }
 
             $model->save();
@@ -158,8 +154,19 @@ class ProdutoController extends Controller
      */
     public function actionDelete($id)
     {
-        $this->findModel($id)->delete();
-        Yii::$app->getSession()->setFlash('success', 'Produto eliminado com sucesso');
+        $model = $this->findModel($id);
+
+        $linhasVendas = LinhaVenda::find()->where(['IDproduto' => $model->IDproduto])->one();
+
+        if($linhasVendas == null){
+            $model->delete();
+            Yii::$app->getSession()->setFlash('success', 'Produto eliminado com sucesso');
+            return $this->redirect('index');
+        } else {
+            Yii::$app->getSession()->setFlash('error', 'Produto não pode ser eliminado');
+            return $this->redirect('index');
+        }
+        
     }
 
     /**

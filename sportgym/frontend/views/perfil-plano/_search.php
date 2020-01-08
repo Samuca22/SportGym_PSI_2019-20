@@ -14,13 +14,8 @@ use yii\widgets\ActiveForm;
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
-
-
-    <div class="form-group">
-        <?= Html::submitButton('Search', ['class' => 'btn btn-primary']) ?>
-        <?= Html::resetButton('Reset', ['class' => 'btn btn-outline-secondary']) ?>
-    </div>
-
+    <?= $form->field($model, 'global')->textInput(['maxlength' => true, 'class' => 'form-control', 'placeholder' => 'Nome do Plano'])->label(false) ?>
+    <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-azul', 'style' => 'float:right;']) ?>
     <?php ActiveForm::end(); ?>
 
 </div>

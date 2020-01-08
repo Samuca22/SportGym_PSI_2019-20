@@ -21,7 +21,7 @@ use yii\web\UploadedFile;
  * @property string $cp
  * @property string $nif
  * @property float|null $peso
- *
+ * @property float|null $altura
  * @property User $iDperfil
  * @property Perfilaula[] $perfilaulas
  * @property Aula[] $iDaulas
@@ -35,6 +35,9 @@ class Perfil extends \yii\db\ActiveRecord
     public $estatuto;
     public $email;
     public $username;
+    public $pass_antiga;
+    public $pass_nova;
+    public $pass_confirmar;
     /**
      * {@inheritdoc}
      */
@@ -49,16 +52,12 @@ class Perfil extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [[/*'IDperfil', 'nSocio', */'primeiroNome', 'apelido', 'genero', 'telefone', 'dtaNascimento', 'rua', 'localidade', 'cp', 'nif'], 'required', 'message' => 'Preencha os campos'],
+            [['primeiroNome', 'apelido', 'genero', 'telefone', 'dtaNascimento', 'rua', 'localidade', 'cp', 'nif'], 'required', 'message' => 'Preencha os campos'],
             [['IDperfil', 'nSocio'], 'integer'],
             [['genero'], 'string'],
             [['dtaNascimento'], 'safe'],
-<<<<<<< HEAD
-            [['dtaNascimento'], 'date', 'format'=>'yyyy-M-d'],
-=======
             [['dtaNascimento'], 'date', 'format' => 'yyyy-M-d', 'message' => 'Formato data: aaaa-mm-dd'],
->>>>>>> Ricardo_API
-            [['peso'], 'number'],
+            [['peso', 'altura'], 'number', 'min' => 0, 'max' => 999],
             [['foto'], 'string', 'max' => 500],
             [['primeiroNome'], 'string', 'max' => 50],
             [['apelido'], 'string', 'max' => 30],
@@ -69,12 +68,17 @@ class Perfil extends \yii\db\ActiveRecord
             [['nif'], 'unique'],
             [['file'], 'file'],
             [['estatuto', 'email'], 'safe'],
-            [['email'], 'required', 'message' => 'Introduza um email válido'],
             ['email', 'email', 'message' => 'Introduza um email válido'],
             ['email', 'string', 'max' => 255],
-            ['username', 'required', 'message' => 'Introduza um username válido'],
-            //[['IDperfil'], 'unique'],
+            [['IDperfil'], 'unique'],
             [['IDperfil'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['IDperfil' => 'id']],
+            ['username', 'string', 'min' => 4],
+
+
+            [['pass_nova', 'pass_antiga', 'pass_confirmar'], 'safe'],
+            [['pass_nova', 'pass_confirmar'], 'string', 'min' => 4],
+            [['pass_nova', 'pass_confirmar'], 'filter', 'filter' => 'trim'],
+            [['pass_confirmar'], 'compare', 'compareAttribute' => 'pass_nova', 'message' => 'Password Diferentes'],
         ];
     }
 
@@ -96,7 +100,7 @@ class Perfil extends \yii\db\ActiveRecord
             'cp' => 'Código Postal',
             'nif' => 'NIF',
             'peso' => 'Peso',
-
+            'altura' => 'Altura',
             'estatuto' => 'Estatuto',
             'file' => 'Foto',
         ];
@@ -200,12 +204,5 @@ class Perfil extends \yii\db\ActiveRecord
         $nome_imagem = 'prof' . $this->nSocio;    //Atribui nome aleatório ao ficheiro 
         $this->file->saveAs('../../common/uploads/perfis/' . $nome_imagem . '.' . $this->file->extension);
         $this->foto = $nome_imagem . '.' . $this->file->extension;
-    }
-
-    public function whenSelfUnique($model, $attribute) {
-        if (!\Yii::$app->user->isGuest) {
-            return \Yii::$app->user->identity->$attribute !== $model->$attribute;
-        }
-        return true;
     }
 }

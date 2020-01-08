@@ -16,6 +16,7 @@ AppAsset::register($this);
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
+
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,54 +25,54 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
-<body>
-<?php $this->beginBody() ?>
 
-<div class="wrap">
+<body>
+    <?php $this->beginBody() ?>
     <?php
     NavBar::begin([
-        'brandLabel' => '<img src="/imgs/logo.png" width="60" height="25" style="float:left;margin-right:15px;"> SportGym',
+        'brandLabel' => '<img src="/imgs/logo.png" width="60" height="25" id="navbar-img">SportGym',
         'brandUrl' => Yii::$app->homeUrl,
         'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
+            'class' => 'navbar navbar-inverse navbar-fixed-top my-navbar',
         ],
     ]);
-<<<<<<< HEAD
-
     if (Yii::$app->user->isGuest) {
         $menuItems = [
-            ['label' => 'Clubes', 'url' => ['/ginasio/index']],
-            ['label' => 'Sobre Nós', 'url' => ['/sobre-nos/index']],
-            ['label' => 'Login', 'url' => ['/site/login']],
+            ['label' => 'Clubes', 'url' => ['/ginasio/index'], 'linkOptions' => ['class' => 'navbar-a'], 'options' => ['class' => 'navbar-item']],
+            ['label' => 'Sobre Nós', 'url' => ['/site/about'], 'linkOptions' => ['class' => 'navbar-a'], 'options' => ['class' => 'navbar-item']],
+            ['label' => 'Login', 'url' => ['/site/login'], 'linkOptions' => ['class' => 'navbar-a'], 'options' => ['class' => 'navbar-item']],
         ];
     } else {
         $menuItems = [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'Meus Planos', 'url' => ['/plano/index']],
-            ['label' => 'Minhas Compras', 'url' => ['/venda/index']],
-            ['label' => 'Mapa de Aulas', 'url' => ['perfil-aula/index']],
-            ['label' => 'Clubes', 'url' => ['ginasio/index']],
-            ['label' => 'Sobre Nós', 'url' => ['/sobre-nos/index']],
+            ['label' => 'Home', 'url' => ['/site/index'], 'linkOptions' => ['class' => 'navbar-a'], 'options' => ['class' => 'navbar-item']],
+            ['label' => 'Loja', 'url' => ['/loja/index'], 'linkOptions' => ['class' => 'navbar-a'], 'options' => ['class' => 'navbar-item']],
+            ['label' => 'Clubes', 'url' => ['ginasio/index'], 'linkOptions' => ['class' => 'navbar-a'], 'options' => ['class' => 'navbar-item']],
+            ['label' => 'Sobre Nós', 'url' => ['/site/about'], 'linkOptions' => ['class' => 'navbar-a'], 'options' => ['class' => 'navbar-item']],
+            [
+                'label' =>  'Minha Conta',
+                'items' => [
+                    ['label' => 'Meus Planos', 'url' => ['/perfil-plano/index']],
+                    ['label' => 'Minhas Aulas', 'url' => ['perfil-aula/index']],
+                    ['label' => 'Minhas Compras', 'url' => ['/venda/index']],
+                    ['label' => 'Definições', 'url' => ['definicoes/index']],
+                ],
+                'options' => [
+                    'class' => 'navbar-item'
+                ],
+                'linkOptions' => [
+                    'class' => 'navbar-a'
+                ],
+            ],
         ];
 
-=======
-    
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems = [
-            ['label' => 'Loja', 'url' => ['/loja/index']],
-        ];
->>>>>>> Ricardo_API
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
                 'Logout (' . Yii::$app->user->identity->username . ')',
-                ['class' => 'btn btn-link logout']
+                ['class' => 'btn btn-link logout navbar-a navbar-item']
             )
             . Html::endForm()
             . '</li>';
-
     }
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
@@ -88,23 +89,9 @@ AppAsset::register($this);
         <?= Alert::widget() ?>
         <?= $content ?>
     </div>
-</div>
+    </div>
 
-<<<<<<< HEAD
-<!--<footer class="footer">
-        <div class="container">
-            <p class="pull-left">&copy; <?php //echo Html::encode('SportGym')
-?> <?php //echo date('Y')
-?></p>
-
-            <p class="pull-right"><? //echo Yii::powered()
-?></p>
-        </div>
-    </footer> -->
-
-=======
->>>>>>> Ricardo_API
-<?php $this->endBody() ?>
+    <?php $this->endBody() ?>
 </body>
 
 </html>

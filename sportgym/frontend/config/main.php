@@ -45,10 +45,16 @@ return [
             'errorAction' => 'site/error',
         ],
 
+
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
+                [
+                    'class' => 'yii\rest\UrlRule',
+                    'controller' => 'v1/produtos',
+                    'pluralize' => false,
+                ],
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'v1/planos',
@@ -62,8 +68,9 @@ return [
             ],
         ],
 
+
     ],
-    
+
 
     'params' => $params,
 ];

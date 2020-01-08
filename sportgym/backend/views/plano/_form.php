@@ -15,22 +15,10 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'nome')->textInput(['maxlength' => true, 'class' => 'form-control', 'placeholder' => 'Musculação/Emagrecimento']) ?>
 
-    <?php
-    if ($model->treino == 1) {
-        $model->tipo = 0;
-    }
-    if ($model->treino == 1) {
-        $model->tipo = 1;
-    }
-    if ($model->nutricao == 1) {
-        $model->tipo = 2;
-    }
-    ?>
-
     <?= $form->field($model, 'tipo')->dropDownList(
         [
-            1 => 'Treino',
-            2 => 'Nutrição',
+            0 => 'Treino',
+            1 => 'Nutrição',
         ],
         [
             'prompt' => 'Selecione o tipo de plano',

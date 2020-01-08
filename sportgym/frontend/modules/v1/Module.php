@@ -2,6 +2,8 @@
 
 namespace frontend\modules\v1;
 
+use Yii;
+
 /**
  * v1 module definition class
  */
@@ -18,7 +20,6 @@ class Module extends \yii\base\Module
     public function init()
     {
         parent::init();
-
-        // custom initialization code goes here
+        Yii::$app->user->enableSession = false;
     }
 }

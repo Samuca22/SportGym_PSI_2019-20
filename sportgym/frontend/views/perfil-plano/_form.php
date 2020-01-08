@@ -12,18 +12,52 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'IDperfil')->textInput() ?>
+    <?= $form->field($model, 'nome')->textInput(['maxlength' => true, 'class' => 'form-control', 'placeholder' => 'Musculação/Emagrecimento']) ?>
 
-<<<<<<< HEAD
-    <?= $form->field($model, 'IDplano')->textInput(['maxlength' => true]) ?>
-=======
-    <?= $form->field($model, 'IDplano')->textInput() ?>
->>>>>>> Ricardo_API
+    <?= $form->field($model, 'tipo')->dropDownList(
+        [
+            1 => 'Treino',
+            2 => 'Nutrição',
+        ],
+        [
+            'prompt' => 'Selecione o tipo de plano',
+            'options' => [
+                $model->tipo => ['Selected' => true],
+            ],
+        ],
+        [
 
-    <?= $form->field($model, 'dtaplano')->textInput() ?>
+            'class' => 'form-control'
+        ]
+    ) ?>
+
+    <?= $form->field($model, 'descricao')->textarea([
+        'maxlength' => true, 'style' => 'resize:none;width:500px;height:700px;overflow-y:auto;',
+        'value' => 'Nome Plano - Objetivo
+
+        PEQUENO-ALMOÇO
+        leite com aveia OU ovos com batatas
+    
+        LANCHE DA MANHÃ
+        Pão com atum
+
+        ALMOÇO
+        Batata doce com arroz com um peito de frango
+    
+        LANCHA DA TARDE
+        Pão com cebola e maionese
+    
+        JANTAR
+        Batata salgada com massa e salmão
+    
+        CEIA
+        Shake',
+
+        'class' => 'form-control'
+    ]) ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Gravar', ['class' => 'btn btn-azul']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
