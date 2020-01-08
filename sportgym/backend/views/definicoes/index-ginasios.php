@@ -118,7 +118,7 @@ use yii\helpers\Html;
 <div class="row">
     <div class="col-md-12">
         <div style="float:right;">
-            <?= Html::a('Novo Estabelecimento', ['create-ginasio'], ['class' => 'btn btn-azul']) ?>
+            <?= Html::a('Novo Estabelecimento', ['create-ginasio'], ['class' => 'btn btn-azul', 'name' => 'novo-estabelecimento-button']) ?>
         </div>
     </div>
 </div>

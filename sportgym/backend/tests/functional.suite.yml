@@ -2,4 +2,8 @@ suite_namespace: backend\tests\functional
 actor: FunctionalTester
 modules:
     enabled:
-        - Yii2
+        - Yii2:
+        # Linha abaixo foi adicionada
+            configFile: 'config/codeception-local.php'
+            
+            

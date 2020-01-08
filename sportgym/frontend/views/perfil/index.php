@@ -4,10 +4,6 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 
 /* @var $this yii\web\View */
-<<<<<<< HEAD
-/* @var $searchModel common\models\PerfilSearch */
-=======
->>>>>>> Ricardo_API
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
 $this->title = 'Perfils';
@@ -21,17 +17,9 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Perfil', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-<<<<<<< HEAD
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
-        'filterModel' => $searchModel,
-=======
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
->>>>>>> Ricardo_API
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 

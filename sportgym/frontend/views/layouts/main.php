@@ -36,8 +36,6 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-<<<<<<< HEAD
-
     if (Yii::$app->user->isGuest) {
         $menuItems = [
             ['label' => 'Clubes', 'url' => ['/ginasio/index']],
@@ -54,15 +52,6 @@ AppAsset::register($this);
             ['label' => 'Sobre Nós', 'url' => ['/sobre-nos/index']],
         ];
 
-=======
-    
-    if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
-    } else {
-        $menuItems = [
-            ['label' => 'Loja', 'url' => ['/loja/index']],
-        ];
->>>>>>> Ricardo_API
         $menuItems[] = '<li>'
             . Html::beginForm(['/site/logout'], 'post')
             . Html::submitButton(
@@ -90,20 +79,6 @@ AppAsset::register($this);
     </div>
 </div>
 
-<<<<<<< HEAD
-<!--<footer class="footer">
-        <div class="container">
-            <p class="pull-left">&copy; <?php //echo Html::encode('SportGym')
-?> <?php //echo date('Y')
-?></p>
-
-            <p class="pull-right"><? //echo Yii::powered()
-?></p>
-        </div>
-    </footer> -->
-
-=======
->>>>>>> Ricardo_API
 <?php $this->endBody() ?>
 </body>
 

@@ -6,12 +6,11 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model common\models\Perfil */
 
-<<<<<<< HEAD
-$this->title = $modelPerfil->primeiroNome . ' ' . $modelPerfil->apelido . ' ' . $modelPerfil->nSocio;
+$this->title = $model->primeiroNome . ' ' . $model->apelido . ' ' . $model->nSocio;
 ?>
 <div class="row" style="align-items: center; display: flex;">
     <div class="col-md-8">
-        <h1>Bem-Vindo <?= $modelPerfil->primeiroNome, ' ', $modelPerfil->apelido ?></h1>
+        <h1>Bem-Vindo <?= $model->primeiroNome, ' ', $model->apelido ?></h1>
     </div>
     <div class="col-md-4">
         <span style="float: right;">
@@ -23,27 +22,27 @@ $this->title = $modelPerfil->primeiroNome . ' ' . $modelPerfil->apelido . ' ' . 
 <div class="perfil-container container">
     <div class="row" style="margin-top: 30px">
         <div class="col-md-3">
-            <img src="<?= $modelPerfil->foto ?>" width="200" height="200"> <!-- Não mostra a foto porque não dá para ir buscá-la ao backend -->
+            <img src="<?= $model->foto ?>" width="200" height="200"> <!-- Não mostra a foto porque não dá para ir buscá-la ao backend -->
         </div>
         <div class="col-md-9">
             <div class="row">
                 <div class="col col-sm-12">
-                    <span>Nome: </span><?= $modelPerfil->primeiroNome ?> <?= $modelPerfil->apelido ?>
+                    <span>Nome: </span><?= $model->primeiroNome ?> <?= $model->apelido ?>
                 </div>
             </div>
             <div class="row" style="margin-top: 20px">
                 <div class="col col-md-12">
-                    <span>Nº Sócio:</span> <?= $modelPerfil->nSocio ?> <span>Username:</span> <?= $modelUser->username ?>
+                    <span>Nº Sócio:</span> <?= $model->nSocio ?> <span>Username:</span> 
                 </div>
             </div>
             <div class="row" style="margin-top: 20px">
                 <div class="col col-sm-12">
-                    <span>Género:</span> <?= $modelPerfil->genero ?> <span>Data de Nascimento:</span> <?= Yii::$app->formatter->asDate($modelPerfil->dtaNascimento, 'dd/MM/yyyy') ?>
+                    <span>Género:</span> <?= $model->genero ?> <span>Data de Nascimento:</span> <?= Yii::$app->formatter->asDate($model->dtaNascimento, 'dd/MM/yyyy') ?>
                 </div>
             </div>
             <div class="row" style="margin-top: 20px">
                 <div class="col col-sm-12">
-                    <span>Peso:</span> <?= $modelPerfil->peso ?>kg <span>Altura:</span> <?= $modelPerfil->altura ?>cm
+                    <span>Peso:</span> <?= $model->peso ?>kg <span>Altura:</span> <?= $model->altura ?>cm
                 </div>
             </div>
         </div>
@@ -86,46 +85,3 @@ $this->title = $modelPerfil->primeiroNome . ' ' . $modelPerfil->apelido . ' ' . 
         </table>
     </div>
 </div>
-=======
-$this->title = $model->IDperfil;
-$this->params['breadcrumbs'][] = ['label' => 'Perfils', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
-\yii\web\YiiAsset::register($this);
-?>
-<div class="perfil-view">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Update', ['update', 'id' => $model->IDperfil], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->IDperfil], [
-            'class' => 'btn btn-danger',
-            'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
-                'method' => 'post',
-            ],
-        ]) ?>
-    </p>
-
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'IDperfil',
-            'nSocio',
-            'foto',
-            'primeiroNome',
-            'apelido',
-            'genero',
-            'telefone',
-            'dtaNascimento',
-            'rua',
-            'localidade',
-            'cp',
-            'nif',
-            'peso',
-            'altura',
-        ],
-    ]) ?>
-
-</div>
->>>>>>> Ricardo_API

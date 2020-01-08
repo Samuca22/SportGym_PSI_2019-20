@@ -47,7 +47,7 @@ use yii\widgets\ActiveForm;
         <div class="row">
             <div class="col-md-12">
                 <div style="float:right;">
-                    <?= Html::submitButton('Gravar', ['class' => 'btn btn-azul']) ?>
+                    <?= Html::submitButton('Gravar', ['class' => 'btn btn-azul', 'name' => 'criar-ginasio-button']) ?>
                     <?= Html::a('Cancelar', ['index-ginasios'], ['class' => 'btn btn-vermelho']) ?>
                 </div>
             </div>
