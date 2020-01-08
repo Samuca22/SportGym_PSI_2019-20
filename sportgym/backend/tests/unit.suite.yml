@@ -1,2 +1,13 @@
 suite_namespace: backend\tests\unit
 actor: UnitTester
+modules:
+  enabled:
+    - Asserts
+    - Yii2:
+        configFile: 'config/codeception-local.php'
+    - Db:
+        dsn: 'mysql:host=localhost;dbname=sportgymdb_test'
+        user: 'root'
+        password: ''
+        populate: false
+        cleanup: true

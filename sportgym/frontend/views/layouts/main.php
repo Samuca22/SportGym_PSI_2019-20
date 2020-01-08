@@ -94,5 +94,5 @@ AppAsset::register($this);
     <?php $this->endBody() ?>
 </body>
 
-</html>
+    </html>
 <?php $this->endPage() ?>

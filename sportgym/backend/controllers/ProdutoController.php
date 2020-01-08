@@ -94,6 +94,7 @@ class ProdutoController extends Controller
     public function actionCreate()
     {
         $model = new Produto();
+
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $model->estado = 0;
             $model->save();
