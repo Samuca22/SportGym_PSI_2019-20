@@ -66,7 +66,7 @@ class PlanoController extends Controller
     {
         $treino_searchModel = new PlanoSearch();
         $treino_dataProvider = $treino_searchModel->search(Yii::$app->request->queryParams);
-        $treino_dataProvider->query->andWhere('treino = 1');
+        $treino_dataProvider->query->andWhere('tipo = 0');
 
         return $this->render('index-treino', [
             'treino_searchModel' => $treino_searchModel,
@@ -78,7 +78,7 @@ class PlanoController extends Controller
     {
         $nutricao_searchModel = new PlanoSearch();
         $nutricao_dataProvider = $nutricao_searchModel->search(Yii::$app->request->queryParams);
-        $nutricao_dataProvider->query->andWhere('nutricao = 1');
+        $nutricao_dataProvider->query->andWhere('tipo = 1');
 
         return $this->render('index-nutricao', [
             'nutricao_searchModel' => $nutricao_searchModel,
@@ -109,19 +109,8 @@ class PlanoController extends Controller
         $model = new Plano();
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if($model->tipo == 1){
-                $model->treino = 1;
-                $model->nutricao = 0;
-            }
-            if($model->tipo == 2)
-            {
-                $model->treino = 0;
-                $model->nutricao = 1;
-            }
-
             if($model->save()){
-                $model->nome = 'sportgym' . $model->IDplano . '_' . $model->nome;
-                $model->save();
+                $model->atribuirNomeFromBack(); 
                 Yii::$app->getSession()->setFlash('success', 'Plano criado com sucesso');
                 return $this->redirect(['view', 'id' => $model->IDplano]);
             }
@@ -162,18 +151,11 @@ class PlanoController extends Controller
     public function actionDelete($id)
     {
         $plano = $this->findModel($id);
-        $perfisPlano = PerfilPlano::find()->all();
-        $possivelApagar = true;
 
-        foreach ($perfisPlano as $perfilPlano) {
-            if ($perfilPlano->IDplano == $plano->IDplano) {
-                $possivelApagar = false;
-                break;
-            }
-        }
+        $possivelApagar = $plano->verificarAtribuicaoPlano();
 
         if($possivelApagar == true){
-            if ($plano->treino == 1) {
+            if ($plano->tipo == 0) {
                 $plano->delete();
                 Yii::$app->getSession()->setFlash('success', 'Plano Apagado com sucesso');
                 return $this->redirect(['index-treino']);
@@ -184,7 +166,7 @@ class PlanoController extends Controller
             }
         }
         else{
-            if ($plano->treino == 1) {
+            if ($plano->tipo == 0) {
                 Yii::$app->getSession()->setFlash('error', 'Este plano encontra-se associado a pelo menos um sócio');
                 return $this->redirect(['index-treino']);
             } else {

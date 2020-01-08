@@ -23,7 +23,7 @@ class SignupForm extends Model
     {
         return [
             ['username', 'trim'],
-            //['username', 'required'],
+            ['username', 'required'],
             ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => 'This username has already been taken.'],
             ['username', 'string', 'min' => 2, 'max' => 255],
 
@@ -33,8 +33,8 @@ class SignupForm extends Model
             ['email', 'string', 'max' => 255],
             ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => 'Este email já está a ser usado'],
 
-            // Password será atribuida automaticamente
-            //['password', 'required'],
+
+            ['password', 'required'],
             ['password', 'string', 'min' => 4],
         ];
     }
@@ -71,25 +71,20 @@ class SignupForm extends Model
      * @param User $user user model to with email should be send
      * @return bool whether the email was sent
      */
-//    public function sendEmail()
-//    {
-//        Yii::$app->mailer->compose()
-//        ->setFrom('sportgym.muscle@gmail.com')
-//            ->setTo('ricardofm1712@gmail.com')
-//            ->setSubject('Teste')
-//            ->setHtmlBody('<p>Credenciais de Acesso: </p><p><b>USERNAME: </b>' . $this->username . '</p><p><b>PASSWORD: </b>' . $this->password . '</p>')
-//            ->send();
-//    }
+    public function sendEmail()
+    {
+        Yii::$app->mailer->compose()
+        ->setFrom('sportgym.muscle@gmail.com')
+            ->setTo('ricardofm1712@gmail.com')
+            ->setSubject('Teste')
+            ->setHtmlBody('<p>Credenciais de Acesso: </p><p><b>USERNAME: </b>' . $this->username . '</p><p><b>PASSWORD: </b>' . $this->password . '</p>')
+            ->send();
+    }
 
     public function atribuirUserPass()
     {
         $this->username = Yii::$app->security->generateRandomString(8);
-<<<<<<< HEAD
-        $this->password = "goncalo";
-       // $this->password = Yii::$app->security->generateRandomString(8);
-=======
         $this->password = 'ricardo';
         //$this->password = Yii::$app->security->generateRandomString(8);
->>>>>>> Ricardo_API
     }
 }

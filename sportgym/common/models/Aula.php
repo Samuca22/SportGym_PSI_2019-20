@@ -38,11 +38,9 @@ class Aula extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['tipo', 'dtaInicio', 'duracao'], 'required'],
-            [['dtaInicio', 'duracao'], 'safe'],
-            [['IDperfil', 'IDginasio'], 'integer'],
-            [['tipo'], 'string', 'max' => 20],
-            [['IDginasio'], 'exist', 'skipOnError' => true, 'targetClass' => Ginasio::className(), 'targetAttribute' => ['IDginasio' => 'IDginasio']],
+            [['tipo', 'duracao'], 'required'],
+            [['duracao'], 'safe'],
+            [['tipo'], 'string', 'max' => 100],
         ];
     }
 
@@ -54,10 +52,7 @@ class Aula extends \yii\db\ActiveRecord
         return [
             'IDaula' => 'I Daula',
             'tipo' => 'Tipo',
-            'dtaInicio' => 'Dta Inicio',
             'duracao' => 'Duracao',
-            'IDperfil' => 'I Dperfil',
-            'IDginasio' => 'I Dginasio',
         ];
     }
 

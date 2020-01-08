@@ -2,12 +2,11 @@
 
 namespace frontend\controllers;
 
+use common\models\Perfil;
 use Yii;
 use common\models\PerfilPlano;
-<<<<<<< HEAD
 use common\models\PerfilPlanoSearch;
-=======
->>>>>>> Ricardo_API
+use common\models\Plano;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -39,63 +38,73 @@ class PerfilPlanoController extends Controller
      */
     public function actionIndex()
     {
-<<<<<<< HEAD
-
         $user = Yii::$app->user->identity;
-        $query = PerfilPlano::find()->where(['IDperfil' => $user->id]);
 
+        $plano_searchModel = new PerfilPlanoSearch();
+        $planos_dataProvider=$plano_searchModel->search(Yii::$app->request->queryParams);
+        $planos_dataProvider->query->andWhere(['perfilplano.IDperfil' => $user->getId()]);
 
-        $searchModel = new PerfilPlanoSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        $plano_dataProvider = new ActiveDataProvider ([
-            'query' => $query,
-        ]);
-
-        $dataProvider = $plano_dataProvider;
-
+        
         return $this->render('index', [
-            'searchModel' => $searchModel,
-=======
-        $dataProvider = new ActiveDataProvider([
-            'query' => PerfilPlano::find(),
-        ]);
-
-        return $this->render('index', [
->>>>>>> Ricardo_API
-            'dataProvider' => $dataProvider,
+            'plano_searchModel' => $plano_searchModel,
+            'plano_dataProvider' => $planos_dataProvider,
         ]);
     }
 
     /**
      * Displays a single PerfilPlano model.
      * @param integer $IDperfil
-<<<<<<< HEAD
      * @param string $IDplano
-=======
-     * @param integer $IDplano
->>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionView($IDperfil, $IDplano)
+    public function actionView($IDplano)
     {
+        $model = Plano::findOne([$IDplano]);
         return $this->render('view', [
-            'model' => $this->findModel($IDperfil, $IDplano),
+            'model' => $model,
         ]);
     }
 
-    /**
-     * Creates a new PerfilPlano model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
+
     public function actionCreate()
     {
-        $model = new PerfilPlano();
+        $user = Yii::$app->user->identity;
+        $model = new Plano();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'IDperfil' => $model->IDperfil, 'IDplano' => $model->IDplano]);
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if($model->tipo == 1){
+                $model->treino = 1;
+                $model->nutricao = 0;
+            }
+            if($model->tipo == 2)
+            {
+                $model->treino = 0;
+                $model->nutricao = 1;
+            }
+
+            if($model->save()){
+                $model->nome = $user->username . $model->IDplano . '_' . $model->nome;
+                $model->save();
+                $modelPerfilPlano = new PerfilPlano();
+                $modelPerfilPlano->IDperfil = $user->getId();
+                $modelPerfilPlano->IDplano = $model->IDplano;
+                $modelPerfilPlano->nSocio = $user->perfil->nSocio;
+                $modelPerfilPlano->dtaplano = date('Y-m-d');
+                
+
+                if($modelPerfilPlano->validate())
+                {
+                    $modelPerfilPlano->save();
+                    Yii::$app->getSession()->setFlash('success', 'Plano criado com sucesso');
+                    return $this->redirect(['index']);
+                } else {
+                    Yii::$app->getSession()->setFlash('error', 'Erro');
+                    return $this->redirect(['create']);
+                }
+
+                
+            }
         }
 
         return $this->render('create', [
@@ -107,11 +116,7 @@ class PerfilPlanoController extends Controller
      * Updates an existing PerfilPlano model.
      * If update is successful, the browser will be redirected to the 'view' page.
      * @param integer $IDperfil
-<<<<<<< HEAD
      * @param string $IDplano
-=======
-     * @param integer $IDplano
->>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -132,17 +137,13 @@ class PerfilPlanoController extends Controller
      * Deletes an existing PerfilPlano model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $IDperfil
-<<<<<<< HEAD
      * @param string $IDplano
-=======
-     * @param integer $IDplano
->>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
-    public function actionDelete($IDperfil, $IDplano)
+    public function actionDelete($IDplano)
     {
-        $this->findModel($IDperfil, $IDplano)->delete();
+        $this->findModel(Yii::$app->user->getId(), $IDplano)->delete();
 
         return $this->redirect(['index']);
     }
@@ -151,11 +152,6 @@ class PerfilPlanoController extends Controller
      * Finds the PerfilPlano model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $IDperfil
-<<<<<<< HEAD
-     * @param string $IDplano
-=======
-     * @param integer $IDplano
->>>>>>> Ricardo_API
      * @return PerfilPlano the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */

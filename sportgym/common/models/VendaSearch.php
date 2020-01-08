@@ -21,7 +21,7 @@ class VendaSearch extends Venda
     {
         return [
             [['IDvenda', 'estado', 'IDperfil'], 'integer'],
-            [['dataVenda', 'global'], 'safe'],
+            [['dataVenda', 'global', 'numVenda', 'globalFrontend'], 'safe'],
             [['total'], 'number'],
         ];
     }
@@ -29,8 +29,8 @@ class VendaSearch extends Venda
     public function attributeLabels()
     {
         return [
-            'global' => 'Data da Venda ou Primeiro Nome',
-            'globalFrontend' => '',
+            'global' => 'Pesquisar',
+            'globalFrontend' => 'Pesquisar',
 
         ];
     }
@@ -72,16 +72,10 @@ class VendaSearch extends Venda
 
         // grid filtering conditions
         $query->orFilterWhere(['like', 'dataVenda', $this->global])
+            ->orFilterWhere(['like', 'total', $this->global])
             ->orFilterWhere(['like', 'perfil.primeiroNome', $this->global])
-            ->orFilterWhere(['like', 'total', $this->globalFrontend])
-        ->orFilterWhere(['like', 'dataVenda', $this->globalFrontend])
-        ->orFilterWhere(['like', 'estado', $this->globalFrontend]);
-        //'IDvenda' => $this->IDvenda,
-        //'estado' => $this->estado,
-        //'dataVenda' => $this->dataVenda,
-        //'total' => $this->total,
-        //'IDperfil' => $this->IDperfil,
-        //]);
+            ->orFilterWhere(['like', 'numVenda', $this->globalFrontend])
+            ->orFilterWhere(['like', 'dataVenda', $this->globalFrontend]);
 
         return $dataProvider;
     }

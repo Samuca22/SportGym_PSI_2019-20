@@ -8,7 +8,10 @@ Samuel Jorge Perdigão Martins, - nº2180641
 
 create database if not exists sportgymdb;
 
-use SportGymDB;
+use sportgymdb_test;
+
+ALTER TABLE plano
+ADD tipo boolean not null;
 
 drop table ginasio;
 create table if not exists ginasio(
@@ -66,8 +69,7 @@ drop table plano;
 create table if not exists plano(
 IDplano int unsigned auto_increment,
 nome varchar(100) not null, 
-nutricao boolean not null,
-treino boolean not null,
+tipo boolean not null,
 descricao varchar(5000),
 constraint pk_plano_IDplano primary key (IDplano)
 )engine=InnoDB;

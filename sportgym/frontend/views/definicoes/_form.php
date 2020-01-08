@@ -10,17 +10,19 @@ use yii\widgets\ActiveForm;
 <?php $form = ActiveForm::begin(); ?>
 
 <div class="definicoes-form">
+
     <div class="col-md-6 col-md-offset-3">
-        <?php $model->email = $modelUser->email ?> 
-        <?= $form->field($model, 'email')->textInput() ?>
-        <?= $form->field($modelUser, 'username')->textInput() ?>
-        <?= $form->field($modelUser, 'password_hash')->passwordInput() ?>
+        <?php $modelPerfil->username = $modelUser->username ?>
+        <?= $form->field($modelPerfil, 'username')->textInput() ?>
+        <?= $form->field($modelPerfil, 'pass_antiga')->textInput()->label('Password Antiga') ?>
+        <?= $form->field($modelPerfil, 'pass_nova')->passwordInput()->label('Nova Password') ?>
+        <?= $form->field($modelPerfil, 'pass_confirmar')->passwordInput()->label('Confirmar Nova Password') ?>
         <div class="row">
-            <div class="col-md-2">
-                <?= $form->field($model, 'peso')->textInput() ?>
+            <div class="col-md-3">
+                <?= $form->field($modelPerfil, 'peso')->textInput()->label('Peso (Kg)') ?>
             </div>
-            <div class="col-md-2">
-                <?= $form->field($model, 'altura')->textInput() ?>
+            <div class="col-md-3">
+                <?= $form->field($modelPerfil, 'altura')->textInput()->label('Altura (cm)') ?>
             </div>
         </div>
         <span style="float:right;">
@@ -28,6 +30,7 @@ use yii\widgets\ActiveForm;
             <?= Html::a('Cancelar', ['definicoes/index'], ['class' => 'btn btn-vermelho']) ?>
         </span>
     </div>
+
 </div>
 
 <?php ActiveForm::end(); ?>
