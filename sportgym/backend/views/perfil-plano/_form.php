@@ -15,11 +15,11 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($modelPerfilPlano, 'nSocio')->textInput(['class' => 'form-control', 'placeholder' => 'Musculação']) ?>
+    <?= $form->field($modelPerfilPlano, 'nSocio')->textInput(['class' => 'form-control', 'placeholder' => '1000']) ?>
 
 
     <?= $form->field($modelPerfilPlano, 'IDplano')->dropDownList(
-        ArrayHelper::map(Plano::find()->all(), 'IDplano', 'nome'),
+        ArrayHelper::map(Plano::find()->orderBy(['nome' => SORT_ASC])->all(), 'IDplano', 'nome'),
         [
            'prompt' => 'Selecione um plano',
            'class' => 'form-control',

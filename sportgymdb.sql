@@ -66,9 +66,8 @@ drop table plano;
 create table if not exists plano(
 IDplano int unsigned auto_increment,
 nome varchar(100) not null, 
-nutricao boolean not null,
-treino boolean not null,
-descricao varchar(5000),
+tipo boolean not null,
+descricao varchar(5000) not null,
 constraint pk_plano_IDplano primary key (IDplano)
 )engine=InnoDB;
 
@@ -78,7 +77,8 @@ IDvenda int unsigned auto_increment,
 estado boolean not null,
 dataVenda datetime null, 
 total float not null,
-IDperfil int ,
+IDperfil int,
+numVenda varchar(20) null, 
 constraint pk_venda_IDvenda primary key (IDvenda),
 constraint fk_venda_IDperfil foreign key (IDperfil) references perfil(IDperfil)
 )engine=InnoDB;

@@ -32,7 +32,7 @@ class LinhaVenda extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['quantidade'], 'required'],
+            [['quantidade', 'subTotal'], 'required'],
             [['quantidade', 'IDvenda', 'IDproduto'], 'integer'],
             [['subTotal'], 'number'],
             [['IDproduto'], 'exist', 'skipOnError' => true, 'targetClass' => Produto::className(), 'targetAttribute' => ['IDproduto' => 'IDproduto']],

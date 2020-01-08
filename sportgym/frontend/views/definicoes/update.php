@@ -5,27 +5,33 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\Perfil */
 
-$this->title = 'Editar ' . $model->primeiroNome . ' ' . $model->apelido;
+$this->title = $modelPerfil->primeiroNome . ' ' . $modelPerfil->apelido;
 ?>
-<div class="row" style="align-items: center; display: flex;">
-    <div class="col-md-8">
-        <h1>Definições</h1>
-    </div>
-    <div class="col-md-4">
-        <span style="float: right;">
-            <?= Html::a('Home', ['/perfil/view'], ['class' => 'btn btn-azulFront']) ?>
-        </span>
-    </div>
-</div>
-<hr>
-<br>
 
-<div class="perfil-update">
+<div class="img-container">
+    <div class="my-container definicoes">
+        <div class="row">
+            <div class="col-xs-8">
+                <h4>Alterar Dados Pessoais</h4>
+            </div>
+            <div class="col-xs-4">
+                <p style="float: right;">
+                    <?= Html::a('Voltar', ['/definicoes/index'], ['class' => 'btn btn-azul']) ?>
+                </p>
+            </div>
+        </div>
+        <hr class="hr">
+        <br>
 
-    <?= $this->render('_form', [
-        'model' => $model,
-        'modelUser' => $modelUser,
-        'user' => $user,
-    ]) ?>
+        <div class="perfil-update">
+
+            <?= $this->render('_form', [
+                'modelPerfil' => $modelPerfil,
+                'modelUser' => $modelUser,
+                'user' => $user,
+            ]) ?>
+
+        </div>
+    </div>
 
 </div>

@@ -10,7 +10,7 @@ $this->title = $model->nome;
 <div class="plano-update">
 
     <h4>
-        <?php if ($model->treino == 1) {
+        <?php if ($model->tipo == 0) {
             echo 'Plano de <strong>Treino: </strong>' . Html::encode($model->nome);
         } else {
             echo 'Plano de <strong>Nutrição: </strong>' . Html::encode($model->nome);

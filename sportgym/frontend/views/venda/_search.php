@@ -9,19 +9,12 @@ use yii\widgets\ActiveForm;
 ?>
 
 <div class="venda-search">
-
     <?php $form = ActiveForm::begin([
         'action' => ['index'],
         'method' => 'get',
     ]); ?>
-
-
-    <?= $form->field($model, 'global')->textInput(['class' => 'form-control form-pesquisa', 'placeholder' => 'Total ou Data ']) ?>
-
-    <div class="form-group">
-        <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-azul']) ?>
-
-    </div>
+    <?= $form->field($model, 'globalFrontend')->textInput(['maxlength' => true, 'class' => 'form-control', 'placeholder' => 'Nº venda ou Data (aaaa-mm-dd)'])->label(false) ?>
+    <?= Html::submitButton('Pesquisar', ['class' => 'btn btn-azul', 'style' => 'float:right;']) ?>
 
     <?php ActiveForm::end(); ?>
 

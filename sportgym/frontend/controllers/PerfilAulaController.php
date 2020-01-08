@@ -2,16 +2,12 @@
 
 namespace frontend\controllers;
 
-<<<<<<< HEAD
+
 use common\models\Aula;
 use common\models\Perfil;
 use Yii;
 use common\models\PerfilAula;
 use common\models\PerfilAulaSearch;
-=======
-use Yii;
-use common\models\PerfilAula;
->>>>>>> Ricardo_API
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -43,7 +39,6 @@ class PerfilAulaController extends Controller
      */
     public function actionIndex()
     {
-<<<<<<< HEAD
 
         $user = Yii::$app->user->identity;
         $query = PerfilAula::find()->where(['IDperfil' => $user->id]);
@@ -53,11 +48,6 @@ class PerfilAulaController extends Controller
         'query' => $query,
     ]);
 
-=======
-        $dataProvider = new ActiveDataProvider([
-            'query' => PerfilAula::find(),
-        ]);
->>>>>>> Ricardo_API
 
         return $this->render('index', [
             'dataProvider' => $dataProvider,
@@ -67,11 +57,7 @@ class PerfilAulaController extends Controller
     /**
      * Displays a single PerfilAula model.
      * @param integer $IDperfil
-<<<<<<< HEAD
      * @param string $IDaula
-=======
-     * @param integer $IDaula
->>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -103,12 +89,7 @@ class PerfilAulaController extends Controller
     /**
      * Updates an existing PerfilAula model.
      * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $IDperfil
-<<<<<<< HEAD
      * @param string $IDaula
-=======
-     * @param integer $IDaula
->>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -129,11 +110,7 @@ class PerfilAulaController extends Controller
      * Deletes an existing PerfilAula model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
      * @param integer $IDperfil
-<<<<<<< HEAD
      * @param string $IDaula
-=======
-     * @param integer $IDaula
->>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -148,11 +125,7 @@ class PerfilAulaController extends Controller
      * Finds the PerfilAula model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
      * @param integer $IDperfil
-<<<<<<< HEAD
      * @param string $IDaula
-=======
-     * @param integer $IDaula
->>>>>>> Ricardo_API
      * @return PerfilAula the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */

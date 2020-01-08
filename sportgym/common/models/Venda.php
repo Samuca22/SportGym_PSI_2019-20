@@ -37,6 +37,7 @@ class Venda extends \yii\db\ActiveRecord
             [['dataVenda'], 'safe'],
             [['dataVenda'], 'date', 'format'=>'yyyy-m-d'],
             [['total'], 'number'],
+            [['numVenda'], 'string', 'max' => 20],
             [['IDperfil'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['IDperfil' => 'IDperfil']],
         ];
     }
@@ -90,6 +91,5 @@ class Venda extends \yii\db\ActiveRecord
     {
         $this->estado = 1;
         $this->dataVenda = date('Y-m-d H:i:s');
-        $this->save();
     }
 }

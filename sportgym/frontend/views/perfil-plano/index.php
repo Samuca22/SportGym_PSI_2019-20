@@ -1,72 +1,58 @@
 <?php
 
 use yii\helpers\Html;
-use yii\grid\GridView;
-<<<<<<< HEAD
-use kartik\icons\Icon;
 
 
 /* @var $this yii\web\View */
-/* @var $searchModel common\models\PerfilPlanoSearch */
-=======
-
-/* @var $this yii\web\View */
->>>>>>> Ricardo_API
+/* @var $searchModel common\models\PlanoSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Perfil Planos';
-$this->params['breadcrumbs'][] = $this->title;
-?>
-<<<<<<< HEAD
-
-<?php echo $this->render('_search', ['model' => $searchModel]);
+$this->title = 'Meus Planos';
 ?>
 
+<div class="img-container">
+    <div class="my-container meus-planos">
+        <h3 class="text-center">Meus Planos</h3>
+        <hr class="hr">
+        <br>
 
-<h3>
-    <center>Meus Planos</center>
-</h3>
-<hr class="hr">
-<br>
-<?php foreach ($dataProvider->models as $model) : ?>
-    <div class="col-md-6">
-        <div class="mostrar-planos">
-            <span><?= 'Plano - ' . $model->iDplano->nome ?></span><br><br>
-            <span><?= 'Data Plano - ' . $model->dtaplano ?></span><br>
-            <div class="butoes">
-                <?= Html::a('Ver', ['view', 'IDplano', 'IDperfil' => $model->IDplano], ['class' => 'btn btn-xs btn-acao']) ?>
-                <?= Html::a('Editar', ['update', 'id' => $model->IDplano], ['class' => 'btn btn-xs btn-acao']) ?>
-                <?= Html::a('Eliminar', ['delete', 'id' => $model->IDplano], [
-                    'class' => 'btn btn-xs btn-acao',
-                    'data-confirm' => 'Tem mesmo a certeza que pretende apagar este plano?', 'data-method' => 'post'
-                ]) ?>
+
+
+        <div class="row">
+            <div class="col-xs-6">
+            <?= Html::a('Criar Plano', ['create'], ['class' => 'btn btn-lg btn-azul']) ?>
+            </div>
+            <div class="col-xs-6 meus-planos-caixa-pesquisa">
+                <?php echo $this->render('_search', ['model' => $plano_searchModel]);
+                ?>
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            <div class="col-md-6">
+                <h4 class="text-center">Planos de Treino</h4>
+                <?php foreach ($plano_dataProvider->models as $model) : ?>
+                    <?php if ($model->iDplano->treino == '1') : ?>
+                        <?= Html::a('<div class="mostrar-planos">
+                                        <span>' . $model->iDplano->nome . '</span><br><br>
+                                        <span>' . Yii::$app->formatter->asDate($model->dtaplano, 'dd-MM-yyyy') . '</span><br>
+                                    </div>', ['view', 'IDplano' => $model->IDplano], ['class' => 'mostrar-planos-a']) ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
+            </div>
+            <div class="col-md-6">
+                <h4 class="text-center">Planos de Nutrição</h4>
+                <?php foreach ($plano_dataProvider->models as $model) : ?>
+                    <?php if ($model != null && $model->iDplano->nutricao == '1') : ?>
+                        <?= Html::a('<div class="mostrar-planos">
+                                        <span>' . $model->iDplano->nome . '</span><br><br>
+                                        <span>' . Yii::$app->formatter->asDate($model->dtaplano, 'dd-MM-yyyy') . '</span><br>
+                                    </div>', ['view', 'IDplano' => $model->IDplano], ['class' => 'mostrar-planos-a']) ?>
+                    <?php endif; ?>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
-<?php endforeach; ?>
-=======
-<div class="perfil-plano-index">
-
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <p>
-        <?= Html::a('Create Perfil Plano', ['create'], ['class' => 'btn btn-success']) ?>
-    </p>
-
-
-    <?= GridView::widget([
-        'dataProvider' => $dataProvider,
-        'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
-            'IDperfil',
-            'IDplano',
-            'dtaplano',
-
-            ['class' => 'yii\grid\ActionColumn'],
-        ],
-    ]); ?>
-
-
 </div>
->>>>>>> Ricardo_API

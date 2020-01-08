@@ -41,7 +41,6 @@ class Ginasio extends \yii\db\ActiveRecord
             [['email'], 'string', 'max' => 200],
             [['telefone'], 'unique'],
             [['email'], 'unique'],
-            [['email'], 'email'],
         ];
     }
 

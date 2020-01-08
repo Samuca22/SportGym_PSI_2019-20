@@ -39,8 +39,6 @@ class Aula extends \yii\db\ActiveRecord
     {
         return [
             [['tipo', 'dtaInicio', 'duracao'], 'required'],
-            [['duracao'],  'time', 'format'=>'hh:mm:ss'],
-            [['dtaInicio'], 'date', 'format'=>'yyyy-m-d'],
             [['dtaInicio', 'duracao'], 'safe'],
             [['IDperfil', 'IDginasio'], 'integer'],
             [['tipo'], 'string', 'max' => 20],
@@ -56,10 +54,7 @@ class Aula extends \yii\db\ActiveRecord
         return [
             'IDaula' => 'I Daula',
             'tipo' => 'Tipo',
-            'dtaInicio' => 'Dta Inicio',
             'duracao' => 'Duracao',
-            'IDperfil' => 'I Dperfil',
-            'IDginasio' => 'I Dginasio',
         ];
     }
 
