@@ -21,4 +21,12 @@ class PerfisController extends ActiveController
         ];
         return $behaviors;
     }
+
+    public function actionTotal()
+    {
+        $model = new $this->modelClass;
+        $registos = $model::find()->all();
+
+        return ['total' => count($registos)];
+    }
 }
