@@ -17,7 +17,7 @@ class ProdutosTest extends \Codeception\Test\Unit
         $produto->fotoProduto = 'teste.png';
         $produto->descricao = 'shaker azul';
         $produto->precoProduto = 5;
-        $produto->estado = 1;
+        $produto->estado = 0;
 
         $produto->save();
 
@@ -30,13 +30,12 @@ class ProdutosTest extends \Codeception\Test\Unit
     // tests
     public function getProdutoValido()
     {
-
         $produto = new Produto();
         $produto->nome = 'Shaker';
         $produto->fotoProduto = 'teste.png';
         $produto->descricao = 'shake azul';
         $produto->precoProduto = 5;
-        $produto->estado = 1;
+        $produto->estado = 0;
 
         return $produto;
     }
@@ -48,18 +47,78 @@ class ProdutosTest extends \Codeception\Test\Unit
         $this->assertTrue($produto->validate());
     }
 
+    //Nome
     public function testNomeVazio()  // verifica se o campo Nome pode ser igual a Vazio
     {
-        $produto = $this->getProdutoValido();
+        $produto = new Produto();
         $produto->nome = null;
-        $this->assertFalse($produto->validate(['nome']));
+        $produto->fotoProduto = 'teste.png';
+        $produto->descricao = "shake azul";
+        $produto->precoProduto = 5;
+        $produto->estado = 0;
+
+
+        $this->assertFalse($produto->validate());
     }
+
+    public function testNomeDemasiadoLongo() // Verifica se o campo Nome pode conter a quantida de chars inseridos
+    {
+        $produto = new Produto();
+        $produto->nome = "asssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss";
+        $produto->fotoProduto = 'teste.png';
+        $produto->descricao = "shake azul";
+        $produto->precoProduto = 5;
+        $produto->estado = 0;
+
+        $this->assertFalse($produto->validate());
+    }
+
+    public function testAtualizarProdutoNome()  // Verifica a alteração do campo Nome
+    {
+
+        $nome_antigo = 'Shaker';
+        $nome_novo = 'Shaker 400ml';
+
+        $this->tester->seeRecord(Produto::class, ['nome' => $nome_antigo]);
+        $this->tester->dontSeeRecord(Produto::class, ['nome' => $nome_novo]);
+
+        $produto = Produto::find()->where(['nome' => $nome_antigo])->one();
+        $produto->nome = $nome_novo;
+        $produto->save();
+
+        $this->tester->seeRecord(Produto::class, ['nome' => $nome_novo]);
+
+    }
+
+    public function testApagarProdutoNome() // Verifica se o produto foi apagado atravez do campo Nome
+    {
+        $this->tester->seeRecord(Produto::class, ['nome' => 'Shaker']);
+        $produto = Produto::find()->where(['nome' => 'Shaker'])->one();
+        $produto->delete();
+        $this->tester->dontSeeRecord(Produto::class, ['nome' => 'Shaker']);
+    }
+
+
+    //ESTADO
+
 
     public function testEstadoVazio() // verifica se o campo Estado pode ser igual a Vazio
     {
-        $produto = $this->getProdutoValido();
+        $produto = new Produto();
+        $produto->nome = "asssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss";
+        $produto->fotoProduto = 'teste.png';
+        $produto->descricao = "shake azul";
+        $produto->precoProduto = 5;
         $produto->estado = null;
-        $this->assertTrue($produto->validate(['estado']));
+
+        $this->assertFalse($produto->validate());
+    }
+
+    public function testEstadoAceitaString()  // verifica se o campo estado pode aceitar Strings
+    {
+        $produto = $this->getProdutoValido();
+        $produto->estado = "estado";
+        $this->assertFalse($produto->validate(['estado']));
     }
 
     public function testDescricaoVazia()  // verifica se o campo Descrição pode ser igual a Vazio
@@ -81,13 +140,6 @@ class ProdutosTest extends \Codeception\Test\Unit
         $produto = $this->getProdutoValido();
         $produto->precoProduto = null;
         $this->assertFalse($produto->validate(['precoProduto']));
-    }
-
-    public function testNomeDemasiadoLongo() // Verifica se o campo Nome pode conter a quantida de chars inseridos
-    {
-        $produto = $this->getProdutoValido();
-        $produto->nome = "asssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss";
-        $this->assertFalse($produto->validate(['nome']));
     }
 
     public function testDescricaoDemasidoLongo() // Verifica se o campo Nome pode conter a quantida de chars inseridos
@@ -112,43 +164,15 @@ class ProdutosTest extends \Codeception\Test\Unit
         $this->assertFalse($produto->validate(['precoProduto']));
     }
 
-    public function testEstadoAceitaString()  // verifica se o campo estado pode aceitar Strings
-    {
-        $produto = $this->getProdutoValido();
-        $produto->estado = "estado";
-        $this->assertFalse($produto->validate(['estado']));
-    }
 
-    public function testEstadoAceitaFloat()  // verifica se o campo estado aceita Float
-    {
-        $produto = $this->getProdutoValido();
-        $produto->estado = 1.5;
-        $this->assertFalse($produto->validate(['estado']));
-    }
+
+
 
 
     public function testVerificarNomeExiste() // Test para verificar se o produto extiste
     {
 
         $this->tester->seeRecord(Produto::class, ['nome' => 'Shaker']);
-    }
-
-
-    public function testAtualizarProdutoNome()  // Verifica a alteração do campo Nome
-    {
-
-        $nome_antigo = 'Shaker';
-        $nome_novo = 'Shaker 400ml';
-
-        $this->tester->seeRecord(Produto::class, ['nome' => $nome_antigo]);
-        $this->tester->dontSeeRecord(Produto::class, ['nome' => $nome_novo]);
-
-        $produto = Produto::find()->where(['nome' => $nome_antigo])->one();
-        $produto->nome = $nome_novo;
-        $produto->save();
-
-        $this->tester->seeRecord(Produto::class, ['nome' => $nome_novo]);
-
     }
 
 
@@ -187,15 +211,6 @@ class ProdutosTest extends \Codeception\Test\Unit
     }
 
 
-    public function testApagarProdutoNome() // Verifica se o produto foi apagado atravez do campo Nome
-    {
-        $this->tester->seeRecord(Produto::class, ['nome' => 'Shaker']);
-        $produto = Produto::find()->where(['nome' => 'Shaker'])->one();
-        $produto->delete();
-        $this->tester->dontSeeRecord(Produto::class, ['nome' => 'Shaker']);
-    }
-
-
     public function testApagarProdutoDescricao() // Verifica se o produto foi apagado atravez do campo Descricao
     {
         $this->tester->seeRecord(Produto::class, ['descricao' => 'shaker azul']);
@@ -211,8 +226,6 @@ class ProdutosTest extends \Codeception\Test\Unit
         $produto->delete();
         $this->tester->dontSeeRecord(Produto::class, ['precoProduto' => 5]);
     }
-
-
 
 
 }

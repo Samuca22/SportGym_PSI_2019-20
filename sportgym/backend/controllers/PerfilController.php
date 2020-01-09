@@ -104,42 +104,49 @@ class PerfilController extends Controller
         $modelUser = new SignupForm();
         $modelAdesao = new Adesao();
 
-        // popular todos os modelos assim como validá-los
-        if ($modelUser->load(Yii::$app->request->post()) && $modelUser->validate() && $modelPerfil->load(Yii::$app->request->post()) && $modelPerfil->validate() && $modelAdesao->load(Yii::$app->request->post()) && $modelAdesao->validate()) {
-            // gerar username e password automaticos
+        $modelUser->atribuirUserPass();
+        // caso seja gerado um username já existente
+        if (!$modelUser->validate()) {
             $modelUser->atribuirUserPass();
-
-            // caso seja gerado um username já existente
-            if (!$modelUser->validate()) {
-                $modelUser->atribuirUserPass();
-            }
-
-            // guardar user na BD
-            $modelUser->signup();
-
-            // sncontrar respetivo user/ atribuir o seu id ao id do perfil / gerar número de sócio
-            $user = User::find()->where(['username' => $modelUser->username])->one();
-            $modelPerfil->IDperfil = $user->id;
-            $modelPerfil->nSocio = 1000 + $modelPerfil->IDperfil;
-
-            // se foi dado upload de imagem - guardar.
-            $modelPerfil->file = UploadedFile::getInstance($modelPerfil, 'file');
-
-
-            if ($modelPerfil->file != null) {
-                $modelPerfil->atribuirImagem();
-            }
-
-            // guardar perfil na bd e criar a sua respetiva adesão
-            $modelPerfil->save();
-            $modelAdesao->dtaInicio = date('Y-m-d H:i:s');
-            $modelAdesao->IDperfil = $modelPerfil->IDperfil;
-            $modelAdesao->save();
-            //$modelUser->sendEmail();
-
-            Yii::$app->getSession()->setFlash('success', 'Inscrição de sócio realizada com sucesso');
-            return $this->redirect('index');
         }
+
+        // popular todos os modelos assim como validá-los
+        if ($modelUser->load(Yii::$app->request->post()) && $modelUser->validate()) {
+            if ($modelPerfil->load(Yii::$app->request->post()) && $modelPerfil->validate()) {
+                $modelAdesao->dtaInicio = date("Y-m-d H:i:s"); 
+                if ($modelAdesao->load(Yii::$app->request->post()) && $modelAdesao->validate()) {
+                    // gerar username e password automaticos
+                    
+
+                    // guardar user na BD
+                    $modelUser->signup();
+
+                    // sncontrar respetivo user/ atribuir o seu id ao id do perfil / gerar número de sócio
+                    $user = User::find()->where(['username' => $modelUser->username])->one();
+                    $modelPerfil->IDperfil = $user->id;
+                    $modelPerfil->nSocio = 1000 + $modelPerfil->IDperfil;
+
+                    // se foi dado upload de imagem - guardar.
+                    $modelPerfil->file = UploadedFile::getInstance($modelPerfil, 'file');
+
+
+                    if ($modelPerfil->file != null) {
+                        $modelPerfil->atribuirImagem();
+                    }
+
+                    // guardar perfil na bd e criar a sua respetiva adesão
+                    $modelPerfil->save();
+
+                    $modelAdesao->IDperfil = $modelPerfil->IDperfil;
+                    $modelAdesao->save();
+                    $modelUser->sendEmail();
+
+                    Yii::$app->getSession()->setFlash('success', 'Inscrição de sócio realizada com sucesso');
+                    return $this->redirect('index');
+                }
+            }
+        }
+
 
         return $this->render('create', [
             'modelPerfil' => $modelPerfil,
@@ -194,7 +201,10 @@ class PerfilController extends Controller
                     ]);
                 } else {
                     // popula no modelo user o novo email
-                    $modelUser->email = $modelPerfil->email;
+                    if($modelPerfil->email != ''){
+                        $modelUser->email = $modelPerfil->email;
+                    }
+                    
                 }
             }
 

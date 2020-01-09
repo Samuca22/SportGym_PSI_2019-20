@@ -4,11 +4,8 @@ namespace frontend\controllers;
 
 use Yii;
 use common\models\Aula;
-<<<<<<< HEAD
 use common\models\AulaSearch;
-=======
 use yii\data\ActiveDataProvider;
->>>>>>> Ricardo_API
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -39,30 +36,19 @@ class AulaController extends Controller
      */
     public function actionIndex()
     {
-<<<<<<< HEAD
         $searchModel = new AulaSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
-=======
-        $dataProvider = new ActiveDataProvider([
-            'query' => Aula::find(),
-        ]);
-
-        return $this->render('index', [
->>>>>>> Ricardo_API
             'dataProvider' => $dataProvider,
         ]);
     }
 
     /**
      * Displays a single Aula model.
-<<<<<<< HEAD
      * @param string $id
-=======
      * @param integer $id
->>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -94,11 +80,8 @@ class AulaController extends Controller
     /**
      * Updates an existing Aula model.
      * If update is successful, the browser will be redirected to the 'view' page.
-<<<<<<< HEAD
      * @param string $id
-=======
      * @param integer $id
->>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -118,11 +101,8 @@ class AulaController extends Controller
     /**
      * Deletes an existing Aula model.
      * If deletion is successful, the browser will be redirected to the 'index' page.
-<<<<<<< HEAD
      * @param string $id
-=======
      * @param integer $id
->>>>>>> Ricardo_API
      * @return mixed
      * @throws NotFoundHttpException if the model cannot be found
      */
@@ -136,11 +116,8 @@ class AulaController extends Controller
     /**
      * Finds the Aula model based on its primary key value.
      * If the model is not found, a 404 HTTP exception will be thrown.
-<<<<<<< HEAD
      * @param string $id
-=======
      * @param integer $id
->>>>>>> Ricardo_API
      * @return Aula the loaded model
      * @throws NotFoundHttpException if the model cannot be found
      */

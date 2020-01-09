@@ -13,15 +13,21 @@ use yii\db\ActiveQuery;
  */
 class PerfilPlanoSearch extends PerfilPlano
 {
-    public $nSocio;
+    public $global;
     /**
      * {@inheritdoc}
      */
     public function rules()
     {
         return [
-            [['nSocio'], 'integer'],
-            ['nSocio', 'safe'],
+            ['global', 'safe'],
+        ];
+    }
+
+    public function attributeLabels()
+    {
+        return [
+            'global' => 'Pesquisar',
         ];
     }
 
@@ -45,7 +51,7 @@ class PerfilPlanoSearch extends PerfilPlano
     {
 
         $query = PerfilPlano::find();
-        $query->leftJoin('perfil', 'perfil.IDperfil=perfilplano.IDperfil');
+        $query->leftJoin('plano', 'plano.IDplano=perfilplano.IDplano');
 
         // add conditions that should always apply here
 
@@ -62,9 +68,7 @@ class PerfilPlanoSearch extends PerfilPlano
         }
 
         // grid filtering conditions
-        $query->andFilterWhere([
-            'perfil.nif' => $this->nSocio,
-        ]);
+        $query->andFilterWhere(['like', 'plano.nome', $this->global]);
 
         return $dataProvider;
     }

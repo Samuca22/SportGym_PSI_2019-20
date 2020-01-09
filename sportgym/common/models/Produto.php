@@ -2,6 +2,8 @@
 
 namespace common\models;
 
+use frontend\mosquitto\phpMQTT;
+
 use Yii;
 
 /**
@@ -36,9 +38,12 @@ class Produto extends \yii\db\ActiveRecord
             [['descricao'], 'required', 'message' => 'Introduza uma descrição para o produto'],
             [['fotoProduto'], 'string', 'max' => 500],
             [['estado'], 'integer'],
+            ['estado', 'default', 'value' => '0'],
+            [['estado'], 'required'],
             [['precoProduto'], 'number'],
             [['nome'], 'string', 'max' => 50],
             [['descricao'], 'string', 'max' => 500],
+            [['file'], 'file'],
         ];
     }
 
@@ -57,6 +62,59 @@ class Produto extends \yii\db\ActiveRecord
             //
             'file' => 'Foto',
         ];
+    }
+
+    public function afterSave($insert, $changedAttributes)
+    {
+        parent::afterSave($insert, $changedAttributes);
+
+        //Obter dados do registo em causa
+        $IDproduto = $this->IDproduto;
+        $nome = $this->nome;
+        $descricao = $this->descricao;
+        $precoProduto = $this->precoProduto;
+        $fotoProduto = $this->fotoProduto;
+        $estado = $this->estado;
+
+        $myObj = new \stdClass();
+        $myObj->IDproduto = $IDproduto;
+        $myObj->nome = $nome;
+        $myObj->descricao = $descricao;
+        $myObj->precoProduto = $precoProduto;
+        $myObj->fotoProduto = $fotoProduto;
+        $myObj->estado = $estado;
+
+        $myJSON = json_encode($myObj);
+        if ($insert)
+            $this->FazPublish("INSERT", $myJSON);
+        else
+            $this->FazPublish("UPDATE", $myJSON);
+    }
+
+    public function afterDelete()
+    {
+        parent::afterDelete();
+        $IDproduto = $this->IDproduto;
+        $myObj = new \stdClass();
+        $myObj->IDproduto = $IDproduto;
+        $myJSON = json_encode($myObj);
+        $this->FazPublish("DELETE", $myJSON);
+    }
+
+    public function FazPublish($canal, $msg)
+    {
+        $server = "127.0.0.1";
+        $port = 1883;
+        $username = ""; // set your username
+        $password = ""; // set your password
+        $client_id = "phpMQTT-publisher"; // unique!
+        $mqtt = new phpMQTT($server, $port, $client_id);
+        if ($mqtt->connect(true, NULL, $username, $password)) {
+            $mqtt->publish($canal, $msg, 0);
+            $mqtt->close();
+        } else {
+            file_put_contents("debug.output", "Time out!");
+        }
     }
 
     /**
@@ -93,5 +151,12 @@ class Produto extends \yii\db\ActiveRecord
         } else {
             return $this->estado = 0;
         }
+    }
+
+    public function atribuirImagem()
+    {
+        $nome_imagem = 'prod' . $this->IDproduto;
+        $this->file->saveAs('../../common/uploads/produtos/' . $nome_imagem . '.' . $this->file->extension);
+        $this->fotoProduto = $nome_imagem . '.' . $this->file->extension;
     }
 }

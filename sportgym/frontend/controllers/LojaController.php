@@ -38,7 +38,7 @@ class LojaController extends Controller
     public function actionIndex()
     {
         $venda = Venda::findOne(['IDperfil' => Yii::$app->user->getId(), 'estado' => 0]);
-
+        
         $produto_searchModel = new ProdutoSearch();
         $produto_dataProvider = $produto_searchModel->search(Yii::$app->request->queryParams);
         $produto_dataProvider->query->andWhere('estado = 1');
@@ -129,9 +129,12 @@ class LojaController extends Controller
 
     public function actionFinalizarVenda()
     {
-        $venda = Venda::findOne(['IDperfil' => Yii::$app->user->getId(), 'estado' => 0]);
+        $user = Yii::$app->user->identity;
+        $venda = Venda::findOne(['IDperfil' => $user->id, 'estado' => 0]);
 
         $venda->finalizarVenda();
+        $venda->numVenda = $user->id . $venda->IDvenda;
+        $venda->save();
 
         return $this->redirect('index');
     }

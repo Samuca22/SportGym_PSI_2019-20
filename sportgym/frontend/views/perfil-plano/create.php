@@ -5,16 +5,18 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model common\models\PerfilPlano */
 
-$this->title = 'Create Perfil Plano';
-$this->params['breadcrumbs'][] = ['label' => 'Perfil Planos', 'url' => ['index']];
-$this->params['breadcrumbs'][] = $this->title;
+$this->title = 'Criar Plano';
 ?>
 <div class="perfil-plano-create">
+    <div class="img-container">
+        <div class="my-container meus-planos">
+        <h3 class="text-center">Criar Plano</h3>
+        <hr class="hr">
+        <br>
 
-    <h1><?= Html::encode($this->title) ?></h1>
-
-    <?= $this->render('_form', [
-        'model' => $model,
-    ]) ?>
-
+            <?= $this->render('_form', [
+                'model' => $model,
+            ]) ?>
+        </div>
+    </div>
 </div>

@@ -30,13 +30,13 @@ class DefinicoesController extends Controller
         ];
     }
 
-    public function actionIndex($id)
+    public function actionIndex()
     {
         $user = Yii::$app->user->identity;
-        $modelUser = User::find()->where(['id' => $id])->one();
+        $modelUser = User::findOne(['id' => $user->getId()]);
 
-        return $this->render('index' , [
-            'model' => $this->findModel($id),
+        return $this->render('index', [
+            'model' => $this->findModel($user->getId()),
             'modelUser' => $modelUser,
             'user' => $user,
         ]);
@@ -45,21 +45,34 @@ class DefinicoesController extends Controller
     public function actionUpdate($id)
     {
         $user = Yii::$app->user->identity;
-        $model = Perfil::findOne($id);
-        $modelUser = User::find()->where(['id' => $id])->one();
+        $modelPerfil = Perfil::findOne($id);
+        $modelUser = User::findOne(['id' => $id]);
 
-        //Não grava nada sem ser o "Peso" do perfil
-        
-        if ($modelUser->load(Yii::$app->request->post()) && $modelUser->validate() && $model->load(Yii::$app->request->post()) && $model->validate()) {
-            $modelUser->email = $model->email;
+        if ($modelPerfil->load(Yii::$app->request->post())) {
+            $modelPerfil->save(false);
+            $modelUser->username = $modelPerfil->username;
             $modelUser->save();
-            $model->save();
 
-            return $this->redirect(['index', 'id' => $model->IDperfil]);
+            if ($modelPerfil->pass_antiga != null && $modelPerfil->pass_nova != null && $modelPerfil->pass_confirmar != null) {
+                if ($modelUser->validatePassword($modelPerfil->pass_antiga)) {
+                    if($modelPerfil->validate(array('pass_nova')) && $modelPerfil->validate(array('pass_confirmar'))){
+                        $modelUser->setPassword($modelPerfil->pass_nova);
+                        $modelUser->save();
+                    }
+                } else {
+                    Yii::$app->getSession()->setFlash('error', 'Não foi possível alterar a password');
+                }
+            }
+            return $this->render('index', [
+                'model' => $this->findModel($user->getId()),
+                'modelUser' => $modelUser,
+                'user' => $user,
+            ]);
         }
 
+
         return $this->render('update', [
-            'model' => $model,
+            'modelPerfil' => $modelPerfil,
             'modelUser' => $modelUser,
             'user' => $user,
         ]);

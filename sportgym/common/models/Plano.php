@@ -9,8 +9,7 @@ use Yii;
  *
  * @property int $IDplano
  * @property string $nome
- * @property int $nutricao
- * @property int $treino
+ * @property int $tipo
  * @property string|null $descricao
  *
  * @property Perfilplano[] $perfilplanos
@@ -18,8 +17,6 @@ use Yii;
  */
 class Plano extends \yii\db\ActiveRecord
 {
-    public $tipo;
-    
     /**
      * {@inheritdoc}
      */
@@ -34,13 +31,13 @@ class Plano extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            ['tipo', 'required', 'message' => 'Selecione um tipo de plano'],
-            [['nome'/*, 'nutricao', 'treino'*/], 'required', 'message' => 'Introduza um nome para o plano'],
-            [['nutricao', 'treino'], 'integer'],
-            ['descricao', 'required', 'message' => 'Introduza a descrição do plano'],
-            ['tipo', 'safe'],
             [['nome'], 'string', 'max' => 100],
             [['descricao'], 'string', 'max' => 5000],
+            [['tipo'], 'boolean'],
+
+            [['nome'], 'required', 'message' => 'Introduza um nome para o plano'],
+            [['descricao'], 'required', 'message' => 'Introduza a descrição do plano'],
+            [['tipo'], 'required', 'message' => 'Selecione o tipo de plano'],
         ];
     }
 
@@ -53,8 +50,8 @@ class Plano extends \yii\db\ActiveRecord
             'IDplano' => 'I Dplano',
             'nome' => 'Nome',
             'nutricao' => 'Nutricao',
-            'treino' => 'Treino',
-            'descricao' => 'Descrição',
+            'tipo' => 'Tipo de Plano',
+
         ];
     }
 
@@ -72,5 +69,22 @@ class Plano extends \yii\db\ActiveRecord
     public function getIDperfils()
     {
         return $this->hasMany(Perfil::className(), ['IDperfil' => 'IDperfil'])->viaTable('perfilplano', ['IDplano' => 'IDplano']);
+    }
+
+    public function atribuirNomeFromBack()
+    {
+        $this->nome = 'sportgym' . $this->IDplano . '_' . $this->nome;
+        $this->save();
+    }
+
+    public function verificarAtribuicaoPlano()
+    {
+        $planoAssociado = PerfilPlano::find()->where(['IDplano' => $this->IDplano])->all();
+
+        if($planoAssociado == null){
+            return true;
+        } else {
+            return false;
+        }
     }
 }
