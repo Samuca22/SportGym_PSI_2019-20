@@ -15,6 +15,14 @@ class UserTest extends \Codeception\Test\Unit
 
     protected function _before()
     {
+        $user = new User();
+        $user->username = $this->username;
+        $user->email = $this->email;
+        $user->setPassword($this->password);
+        $user->generateAuthKey();
+        $user->generateEmailVerificationToken();
+        $user->save();
+
 
 
     }
@@ -59,14 +67,16 @@ class UserTest extends \Codeception\Test\Unit
 
     public function testVerificarUserUsername() // verifica se o user se encontra na base dados
     {
-        $user = new LoginForm([
+        $user = new SignupForm([
 
             'username' => 'admin',
+            'password' => 'admin',
         ]);
 
-        $user->login();
-        $this->tester->seeRecord('common\models\User', [
+        $user->signup();
+        $this->tester->seeRecord('backend\models\SignupForm', [
             'username' => 'admin',
+            'password' => 'admin',
             'status' => \common\models\User::STATUS_ACTIVE
         ]);
     }

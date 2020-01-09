@@ -1,5 +1,6 @@
 <?php namespace backend\tests;
 
+
 use common\models\Venda;
 
 class VendasTest extends \Codeception\Test\Unit
@@ -11,28 +12,25 @@ class VendasTest extends \Codeception\Test\Unit
 
     protected function _before()
     {
-
         $venda = new Venda();
-        $venda->total = 500;
+        $venda->total = 0;
         $venda->dataVenda = '2019-12-25';
-        $venda->estado = 1;
-
+        $venda->estado = 0;
         $venda->save();
     }
 
     protected function _after()
     {
+
     }
 
-    // tests
+    //INICIALIZAÇÃO  E VALIDAÇÃO
     public function getVendaValida()
     {
-
         $venda = new Venda();
         $venda->total = 500;
         $venda->dataVenda = '2019-12-25';
-        $venda->estado = 1;
-
+        $venda->estado = 0;
 
         return $venda;
     }
@@ -44,53 +42,74 @@ class VendasTest extends \Codeception\Test\Unit
     }
 
 
+    //CAMPOS OBRIGATÓRIOS
     public function testTotalVazio() // verifica se o campo Total pode ser igual a Vazio
     {
-        $venda = $this->getVendaValida();
+        $venda = new Venda();
         $venda->total = null;
-        $this->assertFalse($venda->validate(['total']));
+        $venda->dataVenda = '2019-12-25';
+        $venda->estado = 0;
+
+        $this->assertFalse($venda->validate());
     }
 
+
+    //CAMPOS QUE NÃO SUPORTAM STRINGS
     public function testTotalAceitaString()  // verifica se o campo Total pode aceitar Strings
     {
-        $venda = $this->getVendaValida();
-        $venda->total = "Dinheiro";
-        $this->assertFalse($venda->validate(['total']));
+        $venda = new Venda();
+        $venda->total = 'Dinheiro';
+        $venda->dataVenda = '2019-12-25';
+        $venda->estado = 0;
+
+        $this->assertFalse($venda->validate());
     }
 
     public function testDataAceitaString()  // verifica se o campo DataVenda pode aceitar Strings
     {
-        $venda = $this->getVendaValida();
-        $venda->dataVenda = "Data";
-        $this->assertFalse($venda->validate(['dataVenda']));
+        $venda = new Venda();
+        $venda->total = 500;
+        $venda->dataVenda = 'Data';
+        $venda->estado = 0;
+
+        $this->assertFalse($venda->validate());
     }
 
-    public function testEstadoAceitaFloat()  // verifica se o campo Total pode aceitar Strings
+
+    //CAMPOS QUE NÃO SUPORTAM NRS DECIMAIS
+    public function testEstadoAceitaFloat()  // verifica se o campo Estado pode aceitar float
     {
-        $venda = $this->getVendaValida();
+        $venda = new Venda();
+        $venda->total = 500;
+        $venda->dataVenda = '2019-12-25';
         $venda->estado = 1.5;
-        $this->assertFalse($venda->validate(['estado']));
+
+        $this->assertFalse($venda->validate());
     }
 
+
+    //VALIDAÇÃO DO TIPO DATA
     public function testDataValidacao()  // verifica se o campo DataVenda é do tipo data
     {
-        $venda = $this->getVendaValida();
-        $venda->dataVenda = "23123-22-40";
-        $this->assertFalse($venda->validate(['dataVenda']));
+        $venda = new Venda();
+        $venda->total = 500;
+        $venda->dataVenda = '2019-22-225';
+        $venda->estado = 0;
+
+        $this->assertFalse($venda->validate());
     }
 
 
-
-    public function testVerificarVendaExiste() // Test para verificar se o produto extiste
+    //VALIDAÇÃO SE A VENDA EXISTE
+    public function testVerificarVendaExiste() // Test para verificar se a Venda existe
     {
-
         $this->tester->seeRecord(Venda::class, ['dataVenda' => '2019-12-25']);
     }
 
 
+    //ALTERAÇÃO DE CAMPOS
     public function testAtualizarVendaData()  // Verifica a alteração do campo dataVenda
     {
-
         $data_antiga = '2019-12-25';
         $data_nova = '2020-01-01';
 
@@ -105,40 +124,14 @@ class VendasTest extends \Codeception\Test\Unit
     }
 
 
-/*
-    public function testAtualizarVendaTotal()  // Verifica a alteração do campo Total
-    {
-        $total_antigo = 500;
-        $total_novo = 499;
-
-        $this->tester->seeRecord(Venda::class, ['total' => $total_antigo]);
-        $this->tester->dontSeeRecord(Venda::class, ['total' => $total_novo]);
-
-        $venda = Venda::find()->where(['total' => $total_antigo])->one();
-        $venda->total = $total_novo;
-        $venda->save();
-
-        $this->tester->seeRecord(Venda::class,['total' => $total_novo]);
-    }
-
-
-    public function testApagarVendaData() // Verifica se o produto foi apagado atravez do campo Data
+    //REMOÇÃO DE CAMPOS
+    public function testApagarVendaData() // Verifica se o produto foi apagado atravez do campo dataVenda
     {
         $this->tester->seeRecord(Venda::class, ['dataVenda' => '2019-12-25']);
         $venda = Venda::find()->where(['dataVenda' => '2019-12-25'])->one();
         $venda->delete();
         $this->tester->dontSeeRecord(Venda::class, ['dataVenda' => '2019-12-25']);
     }
-
-
-    public function testApagarVendaTotal() // Verifica se o produto foi apagado atravez do campo Total
-    {
-        $this->tester->seeRecord(Venda::class, ['total' => 500]);
-        $venda = Venda::find()->where(['total' => 500])->one();
-        $venda->delete();
-        $this->tester->dontSeeRecord(Venda::class, ['total' => 500]);
-    }
-
 
 
 }

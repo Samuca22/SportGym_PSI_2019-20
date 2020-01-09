@@ -11,7 +11,6 @@ class LinhasVendaTest extends \Codeception\Test\Unit
 
     protected function _before()
     {
-
         $linhaVenda = new LinhaVenda();
         $linhaVenda->quantidade = 2;
         $linhaVenda->subTotal = 20.5;
@@ -23,7 +22,7 @@ class LinhasVendaTest extends \Codeception\Test\Unit
     {
     }
 
-    // tests
+    //INICIALIZAÇÃO  E VALIDAÇÃO
     public function getLinhaVendaValida()
     {
         $linhaVenda = new LinhaVenda();
@@ -39,36 +38,47 @@ class LinhasVendaTest extends \Codeception\Test\Unit
         $this->assertTrue($linhaVenda->validate());
     }
 
+
+    //CAMPOS OBRIGATÓRIOS
     public function testQuantidadeVazio()  // verifica se o campo Quantidade pode ser igual a Vazio
     {
-        $linhaVenda = $this->getLinhaVendaValida();
+        $linhaVenda = new LinhaVenda();
         $linhaVenda->quantidade = null;
-        $this->assertFalse($linhaVenda->validate(['quantidade']));
+        $linhaVenda->subTotal = 20.5;
+
+        $this->assertFalse($linhaVenda->validate());
     }
 
+
+    //CAMPOS QUE NÃO SUPORTAM NRS DECIMAIS
     public function testQuantidadeFloat()  // verifica se o campo Quantidade aceita Float
     {
-        $linhaVenda = $this->getLinhaVendaValida();
+        $linhaVenda = new LinhaVenda();
         $linhaVenda->quantidade = 1.5;
-        $this->assertFalse($linhaVenda->validate(['quantidade']));
+        $linhaVenda->subTotal = 20.5;
+
+        $this->assertFalse($linhaVenda->validate());
     }
 
 
+    //CAMPOS QUE NÃO SUPORTAM STRINGS
     public function testQuantidadeString()  // verifica se o campo Quantidade aceita String
     {
-        $linhaVenda = $this->getLinhaVendaValida();
-        $linhaVenda->quantidade = 'Linha de venda';
-        $this->assertFalse($linhaVenda->validate(['quantidade']));
+        $linhaVenda = new LinhaVenda();
+        $linhaVenda->quantidade = 'Quantidade';
+        $linhaVenda->subTotal = 20.5;
+
+        $this->assertFalse($linhaVenda->validate());
     }
 
     public function testsubTotalString()  // verifica se o campo subTotal aceita String
     {
-        $linhaVenda = $this->getLinhaVendaValida();
+        $linhaVenda = new LinhaVenda();
+        $linhaVenda->quantidade = 1.5;
         $linhaVenda->subTotal = 'SubTotal';
-        $this->assertFalse($linhaVenda->validate(['subTotal']));
+
+        $this->assertFalse($linhaVenda->validate());
     }
-
-
 
 
 }
