@@ -28819,3 +28819,995 @@ $_SERVER = [
     'REQUEST_TIME' => 1578441097
 >>>>>>> master
 ]
+2020-01-09 11:25:46 [::1][-][-][warning][yii\web\User::getIdentityAndDurationFromCookie] Invalid auth key attempted for user '1': DXKMCXfQQzLqzDjXkvOGYBDZAHMhG_bZ
+2020-01-09 11:25:46 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '27c7e18fed437ba0d75719be066f1b0847f14608a9e566fd4c618476028ed129a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"DXKMCXfQQzLqzDjXkvOGYBDZAHMhG_bZ\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => '_identity-backend=27c7e18fed437ba0d75719be066f1b0847f14608a9e566fd4c618476028ed129a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22DXKMCXfQQzLqzDjXkvOGYBDZAHMhG_bZ%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '59860'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1578569146.263
+    'REQUEST_TIME' => 1578569146
+]
+2020-01-09 11:25:46 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 27344 bytes' 
+
+in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php:34
+
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): ::unserialize()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): ::Opis\Closure\unserialize()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch()
+#7 {main}
+2020-01-09 11:25:46 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_identity-backend' => '27c7e18fed437ba0d75719be066f1b0847f14608a9e566fd4c618476028ed129a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"DXKMCXfQQzLqzDjXkvOGYBDZAHMhG_bZ\",2592000]\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => '_identity-backend=27c7e18fed437ba0d75719be066f1b0847f14608a9e566fd4c618476028ed129a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22DXKMCXfQQzLqzDjXkvOGYBDZAHMhG_bZ%22%2C2592000%5D%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '59860'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1578569146.263
+    'REQUEST_TIME' => 1578569146
+]
+2020-01-09 11:25:46 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 27344 bytes' 
+
+in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php:34
+
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): ::unserialize()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): ::Opis\Closure\unserialize()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch()
+#7 {main}
+2020-01-09 11:25:46 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => '89verj5pv0un1dpnjmimghvd7m'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=89verj5pv0un1dpnjmimghvd7m'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '59860'
+    'REDIRECT_URL' => '/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1578569146.423
+    'REQUEST_TIME' => 1578569146
+]
+2020-01-09 11:25:56 [::1][1][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 27344 bytes' 
+
+in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php:34
+
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): ::unserialize()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): ::Opis\Closure\unserialize()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch()
+#7 {main}
+2020-01-09 11:25:55 [::1][1][-][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'vkgeXCIN6mMkBhCC8-TttNo0BLZzhxukrwPAJr_FSWfkf0Y6SkyEL1BIJOOpvI7MnVlOwB7-avOWVZJD1Iw_Pg=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => '89verj5pv0un1dpnjmimghvd7m'
+    '_csrf-backend' => '00b45d7bb14f68eaf494f0b99f4326687bc6ccbd28dfd20083ca31e001df029ba:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"Z7XfhAnLtN4aZXcxGmJvmyqW9VRekIvY\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '236'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=89verj5pv0un1dpnjmimghvd7m; _csrf-backend=00b45d7bb14f68eaf494f0b99f4326687bc6ccbd28dfd20083ca31e001df029ba%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22Z7XfhAnLtN4aZXcxGmJvmyqW9VRekIvY%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '59868'
+    'REDIRECT_URL' => '/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1578569155.883
+    'REQUEST_TIME' => 1578569155
+]
+2020-01-09 11:25:56 [::1][1][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 27344 bytes' 
+
+in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php:34
+
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): ::unserialize()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): ::Opis\Closure\unserialize()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch()
+#7 {main}
+2020-01-09 11:25:56 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => '1144r44ss1rh06e6mkk0t0u178'
+    '_identity-backend' => 'bce6237672a457d2281b611d6f362a87bdf7979f7b1e16372427649abb5740d8a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"uK9LoyKVNbbQICMbbc_vqXxtkGpyh1WV\",2592000]\";}'
+    '_csrf-backend' => '259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=1144r44ss1rh06e6mkk0t0u178; _identity-backend=bce6237672a457d2281b611d6f362a87bdf7979f7b1e16372427649abb5740d8a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22uK9LoyKVNbbQICMbbc_vqXxtkGpyh1WV%22%2C2592000%5D%22%3B%7D; _csrf-backend=259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '59868'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1578569156.558
+    'REQUEST_TIME' => 1578569156
+]
+2020-01-09 11:26:00 [::1][1][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 27344 bytes' 
+
+in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php:34
+
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): ::unserialize()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): ::Opis\Closure\unserialize()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch()
+#7 {main}
+2020-01-09 11:26:00 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => '1144r44ss1rh06e6mkk0t0u178'
+    '_identity-backend' => 'bce6237672a457d2281b611d6f362a87bdf7979f7b1e16372427649abb5740d8a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"uK9LoyKVNbbQICMbbc_vqXxtkGpyh1WV\",2592000]\";}'
+    '_csrf-backend' => '259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=1144r44ss1rh06e6mkk0t0u178; _identity-backend=bce6237672a457d2281b611d6f362a87bdf7979f7b1e16372427649abb5740d8a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22uK9LoyKVNbbQICMbbc_vqXxtkGpyh1WV%22%2C2592000%5D%22%3B%7D; _csrf-backend=259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '59867'
+    'REDIRECT_URL' => '/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1578569160.052
+    'REQUEST_TIME' => 1578569160
+]
+2020-01-09 11:26:00 [::1][1][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 27344 bytes' 
+
+in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php:34
+
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): ::unserialize()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): ::Opis\Closure\unserialize()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch()
+#7 {main}
+2020-01-09 11:26:00 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => '1144r44ss1rh06e6mkk0t0u178'
+    '_identity-backend' => 'bce6237672a457d2281b611d6f362a87bdf7979f7b1e16372427649abb5740d8a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"uK9LoyKVNbbQICMbbc_vqXxtkGpyh1WV\",2592000]\";}'
+    '_csrf-backend' => '259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=1144r44ss1rh06e6mkk0t0u178; _identity-backend=bce6237672a457d2281b611d6f362a87bdf7979f7b1e16372427649abb5740d8a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22uK9LoyKVNbbQICMbbc_vqXxtkGpyh1WV%22%2C2592000%5D%22%3B%7D; _csrf-backend=259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '59867'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1578569160.149
+    'REQUEST_TIME' => 1578569160
+]
+2020-01-09 11:26:02 [::1][1][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 27344 bytes' 
+
+in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php:34
+
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): ::unserialize()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): ::Opis\Closure\unserialize()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch()
+#7 {main}
+2020-01-09 11:26:02 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => '1144r44ss1rh06e6mkk0t0u178'
+    '_identity-backend' => 'bce6237672a457d2281b611d6f362a87bdf7979f7b1e16372427649abb5740d8a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"uK9LoyKVNbbQICMbbc_vqXxtkGpyh1WV\",2592000]\";}'
+    '_csrf-backend' => '259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://sportgym.back/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=1144r44ss1rh06e6mkk0t0u178; _identity-backend=bce6237672a457d2281b611d6f362a87bdf7979f7b1e16372427649abb5740d8a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22uK9LoyKVNbbQICMbbc_vqXxtkGpyh1WV%22%2C2592000%5D%22%3B%7D; _csrf-backend=259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '59872'
+    'REDIRECT_URL' => '/site/index'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/index'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1578569162.03
+    'REQUEST_TIME' => 1578569162
+]
+2020-01-09 11:26:02 [::1][1][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 27344 bytes' 
+
+in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php:34
+
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): ::unserialize()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): ::Opis\Closure\unserialize()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch()
+#7 {main}
+2020-01-09 11:26:02 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => '1144r44ss1rh06e6mkk0t0u178'
+    '_identity-backend' => 'bce6237672a457d2281b611d6f362a87bdf7979f7b1e16372427649abb5740d8a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"uK9LoyKVNbbQICMbbc_vqXxtkGpyh1WV\",2592000]\";}'
+    '_csrf-backend' => '259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://sportgym.back/site/index'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=1144r44ss1rh06e6mkk0t0u178; _identity-backend=bce6237672a457d2281b611d6f362a87bdf7979f7b1e16372427649abb5740d8a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22uK9LoyKVNbbQICMbbc_vqXxtkGpyh1WV%22%2C2592000%5D%22%3B%7D; _csrf-backend=259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '59876'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1578569162.786
+    'REQUEST_TIME' => 1578569162
+]
+2020-01-09 11:26:04 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 27344 bytes' 
+
+in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php:34
+
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): ::unserialize()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): ::Opis\Closure\unserialize()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch()
+#7 {main}
+2020-01-09 11:26:04 [::1][-][-][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'YfkGriVBvPyJZjJ8--zXE-CASJah8D7x8K8McNwE_MUU1CvWTTn4xfMgCyS6qpBi0s4wpu2gXLCk5T5Jq0aOoQ=='
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => '1144r44ss1rh06e6mkk0t0u178'
+    '_identity-backend' => 'bce6237672a457d2281b611d6f362a87bdf7979f7b1e16372427649abb5740d8a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"uK9LoyKVNbbQICMbbc_vqXxtkGpyh1WV\",2592000]\";}'
+    '_csrf-backend' => '259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd\";}'
+]
+
+$_SESSION = []
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '106'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://sportgym.back/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=1144r44ss1rh06e6mkk0t0u178; _identity-backend=bce6237672a457d2281b611d6f362a87bdf7979f7b1e16372427649abb5740d8a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22uK9LoyKVNbbQICMbbc_vqXxtkGpyh1WV%22%2C2592000%5D%22%3B%7D; _csrf-backend=259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '59879'
+    'REDIRECT_URL' => '/site/logout'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/logout'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1578569164.148
+    'REQUEST_TIME' => 1578569164
+]
+2020-01-09 11:26:04 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 27344 bytes' 
+
+in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php:34
+
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): ::unserialize()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): ::Opis\Closure\unserialize()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch()
+#7 {main}
+2020-01-09 11:26:04 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd\";}'
+    'advanced-backend' => 'p78b5effn7f4kit9ljs6boq5fq'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://sportgym.back/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => '_csrf-backend=259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd%22%3B%7D; advanced-backend=p78b5effn7f4kit9ljs6boq5fq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '59879'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1578569164.197
+    'REQUEST_TIME' => 1578569164
+]
+2020-01-09 11:26:04 [::1][-][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 27344 bytes' 
+
+in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php:34
+
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): ::unserialize()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): ::Opis\Closure\unserialize()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch()
+#7 {main}
+2020-01-09 11:26:04 [::1][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd\";}'
+    'advanced-backend' => 'p78b5effn7f4kit9ljs6boq5fq'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://sportgym.back/'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => '_csrf-backend=259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd%22%3B%7D; advanced-backend=p78b5effn7f4kit9ljs6boq5fq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '59879'
+    'REDIRECT_URL' => '/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1578569164.222
+    'REQUEST_TIME' => 1578569164
+]
+2020-01-09 11:26:15 [::1][1][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 27344 bytes' 
+
+in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php:34
+
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): ::unserialize()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): ::Opis\Closure\unserialize()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch()
+#7 {main}
+2020-01-09 11:26:14 [::1][1][-][info][application] $_GET = []
+
+$_POST = [
+    '_csrf-backend' => 'HhxXHVWlm8IpFxMUJ4QZB61ykOporl0_TfBZlxHWXBprMXplPd3f-1NRKkxmwl52nzzo2iT-P34ZumuuZpQufg=='
+    'LoginForm' => [
+        'username' => 'admin'
+        'password' => 'admin'
+        'rememberMe' => '1'
+    ]
+    'login-button' => ''
+]
+
+$_FILES = []
+
+$_COOKIE = [
+    '_csrf-backend' => '259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd\";}'
+    'advanced-backend' => 'p78b5effn7f4kit9ljs6boq5fq'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'REDIRECT_STATUS' => '200'
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'CONTENT_LENGTH' => '236'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_ORIGIN' => 'http://sportgym.back'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => '_csrf-backend=259aa58b547b335f8aeae1eb3f79e1d9d2c180b6a65ab5ce24941350d0c790c4a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22u--xhxD9zF9XAFGq2Nx0LPbATJ29wBrd%22%3B%7D; advanced-backend=p78b5effn7f4kit9ljs6boq5fq'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '59884'
+    'REDIRECT_URL' => '/site/login'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'POST'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/site/login'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1578569174.417
+    'REQUEST_TIME' => 1578569174
+]
+2020-01-09 11:26:15 [::1][1][-][warning][yii\log\Dispatcher::dispatch] Unable to send log via yii\debug\LogTarget: PHP Notice 'yii\base\ErrorException' with message 'unserialize(): Error at offset 0 of 27344 bytes' 
+
+in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php:34
+
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): yii\web\ErrorHandler->handleError()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\opis\closure\functions.php(34): ::unserialize()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(105): ::Opis\Closure\unserialize()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(80): yii\debug\LogTarget->updateIndexFile()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2-debug\src\LogTarget.php(136): yii\debug\LogTarget->export()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Dispatcher.php(189): yii\debug\LogTarget->collect()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\log\Logger.php(177): yii\log\Dispatcher->dispatch()
+#7 {main}
+2020-01-09 11:26:15 [::1][1][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = [
+    'advanced-backend' => 'ibd2ahg7p75ulvm89plpvhm9ih'
+    '_identity-backend' => 'bce6237672a457d2281b611d6f362a87bdf7979f7b1e16372427649abb5740d8a:2:{i:0;s:17:\"_identity-backend\";i:1;s:46:\"[1,\"uK9LoyKVNbbQICMbbc_vqXxtkGpyh1WV\",2592000]\";}'
+    '_csrf-backend' => '3c0ff4bcc6ff28d875ce1f3d070dbbc9674e8d46b807a05c08be5532c737a72aa:2:{i:0;s:13:\"_csrf-backend\";i:1;s:32:\"FnL5l-2ulyVxBuz5jjrZgCV7I2Q-dIPl\";}'
+]
+
+$_SESSION = [
+    '__flash' => []
+    '__returnUrl' => 'http://sportgym.back/'
+    '__id' => 1
+]
+
+$_SERVER = [
+    'HTTP_HOST' => 'sportgym.back'
+    'HTTP_CONNECTION' => 'keep-alive'
+    'HTTP_CACHE_CONTROL' => 'max-age=0'
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1'
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36'
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    'HTTP_REFERER' => 'http://sportgym.back/site/login'
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate'
+    'HTTP_ACCEPT_LANGUAGE' => 'pt-PT,pt;q=0.9,en-GB;q=0.8,en;q=0.7,en-US;q=0.6'
+    'HTTP_COOKIE' => 'advanced-backend=ibd2ahg7p75ulvm89plpvhm9ih; _identity-backend=bce6237672a457d2281b611d6f362a87bdf7979f7b1e16372427649abb5740d8a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A46%3A%22%5B1%2C%22uK9LoyKVNbbQICMbbc_vqXxtkGpyh1WV%22%2C2592000%5D%22%3B%7D; _csrf-backend=3c0ff4bcc6ff28d875ce1f3d070dbbc9674e8d46b807a05c08be5532c737a72aa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22FnL5l-2ulyVxBuz5jjrZgCV7I2Q-dIPl%22%3B%7D'
+    'PATH' => 'C:\\ProgramData\\Oracle\\Java\\javapath;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Windows\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Program Files\\PuTTY\\;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Windows\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps'
+    'SystemRoot' => 'C:\\Windows'
+    'COMSPEC' => 'C:\\Windows\\system32\\cmd.exe'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'WINDIR' => 'C:\\Windows'
+    'SERVER_SIGNATURE' => '<address>Apache/2.4.39 (Win32) PHP/7.2.18 Server at sportgym.back Port 80</address>
+'
+    'SERVER_SOFTWARE' => 'Apache/2.4.39 (Win32) PHP/7.2.18'
+    'SERVER_NAME' => 'sportgym.back'
+    'SERVER_ADDR' => '::1'
+    'SERVER_PORT' => '80'
+    'REMOTE_ADDR' => '::1'
+    'DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'REQUEST_SCHEME' => 'http'
+    'CONTEXT_PREFIX' => ''
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web'
+    'SERVER_ADMIN' => 'wampserver@wampserver.invalid'
+    'SCRIPT_FILENAME' => 'C:/wamp64/www/SportGym_PSI_2019-20/sportgym/backend/web/index.php'
+    'REMOTE_PORT' => '59884'
+    'GATEWAY_INTERFACE' => 'CGI/1.1'
+    'SERVER_PROTOCOL' => 'HTTP/1.1'
+    'REQUEST_METHOD' => 'GET'
+    'QUERY_STRING' => ''
+    'REQUEST_URI' => '/'
+    'SCRIPT_NAME' => '/index.php'
+    'PHP_SELF' => '/index.php'
+    'REQUEST_TIME_FLOAT' => 1578569175.089
+    'REQUEST_TIME' => 1578569175
+]
