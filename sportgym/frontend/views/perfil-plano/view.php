@@ -12,7 +12,7 @@ $this->title = $model->nome;
     <div class="img-container">
         <div class="my-container meus-planos">
             <h4>
-                <?php if ($model->treino == 1) {
+                <?php if ($model->tipo == 0) {
                     echo 'Plano de Treino: <strong>' . Html::encode($model->nome) . '</strong>';
                 } else {
                     echo 'Plano de Nutrição: <strong>' . Html::encode($model->nome) . '</strong>';

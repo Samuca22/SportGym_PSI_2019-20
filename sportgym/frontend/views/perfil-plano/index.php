@@ -34,7 +34,7 @@ $this->title = 'Meus Planos';
             <div class="col-md-6">
                 <h4 class="text-center">Planos de Treino</h4>
                 <?php foreach ($plano_dataProvider->models as $model) : ?>
-                    <?php if ($model->iDplano->treino == '1') : ?>
+                    <?php if ($model->iDplano->tipo == '0') : ?>
                         <?= Html::a('<div class="mostrar-planos">
                                         <span>' . $model->iDplano->nome . '</span><br><br>
                                         <span>' . Yii::$app->formatter->asDate($model->dtaplano, 'dd-MM-yyyy') . '</span><br>
@@ -45,7 +45,7 @@ $this->title = 'Meus Planos';
             <div class="col-md-6">
                 <h4 class="text-center">Planos de Nutrição</h4>
                 <?php foreach ($plano_dataProvider->models as $model) : ?>
-                    <?php if ($model != null && $model->iDplano->nutricao == '1') : ?>
+                    <?php if ($model != null && $model->iDplano->tipo == '1') : ?>
                         <?= Html::a('<div class="mostrar-planos">
                                         <span>' . $model->iDplano->nome . '</span><br><br>
                                         <span>' . Yii::$app->formatter->asDate($model->dtaplano, 'dd-MM-yyyy') . '</span><br>

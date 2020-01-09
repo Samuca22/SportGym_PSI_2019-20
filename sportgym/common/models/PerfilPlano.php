@@ -32,7 +32,7 @@ class PerfilPlano extends \yii\db\ActiveRecord
     {
         return [
             [[/*'IDperfil', */'dtaplano'], 'required', 'message' => 'Introduza a data em que o plano foi atribuido'],
-            [['nSocio'], 'required', 'message' => 'Introduza o número de sócio'],
+            [['nSocio'], 'required', 'message' => 'Introduza o número de sócio', 'on' => 'create'],
             [['IDplano'], 'required', 'message' => 'Introduza um plano válido'], 
             [['IDperfil', 'IDplano'], 'integer'],
             [['dtaplano'], 'safe'],

@@ -73,19 +73,9 @@ class PerfilPlanoController extends Controller
         $model = new Plano();
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            if($model->tipo == 1){
-                $model->treino = 1;
-                $model->nutricao = 0;
-            }
-            if($model->tipo == 2)
-            {
-                $model->treino = 0;
-                $model->nutricao = 1;
-            }
 
             if($model->save()){
                 $model->nome = $user->username . $model->IDplano . '_' . $model->nome;
-                $model->save();
                 $modelPerfilPlano = new PerfilPlano();
                 $modelPerfilPlano->IDperfil = $user->getId();
                 $modelPerfilPlano->IDplano = $model->IDplano;

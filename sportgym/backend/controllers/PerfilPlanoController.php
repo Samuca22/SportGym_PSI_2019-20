@@ -58,7 +58,8 @@ class PerfilPlanoController extends Controller
         $perfis_dataProvider = $perfis_searchModel->search(Yii::$app->request->queryParams);
 
         // Instanciar modelo e tentar popula-lo
-        $modelPerfilPlano = new PerfilPlano();;
+        $modelPerfilPlano = new PerfilPlano();
+        $modelPerfilPlano->scenario = 'create';
 
         if ($modelPerfilPlano->load(Yii::$app->request->post()) && $modelPerfilPlano->validate()) {
             $perfil = Perfil::findOne(['nSocio' => $modelPerfilPlano->nSocio]);
