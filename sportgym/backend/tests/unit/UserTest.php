@@ -16,75 +16,112 @@ class UserTest extends \Codeception\Test\Unit
     protected function _before()
     {
         $user = new User();
-        $user->username = $this->username;
-        $user->email = $this->email;
-        $user->setPassword($this->password);
+        $user->username = 'colaborador';
+        $user->email = 'colaborador@sportgym.com';
+        $user->setPassword('admin');
         $user->generateAuthKey();
         $user->generateEmailVerificationToken();
         $user->save();
-
-
-
     }
 
     protected function _after()
     {
     }
 
-    // tests
-    public function getUserValido()
+
+    //INICIALIZAÇÃO  E VALIDAÇÃO
+    public function testVerificarGinasioExiste() // Test para verificar se o Ginasio extiste
     {
-
-        $user = new User();
-        $user->username = 'admin';
-        $user->password = 'pwadmin';
-        $user->email = 'admin@sportgym.pt';
-
-
-        return $user;
-
+        $this->tester->SeeRecord(User::class, ['username' => 'colaborador']);
     }
 
 
-    public function testUserValido() //Verifica se o Venda é valida
+    //CAMPOS ÚNICOS
+    public function testUsernameRepetido() // Verifica se o campo Username pode ser repetido
     {
-        $user = $this->getUserValido();
-        $this->assertTrue($user->validate());
+        $signup = new SignupForm();
+        $signup->username = 'colaborador';
+        $signup->email = 'ceo@sportygym.com';
+        $signup->password = 'admin';
+
+        $this->assertFalse($signup->validate());
+    }
+
+    public function testEmailRepetido() // Verifica se o campo Email pode ser repetido
+    {
+        $signup = new SignupForm();
+        $signup->username = 'ceo';
+        $signup->email = 'colaborador@sportgym.com';
+        $signup->password = 'admin';
+
+        $this->assertFalse($signup->validate());
     }
 
 
-/*
-    public function testUsernameVazio() // verifica se o campo User pode ser igual a Vazio
+    //CAMPOS OBRIGATÓRIOS
+    public function testUsernameVazio() // verifica se o campo username pode ser igual a Vazio
     {
-        $user = $this->getUserValido();
-        $user->username = null;
-        $this->assertFalse($user->validate(['username']));
+        $signup = new SignupForm();
+        $signup->username = null;
+        $signup->email = 'ceo@sportgym.com';
+        $signup->password = 'admin';
+
+        $this->assertFalse($signup->validate());
     }
 
-*/
-
-
-
-    public function testVerificarUserUsername() // verifica se o user se encontra na base dados
+    public function testEmailVazio() // verifica se o campo email pode ser igual a Vazio
     {
-        $user = new SignupForm([
+        $signup = new SignupForm();
+        $signup->username = 'ceo';
+        $signup->email = null;
+        $signup->password = 'admin';
 
-            'username' => 'admin',
-            'password' => 'admin',
-        ]);
+        $this->assertFalse($signup->validate());
+    }
 
-        $user->signup();
-        $this->tester->seeRecord('backend\models\SignupForm', [
-            'username' => 'admin',
-            'password' => 'admin',
-            'status' => \common\models\User::STATUS_ACTIVE
-        ]);
+    public function testPasswordVazio() // verifica se o campo Passowrd pode ser igual a Vazio
+    {
+        $signup = new SignupForm();
+        $signup->username = 'ceo';
+        $signup->email = 'ceo@sportgym.com';
+        $signup->password = null;
+
+        $this->assertFalse($signup->validate());
     }
 
 
+    //CAMPOS COM MÁXIMO DE CHARS
+    public function testUsernameDemasiadoLongo() // Verifica se o campo Username pode conter a quantida de chars inseridos
+    {
+        $signup = new SignupForm();
+        $signup->username = 'ssssssssssssssssssssssssssssslllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss';
+        $signup->email = 'ceo@sportgym.com';
+        $signup->password = 'admin';
+
+        $this->assertFalse($signup->validate());
+    }
+
+    public function testEmailDemasiadoLongo() // Verifica se o campo Email pode conter a quantida de chars inseridos
+    {
+        $signup = new SignupForm();
+        $signup->username = 'ceo';
+        $signup->email = 'ssssssssssssssssssssssssssssslllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss@sapo.pt';
+        $signup->password = 'admin';
+
+        $this->assertFalse($signup->validate());
+    }
 
 
+    //VERIFICAÇÃO DO TIPO EMAIL
+    public function testEmailValidacao() // Verifica se o campo email é do tipo email
+    {
+        $signup = new SignupForm();
+        $signup->username = 'ceo';
+        $signup->email = 'ceosportgymcom';
+        $signup->password = 'admin';
 
+        $this->assertFalse($signup->validate());
+    }
 
 
 }

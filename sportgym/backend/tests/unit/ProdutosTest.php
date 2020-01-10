@@ -60,19 +60,6 @@ class ProdutosTest extends \Codeception\Test\Unit
         $this->assertFalse($produto->validate());
     }
 
-    /*
-        public function testEstadoVazio() // verifica se o campo Estado pode ser igual a Vazio
-        {
-            $produto = new Produto();
-            $produto->nome = "Shaker";
-            $produto->fotoProduto = 'teste.png';
-            $produto->descricao = "shake azul";
-            $produto->precoProduto = 5;
-            $produto->estado = null;
-
-            $this->assertFalse($produto->validate());
-        }
-    */
     public function testPrecoVazio()  // verifica se o campo precoProduto pode ser igual a Vazio
     {
         $produto = new Produto();
@@ -171,6 +158,19 @@ class ProdutosTest extends \Codeception\Test\Unit
         $produto->estado = 0;
 
         $this->assertFalse($produto->validate());
+    }
+
+
+    //ATRIBUIÇÃO DE VALOR DEFAULT
+    public function testEstadoDefault() // verifica se o campo Estado pode ser igual a Vazio
+    {
+        $produto = new Produto();
+        $produto->nome = "Shaker";
+        $produto->fotoProduto = 'teste.png';
+        $produto->descricao = "shake azul";
+        $produto->precoProduto = 5;
+
+        $this->assertTrue($produto->validate() && $produto->estado == 0);
     }
 
 

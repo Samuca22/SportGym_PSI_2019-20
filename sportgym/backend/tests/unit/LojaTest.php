@@ -21,7 +21,7 @@ class LojaTest extends \Codeception\Test\Unit
 
     // TESTES DA LOJA
 
-   //INICIALIZAÇÃO
+    //INICIALIZAÇÃO
     public function testIniciarVenda() //TESTE PARA VERIFICAÇÃO A INICIALIZAÇÃO DE UMA VENDA
     {
         $venda = new Venda();
@@ -45,7 +45,6 @@ class LojaTest extends \Codeception\Test\Unit
         $this->tester->seeRecord(LinhaVenda::class, ['subTotal' => $produto->precoProduto * $linhaVenda->quantidade]);
         $this->tester->seeRecord(LinhaVenda::class, ['quantidade' => 1]);
     }
-
 
 
     //RETIRAR
@@ -104,7 +103,6 @@ class LojaTest extends \Codeception\Test\Unit
 
         $this->tester->dontSeeRecord(LinhaVenda::class, ['IDlinhavenda' => $linhaVenda->IDlinhaVenda]);
     }
-
 
 
     //ADICIONAR

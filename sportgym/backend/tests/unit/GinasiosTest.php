@@ -11,7 +11,6 @@ class GinasiosTest extends \Codeception\Test\Unit
 
     protected function _before()
     {
-
         $ginasio = new Ginasio();
         $ginasio->rua = 'Rua da liberdade';
         $ginasio->localidade = 'Ourem';
@@ -29,7 +28,6 @@ class GinasiosTest extends \Codeception\Test\Unit
     //INICIALIZAÇÃO  E VALIDAÇÃO
     public function getGinasioValido()
     {
-
         $ginasio = new Ginasio();
         $ginasio->rua = 'Rua da liberdade';
         $ginasio->localidade = 'Ourem';
@@ -66,7 +64,7 @@ class GinasiosTest extends \Codeception\Test\Unit
         $ginasio->rua = 'Rua da liberdade';
         $ginasio->localidade = null;
         $ginasio->cp = '2490-232';
-        $ginasio->telefone = '234323423';
+        $ginasio->telefone = '1111111';
         $ginasio->email = 'ouremm@sportgym.pt';
 
         $this->assertFalse($ginasio->validate());
@@ -140,7 +138,7 @@ class GinasiosTest extends \Codeception\Test\Unit
         $ginasio->localidade = 'Ourem';
         $ginasio->cp = '2490-232';
         $ginasio->telefone = '244323423';
-        $ginasio->email = "assssssssdddddddddddddddddddddddddddddddddddddddddddaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss";
+        $ginasio->email = "assssssssdddddddddddddddddddddddddddddddddddddddddddaaaaaaaaaaaaaaaaaaaaaaaaaassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss@sapo.pt";
 
         $this->assertFalse($ginasio->validate());
     }
@@ -178,7 +176,7 @@ class GinasiosTest extends \Codeception\Test\Unit
         $ginasio->localidade = 'Ourem';
         $ginasio->cp = '2490-232';
         $ginasio->telefone = '244323423';
-        $ginasio->email = 'ourem@sportgym.pt';
+        $ginasio->email = 'ourem@ouremmmmmmmm.pt';
 
         $this->assertFalse($ginasio->validate());
     }
@@ -189,7 +187,7 @@ class GinasiosTest extends \Codeception\Test\Unit
         $ginasio->rua = 'Rua da liberdade';
         $ginasio->localidade = 'Ourem';
         $ginasio->cp = '2490-232';
-        $ginasio->telefone = '244323423';
+        $ginasio->telefone = '234343433';
         $ginasio->email = 'ourem@sportgym.pt';
 
         $this->assertFalse($ginasio->validate());
