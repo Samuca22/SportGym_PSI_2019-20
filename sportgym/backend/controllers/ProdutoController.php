@@ -96,7 +96,6 @@ class ProdutoController extends Controller
         $model = new Produto();
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $model->estado = 0;
             $model->save();
             
             $model->file = UploadedFile::getInstance($model, 'file');

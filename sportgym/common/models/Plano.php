@@ -1,7 +1,9 @@
 <?php
 
 namespace common\models;
+use backend\mosquitto\phpMQTT;
 
+use Exception;
 use Yii;
 
 /**
@@ -49,10 +51,70 @@ class Plano extends \yii\db\ActiveRecord
         return [
             'IDplano' => 'I Dplano',
             'nome' => 'Nome',
-            'nutricao' => 'Nutricao',
             'tipo' => 'Tipo de Plano',
 
         ];
+    }
+
+    public function afterSave($insert, $changedAttributes)
+    {
+        parent::afterSave($insert, $changedAttributes);
+
+        //Obter dados do registo em causa
+        $IDplano = $this->IDplano;
+        $nome = $this->nome;
+        $descricao = $this->descricao;
+        $tipo = $this->tipo;
+
+
+
+        $myObj = new \stdClass();
+        $myObj->IDplano = $IDplano;
+        $myObj->nome = $nome;
+        $myObj->descricao = $descricao;
+        $myObj->tipo = $tipo;
+
+        try{
+            $myJSON = json_encode($myObj);
+            if ($insert)
+                $this->FazPublish("INSERCAO_PLANO", $myJSON);
+            else
+                $this->FazPublish("EDICAO_PLANO", $myJSON);
+        } catch(Exception $ex){
+
+        }
+        
+    }
+
+    public function afterDelete()
+    {
+        parent::afterDelete();
+        $IDplano = $this->IDplano;
+        $myObj = new \stdClass();
+        $myObj->IDplano = $IDplano;
+        $myJSON = json_encode($myObj);
+        try{
+            $this->FazPublish("APAGAR_PLANO", $myJSON);
+        } catch (Exception $ex){
+
+        }
+        
+    }
+
+    public function FazPublish($canal, $msg)
+    {
+        $server = "127.0.0.1";
+        $port = 1883;
+        $username = ""; // set your username
+        $password = ""; // set your password
+        $client_id = "phpMQTT-publisher"; // unique!
+        $mqtt = new phpMQTT($server, $port, $client_id);
+        if ($mqtt->connect(true, NULL, $username, $password)) {
+            $mqtt->publish($canal, $msg, 0);
+            $mqtt->close();
+        } else {
+            file_put_contents("debug.output", "Time out!");
+        }
     }
 
     /**

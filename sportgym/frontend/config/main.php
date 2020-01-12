@@ -54,11 +54,27 @@ return [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'v1/produtos',
                     'pluralize' => false,
+                    'except'  => ['create', 'delete', 'view'],
+                    'extraPatterns' => [
+                        'PUT {id}/alterar-estado' => 'alterar-estado', // 'alterar-estado' é 'actionAlterarEstado'. Altera a visibilidade do produto na loja
+                    ],
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'v1/perfis',
                     'pluralize' => false,
+                    'except'  => ['create', 'delete'],
+                    'extraPatterns' => [
+                        'GET {id}/enviar-dados' => 'enviar-dados',
+                        'GET total' => 'total',
+                        'GET sexo-masculino' => 'perfis-sexo-masculino',
+                        'GET total-masculino' => 'total-masculino',
+                        'GET sexo-feminino' => 'perfis-sexo-feminino',
+                        'GET total-feminino' => 'total-feminino',
+
+                        'PUT {id}/alterar-peso' => 'alterar-peso',
+                        'PUT {id}/alterar-altura' => 'alterar-altura',
+                    ],
 
                 ],
                 [
@@ -77,14 +93,9 @@ return [
                         'POST {id}/novo-plano-nutricao' => 'id-criar-plano-nutricao', // 'id-criar-plano-nutricao' é 'actionIdCriarPlanoNutricao'. Cria um plano de Nutricao e atribui ao perfil id.
                     ],
                 ],
-
-
             ],
         ],
-
-
     ],
-
 
     'params' => $params,
 ];

@@ -2,9 +2,8 @@
 
 namespace frontend\modules\v1\controllers;
 
-use common\models\Perfil;
+
 use common\models\PerfilPlano;
-use common\models\Plano;
 use Yii;
 use yii\filters\auth\QueryParamAuth;
 use yii\rest\ActiveController;

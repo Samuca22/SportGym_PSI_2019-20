@@ -2,6 +2,8 @@
 
 namespace common\models;
 
+use backend\mosquitto\phpMQTT;
+use Exception;
 use Yii;
 use yii\web\UploadedFile;
 
@@ -104,6 +106,85 @@ class Perfil extends \yii\db\ActiveRecord
             'estatuto' => 'Estatuto',
             'file' => 'Foto',
         ];
+    }
+
+    public function afterSave($insert, $changedAttributes)
+    {
+        parent::afterSave($insert, $changedAttributes);
+
+        //Obter dados do registo em causa
+        $IDperfil = $this->IDperfil;
+        $primeiroNome = $this->primeiroNome;
+        $apelido = $this->apelido;
+        $nSocio = $this->nSocio;
+        $genero = $this->genero;
+        $telefone = $this->telefone;
+        $dtaNascimento = $this->dtaNascimento;
+        $rua = $this->rua;
+        $localidade = $this->localidade;
+        $cp = $this->cp;
+        $nif = $this->nif;
+        $peso = $this->peso;
+        $altura = $this->altura;
+
+
+
+        $myObj = new \stdClass();
+        $myObj->IDperfil = $IDperfil;
+        $myObj->primeiroNome = $primeiroNome;
+        $myObj->apelido = $apelido;
+        $myObj->nSocio = $nSocio;
+        $myObj->genero = $genero;
+        $myObj->telefone = $telefone;
+        $myObj->dtaNascimento = $dtaNascimento;
+        $myObj->rua = $rua;
+        $myObj->localidade = $localidade;
+        $myObj->cp = $cp;
+        $myObj->nif = $nif;
+        $myObj->peso = $peso;
+        $myObj->altura = $altura;
+
+        try{
+            $myJSON = json_encode($myObj);
+            if ($insert)
+                $this->FazPublish("INSERCAO_PERFIL", $myJSON);
+            else
+                $this->FazPublish("EDICAO_PERFIL", $myJSON);
+        } catch(Exception $ex){
+
+        }
+        
+    }
+
+    public function afterDelete()
+    {
+        parent::afterDelete();
+        $IDperfil = $this->IDperfil;
+        $myObj = new \stdClass();
+        $myObj->IDperfil = $IDperfil;
+        $myJSON = json_encode($myObj);
+        try{
+            $this->FazPublish("APAGAR_PERFIL", $myJSON);
+        } catch (Exception $ex){
+
+        }
+        
+    }
+
+    public function FazPublish($canal, $msg)
+    {
+        $server = "127.0.0.1";
+        $port = 1883;
+        $username = ""; // set your username
+        $password = ""; // set your password
+        $client_id = "phpMQTT-publisher"; // unique!
+        $mqtt = new phpMQTT($server, $port, $client_id);
+        if ($mqtt->connect(true, NULL, $username, $password)) {
+            $mqtt->publish($canal, $msg, 0);
+            $mqtt->close();
+        } else {
+            file_put_contents("debug.output", "Time out!");
+        }
     }
 
     /**
