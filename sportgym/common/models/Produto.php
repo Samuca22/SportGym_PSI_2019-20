@@ -2,8 +2,8 @@
 
 namespace common\models;
 
-use frontend\mosquitto\phpMQTT;
-
+use backend\mosquitto\phpMQTT;
+use Exception;
 use Yii;
 
 /**
@@ -38,7 +38,7 @@ class Produto extends \yii\db\ActiveRecord
             [['descricao'], 'required', 'message' => 'Introduza uma descrição para o produto'],
             [['fotoProduto'], 'string', 'max' => 500],
             [['estado'], 'integer'],
-            ['estado', 'default', 'value' => '0'],
+            ['estado', 'default', 'value' => 0],
             [['estado'], 'required'],
             [['precoProduto'], 'number'],
             [['nome'], 'string', 'max' => 50],
@@ -84,11 +84,16 @@ class Produto extends \yii\db\ActiveRecord
         $myObj->fotoProduto = $fotoProduto;
         $myObj->estado = $estado;
 
-        $myJSON = json_encode($myObj);
-        if ($insert)
-            $this->FazPublish("INSERT", $myJSON);
-        else
-            $this->FazPublish("UPDATE", $myJSON);
+        try{
+            $myJSON = json_encode($myObj);
+            if ($insert)
+                $this->FazPublish("INSERCAO_PRODUTO", $myJSON);
+            else
+                $this->FazPublish("EDICAO_PRODUTO", $myJSON);
+        } catch(Exception $ex){
+
+        }
+        
     }
 
     public function afterDelete()
@@ -98,7 +103,12 @@ class Produto extends \yii\db\ActiveRecord
         $myObj = new \stdClass();
         $myObj->IDproduto = $IDproduto;
         $myJSON = json_encode($myObj);
-        $this->FazPublish("DELETE", $myJSON);
+        try{
+            $this->FazPublish("APAGAR_PRODUTO", $myJSON);
+        } catch (Exception $ex){
+
+        }
+        
     }
 
     public function FazPublish($canal, $msg)
