@@ -4,3 +4,8 @@ modules:
     enabled:
         - Yii2:
               configFile: 'config/codeception-local.php'
+        - Db:
+            dsn: 'mysql:host=localhost;dbname=sportgymdb_test'
+            user: 'root'
+            password: ''
+            cleanup: false

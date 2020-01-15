@@ -2,6 +2,7 @@
 
 namespace common\models;
 
+use Exception;
 use frontend\mosquitto\phpMQTT;
 
 use Yii;
@@ -82,11 +83,16 @@ class Produto extends \yii\db\ActiveRecord
         $myObj->fotoProduto = $fotoProduto;
         $myObj->estado = $estado;
 
-        $myJSON = json_encode($myObj);
-        if ($insert)
-            $this->FazPublish("INSERT", $myJSON);
-        else
-            $this->FazPublish("UPDATE", $myJSON);
+        try{
+            $myJSON = json_encode($myObj);
+            if ($insert)
+                $this->FazPublish("INSERT", $myJSON);
+            else
+                $this->FazPublish("UPDATE", $myJSON);
+        } catch (Exception $ex){
+
+        }
+      
     }
 
     public function afterDelete()
@@ -96,7 +102,12 @@ class Produto extends \yii\db\ActiveRecord
         $myObj = new \stdClass();
         $myObj->IDproduto = $IDproduto;
         $myJSON = json_encode($myObj);
-        $this->FazPublish("DELETE", $myJSON);
+        try{
+            $this->FazPublish("DELETE", $myJSON);
+        } catch (Exception $ex){
+            
+        }
+        
     }
 
     public function FazPublish($canal, $msg)

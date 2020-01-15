@@ -1,6 +1,9 @@
-<?php namespace backend\tests;
+<?php
+
+namespace backend\tests;
 
 use common\models\LinhaVenda;
+use common\models\Venda;
 
 class LinhasVendaTest extends \Codeception\Test\Unit
 {
@@ -11,64 +14,82 @@ class LinhasVendaTest extends \Codeception\Test\Unit
 
     protected function _before()
     {
-
-        $linhaVenda = new LinhaVenda();
-        $linhaVenda->quantidade = 2;
-        $linhaVenda->subTotal = 20.5;
-
-        $linhaVenda->save();
     }
 
     protected function _after()
     {
     }
 
-    // tests
-    public function getLinhaVendaValida()
+    //Cria uma Venda para se poder adicionar à linhaVenda
+    protected function testCriarVenda()
+    {
+        $venda = new Venda();
+        $venda->iniciarVenda(1);
+
+        $this->assertTrue($venda->validate() && $venda->save());
+
+        return $venda;
+    }
+
+    //INICIALIZAÇÃO E VALIDAÇÃO
+    public function testLinhaVendaValido()
     {
         $linhaVenda = new LinhaVenda();
-        $linhaVenda->quantidade = 2;
-        $linhaVenda->subTotal = 20.5;
+        $linhaVenda->quantidade = 0;
+        $linhaVenda->subTotal = 0;
+        $linhaVenda->IDvenda = 1;
+        $linhaVenda->IDproduto = 1;
+
+        $this->assertTrue($linhaVenda->validate());
 
         return $linhaVenda;
     }
 
-    public function testLinhaVendaValido()
+    protected function testCriarLinhaVenda()
     {
-        $linhaVenda = $this->getLinhaVendaValida();
-        $this->assertTrue($linhaVenda->validate());
+        $linhaVenda = new LinhaVenda();
+        $linhaVenda->iniciarLinhaVenda(1, 1);
+
+        $this->assertTrue($linhaVenda->validate() && $linhaVenda->save());
     }
 
-    public function testQuantidadeVazio()  // verifica se o campo Quantidade pode ser igual a Vazio
+    //CAMPOS OBRIGATÓRIOS
+    public function testQuantidadeVazia()  // verifica se o campo Quantidade pode ser igual a Vazio
     {
-        $linhaVenda = $this->getLinhaVendaValida();
-        $linhaVenda->quantidade = null;
+        $linhaVenda = $this->testLinhaVendaValido();
+        $linhaVenda->quantidade = '';
+
         $this->assertFalse($linhaVenda->validate(['quantidade']));
     }
 
+
+    //CAMPOS QUE NÃO SUPORTAM NRS DECIMAIS
     public function testQuantidadeFloat()  // verifica se o campo Quantidade aceita Float
     {
-        $linhaVenda = $this->getLinhaVendaValida();
+        $linhaVenda = new LinhaVenda();
         $linhaVenda->quantidade = 1.5;
-        $this->assertFalse($linhaVenda->validate(['quantidade']));
+        $linhaVenda->subTotal = 20.5;
+
+        $this->assertFalse($linhaVenda->validate());
     }
 
 
+    //CAMPOS QUE NÃO SUPORTAM STRINGS
     public function testQuantidadeString()  // verifica se o campo Quantidade aceita String
     {
-        $linhaVenda = $this->getLinhaVendaValida();
-        $linhaVenda->quantidade = 'Linha de venda';
-        $this->assertFalse($linhaVenda->validate(['quantidade']));
+        $linhaVenda = new LinhaVenda();
+        $linhaVenda->quantidade = 'Quantidade';
+        $linhaVenda->subTotal = 20.5;
+
+        $this->assertFalse($linhaVenda->validate());
     }
 
     public function testsubTotalString()  // verifica se o campo subTotal aceita String
     {
-        $linhaVenda = $this->getLinhaVendaValida();
+        $linhaVenda = new LinhaVenda();
+        $linhaVenda->quantidade = 1.5;
         $linhaVenda->subTotal = 'SubTotal';
-        $this->assertFalse($linhaVenda->validate(['subTotal']));
+
+        $this->assertFalse($linhaVenda->validate());
     }
-
-
-
-
 }

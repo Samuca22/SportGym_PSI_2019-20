@@ -20,7 +20,7 @@ return [
         'request' => [
             'csrfParam' => '_csrf-frontend',
             'parsers' => [
-                'application/json' => 'yii\web\JsonParser',
+                'application/json' => 'yii\web\JsonParser', //
             ],
         ],
         'user' => [
@@ -54,21 +54,43 @@ return [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'v1/produtos',
                     'pluralize' => false,
+                    'extraPatterns' => [
+                        'PUT {id}/alterar-estado' => 'alterar-estado', // 'planos-treino' é 'actionPlanosTreino'. Devolve todos os planos de treino
+                    ],
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'v1/planos',
                     'pluralize' => false,
+                    'except' => ['update'],
+                    'extraPatterns' => [
+                        'GET treino' => 'planos-treino', // 'planos-treino' é 'actionPlanosTreino'. Devolve todos os planos de treino
+                        'GET nutricao' => 'planos-nutricao', // 'planos-nutricao' é 'actionPlanosNutricao'. Devolve todos os planos de nutricao
+                        'GET {id}/planos' => 'id-planos', // 'id-planos' é 'actionIdPlanos'. Devolve todos os planos atribuidos ao perfil id.
+                        'GET {id}/planos-treino' => 'id-planos-treino', // 'id-planos-treino' é 'actionIdPlanosTreino'. Devolve todos os planos de treino atribuidos ao perfil id.
+                        'GET {id}/planos-nutricao' => 'id-planos-nutricao', // 'id-planos-nutricao' é 'actionIdPlanosNutricao'. Devolve todos os planos de nutricao atribuidos ao perfil id.
+
+                        'POST {id}/novo-plano-treino' => 'id-criar-plano-treino', // 'id-criar-plano-treino' é 'actionIdCriarPlanoTreino'. Cria um plano de treino e atribui ao perfil id.
+                        'POST {id}/novo-plano-nutricao' => 'id-criar-plano-nutricao', // 'id-criar-plano-nutricao' é 'actionIdCriarPlanoNutricao'. Cria um plano de Nutricao e atribui ao perfil id.
+                    ],
                 ],
                 [
                     'class' => 'yii\rest\UrlRule',
                     'controller' => 'v1/perfis',
                     'pluralize' => false,
-
+                    'except'  => ['create', 'delete'],
                     'extraPatterns' => [
+                        'GET {id}/enviar-dados' => 'enviar-dados',
                         'GET total' => 'total',
+                        'GET sexo-masculino' => 'perfis-sexo-masculino',
+                        'GET total-masculino' => 'total-masculino',
+                        'GET sexo-feminino' => 'perfis-sexo-feminino',
+                        'GET total-feminino' => 'total-feminino',
+
+                        'PUT {id}/alterar-peso' => 'alterar-peso',
+                        'PUT {id}/alterar-altura' => 'alterar-altura',
                     ],
-                    
+
                 ],
             ],
         ],

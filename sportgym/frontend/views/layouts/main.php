@@ -60,7 +60,8 @@ AppAsset::register($this);
                     'class' => 'navbar-item'
                 ],
                 'linkOptions' => [
-                    'class' => 'navbar-a'
+                    'class' => 'navbar-a',
+                    'id' => 'minha-conta'
                 ],
             ],
         ];

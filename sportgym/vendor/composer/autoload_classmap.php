@@ -6,6 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Codeception\\Exception\\ConnectionException' => $vendorDir . '/codeception/module-webdriver/src/Codeception/Exception/ConnectionException.php',
+    'Codeception\\Lib\\Interfaces\\ScreenshotSaver' => $vendorDir . '/codeception/module-webdriver/src/Codeception/Lib/Interfaces/ScreenshotSaver.php',
+    'Codeception\\Lib\\Interfaces\\SessionSnapshot' => $vendorDir . '/codeception/module-webdriver/src/Codeception/Lib/Interfaces/SessionSnapshot.php',
+    'Codeception\\Module\\WebDriver' => $vendorDir . '/codeception/module-webdriver/src/Codeception/Module/WebDriver.php',
     'Codeception\\Util\\Shared\\Asserts' => $vendorDir . '/codeception/lib-asserts/src/Codeception/Util/Shared/Asserts.php',
     'File_Iterator' => $vendorDir . '/phpunit/php-file-iterator/src/Iterator.php',
     'File_Iterator_Facade' => $vendorDir . '/phpunit/php-file-iterator/src/Facade.php',

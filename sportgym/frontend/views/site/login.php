@@ -26,7 +26,7 @@ $this->title = 'SportGym';
                 <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
                 <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-login', 'name' => 'login-button']) ?>
+                    <?= Html::submitButton('Login', ['class' => 'btn btn-login', 'name' => 'login-button', 'id' => 'button-login']) ?>
                 </div>
 
                 <?php ActiveForm::end(); ?>

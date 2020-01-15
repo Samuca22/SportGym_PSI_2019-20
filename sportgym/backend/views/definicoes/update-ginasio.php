@@ -9,7 +9,7 @@ $this->title = 'Editar Sócio';
 ?>
 <div class="perfil-update">
 
-    <h4>Atualizar Dados Ginásio - <?= $ginasio->localidade ?></h4>         
+    <h4>Atualizar Dados Clube - <?= $ginasio->localidade ?></h4>         
     <hr class="hr">
     <br>
 

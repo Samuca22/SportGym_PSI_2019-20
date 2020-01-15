@@ -1,0 +1,614 @@
+{
+	"info": {
+		"_postman_id": "bdcc8486-565c-4ba4-8580-b5a53502a732",
+		"name": "SportGym Requests",
+		"description": "Esta coleção possibilita, aos docentes da UC de Serviços e Interoperabilidade de Sistemas (SIS), testar os requests realizados no projeto SportGym.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Perfil Requests",
+			"item": [
+				{
+					"name": "GET Enviar Dados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sportgym.front/v1/perfis/1/enviar-dados?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"perfis",
+								"1",
+								"enviar-dados"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH"
+								}
+							]
+						},
+						"description": "Executa a \"actionEnviarDados\" presente no controlador \"PerfisController\" que permite mostrar alguns dados dos perfis.\n\nAlternativamente o teste pode ser realizado escrevendo o comando abaixo na linha de comandos utilizando o cURL:\n\ncurl --location --request GET 'http://sportgym.front/v1/perfis/1/enviar-dados?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH'"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Total",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sportgym.front/v1/perfis/total?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"perfis",
+								"total"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH"
+								}
+							]
+						},
+						"description": "Executa a \"actionTotal\" presente no controlador \"PerfisController\" que permite retornar o COUNT do nº de perfis.\n\nAlternativamente o teste pode ser realizado escrevendo o comando abaixo na linha de comandos utilizando o cURL:\n\ncurl --location --request GET 'http://sportgym.front/v1/perfis/total?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH'"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Perfis Sexo Masculino",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sportgym.front/v1/perfis/sexo-masculino?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"perfis",
+								"sexo-masculino"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH"
+								}
+							]
+						},
+						"description": "Executa a \"actionPerfisSexoMasculino\" presente no controlador \"PerfisController\" que permite mostrar os perfis onde o genero é igual a 'M', ou seja, perfis correspondentes a pessoas do sexo masculino.\n\nAlternativamente o teste pode ser realizado escrevendo o comando abaixo na linha de comandos utilizando o cURL:\n\ncurl --location --request GET 'http://sportgym.front/v1/perfis/sexo-masculimo?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH'"
+					},
+					"response": []
+				},
+				{
+					"name": "GET COUNT Perfis Sexo Masculino",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sportgym.front/v1/perfis/total-masculino?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"perfis",
+								"total-masculino"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH"
+								}
+							]
+						},
+						"description": "Executa a \"actionTotalMasculino\" presente no controlador \"PerfisController\" que permite mostrar ou COUNT do nº de perfis que têm genero Masculino.\n\nAlternativamente o teste pode ser realizado escrevendo o comando abaixo na linha de comandos utilizando o cURL:\n\ncurl --location --request GET 'http://sportgym.front/v1/perfis/total-masculino?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH'"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Perfis Sexo Feminino",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sportgym.front/v1/perfis/sexo-feminino?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"perfis",
+								"sexo-feminino"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH"
+								}
+							]
+						},
+						"description": "Executa a \"actionPerfisSexoFeminino\" presente no controlador \"PerfisController\" que permite mostrar os perfis onde o genero é igual a 'F', ou seja, perfis correspondentes a pessoas do sexo feminino.\n\nAlternativamente o teste pode ser realizado escrevendo o comando abaixo na linha de comandos utilizando o cURL:\n\ncurl --location --request GET 'http://sportgym.front/v1/perfis/sexo-feminino?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH'"
+					},
+					"response": []
+				},
+				{
+					"name": "GET COUNT Perfis Sexo Feminino",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sportgym.front/v1/perfis/total-feminino?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"perfis",
+								"total-feminino"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH"
+								}
+							]
+						},
+						"description": "Executa a \"actionTotalFeminino\" presente no controlador \"PerfisController\" que permite mostrar ou COUNT do nº de perfis que têm genero Feminino.\n\nAlternativamente o teste pode ser realizado escrevendo o comando abaixo na linha de comandos utilizando o cURL:\n\ncurl --location --request GET 'http://sportgym.front/v1/perfis/total-feminino?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH'"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Alterar Peso",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "75d78d7e-9f56-4a5f-b7e7-c9af78a0327e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"peso\": 80\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sportgym.front/v1/perfis/1/alterar-peso?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"perfis",
+								"1",
+								"alterar-peso"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH"
+								}
+							]
+						},
+						"description": "Executa a \"actionAlterarPeso\" presente no controlador \"PerfisController\" que alterar o valor do campo 'peso' de um dado perfil(perfil com id = 1).\n\nAlternativamente o teste pode ser realizado escrevendo o comando abaixo na linha de comandos utilizando o cURL:\n\ncurl --location --request PUT 'http://sportgym.front/v1/perfis/1/alterar-peso?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n\t\"peso\": 80\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Alterar Altura",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "75d78d7e-9f56-4a5f-b7e7-c9af78a0327e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"altura\": 190\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sportgym.front/v1/perfis/1/alterar-altura?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"perfis",
+								"1",
+								"alterar-altura"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH"
+								}
+							]
+						},
+						"description": "Executa a \"actionAlterarAltura\" presente no controlador \"PerfisController\" que alterar o valor do campo 'altura' de um dado perfil(perfil com id = 1).\n\nAlternativamente o teste pode ser realizado escrevendo o comando abaixo na linha de comandos utilizando o cURL:\n\ncurl --location --request PUT 'http://sportgym.front/v1/perfis/1/alterar-altura?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n\t\"altura\": 190\n}'"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Plano Request",
+			"item": [
+				{
+					"name": "GET Planos Treino",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sportgym.front/v1/planos/treino?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"planos",
+								"treino"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH"
+								}
+							]
+						},
+						"description": "Executa a \"actionPlanosTreino\" presente no controlador \"PlanosController\" que mostra todos os planos do tipo treino.\n\nAlternativamente o teste pode ser realizado escrevendo o comando abaixo na linha de comandos utilizando o cURL:\n\ncurl --location --request GET 'http://sportgym.front/v1/planos/treino?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH'"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Planos Nutricao",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sportgym.front/v1/planos/nutricao?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"planos",
+								"nutricao"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH"
+								}
+							]
+						},
+						"description": "Executa a \"actionPlanosNutricao\" presente no controlador \"PlanosController\" que mostra todos os planos do tipo nutrição.\n\nAlternativamente o teste pode ser realizado escrevendo o comando abaixo na linha de comandos utilizando o cURL:\n\ncurl --location --request GET 'http://sportgym.front/v1/planos/nutricao?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH'"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Planos Perfil",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sportgym.front/v1/planos/1/planos?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"planos",
+								"1",
+								"planos"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH"
+								}
+							]
+						},
+						"description": "Executa a \"actionIdPlanos\" presente no controlador \"PlanosController\" que mostra todos os planos atribuidos a um dado perfil(perfil com id = 1).\n\nAlternativamente o teste pode ser realizado escrevendo o comando abaixo na linha de comandos utilizando o cURL:\n\ncurl --location --request GET 'http://sportgym.front/v1/planos/1/planos?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH'"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Planos Treino Perfil",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sportgym.front/v1/planos/1/planos-treino?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"planos",
+								"1",
+								"planos-treino"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH"
+								}
+							]
+						},
+						"description": "Executa a \"actionIdPlanosTreino\" presente no controlador \"PlanosController\" que mostra todos os planos do tipo treino de um dado perfil(perfil com id = 1).\n\nAlternativamente o teste pode ser realizado escrevendo o comando abaixo na linha de comandos utilizando o cURL:\n\ncurl --location --request GET 'http://sportgym.front/v1/planos/1/planos-treino?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH'"
+					},
+					"response": []
+				},
+				{
+					"name": "GET Planos Nutricao Perfil",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://sportgym.front/v1/planos/1/planos-nutricao?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"planos",
+								"1",
+								"planos-nutricao"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH"
+								}
+							]
+						},
+						"description": "Executa a \"actionIdPlanosNutricao\" presente no controlador \"PlanosController\" que mostra todos os planos do tipo nutricao de um dado perfil(perfil com id = 1).\n\nAlternativamente o teste pode ser realizado escrevendo o comando abaixo na linha de comandos utilizando o cURL:\n\ncurl --location --request GET 'http://sportgym.front/v1/planos/1/planos-nutricao?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH'"
+					},
+					"response": []
+				},
+				{
+					"name": "POST Plano Treino Perfil",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Sportgym_Treino - NovoPlano_Treino_TEST\",\r\n    \"tipo\": 0,\r\n    \"descricao\": \"Treino - Novo Plano de Treino TEST\\r\\n\\r\\n  SEGUNDA-FEIRA (Peito e Tricep)\\r\\n            Aquecer 10min\\r\\n            Supino Inclinado x4 8-10reps\\r\\n       ...\\r\\n\\r\\n            TERCA-FEIRA (Pernas)\\r\\n            Aquecer 5min\\r\\n            Extensso x4 8-10reps\\r\\n           ...\\r\\n            \\r\\n            QUARTA-FEIRA (Costas e Bicep)\\r\\n            Aquecer 5min\\r\\n           Polia Alta x4 8-10reps\\r\\n      ...\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sportgym.front/v1/planos/1/novo-plano-treino?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"planos",
+								"1",
+								"novo-plano-treino"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH"
+								}
+							]
+						},
+						"description": "Executa a \"actionIdCriarPlanoTreino\" presente no controlador \"PlanosController\" que permite criar um novo plano de treino e atribui-lo a um dado perfil(perfil com id = 1).\n\nAlternativamente o teste pode ser realizado escrevendo o comando abaixo na linha de comandos utilizando o cURL:\n\ncurl --location --request POST 'http://sportgym.front/v1/planos/1/novo-plano-treino?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"nome\": \"Sportgym_Treino - NovoPlano_Treino_TEST\",\n    \"tipo\": 0,\n    \"descricao\": \"Treino - Novo Plano de Treino TEST\\r\\n\\r\\n  SEGUNDA-FEIRA (Peito e Trícep)\\r\\n            Aquecer 10min\\r\\n            Supino Inclinado x4 8-10reps\\r\\n       ...\\r\\n\\r\\n            TERCA-FEIRA (Pernas)\\r\\n            Aquecer 5min\\r\\n            Extensão x4 8-10reps\\r\\n           ...\\r\\n            \\r\\n            QUARTA-FEIRA (Costas e Bícep)\\r\\n            Aquecer 5min\\r\\n           Polia Alta x4 8-10reps\\r\\n      ...\"\n}'"
+					},
+					"response": []
+				},
+				{
+					"name": "POST Plano Nutricao Perfil",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nome\": \"Sportgym_Nutricao - NovoPlano_Nutricao_TEST\",\r\n    \"tipo\": 1,\r\n    \"descricao\": \"Nutricao - Novo plano de nutricao TEST\\r\\n\\r\\n            PEQUENO-ALMOCO\\r\\n            leite com aveia OU ovos com batatas\\r\\n        \\r\\n            LANCHE DA MANHA\\r\\n            Pao com atum\\r\\n    \\r\\n            ALMOCO\\r\\n            Batata doce com arroz com um peito de frango\\r\\n        \\r\\n            LANCHE DA TARDE\\r\\n            Pao com cebola e maionese\\r\\n        \\r\\n            JANTAR\\r\\n            Batata salgada com massa e salmao\\r\\n        \\r\\n            CEIA\\r\\n            Shake\"\r\n\t\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://sportgym.front/v1/planos/1/novo-plano-nutricao?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"planos",
+								"1",
+								"novo-plano-nutricao"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH"
+								}
+							]
+						},
+						"description": "Executa a \"actionIdCriarPlanoNutricao\" presente no controlador \"PlanosController\" que permite criar um novo plano de nutricao e atribui-lo a um dado perfil(perfil com id = 1).\n\nAlternativamente o teste pode ser realizado escrevendo o comando abaixo na linha de comandos utilizando o cURL:\n\ncurl --location --request POST 'http://sportgym.front/v1/planos/1/novo-plano-nutricao?access-token=kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH' \\\n--header 'Content-Type: application/json' \\\n--data-raw '{\n    \"nome\": \"Sportgym_Nutricao - NovoPlano_Nutricao_TEST\",\n    \"tipo\": 1,\n    \"descricao\": \"Nutricao - Novo Plano de Nutricao TEST\\r\\n\\r\\n            PEQUENO-ALMOÇO\\r\\n            leite com aveia OU panquecas de banana e aveia\\r\\n        \\r\\n     LANCHE DA MANHÃ\\r\\n      \tPão com atum\\r\\n    \\r\\n            ALMOÇO\\r\\n            Batata doce com arroz com um peito de frango\\r\\n        \\r\\n            LANCHE DA TARDE\\r\\n            Batido de fruta e avaia\\r\\n        \\r\\n            JANTAR\\r\\n            Batata doce com massa e salmão\\r\\n        \\r\\n            CEIA\\r\\n            Bolacha de milho\"\n\t\n}'"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "ProdutosController",
+			"item": [
+				{
+					"name": "PUT Alterar Estado ",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "http://sportgym.front/v1/produtos/2/alterar-estado?access-token=B5jMtXzwBl-MVmvZ-aBYBstXXgaZdpnH",
+							"protocol": "http",
+							"host": [
+								"sportgym",
+								"front"
+							],
+							"path": [
+								"v1",
+								"produtos",
+								"2",
+								"alterar-estado"
+							],
+							"query": [
+								{
+									"key": "access-token",
+									"value": "B5jMtXzwBl-MVmvZ-aBYBstXXgaZdpnH"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e49dd7f2-7414-48bb-ab1e-5cfd4dd07381",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "2552d082-f1bc-44f2-86e8-880bbff821c8",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,13 +1,14 @@
 <?php
 return [
     [
-        'username' => 'erau',
-        'auth_key' => 'tUu1qHcde0diwUol3xeI-18MuHkkprQI',
+        'username' => 'admin',
+        'auth_key' => 'kuAOEGGDbC2Y5m0vgKUemB4U2Fz17qdH',
         // password_0
-        'password_hash' => '$2y$13$nJ1WDlBaGcbCdbNC5.5l4.sgy.OMEKCqtDQOdQ2OWpgiKRWYyzzne',
-        'password_reset_token' => 'RkD_Jw0_8HEedzLk7MM-ZKEFfYR7VbMr_1392559490',
-        'created_at' => '1392559490',
-        'updated_at' => '1392559490',
-        'email' => 'sfriesen@jenkins.info',
+        'password_hash' => '$2y$13$A0dNwgu27aN4M94XKN.GG.mP/avTPcYDfwadQCOIZwwWriXATSnJm',
+        //'password_reset_token' => '',
+        'created_at' => '1578670806',
+        'updated_at' => '1578670806',
+        'email' => 'admin@admin.com',
+        'verification_token' => 'Y5IhS-haQNjl447BwTuQXy-IuRGiFlMp_1578670806',
     ],
 ];

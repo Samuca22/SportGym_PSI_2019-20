@@ -29,10 +29,11 @@ class DefaultController extends RestController
             $behaviors;
     }
 
-    
-
     public function actionIndex(){
-        return 0;
+        
+        return[
+            'access_token' => Yii::$app->user->identity->getAuthKey(),
+        ];
     }
     
     

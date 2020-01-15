@@ -60,7 +60,7 @@ use yii\helpers\Html;
                 <div class="row">
                     <div class="col-md-12">
                         <div style="float:right;margin-top:10px;">
-                            <?= Html::a('Atualizar Dados', ['update-ginasio', 'id' => $ginasios[$i]->IDginasio], ['class' => 'btn btn-acao-reverse', 'style' => 'padding:0;']) ?>
+                            <?= Html::a('Atualizar Clube ' . $ginasios[$i]->localidade, ['update-ginasio', 'id' => $ginasios[$i]->IDginasio], ['class' => 'btn btn-acao-reverse', 'style' => 'padding:0;']) ?>
                         </div>
                     </div>
                 </div>
@@ -104,7 +104,7 @@ use yii\helpers\Html;
                 <div class="row">
                     <div class="col-md-12">
                         <div style="float:right;margin-top:10px;">
-                            <?= Html::a('Atualizar Dados', ['update-ginasio', 'id' => $ginasios[$i + 1]->IDginasio], ['class' => 'btn btn-acao-reverse', 'style' => 'padding:0;']) ?>
+                            <?= Html::a('Atualizar Clube ' . $ginasios[$i + 1]->localidade , ['update-ginasio', 'id' => $ginasios[$i + 1]->IDginasio], ['class' => 'btn btn-acao-reverse', 'style' => 'padding:0;']) ?>
                         </div>
                     </div>
                 </div>
