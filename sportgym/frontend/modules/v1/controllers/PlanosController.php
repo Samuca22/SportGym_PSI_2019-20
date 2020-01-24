@@ -2,8 +2,9 @@
 
 namespace frontend\modules\v1\controllers;
 
-
+use common\models\Perfil;
 use common\models\PerfilPlano;
+use common\models\User;
 use Yii;
 use yii\filters\auth\QueryParamAuth;
 use yii\rest\ActiveController;
@@ -97,16 +98,18 @@ class PlanosController extends ActiveController
 
         if($modelPlano->validate())
         {
+            $perfil = Perfil::findOne($id);
             $modelPlano->save();
             $modelPerfilPlano = new PerfilPlano();
             $modelPerfilPlano->IDperfil = $id;
+            $modelPerfilPlano->nSocio = $perfil->nSocio;
             $modelPerfilPlano->IDplano = $modelPlano->IDplano;
             $modelPerfilPlano->dtaplano = date('Y-m-d');
             $modelPerfilPlano->save();
         } else {
             return null;
         }
-        return ['id' => $id, 'plano' => $modelPlano];
+        return ['plano' => $modelPlano];
     }
 
     public function actionIdCriarPlanoNutricao($id) {
@@ -121,15 +124,27 @@ class PlanosController extends ActiveController
 
         if($modelPlano->validate())
         {
+            $perfil = Perfil::findOne($id);
             $modelPlano->save();
             $modelPerfilPlano = new PerfilPlano();
             $modelPerfilPlano->IDperfil = $id;
+            $modelPerfilPlano->nSocio = $perfil->nSocio;
             $modelPerfilPlano->IDplano = $modelPlano->IDplano;
             $modelPerfilPlano->dtaplano = date('Y-m-d');
             $modelPerfilPlano->save();
         } else {
             return null;
         }
-        return ['id' => $id, 'plano' => $modelPlano];
+        return ['plano' => $modelPlano];
+    }
+
+    public function actionUsernameEmail($id)
+    {
+        $user = User:: findOne($id);
+
+        return[
+            'email' => $user->email,
+            'username' => $user->username,
+        ];
     }
 }

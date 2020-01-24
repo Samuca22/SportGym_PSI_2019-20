@@ -31,8 +31,7 @@ $this->title = $modelPerfil->primeiroNome . ' ' . $modelPerfil->apelido;
             </div>
             <div class="row info">
                 <div class="col-md-3">
-                    <div>Foto</div>
-                    <img src="<?= $modelPerfil->mostrarImagem() ?>" width="200" height="200">
+                    <img src="data:image/png;base64,<?= base64_encode($modelPerfil->foto) ?>" height="200" width="200" />
                 </div>
                 <div class="col-md-9">
                     <div class="row">

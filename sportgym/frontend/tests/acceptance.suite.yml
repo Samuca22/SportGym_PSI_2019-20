@@ -1,0 +1,16 @@
+suite_namespace: frontend\tests\acceptance
+actor: AcceptanceTester
+modules:
+    enabled:
+        - WebDriver:
+            url: 'http://sportgym.front/' 
+            window_size: false
+            port: 4444 #definir porta
+            browser: chrome
+        - Yii2:
+            part: init
+        - Db:
+            dsn: 'mysql:host=localhost;dbname=sportgymdb_test'
+            user: 'root'
+            password: ''
+            cleanup: false

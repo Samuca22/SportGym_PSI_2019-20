@@ -15,7 +15,7 @@ class m200109_220952_create_perfil_table extends Migration
         $this->createTable('{{%perfil}}', [
             'IDperfil' => $this->primaryKey(),
             'nSocio' => $this->integer()->unsigned()->unique()->notNull(),
-            'foto' => $this->string(500),
+            'foto' => 'LONGBLOB',
             'primeiroNome' => $this->string(50)->notNull(),
             'apelido' => $this->string(30)->notNull(),
             'genero' => 'ENUM("M", "F") NOT NULL',
@@ -25,8 +25,8 @@ class m200109_220952_create_perfil_table extends Migration
             'localidade' => $this->string(255)->notNull(),
             'cp' => $this->string(15)->notNull(),
             'nif' => $this->string(15)->unique()->notNull(),
-            'peso' => $this->double(),
-            'altura' => $this->integer(),
+            'peso' => $this->double()->notNull()->defaultValue(0),
+            'altura' => $this->integer()->notNull()->defaultValue(0),
         ]);
 
         $this->addForeignKey(

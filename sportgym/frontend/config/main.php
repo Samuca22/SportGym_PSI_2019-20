@@ -71,9 +71,11 @@ return [
                         'GET total-masculino' => 'total-masculino',
                         'GET sexo-feminino' => 'perfis-sexo-feminino',
                         'GET total-feminino' => 'total-feminino',
+                        'GET {id}/username' => 'username',
 
-                        'PUT {id}/alterar-peso' => 'alterar-peso',
-                        'PUT {id}/alterar-altura' => 'alterar-altura',
+                        'PUT {id}/alterar-peso-altura' => 'alterar-peso-altura',
+                        'PUT {id}/alterar-username' => 'alterar-username',
+                        'PUT {id}/alterar-password' => 'alterar-password',
                     ],
 
                 ],

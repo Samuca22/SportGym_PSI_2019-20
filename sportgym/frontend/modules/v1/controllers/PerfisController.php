@@ -2,6 +2,7 @@
 
 namespace frontend\modules\v1\controllers;
 
+use common\models\User;
 use Yii;
 use yii\filters\auth\QueryParamAuth;
 use yii\rest\ActiveController;
@@ -29,12 +30,17 @@ class PerfisController extends ActiveController
         $perfil = $model::findOne($id);
 
         return [
-            'PrimeiroNome' => $perfil->primeiroNome,
-            'Apelido' => $perfil->apelido,
-            'Telefone' => $perfil->telefone,
-            'DataNascimento' => $perfil->dtaNascimento,
-            'Peso' => $perfil->peso,
-            'Altura' => $perfil->altura
+            'perfil' =>
+            [
+                'nSocio' => $perfil->nSocio,
+                'PrimeiroNome' => $perfil->primeiroNome,
+                'Apelido' => $perfil->apelido,
+                'Telefone' => $perfil->telefone,
+                'DataNascimento' => $perfil->dtaNascimento,
+                'Peso' => $perfil->peso,
+                'Altura' => $perfil->altura,
+            ],
+
         ];
     }
 
@@ -51,12 +57,9 @@ class PerfisController extends ActiveController
         $model = $this->modelClass;
         $registos = $model::find()->where(['genero' => 'M'])->all();
 
-        if($registos == null)
-        {
+        if ($registos == null) {
             return ['Nao existem perfis do sexo feminino'];
-        }
-        else
-        {
+        } else {
             return ['genero' => $registos];
         }
     }
@@ -74,12 +77,9 @@ class PerfisController extends ActiveController
         $model = $this->modelClass;
         $registos = $model::find()->where(['genero' => 'F'])->all();
 
-        if($registos == null)
-        {
+        if ($registos == null) {
             return ['Nao existem perfis do sexo feminino'];
-        }
-        else
-        {
+        } else {
             return ['genero' => $registos];
         }
     }
@@ -92,30 +92,60 @@ class PerfisController extends ActiveController
         return ['total-perfis-femininos' => count($registos)];
     }
 
-    public function actionAlterarPeso($id)  //Permite alterar o peso de um dado perfil
+    public function actionAlterarPesoAltura($id)  //Permite alterar o peso e altura de um dado perfil
     {
-        $peso = \Yii::$app->request->post('peso');
-        $model = new $this->modelClass;
-        $perfil = $model::findOne($id);
-
-
-        $perfil->peso = $peso;
-        $perfil->save();
-
-
-        return $perfil;
-    }
-
-    public function actionAlterarAltura($id)    //Permite alterar a altura de um dado perfil
-    {
+        $peso = Yii::$app->request->post('peso');
         $altura = Yii::$app->request->post('altura');
         $model = new $this->modelClass;
         $perfil = $model::findOne($id);
 
 
+        $perfil->peso = $peso;
         $perfil->altura = $altura;
         $perfil->save();
 
+
         return $perfil;
     }
+
+    public function actionAlterarUsername($id)
+    {
+        $username = Yii::$app->request->post('username');
+        $user = User::findOne($id);
+        $outroUser = User::find()->where(['username' => $username])->one();
+
+        if($outroUser == null)
+        {
+            $user->username = $username;
+            $user->save();
+            return ['username' => $username];
+        } else {
+            return false;
+        }        
+    }
+
+    public function actionAlterarPassword($id)
+    {
+        $password = Yii::$app->request->post('password');
+        $password_atual = Yii::$app->request->post('password_atual');
+        $user = User::findOne($id);
+
+        if ($user->validatePassword($password_atual)) {
+            $user->setPassword($password);
+            $user->save(false);
+            return ['result' => 'OK'];
+        } else {
+            return false;
+        }        
+    }
+
+    public function actionUsername($id)
+    {
+        $user = User::findOne($id);
+
+        return[
+            'username' => $user->username,
+        ];
+    }
+
 }

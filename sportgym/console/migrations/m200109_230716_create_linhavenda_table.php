@@ -15,7 +15,7 @@ class m200109_230716_create_linhavenda_table extends Migration
         $this->createTable('{{%linhavenda}}', [
             'IDlinhaVenda' => $this->primaryKey(),
             'quantidade' => $this->integer()->notNull(),
-            'subTotal' => $this->integer()->notNull(),
+            'subTotal' => $this->float()->notNull(),
             'IDvenda' => $this->integer()->notNull(),
             'IDproduto' => $this->integer()->notNull(),
         ]);

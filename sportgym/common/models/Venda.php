@@ -79,17 +79,19 @@ class Venda extends \yii\db\ActiveRecord
         $this->save();
     }
 
-    public function iniciarVenda()
+    public function iniciarVenda($user_id)
     {
         $this->estado = 0;
         $this->total = 0;
-        $this->IDperfil = Yii::$app->user->getId();
+        $this->IDperfil = $user_id;
         $this->save();
     }
 
-    public function finalizarVenda()
+    public function finalizarVenda($user_id)
     {
         $this->estado = 1;
         $this->dataVenda = date('Y-m-d H:i:s');
+        $this->numVenda = '10' . $user_id . $this->IDvenda;
+        $this->save(false);
     }
 }

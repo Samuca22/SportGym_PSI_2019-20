@@ -30,7 +30,13 @@ $this->title = 'Gestão de Produtos';;
                 </tr>
                 <?php foreach ($dataProvider->models as $model) : ?>
                     <tr>
-                        <td><img src='<?= $model->mostrarImagem() ?>' width='25' height='25' style="margin-right:7px;"><?= $model->nome ?></td>
+                        <td>
+                        <?php if ($model->fotoProduto == null) : ?>
+                            <img src="<?= $model->semImagem() ?>" height="25" width="25" style="margin-right:7px;"><?= $model->nome ?>
+                        <?php else : ?>
+                            <img src="data:image/png;base64,<?= base64_encode($model->fotoProduto) ?>" height="25" width="25" style="margin-right:7px;"><?= $model->nome ?>
+                        <?php endif; ?>
+                        </td>
                         <td style="max-width:200px;text-overflow:ellipsis;overflow:hidden;white-space:nowrap;">
                             <?= $model->descricao ?>
                         </td>

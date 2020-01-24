@@ -1094,3 +1094,375 @@ $_SERVER = [
     ]
     'argc' => 3
 ]
+2020-01-15 04:44:12 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1049] Unknown database 'sportgymdb'' in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php:698
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(698): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(624): yii\db\Connection->createPdoInstance()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(1015): yii\db\Connection->open()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(1002): yii\db\Connection->getMasterPdo()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(754): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(193): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(874): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(167): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp('2')
+#15 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Controller.php(164): yii\base\Controller->runAction('', Array)
+#18 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#19 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\yii(23): yii\base\Application->run()
+#23 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1049] Unknown database 'sportgymdb'' in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php:635
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(1015): yii\db\Connection->open()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(1002): yii\db\Connection->getMasterPdo()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(754): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(193): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(874): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(167): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp('2')
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#14 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Controller.php(164): yii\base\Controller->runAction('', Array)
+#16 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#17 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\yii(23): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2020-01-15 04:44:12 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\ricar\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-87IKK22'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\ricar'
+    'LOCALAPPDATA' => 'C:\\Users\\ricar\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-87IKK22'
+    'MOSQUITTO_DIR' => 'C:\\Program Files\\mosquitto'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\ricar\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\ricar\\OneDrive'
+    'OS' => 'Windows_NT'
+    'Path' => 'C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\ProgramData\\Oracle\\Java\\javapath;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\iCLS\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\wamp64\\bin\\php\\php5.6.40;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;D:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\IPT;C:\\Program Files\\NVIDIA Corporation\\NVIDIA NvDLISR;C:\\Program Files (x86)\\NVIDIA Corporation\\PhysX\\Common;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\composer;C:\\wamp64\\composer;C:\\Program Files\\Git\\cmd;C:\\Program Files\\Git\\mingw64\\bin;C:\\Program Files\\Git\\usr\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\ricar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\ricar\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 158 Stepping 9, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '9e09'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\ricar\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\ricar\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-87IKK22'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-87IKK22'
+    'USERNAME' => 'ricar'
+    'USERPROFILE' => 'C:\\Users\\ricar'
+    'windir' => 'C:\\WINDOWS'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.41.1'
+    'LANG' => 'pt_PT.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'YII_PATH' => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\'
+    'PHP_SELF' => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1579063452.8578
+    'REQUEST_TIME' => 1579063452
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\yii'
+        1 => 'migrate'
+        2 => '2'
+    ]
+    'argc' => 3
+]
+2020-01-20 19:33:14 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1049] Unknown database 'sportgymdb'' in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php:698
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(698): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(624): yii\db\Connection->createPdoInstance()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(1015): yii\db\Connection->open()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(1002): yii\db\Connection->getMasterPdo()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(754): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(193): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(874): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(167): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp('2')
+#15 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Controller.php(164): yii\base\Controller->runAction('', Array)
+#18 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#19 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\yii(23): yii\base\Application->run()
+#23 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1049] Unknown database 'sportgymdb'' in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php:635
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(1015): yii\db\Connection->open()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(1002): yii\db\Connection->getMasterPdo()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(754): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(193): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(874): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(167): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp('2')
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#14 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Controller.php(164): yii\base\Controller->runAction('', Array)
+#16 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#17 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\yii(23): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2020-01-20 19:33:14 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\ricar\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-87IKK22'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\ricar'
+    'JAVA_HOME' => 'C:\\Program Files\\Java\\jdk1.8.0_111\\bin'
+    'LOCALAPPDATA' => 'C:\\Users\\ricar\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-87IKK22'
+    'MOSQUITTO_DIR' => 'C:\\Program Files\\mosquitto'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\ricar\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\ricar\\OneDrive'
+    'OS' => 'Windows_NT'
+    'PATH' => 'C:\\Program Files\\Java\\jdk1.8.0_111\\bin;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\ricar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\ricar\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 158 Stepping 9, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '9e09'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\ricar\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\ricar\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-87IKK22'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-87IKK22'
+    'USERNAME' => 'ricar'
+    'USERPROFILE' => 'C:\\Users\\ricar'
+    'windir' => 'C:\\WINDOWS'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.41.1'
+    'LANG' => 'pt_PT.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'YII_PATH' => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\'
+    'PHP_SELF' => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\yii'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\yii'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\yii'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\yii'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1579548794.289
+    'REQUEST_TIME' => 1579548794
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\yii'
+        1 => 'migrate'
+        2 => '2'
+    ]
+    'argc' => 3
+]
+2020-01-20 19:33:21 [-][-][-][error][yii\db\Exception] exception 'PDOException' with message 'SQLSTATE[HY000] [1049] Unknown database 'sportgymdb_test'' in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php:698
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(698): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(624): yii\db\Connection->createPdoInstance()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(1015): yii\db\Connection->open()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(1002): yii\db\Connection->getMasterPdo()
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(754): yii\db\mysql\Schema->loadTableSchema('migration')
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(193): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#12 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(874): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(167): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#14 [internal function]: yii\console\controllers\BaseMigrateController->actionUp('2')
+#15 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#16 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#17 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Controller.php(164): yii\base\Controller->runAction('', Array)
+#18 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#19 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#20 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#21 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#22 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\yii_test(27): yii\base\Application->run()
+#23 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1049] Unknown database 'sportgymdb_test'' in C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php:635
+Stack trace:
+#0 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(1015): yii\db\Connection->open()
+#1 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Connection.php(1002): yii\db\Connection->getMasterPdo()
+#2 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(253): yii\db\Connection->getSlavePdo()
+#3 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(1153): yii\db\Command->prepare(true)
+#4 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#5 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\mysql\Schema.php(319): yii\db\Command->queryAll()
+#6 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\mysql\Schema.php(125): yii\db\mysql\Schema->findColumns(Object(yii\db\TableSchema))
+#7 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(754): yii\db\mysql\Schema->loadTableSchema('migration')
+#8 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\db\Schema.php(193): yii\db\Schema->getTableMetadata('{{%migration}}', 'schema', true)
+#9 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\MigrateController.php(211): yii\db\Schema->getTableSchema('{{%migration}}', true)
+#10 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(874): yii\console\controllers\MigrateController->getMigrationHistory(NULL)
+#11 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\controllers\BaseMigrateController.php(167): yii\console\controllers\BaseMigrateController->getNewMigrations()
+#12 [internal function]: yii\console\controllers\BaseMigrateController->actionUp('2')
+#13 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\InlineAction.php(57): call_user_func_array(Array, Array)
+#14 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#15 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Controller.php(164): yii\base\Controller->runAction('', Array)
+#16 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Module.php(528): yii\console\Controller->runAction('', Array)
+#17 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Application.php(180): yii\base\Module->runAction('migrate', Array)
+#18 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\console\Application.php(147): yii\console\Application->runAction('migrate', Array)
+#19 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\vendor\yiisoft\yii2\base\Application.php(386): yii\console\Application->handleRequest(Object(yii\console\Request))
+#20 C:\wamp64\www\SportGym_PSI_2019-20\sportgym\yii_test(27): yii\base\Application->run()
+#21 {main}
+Additional Information:
+
+2020-01-20 19:33:21 [-][-][-][info][application] $_GET = []
+
+$_POST = []
+
+$_FILES = []
+
+$_COOKIE = []
+
+$_SERVER = [
+    'ALLUSERSPROFILE' => 'C:\\ProgramData'
+    'APPDATA' => 'C:\\Users\\ricar\\AppData\\Roaming'
+    'CommonProgramFiles' => 'C:\\Program Files\\Common Files'
+    'CommonProgramFiles(x86)' => 'C:\\Program Files (x86)\\Common Files'
+    'CommonProgramW6432' => 'C:\\Program Files\\Common Files'
+    'COMPUTERNAME' => 'DESKTOP-87IKK22'
+    'ComSpec' => 'C:\\WINDOWS\\system32\\cmd.exe'
+    'DriverData' => 'C:\\Windows\\System32\\Drivers\\DriverData'
+    'FPS_BROWSER_APP_PROFILE_STRING' => 'Internet Explorer'
+    'FPS_BROWSER_USER_PROFILE_STRING' => 'Default'
+    'HOMEDRIVE' => 'C:'
+    'HOMEPATH' => '\\Users\\ricar'
+    'JAVA_HOME' => 'C:\\Program Files\\Java\\jdk1.8.0_111\\bin'
+    'LOCALAPPDATA' => 'C:\\Users\\ricar\\AppData\\Local'
+    'LOGONSERVER' => '\\\\DESKTOP-87IKK22'
+    'MOSQUITTO_DIR' => 'C:\\Program Files\\mosquitto'
+    'NUMBER_OF_PROCESSORS' => '8'
+    'OneDrive' => 'C:\\Users\\ricar\\OneDrive'
+    'OneDriveConsumer' => 'C:\\Users\\ricar\\OneDrive'
+    'OS' => 'Windows_NT'
+    'PATH' => 'C:\\Program Files\\Java\\jdk1.8.0_111\\bin;C:\\wamp64\\bin\\php\\php5.6.40;C:\\composer;C:\\Users\\ricar\\AppData\\Local\\Microsoft\\WindowsApps;;C:\\Users\\ricar\\AppData\\Local\\Programs\\Microsoft VS Code\\bin;C:\\Users\\ricar\\AppData\\Roaming\\Composer\\vendor\\bin'
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC'
+    'PHP_COMMAND' => 'php.exe'
+    'PROCESSOR_ARCHITECTURE' => 'AMD64'
+    'PROCESSOR_IDENTIFIER' => 'Intel64 Family 6 Model 158 Stepping 9, GenuineIntel'
+    'PROCESSOR_LEVEL' => '6'
+    'PROCESSOR_REVISION' => '9e09'
+    'ProgramData' => 'C:\\ProgramData'
+    'ProgramFiles' => 'C:\\Program Files'
+    'ProgramFiles(x86)' => 'C:\\Program Files (x86)'
+    'ProgramW6432' => 'C:\\Program Files'
+    'PROMPT' => '$P$G'
+    'PSModulePath' => 'C:\\Program Files\\WindowsPowerShell\\Modules;C:\\WINDOWS\\system32\\WindowsPowerShell\\v1.0\\Modules'
+    'PUBLIC' => 'C:\\Users\\Public'
+    'SESSIONNAME' => 'Console'
+    'SystemDrive' => 'C:'
+    'SystemRoot' => 'C:\\WINDOWS'
+    'TEMP' => 'C:\\Users\\ricar\\AppData\\Local\\Temp'
+    'TMP' => 'C:\\Users\\ricar\\AppData\\Local\\Temp'
+    'USERDOMAIN' => 'DESKTOP-87IKK22'
+    'USERDOMAIN_ROAMINGPROFILE' => 'DESKTOP-87IKK22'
+    'USERNAME' => 'ricar'
+    'USERPROFILE' => 'C:\\Users\\ricar'
+    'windir' => 'C:\\WINDOWS'
+    'TERM_PROGRAM' => 'vscode'
+    'TERM_PROGRAM_VERSION' => '1.41.1'
+    'LANG' => 'pt_PT.UTF-8'
+    'COLORTERM' => 'truecolor'
+    'YII_PATH' => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\'
+    'PHP_SELF' => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\yii_test'
+    'SCRIPT_NAME' => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\yii_test'
+    'SCRIPT_FILENAME' => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\yii_test'
+    'PATH_TRANSLATED' => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\yii_test'
+    'DOCUMENT_ROOT' => ''
+    'REQUEST_TIME_FLOAT' => 1579548801.8512
+    'REQUEST_TIME' => 1579548801
+    'argv' => [
+        0 => 'C:\\wamp64\\www\\SportGym_PSI_2019-20\\sportgym\\yii_test'
+        1 => 'migrate'
+        2 => '2'
+    ]
+    'argc' => 3
+]

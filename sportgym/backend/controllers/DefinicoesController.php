@@ -11,6 +11,7 @@ use yii\web\Controller;
 use Yii;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
+use yii\web\UploadedFile;
 
 class DefinicoesController extends  Controller
 {
@@ -77,6 +78,8 @@ class DefinicoesController extends  Controller
         $perfil = Perfil::findOne($id);
         $modelUser  = User::findOne($id);
         $usernameAntigo = $modelUser->username;
+        $emailAntigo = $modelUser->email;
+        $oldImage = $perfil->foto;
 
         if ($perfil->load(Yii::$app->request->post()) && $perfil->validate()) {
             if ($usernameAntigo != $perfil->username) {
@@ -88,7 +91,19 @@ class DefinicoesController extends  Controller
                     Yii::$app->getSession()->setFlash('error', 'username já existe');
                 }
             }
-            $modelUser->email = $perfil->email;
+            if ($emailAntigo != $perfil->email) {
+                $outroUser = User::findOne(['email' => $perfil->email]);
+                if ($outroUser == null) {
+                    $modelUser->email = $perfil->email;
+                    $modelUser->save();
+                } else {
+                    Yii::$app->getSession()->setFlash('error', 'email já existe');
+                }
+            }
+            
+            $newImage = UploadedFile::getInstance($perfil, 'foto');
+            $perfil->adicionarImagemUpdate($newImage, $oldImage);
+
             $perfil->save();
 
             return $this->render('index-utilizador', ['perfil' => $perfil, 'user' => $modelUser]);

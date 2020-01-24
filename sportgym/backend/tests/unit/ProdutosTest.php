@@ -12,172 +12,111 @@ class ProdutosTest extends \Codeception\Test\Unit
 
     protected function _before()
     {
-        $produto = new Produto();
-        $produto->nome = 'Shaker';
-        $produto->fotoProduto = 'teste.png';
-        $produto->descricao = 'shaker azul';
-        $produto->precoProduto = 5;
-        $produto->estado = 0;
-
-        $produto->save();
 
     }
 
     protected function _after()
     {
+        
     }
 
     //INICIALIZAÇÃO  E VALIDAÇÃO
-    public function getProdutoValido()
+    public function testProdutoValido()
     {
+        
         $produto = new Produto();
-        $produto->nome = 'Shaker';
-        $produto->fotoProduto = 'teste.png';
-        $produto->descricao = 'shake azul';
+        $produto->nome = 'Batata Frita';
+        $produto->descricao = 'Pacote de 3Kg de Batata Frita';
         $produto->precoProduto = 5;
         $produto->estado = 0;
+        
 
+        $this->assertTrue($produto->validate());
         return $produto;
     }
-
-    public function testProdutoValido() //Verifica se o Produto é valido
-    {
-        $produto = $this->getProdutoValido();
-        $this->assertTrue($produto->validate());
-    }
-
 
     //CAMPOS OBRIGATÓRIOS
     public function testNomeVazio()  // verifica se o campo Nome pode ser igual a Vazio
     {
-        $produto = new Produto();
-        $produto->nome = null;
-        $produto->fotoProduto = 'teste.png';
-        $produto->descricao = "shake azul";
-        $produto->precoProduto = 5;
-        $produto->estado = 0;
+        $produto = $this->testProdutoValido();
+        $produto->nome = '';
 
-        $this->assertFalse($produto->validate());
-    }
-
-    public function testPrecoVazio()  // verifica se o campo precoProduto pode ser igual a Vazio
-    {
-        $produto = new Produto();
-        $produto->nome = 'Shaker';
-        $produto->fotoProduto = 'teste.png';
-        $produto->descricao = 'shaker azul';
-        $produto->precoProduto = 'null';
-        $produto->estado = 0;
-
-        $this->assertFalse($produto->validate());
+        $this->assertFalse($produto->validate(['nome']));
     }
 
     public function testDescricaoVazia()  // verifica se o campo Descrição pode ser igual a Vazio
     {
-        $produto = new Produto();
-        $produto->nome = 'Shaker';
-        $produto->fotoProduto = 'teste.png';
-        $produto->descricao = null;
-        $produto->precoProduto = 5;
-        $produto->estado = 0;
+        $produto = $this->testProdutoValido();
+        $produto->descricao = '';
 
-        $this->assertFalse($produto->validate());
+        $this->assertFalse($produto->validate(['descricao']));
     }
 
-    public function testFotovazia()  // verifica se o campo fotoProduto pode ser igual a Vazio
+    public function testPrecoVazio()  // verifica se o campo precoProduto pode ser igual a Vazio
     {
-        $produto = new Produto();
-        $produto->nome = 'Shaker';
-        $produto->fotoProduto = null;
-        $produto->descricao = 'shaker azul';
-        $produto->precoProduto = 5;
-        $produto->estado = 0;
+        $produto = $this->testProdutoValido();
+        $produto->precoProduto = '';
 
-        $this->assertTrue($produto->validate(['fotoProduto']));
+        $this->assertFalse($produto->validate(['precoProduto']));
     }
 
 
     //CAMPOS COM MÁXIMO DE CHARS
     public function testNomeDemasiadoLongo() // Verifica se o campo Nome pode conter a quantida de chars inseridos
     {
-        $produto = new Produto();
+        $produto = $this->testProdutoValido();
         $produto->nome = "asssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss";
-        $produto->fotoProduto = 'teste.png';
-        $produto->descricao = "shake azul";
-        $produto->precoProduto = 5;
-        $produto->estado = 0;
 
-        $this->assertFalse($produto->validate());
+        $this->assertFalse($produto->validate(['nome']));
     }
 
     public function testDescricaoDemasidoLongo() // Verifica se o campo Descricao pode conter a quantida de chars inseridos
     {
-        $produto = new Produto();
-        $produto->nome = 'Shaker';
-        $produto->fotoProduto = 'teste.png';
+        $produto = $this->testProdutoValido();
         $produto->descricao = "asssssssssssssssssssssssssssssssssssssssssssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss";
-        $produto->precoProduto = 5;
-        $produto->estado = 0;
 
-        $this->assertFalse($produto->validate());
+        $this->assertFalse($produto->validate(['descricao']));
     }
-
-    public function testFotoDemasiadoLongo() // Verifica se o campo  fotoProduto conter a quantida de chars inseridos
-    {
-        $produto = new Produto();
-        $produto->nome = 'Shaker';
-        $produto->fotoProduto = "asssssssssssssssssssssssssssssssssssssssssssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssasssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss";
-        $produto->descricao = 'shaker azul';
-        $produto->precoProduto = 5;
-        $produto->estado = 0;
-
-        $this->assertFalse($produto->validate());
-    }
-
 
     //CAMPOS QUE NÃO SUPORTAM STRINGS
     public function testEstadoAceitaString()  // verifica se o campo estado pode aceitar Strings
     {
-        $produto = new Produto();
-        $produto->nome = 'Shaker';
-        $produto->fotoProduto = 'teste.png';
-        $produto->descricao = 'shaker azul';
-        $produto->precoProduto = 5;
-        $produto->estado = 'estado';
+        $produto = $this->testProdutoValido();
+        $produto->estado = 'xxxxxxxxxxxxxxxxx';
 
-        $this->assertFalse($produto->validate());
+        $this->assertFalse($produto->validate(['estado']));
     }
 
     public function testPrecoAceitaString()  // verifica se o campo precoProduto pode aceitar Strings
     {
+        $produto = $this->testProdutoValido();
+        $produto->precoProduto = 'xxxxxxxxxxxxxxxxxxxxxxx';
+
+        $this->assertFalse($produto->validate(['precoProduto']));
+    }
+
+    public function testCriarProduto()  // verifica se o campo precoProduto pode aceitar Strings
+    {
         $produto = new Produto();
         $produto->nome = 'Shaker';
-        $produto->fotoProduto = 'teste.png';
-        $produto->descricao = 'shaker azul';
-        $produto->precoProduto = 'Dinheiro';
-        $produto->estado = 0;
+        $produto->descricao = 'Shaker azul';
+        $produto->precoProduto = 123;
 
-        $this->assertFalse($produto->validate());
+        $this->assertTrue($produto->validate() && $produto->save());
+    }
+
+    //VALIDAÇÃO SE O PRODUTO EXISTE
+    public function testVerificarNomeExiste() // Test para verificar se o produto extiste
+    {
+        $this->tester->seeRecord(Produto::class, ['nome' => 'Shaker']);
     }
 
 
     //ATRIBUIÇÃO DE VALOR DEFAULT
     public function testEstadoDefault() // verifica se o campo Estado pode ser igual a Vazio
     {
-        $produto = new Produto();
-        $produto->nome = "Shaker";
-        $produto->fotoProduto = 'teste.png';
-        $produto->descricao = "shake azul";
-        $produto->precoProduto = 5;
-
-        $this->assertTrue($produto->validate() && $produto->estado == 0);
-    }
-
-
-    //VALIDAÇÃO SE O PRODUTO EXISTE
-    public function testVerificarNomeExiste() // Test para verificar se o produto extiste
-    {
-        $this->tester->seeRecord(Produto::class, ['nome' => 'Shaker']);
+        $produto = Produto::find()->where(['nome' => 'Shaker'])->one();
+        $this->assertTrue($produto->estado == 0);
     }
 
 
@@ -214,8 +153,8 @@ class ProdutosTest extends \Codeception\Test\Unit
 
     public function testAtualizarProdutoPreco()  // Verifica a alteração do campo Preco
     {
-        $preco_antigo = 5;
-        $preco_novo = 4;
+        $preco_antigo = 123;
+        $preco_novo = 50;
 
         $this->tester->seeRecord(Produto::class, ['precoProduto' => $preco_antigo]);
         $this->tester->dontSeeRecord(Produto::class, ['precoProduto' => $preco_novo]);
@@ -228,21 +167,13 @@ class ProdutosTest extends \Codeception\Test\Unit
     }
 
 
-    //REMOÇÃO DE CAMPOS
-    public function testApagarProdutoNome() // Verifica se o produto foi apagado atraves do campo Nome
+    //REMOÇÃO
+    public function testApagarRegisto()  // Verifica a alteração do campo Preco
     {
-        $this->tester->seeRecord(Produto::class, ['nome' => 'Shaker']);
-        $produto = Produto::find()->where(['nome' => 'Shaker'])->one();
+        $produto = Produto::find()->where(['nome' => 'Shaker 400ml'])->one();
         $produto->delete();
-        $this->tester->dontSeeRecord(Produto::class, ['nome' => 'Shaker']);
     }
 
-    public function testApagarProdutoDescricao() // Verifica se o produto foi apagado atraves do campo Descricao
-    {
-        $this->tester->seeRecord(Produto::class, ['descricao' => 'shaker azul']);
-        $produto = Produto::find()->where(['descricao' => 'shaker azul'])->one();
-        $produto->delete();
-        $this->tester->dontSeeRecord(Produto::class, ['descricao' => 'shaker azul']);
-    }
+
 
 }

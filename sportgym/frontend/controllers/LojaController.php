@@ -7,6 +7,7 @@ use Yii;
 use common\models\Produto;
 use common\models\ProdutoSearch;
 use common\models\Venda;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -22,6 +23,22 @@ class LojaController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'except' => ['index', 'ver-produto'],
+                'rules' => [
+                    [
+                        'actions' => [],
+                        'allow' => false,
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'actions' => [],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -59,7 +76,7 @@ class LojaController extends Controller
             $venda = new Venda();
             $linhaVenda = new LinhaVenda();
 
-            $venda->iniciarVenda();
+            $venda->iniciarVenda(Yii::$app->user->getId());
             $linhaVenda->iniciarLinhaVenda($venda->IDvenda, $produto);
         } else {
             $linhaVenda = LinhaVenda::findOne(['IDvenda' => $venda->IDvenda, 'IDproduto' => $IDproduto]);
@@ -67,10 +84,7 @@ class LojaController extends Controller
                 $linhaVenda = new LinhaVenda();
                 $linhaVenda->iniciarLinhaVenda($venda->IDvenda, $produto);
             } else {
-                if ($linhaVenda->quantidade < 15) {
-                    $linhaVenda->quantidade++;
-                    $linhaVenda->atualizarLinhaVenda();
-                }
+                $linhaVenda->maisQuantidade();
             }
         }
         $linhaVenda->atualizarLinhaVenda();
@@ -81,20 +95,30 @@ class LojaController extends Controller
     public function actionVerProduto($IDproduto)
     {
         $produto = Produto::find()->where(['IDproduto' => $IDproduto])->one();
-
-        return $this->render('view-produto', ['produto' => $produto]);
+        if($produto->estado == 1)
+        {
+            return $this->render('view-produto', ['produto' => $produto]);
+        }
+        return $this->redirect('index');
     }
 
     public function actionCarrinho()
     {
         $user = Yii::$app->user->identity;
         $venda = Venda::find()->where(['IDperfil' => $user->getId()])->andWhere(['estado' => 0])->one();
-        $linhaVendas = LinhaVenda::find()->where(['IDvenda' => $venda->IDvenda])->all();
 
-        return $this->render('carrinho-index', [
-            'venda' => $venda,
-            'linhaVendas' => $linhaVendas,
-        ]);
+        if(isset($venda))
+        {
+            $linhaVendas = LinhaVenda::find()->where(['IDvenda' => $venda->IDvenda])->all();
+
+            return $this->render('carrinho-index', [
+                'venda' => $venda,
+                'linhaVendas' => $linhaVendas,
+            ]);
+        } else {
+            return $this->redirect('index');
+        }
+        
     }
 
     public function actionMenosQuantidade($IDlinhaVenda)
@@ -127,15 +151,11 @@ class LojaController extends Controller
         return $this->redirect('carrinho');
     }
 
-    public function actionFinalizarVenda()
+    public function actionFinalizarVenda($id)
     {
-        $user = Yii::$app->user->identity;
-        $venda = Venda::findOne(['IDperfil' => $user->id, 'estado' => 0]);
-
-        $venda->finalizarVenda();
-        $venda->numVenda = $user->id . $venda->IDvenda;
-        $venda->save();
-
+        $venda = Venda::findOne($id);
+        $venda->finalizarVenda(Yii::$app->user->getId());
+        
         return $this->redirect('index');
     }
 

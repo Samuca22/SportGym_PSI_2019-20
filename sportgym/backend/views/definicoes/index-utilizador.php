@@ -33,7 +33,7 @@ use yii\helpers\Html;
         <div class="row info">
             <div class="col-md-3">
                 <div>Foto</div>
-                <img src="<?= $perfil->mostrarImagem() ?>" width="200" height="200">
+                <img src="data:image/png;base64,<?= base64_encode($perfil->foto) ?>" height="200" width="200" />
             </div>
             <div class="col-md-9">
                 <div class="row">

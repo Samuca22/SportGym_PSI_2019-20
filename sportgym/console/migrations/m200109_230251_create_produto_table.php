@@ -15,7 +15,7 @@ class m200109_230251_create_produto_table extends Migration
         $this->createTable('{{%produto}}', [
             'IDproduto' => $this->primaryKey(),
             'nome' => $this->string(100)->notNull(),
-            'fotoProduto' => $this->string(500),
+            'fotoProduto' => 'LONGBLOB',
             'descricao' => $this->string(500)->notNull(),
             'estado' => $this->boolean()->notNull()->defaultValue(0),
             'precoProduto' => $this->double()->notNull(),

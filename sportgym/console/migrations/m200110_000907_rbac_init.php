@@ -53,17 +53,26 @@ class m200110_000907_rbac_init extends Migration
         $cancelarInscricaoAula->description = 'permissão para alerar o estado de perfis';
         $auth->add($cancelarInscricaoAula);
 
+        $alterarPlano = $auth->createPermission('alterarPlano');
+        $alterarPlano->description = 'permissão para alerar planos';
+        $auth->add($alterarPlano);
+
 
         // Atribui Permissões
 
         $auth->addChild($socio, $entrarFront);
+
         $auth->addChild($colab, $entrarBack);
-        $auth->addChild($colab, $socio);
-        $auth->addChild($admin, $colab);
+        $auth->addChild($colab, $alterarPlano);
+        $auth->addChild($colab, $cancelarInscricaoAula);
+
         $auth->addChild($admin, $criarEditarGinasios);
         $auth->addChild($admin, $alterarEstadoProdutos);
         $auth->addChild($admin, $alterarEstatuto);
-        $auth->addChild($admin, $cancelarInscricaoAula);
+        
+        $auth->addChild($colab, $socio);
+        $auth->addChild($admin, $colab);
+        
     }
 
     /**

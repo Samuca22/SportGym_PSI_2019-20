@@ -36,14 +36,18 @@ $this->title = 'Detalhes Venda';
         <?php foreach ($linhasVenda as $linhaVenda) : ?>
             <tr>
                 <td>
-                    <img src='<?= $linhaVenda->iDproduto->mostrarImagem() ?>' width='25' height='25' style="margin-right:7px;"><?= $linhaVenda->iDproduto->nome ?>
+                    <?php if ($linhaVenda->iDproduto->fotoProduto == null) : ?>
+                        <img src="<?= $linhaVenda->iDproduto->semImagem() ?>" height="25" width="25" style="margin-right:7px;"><?= $linhaVenda->iDproduto->nome ?>
+                    <?php else : ?>
+                        <img src="data:image/png;base64,<?= base64_encode($linhaVenda->iDproduto->fotoProduto) ?>" height="25" width="25" style="margin-right:7px;"><?= $linhaVenda->iDproduto->nome ?>
+                    <?php endif; ?>
                     <?= Html::a('Ver produto', ['produto/view', 'id' => $linhaVenda->iDproduto->IDproduto], ['class' => 'btn btn-venda-ver-produto']) ?>
                 </td>
                 <td style="text-align:center;font-size:16px;"><?= 'x' . $linhaVenda->quantidade ?></td>
                 <td style="text-align:center;font-size:16px;"><?= $linhaVenda->subTotal . '€' ?></td>
             </tr>
-            
+
         <?php endforeach; ?>
     </table>
-    
+
 </div>

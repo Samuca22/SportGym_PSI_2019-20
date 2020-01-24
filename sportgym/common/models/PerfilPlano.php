@@ -35,7 +35,7 @@ class PerfilPlano extends \yii\db\ActiveRecord
             [['nSocio'], 'required', 'message' => 'Introduza o número de sócio', 'on' => 'create'],
             [['IDplano'], 'required', 'message' => 'Introduza um plano válido'], 
             [['IDperfil', 'IDplano'], 'integer'],
-            [['dtaplano'], 'safe'],
+            [['dtaplano'], 'date', 'format'=>'yyyy-m-d', 'message' => 'aaaa-mm-dd'],
             [['IDperfil', 'IDplano'], 'unique', 'targetAttribute' => ['IDperfil', 'IDplano'], 'message' => 'Este plano já se encontra atribuído ao sócio inserid'],
             [['nSocio'], 'exist', 'skipOnError' => true, 'targetClass' => Perfil::className(), 'targetAttribute' => ['nSocio' => 'nSocio'], 'message' => 'Sócio não existe'],
         ];

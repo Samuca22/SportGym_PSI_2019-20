@@ -41,7 +41,7 @@ use yii\widgets\ActiveForm;
             </div>
             <div class="row">
                 <div class="col-md-8">
-                    <?= $form->field($model, 'file')->fileInput()->label('Fotografia') ?>
+                    <?= $form->field($model, 'fotoProduto')->fileInput()->label('Fotografia') ?>
                 </div>
                 <div class="col-md-4" style="margin-top:20px;">
                     <div style="float:right;">

@@ -16,14 +16,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'tipo')->dropDownList(
         [
-            1 => 'Treino',
-            2 => 'Nutrição',
+            0 => 'Treino',
+            1 => 'Nutrição',
         ],
         [
             'prompt' => 'Selecione o tipo de plano',
-            'options' => [
-                $model->tipo => ['Selected' => true],
-            ],
         ],
         [
 

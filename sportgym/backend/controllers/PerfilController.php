@@ -123,20 +123,13 @@ class PerfilController extends Controller
 
                     // sncontrar respetivo user/ atribuir o seu id ao id do perfil / gerar número de sócio
                     $user = User::find()->where(['username' => $modelUser->username])->one();
+                    $user->status = 10;
+                    $user->save();
                     $modelPerfil->IDperfil = $user->id;
                     $modelPerfil->nSocio = 1000 + $modelPerfil->IDperfil;
 
-                    // se foi dado upload de imagem - guardar.
-                    $modelPerfil->file = UploadedFile::getInstance($modelPerfil, 'file');
-
-
-                    if ($modelPerfil->file != null) {
-                        $modelPerfil->atribuirImagem();
-                    }
-
                     // guardar perfil na bd e criar a sua respetiva adesão
                     $modelPerfil->save();
-
                     $modelAdesao->IDperfil = $modelPerfil->IDperfil;
                     $modelAdesao->save();
                     $modelUser->sendEmail();
@@ -167,6 +160,7 @@ class PerfilController extends Controller
         // Guardar Perfil e User
         $modelPerfil = $this->findModel($id);
         $modelUser = User::findOne($id);
+        $oldImage = $modelPerfil->foto;
 
         // Buscar o role do perfil selecionado
         $auth = Yii::$app->authManager;
@@ -220,12 +214,8 @@ class PerfilController extends Controller
             }
 
 
-            // popular no modelo perfil o fila
-            $modelPerfil->file = UploadedFile::getInstance($modelPerfil, 'file');
-            // se file não for null (se foi dado upload de alguma imagem) atribuir e salvar na pasta uploads
-            if ($modelPerfil->file != null) {
-                $modelPerfil->atribuirImagem();
-            }
+            $newImage = UploadedFile::getInstance($modelPerfil, 'foto');
+            $modelPerfil->adicionarImagemUpdate($newImage, $oldImage);
 
             // gravar todas as alterações efetuadas
             $modelUser->save();

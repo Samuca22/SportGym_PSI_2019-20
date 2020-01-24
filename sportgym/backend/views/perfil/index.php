@@ -31,7 +31,7 @@ $this->title = 'Gestão de Perfis';
                 <?php foreach ($perfis_dataProvider->models as $model) : ?>
                     <tr>
                         <td>
-                            <img src='<?= $model->mostrarImagem() ?>' width='25' height='25' style="margin-right:7px;"><?= $model->nSocio ?>
+                            <img src="data:image/png;base64,<?= base64_encode($model->foto) ?>" height="25" width="25" style="margin-right:7px;"><?= $model->nSocio ?>
                         </td>
                         <td><?= $model->primeiroNome . ' ' . $model->apelido ?></td>
                         <td><?= $model->nif ?></td>

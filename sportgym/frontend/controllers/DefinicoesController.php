@@ -5,7 +5,7 @@ namespace frontend\controllers;
 use Yii;
 use common\models\Perfil;
 use common\models\User;
-use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -21,6 +21,21 @@ class DefinicoesController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => [],
+                        'allow' => false,
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'actions' => [],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -48,7 +63,7 @@ class DefinicoesController extends Controller
         $modelPerfil = Perfil::findOne($id);
         $modelUser = User::findOne(['id' => $id]);
 
-        if ($modelPerfil->load(Yii::$app->request->post())) {
+        if ($modelPerfil->load(Yii::$app->request->post()) && $modelPerfil->validate()) {
             $modelPerfil->save(false);
             $modelUser->username = $modelPerfil->username;
             $modelUser->save();
@@ -61,8 +76,15 @@ class DefinicoesController extends Controller
                     }
                 } else {
                     Yii::$app->getSession()->setFlash('error', 'Não foi possível alterar a password');
+                    return $this->render('update', [
+                        'modelPerfil' => $modelPerfil,
+                        'modelUser' => $modelUser,
+                        'user' => $user,
+                    ]);
+                    
                 }
             }
+            
             return $this->render('index', [
                 'model' => $this->findModel($user->getId()),
                 'modelUser' => $modelUser,

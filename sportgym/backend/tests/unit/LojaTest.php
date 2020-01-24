@@ -4,7 +4,7 @@ use common\models\LinhaVenda;
 use common\models\Produto;
 use common\models\Venda;
 
-class LojaTest extends \Codeception\Test\Unit
+class LinhasVendaTest extends \Codeception\Test\Unit
 {
     /**
      * @var \backend\tests\UnitTester
@@ -12,155 +12,174 @@ class LojaTest extends \Codeception\Test\Unit
     protected $tester;
 
     protected function _before()
-    {
+    {    
     }
 
     protected function _after()
     {
     }
 
-    // TESTES DA LOJA
-
-    //INICIALIZAÇÃO
-    public function testIniciarVenda() //TESTE PARA VERIFICAÇÃO A INICIALIZAÇÃO DE UMA VENDA
+    //CAMPOS OBRIGATÓRIOS
+    public function testQuantidadeVazio()  // verifica se o campo Quantidade pode ser igual a Vazio
     {
-        $venda = new Venda();
-        $venda->total = 0;
-        $venda->dataVenda = '2019-12-25';
-        $venda->estado = 0;
-        $venda->save();
-
-        $produto = new Produto();
-        $produto->nome = 'shaker';
-        $produto->fotoProduto = 'teste.png';
-        $produto->descricao = "shake azul";
-        $produto->precoProduto = 5;
-        $produto->estado = 1;
-        $produto->save();
-
         $linhaVenda = new LinhaVenda();
-        $linhaVenda->iniciarLinhaVenda($venda->IDvenda, $produto);
-        $linhaVenda->save();
+        $linhaVenda->quantidade = '';
 
-        $this->tester->seeRecord(LinhaVenda::class, ['subTotal' => $produto->precoProduto * $linhaVenda->quantidade]);
-        $this->tester->seeRecord(LinhaVenda::class, ['quantidade' => 1]);
+        $this->assertFalse($linhaVenda->validate(['quantidade']));
+    }
+
+    public function testSubTotalVazio()  // verifica se o campo Quantidade pode ser igual a Vazio
+    {
+        $linhaVenda = new LinhaVenda();
+        $linhaVenda->subTotal = '';
+
+        $this->assertFalse($linhaVenda->validate(['subTotal']));
     }
 
 
-    //RETIRAR
-    public function testRetirarQuantidadeLinhaVenda() //TESTE PARA RETIRAR QUANTIDADE À LINHA DE VENDA
+    //INT E FLOAT
+    public function testQuantidadeFloat()  // verifica se o campo Quantidade aceita Float
     {
-
-        $venda = new Venda();
-        $venda->total = 0;
-        $venda->dataVenda = '2019-12-25';
-        $venda->estado = 0;
-        $venda->save();
-
-        $produto = new Produto();
-        $produto->nome = 'shaker';
-        $produto->fotoProduto = 'teste.png';
-        $produto->descricao = "shake azul";
-        $produto->precoProduto = 5;
-        $produto->estado = 1;
-        $produto->save();
-
         $linhaVenda = new LinhaVenda();
-        $linhaVenda->iniciarLinhaVenda($venda->IDvenda, $produto);
-        $linhaVenda->save();
+        $linhaVenda->quantidade = 1.5;
 
-        $linhaVenda->quantidade = 5;
-        $linhaVenda->menosQuantidade();
+        $this->assertFalse($linhaVenda->validate(['quantidade']));
+    }
 
-        $this->tester->seeRecord(LinhaVenda::class, ['quantidade' => 4]);
+    public function testSubTotalFloatInt()  // verifica se o campo Quantidade aceita Float
+    {
+        $linhaVenda = new LinhaVenda();
+        $linhaVenda->subTotal = 1.5;
+
+        $this->assertTrue($linhaVenda->validate(['subTotal']));
+
+        $linhaVenda->subTotal = 1;
+
+        $this->assertTrue($linhaVenda->validate(['subTotal']));
     }
 
 
-    public function testRetirarQuantidadeMaximaLinhaVenda() //TESTE PARA RETIRAR A QUANTIDADE MÁXIMA À LINHA DE VENDA
+    //CAMPOS QUE NÃO SUPORTAM STRINGS
+    public function testQuantidadeString()  // verifica se o campo Quantidade aceita String
     {
-
-        $venda = new Venda();
-        $venda->total = 0;
-        $venda->dataVenda = '2019-12-25';
-        $venda->estado = 0;
-        $venda->save();
-
-        $produto = new Produto();
-        $produto->nome = 'shaker';
-        $produto->fotoProduto = 'teste.png';
-        $produto->descricao = "shake azul";
-        $produto->precoProduto = 5;
-        $produto->estado = 1;
-        $produto->save();
-
         $linhaVenda = new LinhaVenda();
-        $linhaVenda->iniciarLinhaVenda($venda->IDvenda, $produto);
-        $linhaVenda->save();
+        $linhaVenda->quantidade = 'Quantidade';
 
-        //quantidade = 1
-        $linhaVenda->menosQuantidade();
-        //linha de venda apagada
+        $this->assertFalse($linhaVenda->validate(['quantidade']));
+    }
 
-        $this->tester->dontSeeRecord(LinhaVenda::class, ['IDlinhavenda' => $linhaVenda->IDlinhaVenda]);
+    public function testsubTotalString()  // verifica se o campo subTotal aceita String
+    {
+        $linhaVenda = new LinhaVenda();
+        $linhaVenda->subTotal = 'SubTotal';
+
+        $this->assertFalse($linhaVenda->validate(['subTotal']));
     }
 
 
-    //ADICIONAR
-    public function testAdicionarQuantidadeLinhaVenda() //TESTE PARA ADICIONAR QUANTIDADE À LINHA DE VENDA
+    // Cria/Simula uma venda
+    public function IniciarVenda() 
     {
-
-        $venda = new Venda();
-        $venda->total = 0;
-        $venda->dataVenda = '2019-12-25';
-        $venda->estado = 0;
-        $venda->save();
-
         $produto = new Produto();
-        $produto->nome = 'shaker';
-        $produto->fotoProduto = 'teste.png';
-        $produto->descricao = "shake azul";
+        $produto->nome = 'Gomas';
+        $produto->descricao = "Gomas Multicolor";
         $produto->precoProduto = 5;
         $produto->estado = 1;
         $produto->save();
+
+        $venda = new Venda();
+        $venda->iniciarVenda(1);
 
         $linhaVenda = new LinhaVenda();
         $linhaVenda->iniciarLinhaVenda($venda->IDvenda, $produto);
         $linhaVenda->save();
 
+        $venda->atualizarVenda();
+
+        $this->tester->seeRecord(LinhaVenda::class, ['IDlinhaVenda' => $linhaVenda->IDlinhaVenda, 'subTotal' => $produto->precoProduto * $linhaVenda->quantidade]);
+        $this->tester->seeRecord(LinhaVenda::class, ['IDlinhaVenda' => $linhaVenda->IDlinhaVenda, 'quantidade' => 1]);
+        $this->tester->seeRecord(Venda::class, ['IDvenda' => $venda->IDvenda, 'total' => $venda->total]);
+
+        return $linhaVenda;
+    }
+    
+    // verifica método maisQuantidade() do modelo LinhaVenda
+    public function testAdicionarQuantidadeLinhaVenda()
+    {
+        $linhaVenda = $this->IniciarVenda();
+
+        $this->tester->seeRecord(LinhaVenda::class, ['IDlinhaVenda' => $linhaVenda->IDlinhaVenda, 'quantidade' => 1]);
         // quantidade = 1
         $linhaVenda->maisQuantidade();
         // quantidade = 2
 
-        $this->tester->seeRecord(LinhaVenda::class, ['quantidade' => 2]);
+        $this->tester->seeRecord(LinhaVenda::class, ['IDlinhaVenda' => $linhaVenda->IDlinhaVenda, 'quantidade' => 2]);
+        $linhaVenda->delete();
+        $linhaVenda->iDproduto->delete();
+        $linhaVenda->iDvenda->delete();
     }
 
-    public function testAdicionarQuantidadeMaximaLinhaVenda() //TESTE PARA ADICIONAR QUANTIDADE MÁXIMA À LINHA DE VENDA
+    // verifica método menosQuantidade() do modelo LinhaVenda
+    public function testRetirarQuantidadeLinhaVenda() 
     {
-
-        $venda = new Venda();
-        $venda->total = 0;
-        $venda->dataVenda = '2019-12-25';
-        $venda->estado = 0;
-        $venda->save();
-
-        $produto = new Produto();
-        $produto->nome = 'shaker';
-        $produto->fotoProduto = 'teste.png';
-        $produto->descricao = "shake azul";
-        $produto->precoProduto = 5;
-        $produto->estado = 1;
-        $produto->save();
-
-        $linhaVenda = new LinhaVenda();
-        $linhaVenda->iniciarLinhaVenda($venda->IDvenda, $produto);
-        $linhaVenda->save();
-
-        $linhaVenda->quantidade = 15;
+        $linhaVenda = $this->IniciarVenda();
         $linhaVenda->maisQuantidade();
 
+        $this->tester->seeRecord(LinhaVenda::class, ['IDlinhaVenda' => $linhaVenda->IDlinhaVenda, 'quantidade' => 2]);
+        // quantidade = 2
+        $linhaVenda->menosQuantidade();
+        // quantidade = 1
 
-        $this->tester->dontSeeRecord(LinhaVenda::class, ['quantidade' => 16]);
+        $this->tester->seeRecord(LinhaVenda::class, ['IDlinhaVenda' => $linhaVenda->IDlinhaVenda, 'quantidade' => 1]);
+        $linhaVenda->delete();
+        $linhaVenda->iDproduto->delete();
+        $linhaVenda->iDvenda->delete();
     }
 
+    // Verifica que ao reduzir a quantidade de produtos a 0 apaga a linha de venda
+    public function testRetirarQuantidadeMinimaLinhaVenda()
+    {
+        $linhaVenda = $this->IniciarVenda();
+        $venda = Venda::findOne($linhaVenda->IDvenda);
+        $produto = Produto::findOne($linhaVenda->IDproduto);
 
+        $this->tester->seeRecord(LinhaVenda::class, ['IDlinhaVenda' => $linhaVenda->IDlinhaVenda, 'quantidade' => 1]);
+        // quantidade = 1
+        $linhaVenda->menosQuantidade();
+        // quantidade = Apagar Linha Venda
+
+        $this->tester->dontSeeRecord(LinhaVenda::class, ['IDlinhaVenda' => $linhaVenda->IDlinhaVenda]);
+        $venda->delete();
+        $produto->delete();
+    }
+
+    // Verifica que a máxima quantidade de produtos numa linha de venda é 15
+    public function testAdicionarQuantidadeMaximaLinhaVenda() 
+    {
+        $linhaVenda = $this->IniciarVenda();
+        for($i = 2; $i <= 20; $i++)
+        {
+            $linhaVenda->maisQuantidade();
+            // Quantidade Máxima 15
+        }
+ 
+        $this->tester->seeRecord(LinhaVenda::class, ['IDlinhaVenda' => $linhaVenda->IDlinhaVenda, 'quantidade' => 15]);
+        $linhaVenda->delete();
+        $linhaVenda->iDproduto->delete();
+        $linhaVenda->iDvenda->delete();
+    }
+    
+    // verifica atualização do campo 'subTotal' da linha de venda
+    public function testAtualizarLinhaVendaSubTotal() 
+    {
+        $linhaVenda = $this->IniciarVenda();
+        $this->tester->seeRecord(LinhaVenda::class, ['IDlinhaVenda' => $linhaVenda->IDlinhaVenda, 'subTotal' => 5]);
+        
+        $linhaVenda->maisQuantidade();
+ 
+        $this->tester->seeRecord(LinhaVenda::class, ['IDlinhaVenda' => $linhaVenda->IDlinhaVenda, 'subTotal' => 10]);
+        $linhaVenda->delete();
+        $linhaVenda->iDproduto->delete();
+        $linhaVenda->iDvenda->delete();
+    }
 }

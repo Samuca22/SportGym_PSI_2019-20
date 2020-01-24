@@ -7,11 +7,11 @@ namespace Composer\Autoload;
 class ComposerStaticInitd4ac345edcffc7bcb66b54bb00470bb5
 {
     public static $files = array (
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
         'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
+        '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '538ca81a9a966a6716601ecf48f4eaef' => __DIR__ . '/..' . '/opis/closure/functions.php',
@@ -46,6 +46,7 @@ class ComposerStaticInitd4ac345edcffc7bcb66b54bb00470bb5
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
             'Symfony\\Component\\Yaml\\' => 23,
+            'Symfony\\Component\\Process\\' => 26,
             'Symfony\\Component\\Finder\\' => 25,
             'Symfony\\Component\\EventDispatcher\\' => 34,
             'Symfony\\Component\\DomCrawler\\' => 29,
@@ -71,6 +72,7 @@ class ComposerStaticInitd4ac345edcffc7bcb66b54bb00470bb5
         'F' => 
         array (
             'Faker\\' => 6,
+            'Facebook\\WebDriver\\' => 19,
         ),
         'D' => 
         array (
@@ -140,6 +142,10 @@ class ComposerStaticInitd4ac345edcffc7bcb66b54bb00470bb5
         array (
             0 => __DIR__ . '/..' . '/symfony/yaml',
         ),
+        'Symfony\\Component\\Process\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/process',
+        ),
         'Symfony\\Component\\Finder\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/finder',
@@ -192,6 +198,10 @@ class ComposerStaticInitd4ac345edcffc7bcb66b54bb00470bb5
         array (
             0 => __DIR__ . '/..' . '/fzaninotto/faker/src/Faker',
         ),
+        'Facebook\\WebDriver\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/facebook/webdriver/lib',
+        ),
         'Doctrine\\Instantiator\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/instantiator/src/Doctrine/Instantiator',
@@ -242,6 +252,30 @@ class ComposerStaticInitd4ac345edcffc7bcb66b54bb00470bb5
     );
 
     public static $classMap = array (
+        'Codeception\\Exception\\ConnectionException' => __DIR__ . '/..' . '/codeception/module-webdriver/src/Codeception/Exception/ConnectionException.php',
+        'Codeception\\Exception\\ExternalUrlException' => __DIR__ . '/..' . '/codeception/lib-innerbrowser/src/Codeception/Exception/ExternalUrlException.php',
+        'Codeception\\Lib\\Connector\\Yii2' => __DIR__ . '/..' . '/codeception/module-yii2/src/Codeception/Lib/Connector/Yii2.php',
+        'Codeception\\Lib\\Connector\\Yii2\\ConnectionWatcher' => __DIR__ . '/..' . '/codeception/module-yii2/src/Codeception/Lib/Connector/Yii2/ConnectionWatcher.php',
+        'Codeception\\Lib\\Connector\\Yii2\\FixturesStore' => __DIR__ . '/..' . '/codeception/module-yii2/src/Codeception/Lib/Connector/Yii2/FixturesStore.php',
+        'Codeception\\Lib\\Connector\\Yii2\\Logger' => __DIR__ . '/..' . '/codeception/module-yii2/src/Codeception/Lib/Connector/Yii2/Logger.php',
+        'Codeception\\Lib\\Connector\\Yii2\\TestMailer' => __DIR__ . '/..' . '/codeception/module-yii2/src/Codeception/Lib/Connector/Yii2/TestMailer.php',
+        'Codeception\\Lib\\Connector\\Yii2\\TransactionForcer' => __DIR__ . '/..' . '/codeception/module-yii2/src/Codeception/Lib/Connector/Yii2/TransactionForcer.php',
+        'Codeception\\Lib\\DbPopulator' => __DIR__ . '/..' . '/codeception/module-db/src/Codeception/Lib/DbPopulator.php',
+        'Codeception\\Lib\\Driver\\Db' => __DIR__ . '/..' . '/codeception/module-db/src/Codeception/Lib/Driver/Db.php',
+        'Codeception\\Lib\\Driver\\MySql' => __DIR__ . '/..' . '/codeception/module-db/src/Codeception/Lib/Driver/MySql.php',
+        'Codeception\\Lib\\Driver\\Oci' => __DIR__ . '/..' . '/codeception/module-db/src/Codeception/Lib/Driver/Oci.php',
+        'Codeception\\Lib\\Driver\\PostgreSql' => __DIR__ . '/..' . '/codeception/module-db/src/Codeception/Lib/Driver/PostgreSql.php',
+        'Codeception\\Lib\\Driver\\SqlSrv' => __DIR__ . '/..' . '/codeception/module-db/src/Codeception/Lib/Driver/SqlSrv.php',
+        'Codeception\\Lib\\Driver\\Sqlite' => __DIR__ . '/..' . '/codeception/module-db/src/Codeception/Lib/Driver/Sqlite.php',
+        'Codeception\\Lib\\Framework' => __DIR__ . '/..' . '/codeception/lib-innerbrowser/src/Codeception/Lib/Framework.php',
+        'Codeception\\Lib\\InnerBrowser' => __DIR__ . '/..' . '/codeception/lib-innerbrowser/src/Codeception/Lib/InnerBrowser.php',
+        'Codeception\\Lib\\Interfaces\\Db' => __DIR__ . '/..' . '/codeception/module-db/src/Codeception/Lib/Interfaces/Db.php',
+        'Codeception\\Lib\\Interfaces\\ScreenshotSaver' => __DIR__ . '/..' . '/codeception/module-webdriver/src/Codeception/Lib/Interfaces/ScreenshotSaver.php',
+        'Codeception\\Lib\\Interfaces\\SessionSnapshot' => __DIR__ . '/..' . '/codeception/module-webdriver/src/Codeception/Lib/Interfaces/SessionSnapshot.php',
+        'Codeception\\Module\\Db' => __DIR__ . '/..' . '/codeception/module-db/src/Codeception/Module/Db.php',
+        'Codeception\\Module\\WebDriver' => __DIR__ . '/..' . '/codeception/module-webdriver/src/Codeception/Module/WebDriver.php',
+        'Codeception\\Module\\Yii2' => __DIR__ . '/..' . '/codeception/module-yii2/src/Codeception/Module/Yii2.php',
+        'Codeception\\Util\\HttpCode' => __DIR__ . '/..' . '/codeception/lib-innerbrowser/src/Codeception/Util/HttpCode.php',
         'Codeception\\Util\\Shared\\Asserts' => __DIR__ . '/..' . '/codeception/lib-asserts/src/Codeception/Util/Shared/Asserts.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',

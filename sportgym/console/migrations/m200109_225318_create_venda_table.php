@@ -15,7 +15,7 @@ class m200109_225318_create_venda_table extends Migration
         $this->createTable('{{%venda}}', [
             'IDvenda' => $this->primaryKey(),
             'estado' => $this->boolean()->notNull(),
-            'dataVenda' => $this->date(),
+            'dataVenda' => $this->dateTime(),
             'total' => $this->float()->notNull(),
             'numVenda' => $this->string(20),
             'IDperfil' => $this->integer()->notNull(),

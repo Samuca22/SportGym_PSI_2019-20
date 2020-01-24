@@ -75,7 +75,7 @@ class SignupForm extends Model
     {
         Yii::$app->mailer->compose()
         ->setFrom('sportgym.muscle@gmail.com')
-            ->setTo('ricardofm1712@gmail.com')
+            ->setTo($this->email)
             ->setSubject('Teste')
             ->setHtmlBody('<p>Credenciais de Acesso: </p><p><b>USERNAME: </b>' . $this->username . '</p><p><b>PASSWORD: </b>' . $this->password . '</p>')
             ->send();
@@ -84,7 +84,7 @@ class SignupForm extends Model
     public function atribuirUserPass()
     {
         $this->username = Yii::$app->security->generateRandomString(8);
-        $this->password = 'ricardo';
+        $this->password = 'sportgym';
         //$this->password = Yii::$app->security->generateRandomString(8);
     }
 }

@@ -12,7 +12,7 @@ use yii\web\UploadedFile;
  *
  * @property int $IDperfil
  * @property int $nSocio
- * @property string|null $foto
+ * @property resource|null $fotoProduto
  * @property string $primeiroNome
  * @property string $apelido
  * @property string $genero
@@ -33,7 +33,6 @@ use yii\web\UploadedFile;
  */
 class Perfil extends \yii\db\ActiveRecord
 {
-    public $file;
     public $estatuto;
     public $email;
     public $username;
@@ -60,7 +59,6 @@ class Perfil extends \yii\db\ActiveRecord
             [['dtaNascimento'], 'safe'],
             [['dtaNascimento'], 'date', 'format' => 'yyyy-M-d', 'message' => 'Formato data: aaaa-mm-dd'],
             [['peso', 'altura'], 'number', 'min' => 0, 'max' => 999],
-            [['foto'], 'string', 'max' => 500],
             [['primeiroNome'], 'string', 'max' => 50],
             [['apelido'], 'string', 'max' => 30],
             [['telefone', 'rua', 'nif'], 'string', 'max' => 15],
@@ -68,13 +66,22 @@ class Perfil extends \yii\db\ActiveRecord
             [['nSocio'], 'unique'],
             [['telefone'], 'unique'],
             [['nif'], 'unique'],
-            [['file'], 'file'],
+            [['foto'], 'file'],
             [['estatuto', 'email'], 'safe'],
             ['email', 'email', 'message' => 'Introduza um email válido'],
             ['email', 'string', 'max' => 255],
             [['IDperfil'], 'unique'],
             [['IDperfil'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['IDperfil' => 'id']],
-            ['username', 'string', 'min' => 4],
+
+            [
+                ['username'], 'unique', 
+                'targetAttribute' => 'username', 
+                'targetClass' => '\common\models\User', 
+                'message' => 'Username Indisponível',
+                'when' => function ($model) {
+                    return $model->username != Yii::$app->user->identity->username; // or other function for get current username
+                }
+            ],
 
 
             [['pass_nova', 'pass_antiga', 'pass_confirmar'], 'safe'],
@@ -104,8 +111,18 @@ class Perfil extends \yii\db\ActiveRecord
             'peso' => 'Peso',
             'altura' => 'Altura',
             'estatuto' => 'Estatuto',
-            'file' => 'Foto',
+            'foto' => 'Fotografia',
         ];
+    }
+
+    public function beforeSave($insert)
+    {
+        if ($insert) {
+            if ($file = UploadedFile::getInstance($this, 'foto')) {
+                $this->foto = file_get_contents($file->tempName);
+            }
+        }
+        return parent::beforeSave($insert);
     }
 
     public function afterSave($insert, $changedAttributes)
@@ -240,23 +257,6 @@ class Perfil extends \yii\db\ActiveRecord
         return $this->hasMany(Adesao::className(), ['IDperfil' => 'IDperfil']);
     }
 
-    public function mostrarImagem()
-    {
-        if ($this->foto == '') {
-            $path = '../../common/uploads/perfis/no_prof.png';
-            $type = pathinfo($path, PATHINFO_EXTENSION);
-            $data = file_get_contents($path);
-            $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-            return $base64;
-        } else {
-            $path = '../../common/uploads/perfis/' . $this->foto;
-            $type = pathinfo($path, PATHINFO_EXTENSION);
-            $data = file_get_contents($path);
-            $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-            return $base64;
-        }
-    }
-
     public function alterarEstatuto($role)
     {
         $auth = Yii::$app->authManager;
@@ -280,10 +280,13 @@ class Perfil extends \yii\db\ActiveRecord
         }
     }
 
-    public function atribuirImagem()
+    public function adicionarImagemUpdate($novaFoto, $oldImage)
     {
-        $nome_imagem = 'prof' . $this->nSocio;    //Atribui nome aleatório ao ficheiro 
-        $this->file->saveAs('../../common/uploads/perfis/' . $nome_imagem . '.' . $this->file->extension);
-        $this->foto = $nome_imagem . '.' . $this->file->extension;
+        if($novaFoto != '')
+        {
+            $this->foto = file_get_contents($novaFoto->tempName);
+        } else {
+            $this->foto = $oldImage;
+        }
     }
 }

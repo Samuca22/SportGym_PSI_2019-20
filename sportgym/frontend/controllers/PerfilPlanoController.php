@@ -8,6 +8,7 @@ use common\models\PerfilPlano;
 use common\models\PerfilPlanoSearch;
 use common\models\Plano;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -23,6 +24,21 @@ class PerfilPlanoController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => [],
+                        'allow' => false,
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'actions' => [],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
@@ -41,10 +57,10 @@ class PerfilPlanoController extends Controller
         $user = Yii::$app->user->identity;
 
         $plano_searchModel = new PerfilPlanoSearch();
-        $planos_dataProvider=$plano_searchModel->search(Yii::$app->request->queryParams);
+        $planos_dataProvider = $plano_searchModel->search(Yii::$app->request->queryParams);
         $planos_dataProvider->query->andWhere(['perfilplano.IDperfil' => $user->getId()]);
 
-        
+
         return $this->render('index', [
             'plano_searchModel' => $plano_searchModel,
             'plano_dataProvider' => $planos_dataProvider,
@@ -74,17 +90,16 @@ class PerfilPlanoController extends Controller
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
 
-            if($model->save()){
+            if ($model->save()) {
                 $model->nome = $user->username . $model->IDplano . '_' . $model->nome;
                 $modelPerfilPlano = new PerfilPlano();
                 $modelPerfilPlano->IDperfil = $user->getId();
                 $modelPerfilPlano->IDplano = $model->IDplano;
                 $modelPerfilPlano->nSocio = $user->perfil->nSocio;
                 $modelPerfilPlano->dtaplano = date('Y-m-d');
-                
 
-                if($modelPerfilPlano->validate())
-                {
+
+                if ($modelPerfilPlano->validate()) {
                     $modelPerfilPlano->save();
                     Yii::$app->getSession()->setFlash('success', 'Plano criado com sucesso');
                     return $this->redirect(['index']);
@@ -92,8 +107,6 @@ class PerfilPlanoController extends Controller
                     Yii::$app->getSession()->setFlash('error', 'Erro');
                     return $this->redirect(['create']);
                 }
-
-                
             }
         }
 
@@ -102,26 +115,24 @@ class PerfilPlanoController extends Controller
         ]);
     }
 
-    /**
-     * Updates an existing PerfilPlano model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param integer $IDperfil
-     * @param string $IDplano
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($IDperfil, $IDplano)
+    public function actionUpdate($IDplano)
     {
-        $model = $this->findModel($IDperfil, $IDplano);
+        $model = Plano::findOne($IDplano);
+        if (Yii::$app->user->can('alterarPlano')) {
+            if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+                $model->save();
+                return $this->redirect(['view', 'IDplano' => $model->IDplano]);
+            }
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'IDperfil' => $model->IDperfil, 'IDplano' => $model->IDplano]);
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        } else {
+            Yii::$app->getSession()->setFlash('error', 'Se pretende editar um plano desloque-se ao seu clube');
         }
-
-        return $this->render('update', [
-            'model' => $model,
-        ]);
+        return $this->redirect(['view', 'IDplano' => $model->IDplano]);
     }
+
 
     /**
      * Deletes an existing PerfilPlano model.

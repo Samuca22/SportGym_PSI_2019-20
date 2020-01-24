@@ -9,29 +9,26 @@ use yii\bootstrap\ActiveForm;
 
 $this->title = 'SportGym';
 ?>
-<div class="site-login">
-    <div class="text-center">
+<div class="text-center">
     <img src="/imgs/logo.png" width="250">
-    </div>
-    
-    <div class="caixa-login">
-        <div class="row">
-            <div class="col-lg-12">
-                <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
+</div>
 
-                <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'class' => 'form-control']) ?>
+<div class="caixa-login">
+    <div class="row">
+        <div class="col-lg-12">
+            <?php $form = ActiveForm::begin(['id' => 'login-form']); ?>
 
-                <?= $form->field($model, 'password')->passwordInput(['class' => 'form-control']) ?>
+            <?= $form->field($model, 'username')->textInput(['autofocus' => true, 'class' => 'form-control']) ?>
 
-                <?= $form->field($model, 'rememberMe')->checkbox() ?>
+            <?= $form->field($model, 'password')->passwordInput(['class' => 'form-control']) ?>
 
-                <div class="form-group">
-                    <?= Html::submitButton('Login', ['class' => 'btn btn-login', 'name' => 'login-button']) ?>
-                </div>
+            <?= $form->field($model, 'rememberMe')->checkbox() ?>
 
-                <?php ActiveForm::end(); ?>
+            <div class="form-group">
+                <?= Html::submitButton('Login', ['class' => 'btn btn-login', 'name' => 'login-button', 'id' => 'button-login']) ?>
             </div>
+
+            <?php ActiveForm::end(); ?>
         </div>
     </div>
-
 </div>

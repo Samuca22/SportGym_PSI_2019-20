@@ -101,7 +101,7 @@ class m200110_002524_create_users extends Migration
             'IDperfil' => $user3->getId(),
             'primeiroNome' => 'Socio',
             'apelido' => 'Oliveira',
-            'nSocio' => 1003,
+            'nSocio' => 1002,
             'dtaNascimento' => '1990-12-03',
             'genero' => 'M',
             'telefone' => '91111113',

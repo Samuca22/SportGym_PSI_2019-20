@@ -22,7 +22,7 @@ use yii\widgets\ActiveForm;
         <div class="row info">
             <div class="col-md-3">
                 <div>Foto</div>
-                <img src="<?= $perfil->mostrarImagem() ?>" width="200" height="200">
+                <img src="data:image/png;base64,<?= base64_encode($perfil->foto) ?>" height="200" width="200" />
             </div>
             <div class="col-md-9">
                 <div class="row">
@@ -59,7 +59,7 @@ use yii\widgets\ActiveForm;
         </div>
         <div class="row">
             <div class="col-md-12">
-            <?php $perfil->email = $user->email ?>
+                <?php $perfil->email = $user->email ?>
                 <?= $form->field($perfil, 'email') ?>
             </div>
 
@@ -86,7 +86,7 @@ use yii\widgets\ActiveForm;
         <div class="row">
             <div class="col-md-8">
                 <?php if ($perfil->foto == null) : ?>
-                    <?= $form->field($perfil, 'file')->fileInput() ?>
+                    <?= $form->field($perfil, 'foto')->fileInput() ?>
                 <?php endif; ?>
             </div>
             <div class="col-md-4">

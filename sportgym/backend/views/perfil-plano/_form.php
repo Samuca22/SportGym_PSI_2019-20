@@ -26,7 +26,7 @@ use yii\widgets\ActiveForm;
         ]
     ) ?>
 
-    <?= $form->field($modelPerfilPlano, 'dtaplano')->textInput(['class' => 'form-control', 'placeholder' => 'aaaa-mm-dd']) ?>
+    <?= $form->field($modelPerfilPlano, 'dtaplano')->textInput(['class' => 'form-control', 'placeholder' => 'aaaa-mm-dd'])->label('Data de Atribuição') ?>
 
     <div class="form-group">
         <?= Html::submitButton('Atribuir Plano', ['class' => 'btn btn-azul']) ?>

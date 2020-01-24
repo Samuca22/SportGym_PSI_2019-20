@@ -35,6 +35,7 @@ class LinhaVenda extends \yii\db\ActiveRecord
             [['quantidade', 'subTotal'], 'required'],
             [['quantidade', 'IDvenda', 'IDproduto'], 'integer'],
             [['subTotal'], 'number'],
+            [['IDvenda', 'IDproduto'], 'required'],
             [['IDproduto'], 'exist', 'skipOnError' => true, 'targetClass' => Produto::className(), 'targetAttribute' => ['IDproduto' => 'IDproduto']],
             [['IDvenda'], 'exist', 'skipOnError' => true, 'targetClass' => Venda::className(), 'targetAttribute' => ['IDvenda' => 'IDvenda']],
         ];

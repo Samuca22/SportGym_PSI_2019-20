@@ -1,10 +1,8 @@
 <?php namespace backend\tests;
 
 use backend\models\SignupForm;
-use common\models\LoginForm;
-use common\models\Perfil;
 use common\models\User;
-use common\models\Venda;
+
 
 class UserTest extends \Codeception\Test\Unit
 {
@@ -15,113 +13,178 @@ class UserTest extends \Codeception\Test\Unit
 
     protected function _before()
     {
-        $user = new User();
-        $user->username = 'colaborador';
-        $user->email = 'colaborador@sportgym.com';
-        $user->setPassword('admin');
-        $user->generateAuthKey();
-        $user->generateEmailVerificationToken();
-        $user->save();
     }
 
     protected function _after()
     {
     }
 
-
     //INICIALIZAÇÃO  E VALIDAÇÃO
-    public function testVerificarGinasioExiste() // Test para verificar se o Ginasio extiste
+    public function testVerificarUserExiste()
     {
-        $this->tester->SeeRecord(User::class, ['username' => 'colaborador']);
+        $this->tester->SeeRecord(User::class, ['username' => 'colab']);
     }
 
-
     //CAMPOS ÚNICOS
+    //VERIFICA SE O CAMPO DO USERNAME PODE SER REPETIDO
     public function testUsernameRepetido() // Verifica se o campo Username pode ser repetido
     {
         $signup = new SignupForm();
-        $signup->username = 'colaborador';
-        $signup->email = 'ceo@sportygym.com';
-        $signup->password = 'admin';
+        $signup->username = 'colab';
+        $signup->email = 'test@sportgym.pt';
+        $signup->password = 'user';
 
         $this->assertFalse($signup->validate());
     }
 
-    public function testEmailRepetido() // Verifica se o campo Email pode ser repetido
+    //VERIFICA SE O CAMPO DO EMAIL PODE SER REPETIDO
+    public function testEmailRepetido() 
     {
         $signup = new SignupForm();
-        $signup->username = 'ceo';
-        $signup->email = 'colaborador@sportgym.com';
-        $signup->password = 'admin';
+        $signup->username = 'test';
+        $signup->email = 'colab@colab.com';
+        $signup->password = 'test';
 
         $this->assertFalse($signup->validate());
     }
 
-
     //CAMPOS OBRIGATÓRIOS
-    public function testUsernameVazio() // verifica se o campo username pode ser igual a Vazio
+    //TESTA SE O CAMPO DO USERNAME PODE SER VAZIO
+    public function testUsernameVazio() 
     {
         $signup = new SignupForm();
         $signup->username = null;
-        $signup->email = 'ceo@sportgym.com';
-        $signup->password = 'admin';
+        $signup->email = 'test@sportgym.pt';
+        $signup->password = 'test';
 
         $this->assertFalse($signup->validate());
     }
 
-    public function testEmailVazio() // verifica se o campo email pode ser igual a Vazio
+    //TESTA SE O CAMPO DO EMAIL PODE SER VAZIO
+    public function testEmailVazio() 
     {
         $signup = new SignupForm();
-        $signup->username = 'ceo';
+        $signup->username = 'test';
         $signup->email = null;
-        $signup->password = 'admin';
+        $signup->password = 'test';
 
         $this->assertFalse($signup->validate());
     }
 
-    public function testPasswordVazio() // verifica se o campo Passowrd pode ser igual a Vazio
+    //TESTA SE O CAMPO DA PASSWORD PODE SER VAZIO
+    public function testPasswordVazio() 
     {
         $signup = new SignupForm();
-        $signup->username = 'ceo';
-        $signup->email = 'ceo@sportgym.com';
+        $signup->username = 'test';
+        $signup->email = 'test@sportgym.pt';
         $signup->password = null;
 
         $this->assertFalse($signup->validate());
     }
 
-
     //CAMPOS COM MÁXIMO DE CHARS
+    //VERIFICA A INSERÇÃO DE UM USERNAME DEMASIADO LONGO
     public function testUsernameDemasiadoLongo() // Verifica se o campo Username pode conter a quantida de chars inseridos
     {
         $signup = new SignupForm();
-        $signup->username = 'ssssssssssssssssssssssssssssslllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss';
-        $signup->email = 'ceo@sportgym.com';
-        $signup->password = 'admin';
+        $signup->username = 'ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeessssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssttttttttttttttttttttttttttttttttttttttttttttttttttttttttt';
+        $signup->email = 'test@sportgym.pt';
+        $signup->password = 'test';
 
         $this->assertFalse($signup->validate());
     }
 
-    public function testEmailDemasiadoLongo() // Verifica se o campo Email pode conter a quantida de chars inseridos
+    //VERIFICA A INSERÇÃO DE UM EMAIL DEMASIADO LONGO
+    public function testEmailDemasiadoLongo() 
     {
         $signup = new SignupForm();
-        $signup->username = 'ceo';
-        $signup->email = 'ssssssssssssssssssssssssssssslllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss@sapo.pt';
-        $signup->password = 'admin';
+        $signup->username = 'test';
+        $signup->email = 'tttttttttttttttttttttttttttttttttttttttttteeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeesssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssstttttttttttttttttttttttttttttttttttt@sportgym.pt';
+        $signup->password = 'test';
 
         $this->assertFalse($signup->validate());
     }
 
-
-    //VERIFICAÇÃO DO TIPO EMAIL
+    //VERIFICAÇÃO DE EMAIL VÁLIDO
     public function testEmailValidacao() // Verifica se o campo email é do tipo email
     {
         $signup = new SignupForm();
-        $signup->username = 'ceo';
-        $signup->email = 'ceosportgymcom';
-        $signup->password = 'admin';
+        $signup->username = 'test';
+        $signup->email = 'testsportgymcom';
+        $signup->password = 'test';
 
         $this->assertFalse($signup->validate());
     }
 
+    //Cria e Atualiza o campo USERNAME do USER criado
+    public function testAtualizarUsername() // Verifica se o campo email é do tipo email
+    {
+        $user = new User();
+        $user->username = 'user';
+        $user->email = 'user@sportgym.com';
+        $user->setPassword('user');
+        $user->generateAuthKey();
+        $user->generateEmailVerificationToken();
 
+        $user->save();
+
+        $username_antigo = 'user';
+        $username_novo = 'alterado';
+
+        $this->tester->seeRecord(User::class, ['username' => $username_antigo]);
+        $this->tester->dontSeeRecord(User::class, ['username' => $username_novo]);
+
+        $user = User::find()->where(['username' => $username_antigo])->one();
+        $user->username = $username_novo;
+        $user->save();
+
+        $this->tester->seeRecord(User::class, ['username' => $username_novo]);
+        $user->username = $username_antigo;
+        $user->save();
+    }
+
+    //Cria e Atualiza o campo Email do USER criado
+    public function testAtualizarEmail() // Verifica se o campo email é do tipo email
+    {
+        $user = new User();
+        $user->username = 'user';
+        $user->email = 'user@sportgym.com';
+        $user->setPassword('user');
+        $user->generateAuthKey();
+        $user->generateEmailVerificationToken();
+
+        $user->save();
+
+        $email_antigo = 'user@sportgym.com';
+        $email_novo = 'alterado@sportgym.com';
+
+        $this->tester->seeRecord(User::class, ['email' => $email_antigo]);
+        $this->tester->dontSeeRecord(User::class, ['email' => $email_novo]);
+
+        $user = User::find()->where(['email' => $email_antigo])->one();
+        $user->email = $email_novo;
+        $user->save();
+
+        $this->tester->seeRecord(User::class, ['email' => $email_novo]);
+        $user->email = $email_antigo;
+        $user->save();
+    }
+
+    //Cria e apaga um USER
+    public function testApagarUser()
+    {
+        $user = new User();
+        $user->username = 'user';
+        $user->email = 'user@sportgym.com';
+        $user->setPassword('user');
+        $user->generateAuthKey();
+        $user->generateEmailVerificationToken();
+
+        $user->save();
+
+        $this->tester->seeRecord(User::class, ['username' => 'user']);
+        $user = User::find()->where(['username' => 'user'])->one();
+        $user->delete();
+        $this->tester->dontSeeRecord(User::class, ['username' => 'user']);
+    }
 }

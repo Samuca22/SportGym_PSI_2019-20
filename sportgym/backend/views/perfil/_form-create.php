@@ -26,7 +26,7 @@ use yii\widgets\ActiveForm;
             <div class="row">
                 <div class="col-md-3">
                     <div>Foto</div>
-                    <img src="<?= $modelPerfil->mostrarImagem() ?>" width="200" height="200">
+                    <img src="data:image/png;base64,<?= base64_encode($modelPerfil->foto) ?>" height="200" width="200">
                 </div>
                 <div class="col-md-9">
                     <div class="row">
@@ -93,7 +93,7 @@ use yii\widgets\ActiveForm;
             </div>
             <div class="row">
                 <div class="col-md-8">
-                    <?= $form->field($modelPerfil, 'file')->fileInput() ?>
+                    <?= $form->field($modelPerfil, 'foto')->fileInput()->label('Fotografia') ?>
                 </div>
                 <div class="col-md-4">
                     <div style="float:right;margin-top:20px;">

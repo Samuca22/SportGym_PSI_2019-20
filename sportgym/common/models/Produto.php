@@ -3,15 +3,17 @@
 namespace common\models;
 
 use backend\mosquitto\phpMQTT;
+use Codeception\Util\PathResolver;
 use Exception;
 use Yii;
+use yii\web\UploadedFile;
 
 /**
  * This is the model class for table "produto".
  *
  * @property int $IDproduto
  * @property string $nome
- * @property string $fotoProduto
+ * @property resource|null $fotoProduto
  * @property string $descricao
  * @property int $estado
  * @property float $precoProduto
@@ -20,8 +22,6 @@ use Yii;
  */
 class Produto extends \yii\db\ActiveRecord
 {
-    public $file;
-
     public static function tableName()
     {
         return 'produto';
@@ -36,14 +36,13 @@ class Produto extends \yii\db\ActiveRecord
             [['nome'], 'required', 'message' => 'Introduza um nome para o produto'],
             [['precoProduto'], 'required', 'message' => 'Introduza um preço para o produto'],
             [['descricao'], 'required', 'message' => 'Introduza uma descrição para o produto'],
-            [['fotoProduto'], 'string', 'max' => 500],
+            [['fotoProduto'], 'file'],
             [['estado'], 'integer'],
             ['estado', 'default', 'value' => 0],
             [['estado'], 'required'],
             [['precoProduto'], 'number'],
             [['nome'], 'string', 'max' => 50],
             [['descricao'], 'string', 'max' => 500],
-            [['file'], 'file'],
         ];
     }
 
@@ -59,9 +58,18 @@ class Produto extends \yii\db\ActiveRecord
             'descricao' => 'Descrição',
             'estado' => 'Estado',
             'precoProduto' => 'Preço',
-            //
-            'file' => 'Foto',
         ];
+    }
+
+    public function beforeSave($insert)
+    {
+        if ($insert) {
+            if ($file = UploadedFile::getInstance($this, 'fotoProduto')) {
+                $this->fotoProduto = file_get_contents($file->tempName);
+            }
+        }
+
+        return parent::beforeSave($insert);
     }
 
     public function afterSave($insert, $changedAttributes)
@@ -84,16 +92,14 @@ class Produto extends \yii\db\ActiveRecord
         $myObj->fotoProduto = $fotoProduto;
         $myObj->estado = $estado;
 
-        try{
+        try {
             $myJSON = json_encode($myObj);
             if ($insert)
                 $this->FazPublish("INSERCAO_PRODUTO", $myJSON);
             else
                 $this->FazPublish("EDICAO_PRODUTO", $myJSON);
-        } catch(Exception $ex){
-
+        } catch (Exception $ex) {
         }
-        
     }
 
     public function afterDelete()
@@ -103,12 +109,10 @@ class Produto extends \yii\db\ActiveRecord
         $myObj = new \stdClass();
         $myObj->IDproduto = $IDproduto;
         $myJSON = json_encode($myObj);
-        try{
+        try {
             $this->FazPublish("APAGAR_PRODUTO", $myJSON);
-        } catch (Exception $ex){
-
+        } catch (Exception $ex) {
         }
-        
     }
 
     public function FazPublish($canal, $msg)
@@ -136,17 +140,10 @@ class Produto extends \yii\db\ActiveRecord
     }
 
     //Vai buscar a imagem e faz o encoding para Base64
-    public function mostrarImagem()
+    public function semImagem()
     {
-
         if ($this->fotoProduto == '') {
-            $path = '../../common/uploads/produtos/no_prod.png';
-            $type = pathinfo($path, PATHINFO_EXTENSION);
-            $data = file_get_contents($path);
-            $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
-            return $base64;
-        } else {
-            $path = '../../common/uploads/produtos/' . $this->fotoProduto;
+            $path = '../../frontend/uploads/produtos/no_prod.png';
             $type = pathinfo($path, PATHINFO_EXTENSION);
             $data = file_get_contents($path);
             $base64 = 'data:image/' . $type . ';base64,' . base64_encode($data);
@@ -163,10 +160,13 @@ class Produto extends \yii\db\ActiveRecord
         }
     }
 
-    public function atribuirImagem()
+    public function adicionarImagemUpdate($novaFoto, $oldImage)
     {
-        $nome_imagem = 'prod' . $this->IDproduto;
-        $this->file->saveAs('../../common/uploads/produtos/' . $nome_imagem . '.' . $this->file->extension);
-        $this->fotoProduto = $nome_imagem . '.' . $this->file->extension;
+        if($novaFoto != '')
+        {
+            $this->fotoProduto = file_get_contents($novaFoto->tempName);
+        } else {
+            $this->fotoProduto = $oldImage;
+        }
     }
 }

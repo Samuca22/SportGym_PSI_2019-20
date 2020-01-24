@@ -43,7 +43,11 @@ $this->title = $model->nome;
             <div class="row">
                 <div class="col-md-3">
                     <div>Foto</div>
-                    <img src="<?= $model->mostrarImagem() ?>" width="200" height="200">
+                    <?php if ($model->fotoProduto == null) : ?>
+                        <img src="<?= $model->semImagem() ?>" height="200" width="200">
+                    <?php else : ?>
+                        <img src="data:image/png;base64,<?= base64_encode($model->fotoProduto) ?>" height="200" width="200" />
+                    <?php endif; ?>
                 </div>
                 <div class="col-md-9">
                     <div class="row">

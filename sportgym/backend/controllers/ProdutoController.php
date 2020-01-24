@@ -95,17 +95,8 @@ class ProdutoController extends Controller
     {
         $model = new Produto();
 
+
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $model->save();
-            
-            $model->file = UploadedFile::getInstance($model, 'file');
-
-
-            if ($model->file == null) {
-            } else {
-                $model->atribuirImagem();
-            }
-
             $model->save();
 
             Yii::$app->getSession()->setFlash('success', 'Produto criado com sucesso');
@@ -116,6 +107,8 @@ class ProdutoController extends Controller
             ]);
         }
     }
+
+
     /**
      * Updates an existing Produto model.
      * If update is successful, the browser will be redirected to the 'view' page.
@@ -126,17 +119,16 @@ class ProdutoController extends Controller
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
+        $oldImage = $model->fotoProduto;
 
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
-            $model->file = UploadedFile::getInstance($model, 'file');
 
-            if ($model->file == null) {
-            } else {
-                $model->atribuirImagem();
-            }
+            $newImage = UploadedFile::getInstance($model, 'fotoProduto');
+            $model->adicionarImagemUpdate($newImage, $oldImage);
 
             $model->save();
             Yii::$app->getSession()->setFlash('success', 'Produto editado com sucesso');
+
             return $this->redirect(['view', 'id' => $model->IDproduto]);
         }
 
@@ -155,10 +147,9 @@ class ProdutoController extends Controller
     public function actionDelete($id)
     {
         $model = $this->findModel($id);
-
         $linhasVendas = LinhaVenda::find()->where(['IDproduto' => $model->IDproduto])->one();
 
-        if($linhasVendas == null){
+        if ($linhasVendas == null) {
             $model->delete();
             Yii::$app->getSession()->setFlash('success', 'Produto eliminado com sucesso');
             return $this->redirect('index');
@@ -166,7 +157,6 @@ class ProdutoController extends Controller
             Yii::$app->getSession()->setFlash('error', 'Produto não pode ser eliminado');
             return $this->redirect('index');
         }
-        
     }
 
     /**

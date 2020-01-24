@@ -2,7 +2,8 @@
 
 namespace frontend\controllers;
 
-
+use backend\assets\AppAsset;
+use common\models\LinhaVenda;
 use common\models\PerfilPlano;
 use common\models\PerfilPlanoSearch;
 
@@ -10,9 +11,12 @@ use common\models\Venda;
 use common\models\VendaSearch;
 use Yii;
 use yii\data\ActiveDataProvider;
+use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+
+use function PHPSTORM_META\elementType;
 
 /**
  * VendaController implements the CRUD actions for Venda model.
@@ -25,10 +29,19 @@ class VendaController extends Controller
     public function behaviors()
     {
         return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'actions' => [],
+                        'allow' => false,
+                        'roles' => ['?'],
+                    ],
+                    [
+                        'actions' => [],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
                 ],
             ],
         ];
@@ -40,14 +53,9 @@ class VendaController extends Controller
      */
     public function actionIndex()
     {
-
-
-        $user = Yii::$app->user->identity;
-
         $searchModel = new VendaSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-        $dataProvider->query->andWhere(['estado' => 1, 'perfil.IDperfil' => $user->getId()]);
-
+        $dataProvider->query->andWhere(['estado' => 1, 'perfil.IDperfil' => Yii::$app->user->identity->getId()]);
 
         return $this->render('index', [
             'searchModel' => $searchModel,
@@ -64,63 +72,15 @@ class VendaController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
-    }
-
-    /**
-     * Creates a new Venda model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
-    public function actionCreate()
-    {
-        $model = new Venda();
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->IDvenda]);
-        }
-
-        return $this->render('create', [
-            'model' => $model,
-        ]);
-    }
-
-    /**
-     * Updates an existing Venda model.
-     * If update is successful, the browser will be redirected to the 'view' page.
-     * @param string $id
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionUpdate($id)
-    {
         $model = $this->findModel($id);
+        $linhasVenda = LinhaVenda::find()->where(['IDvenda' => $id])->all();
+        $user = Yii::$app->user->identity;
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['view', 'id' => $model->IDvenda]);
-        }
-
-        return $this->render('update', [
+        return $this->render('view', [
             'model' => $model,
+            'user' => $user,
+            'linhasVenda' => $linhasVenda,
         ]);
-    }
-
-    /**
-     * Deletes an existing Venda model.
-     * If deletion is successful, the browser will be redirected to the 'index' page.
-     * @param string $id
-     * @param integer $id
-     * @return mixed
-     * @throws NotFoundHttpException if the model cannot be found
-     */
-    public function actionDelete($id)
-    {
-        $this->findModel($id)->delete();
-
-        return $this->redirect(['index']);
     }
 
     /**
@@ -133,7 +93,7 @@ class VendaController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Venda::findOne($id)) !== null) {
+        if (($model = Venda::find()->where(['IDvenda' => $id])->andWhere(['IDperfil' => Yii::$app->user->getId()])->one()) !== null) {
             return $model;
         }
 
